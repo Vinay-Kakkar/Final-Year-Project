@@ -58,7 +58,6 @@ def read_pdb(pdbcode, pdbfilenm):
 
 pdb_bio = read_pdb("A0A452S449", "Proof of Concepts/AF-A0A452S449-F1-model_v3.pdb")
 
-pdb_seq = extract_seqrecords("A0A452S449", pdb_bio)
-
-print(pdb_seq)
-print(type(pdb_seq))
+structurefile = xpdb.SloppyPDBIO()
+structurefile.set_structure(pdb_bio)
+structurefile.save("Proof of Concepts/new_AF-A0A452S449-F1-model_v3.pdb")
