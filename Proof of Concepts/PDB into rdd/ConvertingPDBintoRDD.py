@@ -1,3 +1,4 @@
+from operator import truediv
 from pdb import Pdb
 from pyspark.sql import SparkSession
 
@@ -34,8 +35,26 @@ else:
 
 spark = SparkSession.builder.appName('PDB').getOrCreate()
 
-pdb = spark.read.option('header','true').csv("Proof of Concepts/PDB into rdd/new_pdb.pdb", inferSchema = True)
+pdb = spark.read.csv("Proof of Concepts/PDB into rdd/new_pdb.pdb", inferSchema = False, header=False)
 
-inputfile = pdb.rdd.flatMap(lambda line: print(line[:4])).take(5)
-
+inputfile = pdb.rdd.map(lambda line: print(line[0])).take(4)
+#look into delimiter when reading i can speceify the delimiter as a space 'sapces'
 print(inputfile)
+
+for l in inputfile:
+    print(l)
+
+print(pdb.columns)
+
+#print(pdb['_c0'][0])
+
+schema = StructType([
+    StructField("record_name", StringType(), True)
+])
+
+data = spark\
+    .read\
+    .schema(schema)\
+    .json("Proof of Concepts/PDB into rdd/new_pdb.pdb")
+
+data.printSchema()
