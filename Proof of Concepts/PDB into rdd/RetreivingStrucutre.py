@@ -1,6 +1,7 @@
-
-
 from Bio.PDB import *
+from pyspark.sql.types import StringType
+from pyspark.sql import SparkSession, Row
+
 parser = PDBParser(PERMISSIVE=True)
 
 
@@ -21,4 +22,7 @@ for item in structure.get_atoms():
     atom.append(item.occupancy)
     atom.append(item.bfactor)
     atoms.append(atom)
-print(atoms[0])
+
+spark = SparkSession.builder.appName('PDB').getOrCreate()
+test = spark.createDataFrame(atoms, StringType())
+test.show()
