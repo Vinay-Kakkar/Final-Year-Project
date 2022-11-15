@@ -2,20 +2,44 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType,StructField, StringType, IntegerType
 import os
 
+def getallpdbfiles(directory):
+    pdbfiles = []
+    for file in os.listdir(directory):
+        filename = os.fsdecode(file)
+        if filename.endswith(".pdb"):
+            pdbfiles.append(filename)
+    return pdbfiles
+
+def readPDBfile(fileloc):
+    pdb = spark.read.option('header','true').csv(fileloc, inferSchema = True)
+    return pdb
+
 spark = SparkSession.builder.appName('PDB').getOrCreate()
 
-pdb = spark.read.option('header','true').csv('Proof of Concepts/PDB onto a Cluster/AF-Q5VSL9-F1-model_v4.pdb', inferSchema = True)
+directory = os.fsencode("Proof of Concepts/PDB onto a Cluster/Original PDBs")
+pdbfiles = getallpdbfiles(directory)
 
-rdd = pdb.rdd.flatMap(lambda x: list(x))
+pdbs = []
+for pdbfile in pdbfiles:
+    filepath = (directory.decode('utf-8')+"/"+pdbfile)
+    pdbs.append(readPDBfile(filepath))
 
-df = spark.createDataFrame(rdd, StringType())
+rdds = []
+for pdb in pdbs:
+    rdds.append(pdb.rdd.flatMap(lambda x: list(x)))
 
-f = open("Proof of Concepts/PDB onto a Cluster/PDBs for Executables/newPDB.pdb", 'w')
 
-for i in df.collect():
-    f.write(i[0]+"\n")
-f.close()
+dfs = []
+for rdd in rdds:
+    dfs.append(spark.createDataFrame(rdd, StringType()))
 
-os.system("wc -l Proof\ of\ Concepts/PDB\ onto\ a\ Cluster/PDBs\ for\ Executables/newPDB.pdb")
+
+for df in dfs:
+    f = open("Proof of Concepts/PDB onto a Cluster/PDBs for Executables/newPDB.pdb", 'w')
+    for i in df.collect():
+        f.write(i[0]+"\n")
+    os.system("wc -l Proof\ of\ Concepts/PDB\ onto\ a\ Cluster/PDBs\ for\ Executables/newPDB.pdb")
+    f.close()
+
 
 
