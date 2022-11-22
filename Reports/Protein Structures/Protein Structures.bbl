@@ -1,0 +1,47 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{JEP{\etalchar{+}}21}
+
+\bibitem[BP03]{baldi_principled_nodate}
+Pierre Baldi and Gianluca Pollastri.
+\newblock The {Principled} {Design} of {Large}-{Scale} {Recursive} {Neural}
+  {Network} {Architectures}–{DAG}-{RNNs} and the {Protein} {Structure}
+  {Prediction} {Problem}.
+\newblock {\em NaN}, page~28, 2003.
+
+\bibitem[BPE22]{bryant_improved_2022}
+Patrick Bryant, Gabriele Pozzati, and Arne Elofsson.
+\newblock Improved prediction of protein-protein interactions using
+  {AlphaFold2}.
+\newblock {\em Nature Communications}, 13:1265, March 2022.
+
+\bibitem[BT98]{branden_introduction_1998}
+Carl~Ivar Branden and John Tooze.
+\newblock {\em Introduction to {Protein} {Structure}}.
+\newblock Garland Science, New York, 2 edition, December 1998.
+
+\bibitem[Fel]{felix_brief_nodate}
+Felix.
+\newblock A brief introduction to {AlphaFold} {\textbar} {Science} {\textbar}
+  {Felix} {Online}.
+
+\bibitem[JEP{\etalchar{+}}21]{jumper_highly_2021}
+John Jumper, Richard Evans, Alexander Pritzel, Tim Green, Michael Figurnov,
+  Olaf Ronneberger, Kathryn Tunyasuvunakool, Russ Bates, Augustin Žídek, Anna
+  Potapenko, Alex Bridgland, Clemens Meyer, Simon A.~A. Kohl, Andrew~J.
+  Ballard, Andrew Cowie, Bernardino Romera-Paredes, Stanislav Nikolov, Rishub
+  Jain, Jonas Adler, Trevor Back, Stig Petersen, David Reiman, Ellen Clancy,
+  Michal Zielinski, Martin Steinegger, Michalina Pacholska, Tamas Berghammer,
+  Sebastian Bodenstein, David Silver, Oriol Vinyals, Andrew~W. Senior, Koray
+  Kavukcuoglu, Pushmeet Kohli, and Demis Hassabis.
+\newblock Highly accurate protein structure prediction with {AlphaFold}.
+\newblock {\em Nature}, 596(7873):583--589, August 2021.
+\newblock Number: 7873 Publisher: Nature Publishing Group.
+
+\bibitem[Zve08]{zvelebil_understanding_2008}
+Marketa~J. Zvelebil.
+\newblock {\em Understanding bioinformatics / {Marketa} {Zvelebil} \& {Jeremy}
+  {O}. {Baum}.}
+\newblock Garland Science/Taylor \& Francis Group, Garland Science, Taylor \&
+  Francis Group, New York, 2008.
+
+\end{thebibliography}
