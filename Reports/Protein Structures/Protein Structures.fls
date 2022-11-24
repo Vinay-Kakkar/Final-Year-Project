@@ -185,6 +185,51 @@ INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics/keyval.sty
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -586,6 +631,27 @@ INPUT ./Transcription and translation.png
 INPUT Transcription and translation.png
 INPUT ./Transcription and translation.png
 INPUT ./Transcription and translation.png
+INPUT ./Gene Expresion.png
+INPUT ./Gene Expresion.png
+INPUT Gene Expresion.png
+INPUT ./Gene Expresion.png
+INPUT ./Gene Expresion.png
+INPUT ./SAGE1.png
+INPUT ./SAGE1.png
+INPUT SAGE1.png
+INPUT ./SAGE1.png
+INPUT ./SAGE1.png
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
+INPUT ./SAGE2.png
+INPUT ./SAGE2.png
+INPUT SAGE2.png
+INPUT ./SAGE2.png
+INPUT ./SAGE2.png
+INPUT ./Overlaping.png
+INPUT ./Overlaping.png
+INPUT Overlaping.png
+INPUT ./Overlaping.png
+INPUT ./Overlaping.png
 INPUT ./Protein Structures.bbl
 INPUT Protein Structures.bbl
 INPUT ./Protein Structures.bbl
@@ -603,5 +669,6 @@ INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
