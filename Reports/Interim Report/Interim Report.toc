@@ -1,0 +1,35 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}aims, objectives and literature survey}{1}{section.0.1}%
+\contentsline {subsection}{\numberline {1.1}aims}{1}{subsection.0.1.1}%
+\contentsline {subsection}{\numberline {1.2}objectives Completed}{1}{subsection.0.1.2}%
+\contentsline {subsubsection}{Tutorials: Explain the prrof of concepts}{1}{section*.2}%
+\contentsline {subsubsection}{Reports}{1}{section*.3}%
+\contentsline {subsubsection}{Proof of Concepts}{1}{section*.4}%
+\contentsline {subsection}{\numberline {1.3}Futher Objectives}{2}{subsection.0.1.3}%
+\contentsline {subsubsection}{Final delievarbles}{2}{section*.5}%
+\contentsline {subsubsection}{Extensions}{2}{section*.6}%
+\contentsline {section}{\numberline {2}literature survey}{2}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}Protein Structures}{2}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Protein Data Bank and the file formats used in accessing it}{2}{subsection.0.2.2}%
+\contentsline {subsection}{\numberline {2.3}Hadoop spark and pyspark}{2}{subsection.0.2.3}%
+\contentsline {subsubsection}{What is Hadoop}{2}{section*.7}%
+\contentsline {subsubsection}{Mapper}{2}{section*.8}%
+\contentsline {subsubsection}{Reducer}{3}{section*.9}%
+\contentsline {subsubsection}{What is Spark}{3}{section*.10}%
+\contentsline {subsubsection}{Spark vs Hadoop}{3}{section*.11}%
+\contentsline {subsubsection}{Software Architectural Bottlenecks}{4}{section*.15}%
+\contentsline {subsubsection}{Portability Limitations}{4}{section*.16}%
+\contentsline {subsubsection}{Portability Assumptions}{4}{section*.17}%
+\contentsline {section}{\numberline {3}Software Development}{4}{section.0.3}%
+\contentsline {section}{\numberline {4}planning and time-scale}{5}{section.0.4}%
+\contentsline {subsection}{\numberline {4.1}planning}{5}{subsection.0.4.1}%
+\contentsline {subsection}{\numberline {4.2}time-scale}{5}{subsection.0.4.2}%
+\contentsline {section}{\numberline {5}summary of completed work}{5}{section.0.5}%
+\contentsline {section}{\numberline {6}diary}{5}{section.0.6}%
+\contentsline {subsubsection}{10th october 2022}{5}{section*.19}%
+\contentsline {subsubsection}{17th october 2022}{5}{section*.20}%
+\contentsline {subsubsection}{24th october 2022}{5}{section*.21}%
+\contentsline {subsubsection}{31th october 2022}{5}{section*.22}%
+\contentsline {subsubsection}{7th october 2022}{5}{section*.23}%
+\contentsline {subsubsection}{14th october 2022}{5}{section*.24}%
+\contentsline {subsubsection}{21th october 2022}{5}{section*.25}%

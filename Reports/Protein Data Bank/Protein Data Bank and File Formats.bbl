@@ -1,0 +1,196 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{BBB{\etalchar{+}}22b}
+
+\bibitem[AAB{\etalchar{+}}19]{adams_announcing_2019}
+Paul~D. Adams, Pavel~V. Afonine, Kumaran Baskaran, Helen~M. Berman, John
+  Berrisford, Gerard Bricogne, David~G. Brown, Stephen~K. Burley, Minyu Chen,
+  Zukang Feng, Claus Flensburg, Aleksandras Gutmanas, Jeffrey~C. Hoch, Yasuyo
+  Ikegawa, Yumiko Kengaku, Eugene Krissinel, Genji Kurisu, Yuhe Liang, Dorothee
+  Liebschner, Lora Mak, John~L. Markley, Nigel~W. Moriarty, Garib~N. Murshudov,
+  Martin Noble, Ezra Peisach, Irina Persikova, Billy~K. Poon, Oleg~V. Sobolev,
+  Eldon~L. Ulrich, Sameer Velankar, Clemens Vonrhein, John Westbrook, Marcin
+  Wojdyr, Masashi Yokochi, and Jasmine~Y. Young.
+\newblock Announcing mandatory submission of {PDBx}/{mmCIF} format files for
+  crystallographic depositions to the {Protein} {Data} {Bank} ({PDB}).
+\newblock {\em Acta Crystallographica Section D Structural Biology},
+  75(4):451--454, April 2019.
+
+\bibitem[BB21]{burley_open-access_2021}
+Stephen~K. Burley and Helen~M. Berman.
+\newblock Open-access data: {A} cornerstone for artificial intelligence
+  approaches to protein structure prediction.
+\newblock {\em Structure (London, England: 1993)}, 29(6):515--520, June 2021.
+
+\bibitem[BBB{\etalchar{+}}21]{powerful_rcsb_2021}
+Stephen~K. Burley, Charmi Bhikadiya, Chunxiao Bi, Sebastian Bittrich, Li~Chen,
+  Gregg~V. Crichlow, Cole~H. Christie, Kenneth Dalenberg, Luigi Di~Costanzo,
+  Jose~M. Duarte, Shuchismita Dutta, Zukang Feng, Sai Ganesan, David~S.
+  Goodsell, Sutapa Ghosh, Rachel~Kramer Green, Vladimir Guranović, Dmytro
+  Guzenko, Brian~P. Hudson, Catherine~L. Lawson, Yuhe Liang, Robert Lowe, Harry
+  Namkoong, Ezra Peisach, Irina Persikova, Chris Randle, Alexander Rose, Yana
+  Rose, Andrej Sali, Joan Segura, Monica Sekharan, Chenghua Shao, Yi-Ping Tao,
+  Maria Voigt, John~D. Westbrook, Jasmine~Y. Young, Christine Zardecki, and
+  Marina Zhuravleva.
+\newblock {RCSB} {Protein} {Data} {Bank}: powerful new tools for exploring {3D}
+  structures of biological macromolecules for basic and applied research and
+  education in fundamental biology, biomedicine, biotechnology, bioengineering
+  and energy sciences.
+\newblock {\em Nucleic Acids Research}, 49(D1):D437--D451, January 2021.
+
+\bibitem[BBB{\etalchar{+}}22a]{burley1_rcsb_2022}
+Stephen Burley, Charmi Bhikadiya, Chunxiao Bi, Sebastian Bittrich, Henry Chao,
+  Li~Chen, Paul Craig, Gregg Crichlow, Kenneth Dalenberg, Jose Duarte,
+  Shuchismita Dutta, Maryam Fayazi, Zukang Feng, Justin Flatt, Sai Ganesan,
+  Sutapa Ghosh, David Goodsell, Rachel Kramer, Vladimir Guranovic, and
+  Christine Zardecki.
+\newblock {RCSB} {Protein} {Data} {Bank} ({RCSB}.org): delivery of
+  experimentally-determined {PDB} structures alongside one million computed
+  structure models of proteins from artificial intelligence/machine learning.
+\newblock {\em Nucleic Acids Research}, November 2022.
+
+\bibitem[BBB{\etalchar{+}}22b]{burley_rcsb_2022}
+Stephen~K. Burley, Charmi Bhikadiya, Chunxiao Bi, Sebastian Bittrich, Li~Chen,
+  Gregg~V. Crichlow, Jose~M. Duarte, Shuchismita Dutta, Maryam Fayazi, Zukang
+  Feng, Justin~W. Flatt, Sai~J. Ganesan, David~S. Goodsell, Sutapa Ghosh,
+  Rachel Kramer~Green, Vladimir Guranovic, Jeremy Henry, Brian~P. Hudson,
+  Catherine~L. Lawson, Yuhe Liang, Robert Lowe, Ezra Peisach, Irina Persikova,
+  Dennis~W. Piehl, Yana Rose, Andrej Sali, Joan Segura, Monica Sekharan,
+  Chenghua Shao, Brinda Vallat, Maria Voigt, John~D. Westbrook, Shamara
+  Whetstone, Jasmine~Y. Young, and Christine Zardecki.
+\newblock {RCSB} {Protein} {Data} {Bank}: {Celebrating} 50 years of the {PDB}
+  with new tools for understanding and visualizing biological macromolecules in
+  {3D}.
+\newblock {\em Protein Science}, 31(1):187--208, 2022.
+\newblock \_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/pro.4213.
+
+\bibitem[BBR20]{bittrich_real-time_2020}
+Sebastian Bittrich, Stephen~K. Burley, and Alexander~S. Rose.
+\newblock Real-time structural motif searching in proteins using an inverted
+  index strategy.
+\newblock {\em PLOS Computational Biology}, 16(12):e1008502, December 2020.
+\newblock Publisher: Public Library of Science.
+
+\bibitem[BG21]{behzadi_worldwide_2021}
+Payam Behzadi and Márió Gajdács.
+\newblock Worldwide {Protein} {Data} {Bank} ({wwPDB}): {A} virtual treasure for
+  research in biotechnology.
+\newblock {\em European Journal of Microbiology and Immunology}, 11(4):77--86,
+  December 2021.
+\newblock Publisher: Akadémiai Kiadó Section: European Journal of
+  Microbiology and Immunology.
+
+\bibitem[BKW{\etalchar{+}}77]{bernstein_protein_1977}
+F.~C. Bernstein, T.~F. Koetzle, G.~J. Williams, E.~F. Meyer, M.~D. Brice, J.~R.
+  Rodgers, O.~Kennard, T.~Shimanouchi, and M.~Tasumi.
+\newblock The {Protein} {Data} {Bank}: a computer-based archival file for
+  macromolecular structures.
+\newblock {\em Journal of Molecular Biology}, 112(3):535--542, May 1977.
+
+\bibitem[Bur21]{burley_impact_2021}
+Stephen~K. Burley.
+\newblock Impact of structural biologists and the {Protein} {Data} {Bank} on
+  small-molecule drug discovery and development.
+\newblock {\em The Journal of Biological Chemistry}, 296:100559, 2021.
+
+\bibitem[BWF{\etalchar{+}}00]{berman_protein_2000}
+Helen~M. Berman, John Westbrook, Zukang Feng, Gary Gilliland, T.~N. Bhat, Helge
+  Weissig, Ilya~N. Shindyalov, and Philip~E. Bourne.
+\newblock The {Protein} {Data} {Bank}.
+\newblock {\em Nucleic Acids Research}, 28(1):235--242, January 2000.
+
+\bibitem[Goo]{noauthor_pdb101_nodate}
+David~S. Goodsell.
+\newblock {PDB101}: {Learn}: {Guide} to {Understanding} {PDB} {Data}:
+  {Introduction}.
+
+\bibitem[LZD{\etalchar{+}}20]{lubin_evolution_2020}
+Joseph~H. Lubin, Christine Zardecki, Elliott~M. Dolan, Changpeng Lu, Zhuofan
+  Shen, Shuchismita Dutta, John~D. Westbrook, Brian~P. Hudson, David~S.
+  Goodsell, Jonathan~K. Williams, Maria Voigt, Vidur Sarma, Lingjun Xie,
+  Thejasvi Venkatachalam, Steven Arnold, Luz Helena~Alfaro Alvarado, Kevin
+  Catalfano, Aaliyah Khan, Erika McCarthy, Sophia Staggers, Brea Tinsley, Alan
+  Trudeau, Jitendra Singh, Lindsey Whitmore, Helen Zheng, Matthew Benedek,
+  Jenna Currier, Mark Dresel, Ashish Duvvuru, Britney Dyszel, Emily Fingar,
+  Elizabeth~M. Hennen, Michael Kirsch, Ali~A. Khan, Charlotte Labrie-Cleary,
+  Stephanie Laporte, Evan Lenkeit, Kailey Martin, Marilyn Orellana, Melanie
+  Ortiz-Alvarez de~la Campa, Isaac Paredes, Baleigh Wheeler, Allison Rupert,
+  Andrew Sam, Katherine See, Santiago~Soto Zapata, Paul~A. Craig, Bonnie~L.
+  Hall, Jennifer Jiang, Julia~R. Koeppe, Stephen~A. Mills, Michael~J. Pikaart,
+  Rebecca Roberts, Yana Bromberg, J.~Steen Hoyer, Siobain Duffy, Jay
+  Tischfield, Francesc~X. Ruiz, Eddy Arnold, Jean Baum, Jesse Sandberg, Grace
+  Brannigan, Sagar~D. Khare, and Stephen~K. Burley.
+\newblock Evolution of the {SARS}-{CoV}-2 proteome in three dimensions ({3D})
+  during the first six months of the {COVID}-19 pandemic.
+\newblock {\em bioRxiv: The Preprint Server for Biology}, page
+  2020.12.01.406637, December 2020.
+
+\bibitem[RDL{\etalchar{+}}21]{rose_rcsb_2021}
+Yana Rose, Jose~M. Duarte, Robert Lowe, Joan Segura, Chunxiao Bi, Charmi
+  Bhikadiya, Li~Chen, Alexander~S. Rose, Sebastian Bittrich, Stephen~K. Burley,
+  and John~D. Westbrook.
+\newblock {RCSB} {Protein} {Data} {Bank}: {Architectural} {Advances} {Towards}
+  {Integrated} {Searching} and {Efficient} {Access} to {Macromolecular}
+  {Structure} {Data} from the {PDB} {Archive}.
+\newblock {\em Journal of Molecular Biology}, 433(11):166704, May 2021.
+
+\bibitem[SBD{\etalchar{+}}21]{sehnal_mol_2021}
+David Sehnal, Sebastian Bittrich, Mandar Deshpande, Radka Svobodová, Karel
+  Berka, Václav Bazgier, Sameer Velankar, Stephen~K Burley, Jaroslav Koča,
+  and Alexander~S Rose.
+\newblock Mol* {Viewer}: modern web app for {3D} visualization and analysis of
+  large biomolecular structures.
+\newblock {\em Nucleic Acids Research}, 49(W1):W431--W437, July 2021.
+
+\bibitem[vdABH17]{van_der_aalst_responsible_2017}
+Wil M.~P. van~der Aalst, Martin Bichler, and Armin Heinzl.
+\newblock Responsible {Data} {Science}.
+\newblock {\em Business \& Information Systems Engineering}, 59(5):311--313,
+  October 2017.
+
+\bibitem[WB19]{westbrook_how_2019}
+John~D. Westbrook and Stephen~K. Burley.
+\newblock How {Structural} {Biologists} and the {Protein} {Data} {Bank}
+  {Contributed} to {Recent} {FDA} {New} {Drug} {Approvals}.
+\newblock {\em Structure (London, England: 1993)}, 27(2):211--217, February
+  2019.
+
+\bibitem[WDA{\etalchar{+}}16]{wilkinson_fair_2016}
+Mark~D. Wilkinson, Michel Dumontier, IJsbrand~Jan Aalbersberg, Gabrielle
+  Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten,
+  Luiz~Bonino da~Silva~Santos, Philip~E. Bourne, Jildau Bouwman, Anthony~J.
+  Brookes, Tim Clark, Mercè Crosas, Ingrid Dillo, Olivier Dumon, Scott
+  Edmunds, Chris~T. Evelo, Richard Finkers, Alejandra Gonzalez-Beltran,
+  Alasdair J.~G. Gray, Paul Groth, Carole Goble, Jeffrey~S. Grethe, Jaap
+  Heringa, Peter A.~C. ’t Hoen, Rob Hooft, Tobias Kuhn, Ruben Kok, Joost Kok,
+  Scott~J. Lusher, Maryann~E. Martone, Albert Mons, Abel~L. Packer, Bengt
+  Persson, Philippe Rocca-Serra, Marco Roos, Rene van Schaik, Susanna-Assunta
+  Sansone, Erik Schultes, Thierry Sengstag, Ted Slater, George Strawn,
+  Morris~A. Swertz, Mark Thompson, Johan van~der Lei, Erik van Mulligen, Jan
+  Velterop, Andra Waagmeester, Peter Wittenburg, Katherine Wolstencroft, Jun
+  Zhao, and Barend Mons.
+\newblock The {FAIR} {Guiding} {Principles} for scientific data management and
+  stewardship.
+\newblock {\em Scientific Data}, 3(1):160018, March 2016.
+\newblock Number: 1 Publisher: Nature Publishing Group.
+
+\bibitem[WF03]{westbrook_pdb_2003}
+John~D. Westbrook and Paula M.~D. Fitzgerald.
+\newblock The {PDB} {Format}, {mmCIF} {Formats}, and {Other} {Data} {Formats}.
+\newblock In {\em Structural {Bioinformatics}}, pages 159--179. John Wiley \&
+  Sons, Ltd, 2003.
+\newblock Section: 8 \_eprint:
+  https://onlinelibrary.wiley.com/doi/pdf/10.1002/0471721204.ch8.
+
+\bibitem[WIN{\etalchar{+}}05]{westbrook_pdbml_2005}
+John Westbrook, Nobutoshi Ito, Haruki Nakamura, Kim Henrick, and Helen~M.
+  Berman.
+\newblock {PDBML}: the representation of archival macromolecular structure data
+  in {XML}.
+\newblock {\em Bioinformatics}, 21(7):988--992, April 2005.
+
+\bibitem[WSHB20]{westbrook_impact_2020}
+John~D. Westbrook, Rose Soskind, Brian~P. Hudson, and Stephen~K. Burley.
+\newblock Impact of the {Protein} {Data} {Bank} on antineoplastic approvals.
+\newblock {\em Drug Discovery Today}, 25(5):837--850, May 2020.
+
+\end{thebibliography}

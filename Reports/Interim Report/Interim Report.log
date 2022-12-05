@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  4 DEC 2022 15:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  5 DEC 2022 01:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/vinaykakkar/Desktop/PROJECT-main/Reports/Protein Structures/Protein Structures.tex"
-(/Users/vinaykakkar/Desktop/PROJECT-main/Reports/Protein Structures/Protein Structures.tex
+**"/Users/vinaykakkar/Desktop/PROJECT-main/Reports/Interim Report/Interim Report.tex"
+(/Users/vinaykakkar/Desktop/PROJECT-main/Reports/Interim Report/Interim Report.tex
 LaTeX2e <2022-11-01>
 L3 programming layer <2022-11-02> (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
@@ -286,8 +286,18 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count294
 \l__pdf_internal_box=\box55
-) (./Protein Structures.aux)
-\openout1 = `"Protein Structures.aux"'.
+) (./Interim Report.aux
+
+LaTeX Warning: Label `tab:Amino acids' multiply defined.
+
+
+LaTeX Warning: Label `tab:Amino acids' multiply defined.
+
+
+LaTeX Warning: Label `Results1' multiply defined.
+
+)
+\openout1 = `"Interim Report.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
@@ -372,15 +382,15 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 Package hyperref Info: Link coloring ON on input line 23.
- (./Protein Structures.out) (./Protein Structures.out)
+ (./Interim Report.out) (./Interim Report.out)
 \@outlinefile=\write3
-\openout3 = `"Protein Structures.out"'.
+\openout3 = `"Interim Report.out"'.
 
  [1
 
-{/usr/local/texlive/2022basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Protein Structures.toc)
+{/usr/local/texlive/2022basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Interim Report.toc)
 \tf@toc=\write4
-\openout4 = `"Protein Structures.toc"'.
+\openout4 = `"Interim Report.toc"'.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
@@ -393,82 +403,50 @@ l.28 \begin{abstract}
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 \end{abstract}
+l.31 \end{abstract}
                     [1]
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.99 
-      [1]
-<Protein Structure.png, id=97, 452.69125pt x 366.36874pt>
-File: Protein Structure.png Graphic file (type png)
-<use Protein Structure.png>
-Package pdftex.def Info: Protein Structure.png  used on input line 141.
-(pdftex.def)             Requested size: 221.78923pt x 179.4943pt.
- [2]
-<Transcription and translation.png, id=118, 293.095pt x 122.4575pt>
-File: Transcription and translation.png Graphic file (type png)
-<use Transcription and translation.png>
-Package pdftex.def Info: Transcription and translation.png  used on input line 158.
-(pdftex.def)             Requested size: 221.78923pt x 92.66504pt.
- [3 <./Protein Structure.png> <./Transcription and translation.png>] [4]
-<Gene Expresion.png, id=169, 341.275pt x 300.62312pt>
-File: Gene Expresion.png Graphic file (type png)
-<use Gene Expresion.png>
-Package pdftex.def Info: Gene Expresion.png  used on input line 232.
-(pdftex.def)             Requested size: 221.78923pt x 195.37059pt.
-<SAGE1.png, id=172, 349.305pt x 377.41pt>
-File: SAGE1.png Graphic file (type png)
-<use SAGE1.png>
-Package pdftex.def Info: SAGE1.png  used on input line 244.
-(pdftex.def)             Requested size: 179.64682pt x 194.10052pt.
-<SAGE2.png, id=173, 349.305pt x 327.2225pt>
-File: SAGE2.png Graphic file (type png)
-<use SAGE2.png>
-Package pdftex.def Info: SAGE2.png  used on input line 250.
-(pdftex.def)             Requested size: 179.64682pt x 168.28929pt.
+l.94 B
+      e able to perform/use user executables that have been created to be pe... [1] [2]
+Underfull \hbox (badness 2828) in paragraph at lines 185--187
+[]\OT1/cmr/m/n/10 For fault tol-er-ance, Spark uses
+ []
+
+
+Overfull \hbox (1.82648pt too wide) in paragraph at lines 161--196
+ [] 
+ []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5 <./Gene Expresion.png>]
-<Overlaping.png, id=200, 496.85625pt x 444.66125pt>
-File: Overlaping.png Graphic file (type png)
-<use Overlaping.png>
-Package pdftex.def Info: Overlaping.png  used on input line 271.
-(pdftex.def)             Requested size: 221.78923pt x 198.49445pt.
- [6 <./SAGE1.png> <./SAGE2.png> <./Overlaping.png>]
-<RNAseq.png, id=222, 736.7525pt x 747.29187pt>
-File: RNAseq.png Graphic file (type png)
-<use RNAseq.png>
-Package pdftex.def Info: RNAseq.png  used on input line 313.
-(pdftex.def)             Requested size: 221.78923pt x 224.95326pt.
- [7] [8 <./RNAseq.png>] (./Protein Structures.bbl [9]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 68.
- (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
- [10
 
-] [11]) [12] (./Protein Structures.aux)
-Package rerunfilecheck Info: File `"Protein Structures".out' has not changed.
-(rerunfilecheck)             Checksum: 53CED8A650968FFE93A7EA0767FA7C93;1830.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3] [4] (./Interim Report.bbl [5]) [6
+
+] (./Interim Report.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `"Interim Report".out' has not changed.
+(rerunfilecheck)             Checksum: FE45BCB4C948B35B1C664CDA3AF497B6;2307.
  ) 
 Here is how much of TeX's memory you used:
- 12061 strings out of 476422
- 199458 string characters out of 5810350
- 565739 words of memory out of 5000000
- 33115 multiletter control sequences out of 15000+600000
- 476228 words of font info for 52 fonts, out of 8000000 for 9000
+ 11901 strings out of 476422
+ 196102 string characters out of 5810350
+ 564491 words of memory out of 5000000
+ 33004 multiletter control sequences out of 15000+600000
+ 475594 words of font info for 50 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 72i,8n,77p,1068b,552s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Protein Structures.pdf" (15 pages, 656564 bytes).
+ 72i,10n,77p,599b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "Interim Report.pdf" (9 pages, 124776 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
- 87 named destinations out of 1000 (max. 500000)
- 124 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 178 compressed objects within 2 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 

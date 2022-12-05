@@ -1,0 +1,33 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{MBY{\etalchar{+}}16}
+
+\bibitem[HRJ17]{hazarika_performance_2017}
+Akaash~Vishal Hazarika, G~Jagadeesh Sai~Raghu Ram, and Eeti Jain.
+\newblock Performance comparision of {Hadoop} and spark engine.
+\newblock In {\em 2017 {International} {Conference} on {I}-{SMAC} ({IoT} in
+  {Social}, {Mobile}, {Analytics} and {Cloud}) ({I}-{SMAC})}, pages 671--674,
+  February 2017.
+
+\bibitem[Lam10]{lam_hadoop_2010}
+Chuck Lam.
+\newblock {\em Hadoop in {Action}}.
+\newblock Simon and Schuster, November 2010.
+\newblock Google-Books-ID: 8DozEAAAQBAJ.
+
+\bibitem[MBY{\etalchar{+}}16]{meng_mllib_2016}
+Xiangrui Meng, Joseph Bradley, Burak Yavuz, Evan Sparks, Shivaram Venkataraman,
+  Davies Liu, Jeremy Freeman, D.~B. Tsai, Manish Amde, Sean Owen, Doris Xin,
+  Reynold Xin, Michael~J. Franklin, Reza Zadeh, Matei Zaharia, and Ameet
+  Talwalkar.
+\newblock {MLlib}: {Machine} {Learning} in {Apache} {Spark}.
+\newblock {\em Journal of Machine Learning Research}, 17(34):1--7, 2016.
+
+\bibitem[SRC10]{shafer_hadoop_2010}
+Jeffrey Shafer, Scott Rixner, and Alan~L. Cox.
+\newblock The {Hadoop} distributed filesystem: {Balancing} portability and
+  performance.
+\newblock In {\em 2010 {IEEE} {International} {Symposium} on {Performance}
+  {Analysis} of {Systems} \& {Software} ({ISPASS})}, pages 122--133, March
+  2010.
+
+\end{thebibliography}

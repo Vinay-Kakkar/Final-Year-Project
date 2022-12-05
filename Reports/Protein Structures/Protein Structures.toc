@@ -8,19 +8,17 @@
 \contentsline {subsubsection}{Quaternary Structure}{2}{section*.6}%
 \contentsline {subsubsection}{Considering Protein structure on several different levels}{3}{section*.9}%
 \contentsline {subsubsection}{Amino Acids}{3}{section*.10}%
-\contentsline {subsubsection}{Bioinformatic Difficulties with Predictions on Proteins}{4}{section*.12}%
+\contentsline {subsubsection}{Bioinformatic Difficulties with Predictions on Proteins}{3}{section*.12}%
 \contentsline {subsection}{\numberline {2.2}Compact Structures}{4}{subsection.0.2.2}%
 \contentsline {subsubsection}{Protein Folds}{4}{section*.13}%
 \contentsline {subsubsection}{Bioinformatics with Protein Folds}{4}{section*.14}%
-\contentsline {section}{\numberline {3}Large Scale Experssion}{5}{section.0.3}%
+\contentsline {section}{\numberline {3}Large Scale Experssion}{4}{section.0.3}%
 \contentsline {subsection}{\numberline {3.1}Large Scale Gene Expression}{5}{subsection.0.3.1}%
-\contentsline {subsubsection}{Serial analysis of gene expression}{6}{section*.16}%
-\contentsline {subsubsection}{Detect differential gene expression}{7}{section*.18}%
-\contentsline {subsubsection}{Clustered gene expression data}{7}{section*.19}%
-\contentsline {subsection}{\numberline {3.2}Large Scale Protein Expression}{7}{subsection.0.3.2}%
-\contentsline {subsubsection}{Clustering methods to identify protein spots with similar expression patterns}{8}{section*.21}%
+\contentsline {subsubsection}{Serial analysis of gene expression}{5}{section*.16}%
+\contentsline {subsubsection}{Clustered gene expression data}{5}{section*.18}%
+\contentsline {subsection}{\numberline {3.2}Large Scale Protein Expression}{6}{subsection.0.3.2}%
+\contentsline {subsection}{\numberline {3.3}RNAseq}{7}{subsection.0.3.3}%
 \contentsline {section}{\numberline {4}Alpha Fold}{8}{section.0.4}%
-\contentsline {subsubsection}{Bioinformatics with Alpha Fold}{8}{section*.22}%
+\contentsline {subsubsection}{Bioinformatics with Alpha Fold}{8}{section*.21}%
 \contentsline {subsection}{\numberline {4.1}AlphaFold 2}{8}{subsection.0.4.1}%
-\contentsline {section}{\numberline {5}Implication for Bioinformatics}{8}{section.0.5}%
-\contentsline {subsubsection}{Visualization and computer manipulation of protein structures}{8}{section*.23}%
+\contentsline {section}{\numberline {5}Implication for Bioinformatics}{9}{section.0.5}%

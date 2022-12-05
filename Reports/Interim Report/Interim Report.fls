@@ -1,9 +1,9 @@
-PWD /Users/vinaykakkar/Desktop/PROJECT-main/Reports/Protein Structures
+PWD /Users/vinaykakkar/Desktop/PROJECT-main/Reports/Interim Report
 INPUT /usr/local/texlive/2022basic/texmf.cnf
 INPUT /usr/local/texlive/2022basic/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022basic/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/vinaykakkar/Desktop/PROJECT-main/Reports/Protein Structures/Protein Structures.tex
-OUTPUT Protein Structures.log
+INPUT /Users/vinaykakkar/Desktop/PROJECT-main/Reports/Interim Report/Interim Report.tex
+OUTPUT Interim Report.log
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/report.cls
@@ -540,10 +540,10 @@ INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdft
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./Protein Structures.aux
-INPUT Protein Structures.aux
-INPUT Protein Structures.aux
-OUTPUT Protein Structures.aux
+INPUT ./Interim Report.aux
+INPUT Interim Report.aux
+INPUT Interim Report.aux
+OUTPUT Interim Report.aux
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -582,18 +582,18 @@ INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics/mathcolor.ltx
-INPUT ./Protein Structures.out
-INPUT Protein Structures.out
-INPUT ./Protein Structures.out
-INPUT Protein Structures.out
-INPUT ./Protein Structures.out
-INPUT Protein Structures.out
-INPUT ./Protein Structures.out
-INPUT Protein Structures.out
-OUTPUT Protein Structures.pdf
-INPUT ./Protein Structures.out
-INPUT ./Protein Structures.out
-OUTPUT Protein Structures.out
+INPUT ./Interim Report.out
+INPUT Interim Report.out
+INPUT ./Interim Report.out
+INPUT Interim Report.out
+INPUT ./Interim Report.out
+INPUT Interim Report.out
+INPUT ./Interim Report.out
+INPUT Interim Report.out
+OUTPUT Interim Report.pdf
+INPUT ./Interim Report.out
+INPUT ./Interim Report.out
+OUTPUT Interim Report.out
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
@@ -610,72 +610,28 @@ INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/
 INPUT /usr/local/texlive/2022basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT ./Protein Structures.toc
-INPUT Protein Structures.toc
-INPUT Protein Structures.toc
+INPUT ./Interim Report.toc
+INPUT Interim Report.toc
+INPUT Interim Report.toc
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
-OUTPUT Protein Structures.toc
+OUTPUT Interim Report.toc
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT ./Protein Structure.png
-INPUT ./Protein Structure.png
-INPUT Protein Structure.png
-INPUT ./Protein Structure.png
-INPUT ./Protein Structure.png
-INPUT ./Transcription and translation.png
-INPUT ./Transcription and translation.png
-INPUT Transcription and translation.png
-INPUT ./Transcription and translation.png
-INPUT ./Transcription and translation.png
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
-INPUT ./Gene Expresion.png
-INPUT ./Gene Expresion.png
-INPUT Gene Expresion.png
-INPUT ./Gene Expresion.png
-INPUT ./Gene Expresion.png
-INPUT ./SAGE1.png
-INPUT ./SAGE1.png
-INPUT SAGE1.png
-INPUT ./SAGE1.png
-INPUT ./SAGE1.png
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
-INPUT ./SAGE2.png
-INPUT ./SAGE2.png
-INPUT SAGE2.png
-INPUT ./SAGE2.png
-INPUT ./SAGE2.png
-INPUT ./Overlaping.png
-INPUT ./Overlaping.png
-INPUT Overlaping.png
-INPUT ./Overlaping.png
-INPUT ./Overlaping.png
-INPUT ./RNAseq.png
-INPUT ./RNAseq.png
-INPUT RNAseq.png
-INPUT ./RNAseq.png
-INPUT ./RNAseq.png
-INPUT ./Protein Structures.bbl
-INPUT Protein Structures.bbl
-INPUT ./Protein Structures.bbl
-INPUT Protein Structures.bbl
-INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omscmr.fd
-INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omscmr.fd
-INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omscmr.fd
-INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omscmr.fd
-INPUT Protein Structures.aux
-INPUT ./Protein Structures.out
-INPUT ./Protein Structures.out
-INPUT /Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk
+INPUT ./Interim Report.bbl
+INPUT Interim Report.bbl
+INPUT ./Interim Report.bbl
+INPUT Interim Report.bbl
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT Interim Report.aux
+INPUT ./Interim Report.out
+INPUT ./Interim Report.out
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
