@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  6 DEC 2022 08:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  6 DEC 2022 08:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -799,7 +799,7 @@ Underfull \hbox (badness 3118) in paragraph at lines 415--421
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Interim Report".out' has not changed.
-(rerunfilecheck)             Checksum: BF28E6CD6130DE131E16EBB98F2D9B80;3511.
+(rerunfilecheck)             Checksum: 4BB53481AA2ADEE78D4C301B63BCB15A;3511.
  ) 
 Here is how much of TeX's memory you used:
  24800 strings out of 476422
@@ -810,7 +810,7 @@ Here is how much of TeX's memory you used:
  319 hyphenation exceptions out of 8191
  99i,10n,103p,1321b,1039s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Interim Report.pdf" (34 pages, 3594747 bytes).
+Output written on "Interim Report.pdf" (34 pages, 3594740 bytes).
 PDF statistics:
  749 PDF objects out of 1000 (max. 8388607)
  646 compressed objects within 7 object streams

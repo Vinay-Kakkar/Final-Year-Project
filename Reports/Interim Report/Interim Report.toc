@@ -68,8 +68,8 @@
 \contentsline {section}{\numberline {6}Planning and Time-Scale}{21}{section.0.6}%
 \contentsline {subsection}{\numberline {6.1}Planning}{22}{subsection.0.6.1}%
 \contentsline {subsubsection}{looking back on Project Plan Timeline}{22}{section*.70}%
-\contentsline {subsection}{\numberline {6.2}time-scale}{22}{subsection.0.6.2}%
-\contentsline {section}{\numberline {7}diary}{22}{section.0.7}%
+\contentsline {subsection}{\numberline {6.2}Time-Scale}{22}{subsection.0.6.2}%
+\contentsline {section}{\numberline {7}Diary}{22}{section.0.7}%
 \contentsline {subsubsection}{26th September 2022}{22}{section*.73}%
 \contentsline {subsubsection}{3rd October 2022}{23}{section*.74}%
 \contentsline {subsubsection}{10th October 2022}{23}{section*.75}%
