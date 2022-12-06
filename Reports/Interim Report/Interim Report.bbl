@@ -1,5 +1,180 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{MBY{\etalchar{+}}16}
+\begin{thebibliography}{EWMR{\etalchar{+}}06}
+
+\bibitem[AAB{\etalchar{+}}19]{adams_announcing_2019}
+Paul~D. Adams, Pavel~V. Afonine, Kumaran Baskaran, Helen~M. Berman, John
+  Berrisford, Gerard Bricogne, David~G. Brown, Stephen~K. Burley, Minyu Chen,
+  Zukang Feng, Claus Flensburg, Aleksandras Gutmanas, Jeffrey~C. Hoch, Yasuyo
+  Ikegawa, Yumiko Kengaku, Eugene Krissinel, Genji Kurisu, Yuhe Liang, Dorothee
+  Liebschner, Lora Mak, John~L. Markley, Nigel~W. Moriarty, Garib~N. Murshudov,
+  Martin Noble, Ezra Peisach, Irina Persikova, Billy~K. Poon, Oleg~V. Sobolev,
+  Eldon~L. Ulrich, Sameer Velankar, Clemens Vonrhein, John Westbrook, Marcin
+  Wojdyr, Masashi Yokochi, and Jasmine~Y. Young.
+\newblock Announcing mandatory submission of {PDBx}/{mmCIF} format files for
+  crystallographic depositions to the {Protein} {Data} {Bank} ({PDB}).
+\newblock {\em Acta Crystallographica Section D Structural Biology},
+  75(4):451--454, April 2019.
+
+\bibitem[ALFJ{\etalchar{+}}17]{alford_rosetta_2017}
+Rebecca~F. Alford, Andrew Leaver-Fay, Jeliazko~R. Jeliazkov, Matthew~J.
+  O’Meara, Frank~P. DiMaio, Hahnbeom Park, Maxim~V. Shapovalov, P.~Douglas
+  Renfrew, Vikram~K. Mulligan, Kalli Kappel, Jason~W. Labonte, Michael~S.
+  Pacella, Richard Bonneau, Philip Bradley, Roland L.~Jr. Dunbrack, Rhiju Das,
+  David Baker, Brian Kuhlman, Tanja Kortemme, and Jeffrey~J. Gray.
+\newblock The {Rosetta} {All}-{Atom} {Energy} {Function} for {Macromolecular}
+  {Modeling} and {Design}.
+\newblock {\em Journal of Chemical Theory and Computation}, 13(6):3031--3048,
+  June 2017.
+\newblock Publisher: American Chemical Society.
+
+\bibitem[BB21]{burley_open-access_2021}
+Stephen~K. Burley and Helen~M. Berman.
+\newblock Open-access data: {A} cornerstone for artificial intelligence
+  approaches to protein structure prediction.
+\newblock {\em Structure (London, England: 1993)}, 29(6):515--520, June 2021.
+
+\bibitem[BBB{\etalchar{+}}21]{powerful_rcsb_2021}
+Stephen~K. Burley, Charmi Bhikadiya, Chunxiao Bi, Sebastian Bittrich, Li~Chen,
+  Gregg~V. Crichlow, Cole~H. Christie, Kenneth Dalenberg, Luigi Di~Costanzo,
+  Jose~M. Duarte, Shuchismita Dutta, Zukang Feng, Sai Ganesan, David~S.
+  Goodsell, Sutapa Ghosh, Rachel~Kramer Green, Vladimir Guranović, Dmytro
+  Guzenko, Brian~P. Hudson, Catherine~L. Lawson, Yuhe Liang, Robert Lowe, Harry
+  Namkoong, Ezra Peisach, Irina Persikova, Chris Randle, Alexander Rose, Yana
+  Rose, Andrej Sali, Joan Segura, Monica Sekharan, Chenghua Shao, Yi-Ping Tao,
+  Maria Voigt, John~D. Westbrook, Jasmine~Y. Young, Christine Zardecki, and
+  Marina Zhuravleva.
+\newblock {RCSB} {Protein} {Data} {Bank}: powerful new tools for exploring {3D}
+  structures of biological macromolecules for basic and applied research and
+  education in fundamental biology, biomedicine, biotechnology, bioengineering
+  and energy sciences.
+\newblock {\em Nucleic Acids Research}, 49(D1):D437--D451, January 2021.
+
+\bibitem[BBB{\etalchar{+}}22a]{burley1_rcsb_2022}
+Stephen Burley, Charmi Bhikadiya, Chunxiao Bi, Sebastian Bittrich, Henry Chao,
+  Li~Chen, Paul Craig, Gregg Crichlow, Kenneth Dalenberg, Jose Duarte,
+  Shuchismita Dutta, Maryam Fayazi, Zukang Feng, Justin Flatt, Sai Ganesan,
+  Sutapa Ghosh, David Goodsell, Rachel Kramer, Vladimir Guranovic, and
+  Christine Zardecki.
+\newblock {RCSB} {Protein} {Data} {Bank} ({RCSB}.org): delivery of
+  experimentally-determined {PDB} structures alongside one million computed
+  structure models of proteins from artificial intelligence/machine learning.
+\newblock {\em Nucleic Acids Research}, November 2022.
+
+\bibitem[BBB{\etalchar{+}}22b]{burley_rcsb_2022}
+Stephen~K. Burley, Charmi Bhikadiya, Chunxiao Bi, Sebastian Bittrich, Li~Chen,
+  Gregg~V. Crichlow, Jose~M. Duarte, Shuchismita Dutta, Maryam Fayazi, Zukang
+  Feng, Justin~W. Flatt, Sai~J. Ganesan, David~S. Goodsell, Sutapa Ghosh,
+  Rachel Kramer~Green, Vladimir Guranovic, Jeremy Henry, Brian~P. Hudson,
+  Catherine~L. Lawson, Yuhe Liang, Robert Lowe, Ezra Peisach, Irina Persikova,
+  Dennis~W. Piehl, Yana Rose, Andrej Sali, Joan Segura, Monica Sekharan,
+  Chenghua Shao, Brinda Vallat, Maria Voigt, John~D. Westbrook, Shamara
+  Whetstone, Jasmine~Y. Young, and Christine Zardecki.
+\newblock {RCSB} {Protein} {Data} {Bank}: {Celebrating} 50 years of the {PDB}
+  with new tools for understanding and visualizing biological macromolecules in
+  {3D}.
+\newblock {\em Protein Science}, 31(1):187--208, 2022.
+\newblock \_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/pro.4213.
+
+\bibitem[BBR20]{bittrich_real-time_2020}
+Sebastian Bittrich, Stephen~K. Burley, and Alexander~S. Rose.
+\newblock Real-time structural motif searching in proteins using an inverted
+  index strategy.
+\newblock {\em PLOS Computational Biology}, 16(12):e1008502, December 2020.
+\newblock Publisher: Public Library of Science.
+
+\bibitem[BG21]{behzadi_worldwide_2021}
+Payam Behzadi and Márió Gajdács.
+\newblock Worldwide {Protein} {Data} {Bank} ({wwPDB}): {A} virtual treasure for
+  research in biotechnology.
+\newblock {\em European Journal of Microbiology and Immunology}, 11(4):77--86,
+  December 2021.
+\newblock Publisher: Akadémiai Kiadó Section: European Journal of
+  Microbiology and Immunology.
+
+\bibitem[BKW{\etalchar{+}}77]{bernstein_protein_1977}
+F.~C. Bernstein, T.~F. Koetzle, G.~J. Williams, E.~F. Meyer, M.~D. Brice, J.~R.
+  Rodgers, O.~Kennard, T.~Shimanouchi, and M.~Tasumi.
+\newblock The {Protein} {Data} {Bank}: a computer-based archival file for
+  macromolecular structures.
+\newblock {\em Journal of Molecular Biology}, 112(3):535--542, May 1977.
+
+\bibitem[BL22]{biehn_protein_2022}
+Sarah~E. Biehn and Steffen Lindert.
+\newblock Protein {Structure} {Prediction} with {Mass} {Spectrometry} {Data}.
+\newblock {\em Annual Review of Physical Chemistry}, 73(1):1--19, 2022.
+\newblock \_eprint: https://doi.org/10.1146/annurev-physchem-082720-123928.
+
+\bibitem[Bou18]{noauthor_210_2018}
+Boundless.
+\newblock 2.10: {Atoms}, {Isotopes}, {Ions}, and {Molecules} - {Hydrogen}
+  {Bonding} and {Van} der {Waals} {Forces}, July 2018.
+
+\bibitem[BP03]{baldi_principled_nodate}
+Pierre Baldi and Gianluca Pollastri.
+\newblock The {Principled} {Design} of {Large}-{Scale} {Recursive} {Neural}
+  {Network} {Architectures}–{DAG}-{RNNs} and the {Protein} {Structure}
+  {Prediction} {Problem}.
+\newblock {\em NaN}, page~28, 2003.
+
+\bibitem[BPE22]{bryant_improved_2022}
+Patrick Bryant, Gabriele Pozzati, and Arne Elofsson.
+\newblock Improved prediction of protein-protein interactions using
+  {AlphaFold2}.
+\newblock {\em Nature Communications}, 13:1265, March 2022.
+
+\bibitem[BT98]{branden_introduction_1998}
+Carl~Ivar Branden and John Tooze.
+\newblock {\em Introduction to {Protein} {Structure}}.
+\newblock Garland Science, New York, 2 edition, December 1998.
+
+\bibitem[Bur21]{burley_impact_2021}
+Stephen~K. Burley.
+\newblock Impact of structural biologists and the {Protein} {Data} {Bank} on
+  small-molecule drug discovery and development.
+\newblock {\em The Journal of Biological Chemistry}, 296:100559, 2021.
+
+\bibitem[BWF{\etalchar{+}}00]{berman_protein_2000}
+Helen~M. Berman, John Westbrook, Zukang Feng, Gary Gilliland, T.~N. Bhat, Helge
+  Weissig, Ilya~N. Shindyalov, and Philip~E. Bourne.
+\newblock The {Protein} {Data} {Bank}.
+\newblock {\em Nucleic Acids Research}, 28(1):235--242, January 2000.
+
+\bibitem[DBB03]{dominguez_haddock_2003}
+Cyril Dominguez, Rolf Boelens, and Alexandre M. J.~J. Bonvin.
+\newblock {HADDOCK}: {A} {Protein} {Protein} {Docking} {Approach} {Based} on
+  {Biochemical} or {Biophysical} {Information}.
+\newblock {\em Journal of the American Chemical Society}, 125(7):1731--1737,
+  February 2003.
+\newblock Publisher: American Chemical Society.
+
+\bibitem[DITS22]{david_alphafold_2022}
+Alessia David, Suhail Islam, Evgeny Tankhilevich, and Michael J.~E. Sternberg.
+\newblock The {AlphaFold} {Database} of {Protein} {Structures}: {A}
+  {Biologist}’s {Guide}.
+\newblock {\em Journal of Molecular Biology}, 434(2):167336, January 2022.
+
+\bibitem[EWMR{\etalchar{+}}06]{eswar_comparative_2006}
+Narayanan Eswar, Ben Webb, Marc~A. Marti-Renom, M.~S. Madhusudhan, David
+  Eramian, Min-Yi Shen, Ursula Pieper, and Andrej Sali.
+\newblock Comparative protein structure modeling using {Modeller}.
+\newblock {\em Current Protocols in Bioinformatics}, Chapter 5:Unit--5.6,
+  October 2006.
+
+\bibitem[Fel]{felix_brief_nodate}
+Felix.
+\newblock A brief introduction to {AlphaFold} {\textbar} {Science} {\textbar}
+  {Felix} {Online}.
+
+\bibitem[God22]{godbey_chapter_2022}
+W~T. Godbey.
+\newblock Chapter 3 - {Proteins}.
+\newblock In W~T. Godbey, editor, {\em Biotechnology and its {Applications}
+  ({Second} {Edition})}, pages 47--72. Academic Press, January 2022.
+
+\bibitem[Goo]{noauthor_pdb101_nodate}
+David~S. Goodsell.
+\newblock {PDB101}: {Learn}: {Guide} to {Understanding} {PDB} {Data}:
+  {Introduction}.
 
 \bibitem[HRJ17]{hazarika_performance_2017}
 Akaash~Vishal Hazarika, G~Jagadeesh Sai~Raghu Ram, and Eeti Jain.
@@ -8,11 +183,104 @@ Akaash~Vishal Hazarika, G~Jagadeesh Sai~Raghu Ram, and Eeti Jain.
   {Social}, {Mobile}, {Analytics} and {Cloud}) ({I}-{SMAC})}, pages 671--674,
   February 2017.
 
+\bibitem[JEP{\etalchar{+}}21]{jumper_highly_2021}
+John Jumper, Richard Evans, Alexander Pritzel, Tim Green, Michael Figurnov,
+  Olaf Ronneberger, Kathryn Tunyasuvunakool, Russ Bates, Augustin Žídek, Anna
+  Potapenko, Alex Bridgland, Clemens Meyer, Simon A.~A. Kohl, Andrew~J.
+  Ballard, Andrew Cowie, Bernardino Romera-Paredes, Stanislav Nikolov, Rishub
+  Jain, Jonas Adler, Trevor Back, Stig Petersen, David Reiman, Ellen Clancy,
+  Michal Zielinski, Martin Steinegger, Michalina Pacholska, Tamas Berghammer,
+  Sebastian Bodenstein, David Silver, Oriol Vinyals, Andrew~W. Senior, Koray
+  Kavukcuoglu, Pushmeet Kohli, and Demis Hassabis.
+\newblock Highly accurate protein structure prediction with {AlphaFold}.
+\newblock {\em Nature}, 596(7873):583--589, August 2021.
+\newblock Number: 7873 Publisher: Nature Publishing Group.
+
+\bibitem[KKN{\etalchar{+}}06]{kodzius_cage_2006}
+Rimantas Kodzius, Miki Kojima, Hiromi Nishiyori, Mari Nakamura, Shiro Fukuda,
+  Michihira Tagami, Daisuke Sasaki, Kengo Imamura, Chikatoshi Kai, Matthias
+  Harbers, Yoshihide Hayashizaki, and Piero Carninci.
+\newblock {CAGE}: cap analysis of gene expression.
+\newblock {\em Nature Methods}, 3(3):211--222, March 2006.
+\newblock Number: 3 Publisher: Nature Publishing Group.
+
+\bibitem[KMY{\etalchar{+}}15]{kelley_phyre2_2015}
+Lawrence~A. Kelley, Stefans Mezulis, Christopher~M. Yates, Mark~N. Wass, and
+  Michael J.~E. Sternberg.
+\newblock The {Phyre2} web portal for protein modeling, prediction and
+  analysis.
+\newblock {\em Nature Protocols}, 10(6):845--858, June 2015.
+\newblock Number: 6 Publisher: Nature Publishing Group.
+
 \bibitem[Lam10]{lam_hadoop_2010}
 Chuck Lam.
 \newblock {\em Hadoop in {Action}}.
 \newblock Simon and Schuster, November 2010.
 \newblock Google-Books-ID: 8DozEAAAQBAJ.
+
+\bibitem[LLV18]{limpikirati_covalent_2018}
+Patanachai Limpikirati, Tianying Liu, and Richard~W. Vachet.
+\newblock Covalent labeling-mass spectrometry with non-specific reagents for
+  studying protein structure and interactions.
+\newblock {\em Methods (San Diego, Calif.)}, 144:79--93, July 2018.
+
+\bibitem[LWL{\etalchar{+}}20]{leman_macromolecular_2020}
+Julia~Koehler Leman, Brian~D. Weitzner, Steven~M. Lewis, Jared Adolf-Bryfogle,
+  Nawsad Alam, Rebecca~F. Alford, Melanie Aprahamian, David Baker, Kyle~A.
+  Barlow, Patrick Barth, Benjamin Basanta, Brian~J. Bender, Kristin Blacklock,
+  Jaume Bonet, Scott~E. Boyken, Phil Bradley, Chris Bystroff, Patrick Conway,
+  Seth Cooper, Bruno~E. Correia, Brian Coventry, Rhiju Das, René~M. De~Jong,
+  Frank DiMaio, Lorna Dsilva, Roland Dunbrack, Alexander~S. Ford, Brandon
+  Frenz, Darwin~Y. Fu, Caleb Geniesse, Lukasz Goldschmidt, Ragul Gowthaman,
+  Jeffrey~J. Gray, Dominik Gront, Sharon Guffy, Scott Horowitz, Po-Ssu Huang,
+  Thomas Huber, Tim~M. Jacobs, Jeliazko~R. Jeliazkov, David~K. Johnson, Kalli
+  Kappel, John Karanicolas, Hamed Khakzad, Karen~R. Khar, Sagar~D. Khare, Firas
+  Khatib, Alisa Khramushin, Indigo~C. King, Robert Kleffner, Brian Koepnick,
+  Tanja Kortemme, Georg Kuenze, Brian Kuhlman, Daisuke Kuroda, Jason~W.
+  Labonte, Jason~K. Lai, Gideon Lapidoth, Andrew Leaver-Fay, Steffen Lindert,
+  Thomas Linsky, Nir London, Joseph~H. Lubin, Sergey Lyskov, Jack Maguire, Lars
+  Malmström, Enrique Marcos, Orly Marcu, Nicholas~A. Marze, Jens Meiler, Rocco
+  Moretti, Vikram~Khipple Mulligan, Santrupti Nerli, Christoffer Norn, Shane
+  Ó’Conchúir, Noah Ollikainen, Sergey Ovchinnikov, Michael~S. Pacella,
+  Xingjie Pan, Hahnbeom Park, Ryan~E. Pavlovicz, Manasi Pethe, Brian~G. Pierce,
+  Kala~Bharath Pilla, Barak Raveh, P.~Douglas Renfrew, Shourya S.~Roy Burman,
+  Aliza Rubenstein, Marion~F. Sauer, Andreas Scheck, William Schief, Ora
+  Schueler-Furman, Yuval Sedan, Alexander~M. Sevy, Nikolaos~G. Sgourakis, Lei
+  Shi, Justin~B. Siegel, Daniel-Adriano Silva, Shannon Smith, Yifan Song,
+  Amelie Stein, Maria Szegedy, Frank~D. Teets, Summer~B. Thyme, Ray Yu-Ruei
+  Wang, Andrew Watkins, Lior Zimmerman, and Richard Bonneau.
+\newblock Macromolecular modeling and design in {Rosetta}: recent methods and
+  frameworks.
+\newblock {\em Nature Methods}, 17(7):665--680, July 2020.
+\newblock Number: 7 Publisher: Nature Publishing Group.
+
+\bibitem[LZD{\etalchar{+}}20]{lubin_evolution_2020}
+Joseph~H. Lubin, Christine Zardecki, Elliott~M. Dolan, Changpeng Lu, Zhuofan
+  Shen, Shuchismita Dutta, John~D. Westbrook, Brian~P. Hudson, David~S.
+  Goodsell, Jonathan~K. Williams, Maria Voigt, Vidur Sarma, Lingjun Xie,
+  Thejasvi Venkatachalam, Steven Arnold, Luz Helena~Alfaro Alvarado, Kevin
+  Catalfano, Aaliyah Khan, Erika McCarthy, Sophia Staggers, Brea Tinsley, Alan
+  Trudeau, Jitendra Singh, Lindsey Whitmore, Helen Zheng, Matthew Benedek,
+  Jenna Currier, Mark Dresel, Ashish Duvvuru, Britney Dyszel, Emily Fingar,
+  Elizabeth~M. Hennen, Michael Kirsch, Ali~A. Khan, Charlotte Labrie-Cleary,
+  Stephanie Laporte, Evan Lenkeit, Kailey Martin, Marilyn Orellana, Melanie
+  Ortiz-Alvarez de~la Campa, Isaac Paredes, Baleigh Wheeler, Allison Rupert,
+  Andrew Sam, Katherine See, Santiago~Soto Zapata, Paul~A. Craig, Bonnie~L.
+  Hall, Jennifer Jiang, Julia~R. Koeppe, Stephen~A. Mills, Michael~J. Pikaart,
+  Rebecca Roberts, Yana Bromberg, J.~Steen Hoyer, Siobain Duffy, Jay
+  Tischfield, Francesc~X. Ruiz, Eddy Arnold, Jean Baum, Jesse Sandberg, Grace
+  Brannigan, Sagar~D. Khare, and Stephen~K. Burley.
+\newblock Evolution of the {SARS}-{CoV}-2 proteome in three dimensions ({3D})
+  during the first six months of the {COVID}-19 pandemic.
+\newblock {\em bioRxiv: The Preprint Server for Biology}, page
+  2020.12.01.406637, December 2020.
+
+\bibitem[LZG20]{liu_mass_2020}
+Xiaoran~Roger Liu, Mengru~Mira Zhang, and Michael~L. Gross.
+\newblock Mass {Spectrometry}-{Based} {Protein} {Footprinting} for
+  {Higher}-{Order} {Structure} {Analysis}: {Fundamentals} and {Applications}.
+\newblock {\em Chemical Reviews}, 120(10):4355--4454, May 2020.
+\newblock Publisher: American Chemical Society.
 
 \bibitem[MBY{\etalchar{+}}16]{meng_mllib_2016}
 Xiangrui Meng, Joseph Bradley, Burak Yavuz, Evan Sparks, Shivaram Venkataraman,
@@ -22,6 +290,81 @@ Xiangrui Meng, Joseph Bradley, Burak Yavuz, Evan Sparks, Shivaram Venkataraman,
 \newblock {MLlib}: {Machine} {Learning} in {Apache} {Spark}.
 \newblock {\em Journal of Machine Learning Research}, 17(34):1--7, 2016.
 
+\bibitem[NZLJ22]{nussinov_alphafold_2022}
+Ruth Nussinov, Mingzhen Zhang, Yonglan Liu, and Hyunbum Jang.
+\newblock {AlphaFold}, {Artificial} {Intelligence} ({AI}), and {Allostery}.
+\newblock {\em The Journal of Physical Chemistry B}, 126(34):6372--6383,
+  September 2022.
+\newblock Publisher: American Chemical Society.
+
+\bibitem[OM06]{okoniewski_hybridization_2006}
+Michał~J. Okoniewski and Crispin~J. Miller.
+\newblock Hybridization interactions between probesets in short oligo
+  microarrays lead to spurious correlations.
+\newblock {\em BMC Bioinformatics}, 7(1):276, June 2006.
+
+\bibitem[OR15]{ouellette_14_2015}
+Robert~J. Ouellette and J.~David Rawn.
+\newblock 14 - {Amino} {Acids}, {Peptides}, and {Proteins}.
+\newblock In Robert~J. Ouellette and J.~David Rawn, editors, {\em Principles of
+  {Organic} {Chemistry}}, pages 371--396. Elsevier, Boston, January 2015.
+
+\bibitem[PBN12]{patel_addressing_2012}
+Aditya~B. Patel, Manashvi Birla, and Ushma Nair.
+\newblock Addressing big data problem using {Hadoop} and {Map} {Reduce}.
+\newblock In {\em 2012 {Nirma} {University} {International} {Conference} on
+  {Engineering} ({NUiCONE})}, pages 1--5, December 2012.
+\newblock ISSN: 2375-1282.
+
+\bibitem[RBL{\etalchar{+}}02]{reinartz_massively_2002}
+Jeannette Reinartz, Eddy Bruyns, Jing-Zhong Lin, Tim Burcham, Sydney Brenner,
+  Ben Bowen, Michael Kramer, and Rick Woychik.
+\newblock Massively parallel signature sequencing ({MPSS}) as a tool for
+  in-depth quantitative gene expression profiling in all organisms.
+\newblock {\em Briefings in Functional Genomics}, 1(1):95--104, February 2002.
+
+\bibitem[RDL{\etalchar{+}}21]{rose_rcsb_2021}
+Yana Rose, Jose~M. Duarte, Robert Lowe, Joan Segura, Chunxiao Bi, Charmi
+  Bhikadiya, Li~Chen, Alexander~S. Rose, Sebastian Bittrich, Stephen~K. Burley,
+  and John~D. Westbrook.
+\newblock {RCSB} {Protein} {Data} {Bank}: {Architectural} {Advances} {Towards}
+  {Integrated} {Searching} and {Efficient} {Access} to {Macromolecular}
+  {Structure} {Data} from the {PDB} {Archive}.
+\newblock {\em Journal of Molecular Biology}, 433(11):166704, May 2021.
+
+\bibitem[RLW{\etalchar{+}}12]{russel_putting_2012}
+Daniel Russel, Keren Lasker, Ben Webb, Javier Velázquez-Muriel, Elina Tjioe,
+  Dina Schneidman-Duhovny, Bret Peterson, and Andrej Sali.
+\newblock Putting the {Pieces} {Together}: {Integrative} {Modeling} {Platform}
+  {Software} for {Structure} {Determination} of {Macromolecular} {Assemblies}.
+\newblock {\em PLOS Biology}, 10(1):e1001244, January 2012.
+\newblock Publisher: Public Library of Science.
+
+\bibitem[RRG07]{royce_toward_2007}
+Thomas~E. Royce, Joel~S. Rozowsky, and Mark~B. Gerstein.
+\newblock Toward a universal microarray: prediction of gene expression through
+  nearest-neighbor probe sequence identification.
+\newblock {\em Nucleic Acids Research}, 35(15):e99, 2007.
+
+\bibitem[SC10]{schroeder_structure_2010}
+Harry~W Schroeder and Lisa Cavacini.
+\newblock Structure and {Function} of {Immunoglobulins}.
+\newblock {\em The Journal of allergy and clinical immunology}, 125(2 0
+  2):S41--S52, February 2010.
+
+\bibitem[SFB04]{sun_overview_2004}
+Peter~D. Sun, Christine~E. Foster, and Jeffrey~C. Boyington.
+\newblock Overview of {Protein} {Structural} and {Functional} {Folds}.
+\newblock {\em Current Protocols in Protein Science}, 35(1):1711--171189,
+  February 2004.
+
+\bibitem[SL20]{seffernick_hybrid_2020}
+Justin~T. Seffernick and Steffen Lindert.
+\newblock Hybrid methods for combined experimental and computational
+  determination of protein structure.
+\newblock {\em The Journal of Chemical Physics}, 153(24):240901, December 2020.
+\newblock Publisher: American Institute of Physics.
+
 \bibitem[SRC10]{shafer_hadoop_2010}
 Jeffrey Shafer, Scott Rixner, and Alan~L. Cox.
 \newblock The {Hadoop} distributed filesystem: {Balancing} portability and
@@ -29,5 +372,83 @@ Jeffrey Shafer, Scott Rixner, and Alan~L. Cox.
 \newblock In {\em 2010 {IEEE} {International} {Symposium} on {Performance}
   {Analysis} of {Systems} \& {Software} ({ISPASS})}, pages 122--133, March
   2010.
+
+\bibitem[TAW{\etalchar{+}}21]{tunyasuvunakool_highly_2021}
+Kathryn Tunyasuvunakool, Jonas Adler, Zachary Wu, Tim Green, Michal Zielinski,
+  Augustin Žídek, Alex Bridgland, Andrew Cowie, Clemens Meyer, Agata Laydon,
+  Sameer Velankar, Gerard~J. Kleywegt, Alex Bateman, Richard Evans, Alexander
+  Pritzel, Michael Figurnov, Olaf Ronneberger, Russ Bates, Simon A.~A. Kohl,
+  Anna Potapenko, Andrew~J. Ballard, Bernardino Romera-Paredes, Stanislav
+  Nikolov, Rishub Jain, Ellen Clancy, David Reiman, Stig Petersen, Andrew~W.
+  Senior, Koray Kavukcuoglu, Ewan Birney, Pushmeet Kohli, John Jumper, and
+  Demis Hassabis.
+\newblock Highly accurate protein structure prediction for the human proteome.
+\newblock {\em Nature}, 596(7873):590--596, August 2021.
+\newblock Number: 7873 Publisher: Nature Publishing Group.
+
+\bibitem[vdABH17]{van_der_aalst_responsible_2017}
+Wil M.~P. van~der Aalst, Martin Bichler, and Armin Heinzl.
+\newblock Responsible {Data} {Science}.
+\newblock {\em Business \& Information Systems Engineering}, 59(5):311--313,
+  October 2017.
+
+\bibitem[WDA{\etalchar{+}}16]{wilkinson_fair_2016}
+Mark~D. Wilkinson, Michel Dumontier, IJsbrand~Jan Aalbersberg, Gabrielle
+  Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten,
+  Luiz~Bonino da~Silva~Santos, Philip~E. Bourne, Jildau Bouwman, Anthony~J.
+  Brookes, Tim Clark, Mercè Crosas, Ingrid Dillo, Olivier Dumon, Scott
+  Edmunds, Chris~T. Evelo, Richard Finkers, Alejandra Gonzalez-Beltran,
+  Alasdair J.~G. Gray, Paul Groth, Carole Goble, Jeffrey~S. Grethe, Jaap
+  Heringa, Peter A.~C. ’t Hoen, Rob Hooft, Tobias Kuhn, Ruben Kok, Joost Kok,
+  Scott~J. Lusher, Maryann~E. Martone, Albert Mons, Abel~L. Packer, Bengt
+  Persson, Philippe Rocca-Serra, Marco Roos, Rene van Schaik, Susanna-Assunta
+  Sansone, Erik Schultes, Thierry Sengstag, Ted Slater, George Strawn,
+  Morris~A. Swertz, Mark Thompson, Johan van~der Lei, Erik van Mulligen, Jan
+  Velterop, Andra Waagmeester, Peter Wittenburg, Katherine Wolstencroft, Jun
+  Zhao, and Barend Mons.
+\newblock The {FAIR} {Guiding} {Principles} for scientific data management and
+  stewardship.
+\newblock {\em Scientific Data}, 3(1):160018, March 2016.
+\newblock Number: 1 Publisher: Nature Publishing Group.
+
+\bibitem[WF03]{westbrook_pdb_2003}
+John~D. Westbrook and Paula M.~D. Fitzgerald.
+\newblock The {PDB} {Format}, {mmCIF} {Formats}, and {Other} {Data} {Formats}.
+\newblock In {\em Structural {Bioinformatics}}, pages 159--179. John Wiley \&
+  Sons, Ltd, 2003.
+\newblock Section: 8 \_eprint:
+  https://onlinelibrary.wiley.com/doi/pdf/10.1002/0471721204.ch8.
+
+\bibitem[WGS09]{wang_rna-seq_2009}
+Zhong Wang, Mark Gerstein, and Michael Snyder.
+\newblock {RNA}-{Seq}: a revolutionary tool for transcriptomics.
+\newblock {\em Nature Reviews Genetics}, 10(1):57--63, January 2009.
+\newblock Number: 1 Publisher: Nature Publishing Group.
+
+\bibitem[WIN{\etalchar{+}}05]{westbrook_pdbml_2005}
+John Westbrook, Nobutoshi Ito, Haruki Nakamura, Kim Henrick, and Helen~M.
+  Berman.
+\newblock {PDBML}: the representation of archival macromolecular structure data
+  in {XML}.
+\newblock {\em Bioinformatics}, 21(7):988--992, April 2005.
+
+\bibitem[WSHB20]{westbrook_impact_2020}
+John~D. Westbrook, Rose Soskind, Brian~P. Hudson, and Stephen~K. Burley.
+\newblock Impact of the {Protein} {Data} {Bank} on antineoplastic approvals.
+\newblock {\em Drug Discovery Today}, 25(5):837--850, May 2020.
+
+\bibitem[YYR{\etalchar{+}}15]{yang_i-tasser_2015}
+Jianyi Yang, Renxiang Yan, Ambrish Roy, Dong Xu, Jonathan Poisson, and Yang
+  Zhang.
+\newblock The {I}-{TASSER} {Suite}: protein structure and function prediction.
+\newblock {\em Nature Methods}, 12(1):7--8, January 2015.
+\newblock Number: 1 Publisher: Nature Publishing Group.
+
+\bibitem[Zve08]{zvelebil_understanding_2008}
+Marketa~J. Zvelebil.
+\newblock {\em Understanding bioinformatics / {Marketa} {Zvelebil} \& {Jeremy}
+  {O}. {Baum}.}
+\newblock Garland Science/Taylor \& Francis Group, Garland Science, Taylor \&
+  Francis Group, New York, 2008.
 
 \end{thebibliography}
