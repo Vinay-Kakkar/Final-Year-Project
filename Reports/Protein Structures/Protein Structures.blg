@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Protein Structures.aux
+The style file: alpha.bst
+Database file #1: bibliography.bib
+You've used 30 entries,
+            2543 wiz_defined-function locations,
+            747 strings with 14695 characters,
+and the built_in function-call counts, 19273 in all, are:
+= -- 1706
+> -- 1707
+< -- 8
++ -- 653
+- -- 647
+* -- 1876
+:= -- 3405
+add.period$ -- 103
+call.type$ -- 30
+change.case$ -- 406
+chr.to.int$ -- 30
+cite$ -- 30
+duplicate$ -- 444
+empty$ -- 880
+format.name$ -- 671
+if$ -- 3591
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 29
+newline$ -- 165
+num.names$ -- 94
+pop$ -- 351
+preamble$ -- 1
+purify$ -- 437
+quote$ -- 0
+skip$ -- 376
+stack$ -- 0
+substring$ -- 757
+swap$ -- 51
+text.length$ -- 8
+text.prefix$ -- 4
+top$ -- 0
+type$ -- 232
+warning$ -- 0
+while$ -- 132
+width$ -- 34
+write$ -- 414
