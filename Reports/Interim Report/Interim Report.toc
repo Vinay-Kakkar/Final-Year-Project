@@ -1,0 +1,83 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Aims, objectives and Literature Survey}{1}{section.0.1}%
+\contentsline {subsection}{\numberline {1.1}Aims}{1}{subsection.0.1.1}%
+\contentsline {subsubsection}{Aim provided in the Project description}{1}{section*.2}%
+\contentsline {subsubsection}{Aim in more depth}{1}{section*.3}%
+\contentsline {subsection}{\numberline {1.2}Objectives}{1}{subsection.0.1.2}%
+\contentsline {subsubsection}{ObjectivesCompleted}{1}{section*.4}%
+\contentsline {subsubsection}{Tutorials}{1}{section*.5}%
+\contentsline {subsubsection}{Proof of Concept}{2}{section*.6}%
+\contentsline {subsubsection}{Distributing Protein Structure Files Amongst MapReduce cluster}{2}{section*.7}%
+\contentsline {subsubsection}{Running MapReduce using a single type of executable for Analysing Protein Structures}{2}{section*.8}%
+\contentsline {subsubsection}{Reports}{2}{section*.9}%
+\contentsline {subsubsection}{Protein Structures}{2}{section*.10}%
+\contentsline {subsubsection}{The Protein Data Bank and the file formats}{2}{section*.11}%
+\contentsline {subsection}{\numberline {1.3}Futher Objectives}{2}{subsection.0.1.3}%
+\contentsline {subsubsection}{Extensions}{3}{section*.12}%
+\contentsline {section}{\numberline {2}Protein Structures}{3}{section.0.2}%
+\contentsline {subsection}{\numberline {2.1}Introduction}{3}{subsection.0.2.1}%
+\contentsline {subsection}{\numberline {2.2}Primary, Secondary, Tertiary and Quaternary Structure}{3}{subsection.0.2.2}%
+\contentsline {subsubsection}{Primary Structure}{3}{section*.15}%
+\contentsline {subsubsection}{Secondary Structure}{4}{section*.16}%
+\contentsline {subsubsection}{Tertiary Structure}{4}{section*.17}%
+\contentsline {subsubsection}{Quaternary Structure}{4}{section*.18}%
+\contentsline {subsubsection}{Considering Protein structure on several different levels}{5}{section*.21}%
+\contentsline {subsubsection}{Amino Acids}{5}{section*.22}%
+\contentsline {subsubsection}{Bioinformatic Difficulties with Predictions on Proteins}{6}{section*.24}%
+\contentsline {subsection}{\numberline {2.3}Large Scale Experssion}{6}{subsection.0.2.3}%
+\contentsline {subsubsection}{Large Scale Gene Expression}{7}{section*.25}%
+\contentsline {subsubsection}{Serial analysis of gene expression}{7}{section*.27}%
+\contentsline {subsubsection}{Clustered gene expression data}{7}{section*.29}%
+\contentsline {subsubsection}{Large Scale Protein Expression}{8}{section*.30}%
+\contentsline {subsection}{\numberline {2.4}RNAseq}{9}{subsection.0.2.4}%
+\contentsline {subsection}{\numberline {2.5}Alpha Fold}{10}{subsection.0.2.5}%
+\contentsline {subsubsection}{Bioinformatics with Alpha Fold}{10}{section*.33}%
+\contentsline {subsubsection}{AlphaFold 2}{10}{section*.34}%
+\contentsline {section}{\numberline {3}The Protein Data Bank and the File Formats}{10}{section.0.3}%
+\contentsline {subsection}{\numberline {3.1}Protein Data Bank}{10}{subsection.0.3.1}%
+\contentsline {subsubsection}{Aims and Objectives of PDB}{11}{section*.36}%
+\contentsline {subsubsection}{Timeline of PDB}{11}{section*.37}%
+\contentsline {subsubsection}{Recent Project}{12}{section*.38}%
+\contentsline {subsubsection}{Covid}{13}{section*.39}%
+\contentsline {subsection}{\numberline {3.2}PDB Currently}{13}{subsection.0.3.2}%
+\contentsline {subsubsection}{The PDB Site currently}{13}{section*.40}%
+\contentsline {subsection}{\numberline {3.3}Recent Improvements}{14}{subsection.0.3.3}%
+\contentsline {subsection}{\numberline {3.4}Summary}{15}{subsection.0.3.4}%
+\contentsline {subsubsection}{Future and struggles of PDB}{15}{section*.47}%
+\contentsline {subsubsection}{Future}{15}{section*.48}%
+\contentsline {subsubsection}{Struggles}{16}{section*.49}%
+\contentsline {subsection}{\numberline {3.5}File Formats}{16}{subsection.0.3.5}%
+\contentsline {subsubsection}{PDB Data}{16}{section*.50}%
+\contentsline {subsubsection}{.pdb Files}{16}{section*.51}%
+\contentsline {subsubsection}{.mmCIF Files}{17}{section*.53}%
+\contentsline {subsubsection}{.xml}{17}{section*.54}%
+\contentsline {subsubsection}{Visualizing Structures}{17}{section*.56}%
+\contentsline {subsubsection}{Reading Coordinate Files}{18}{section*.57}%
+\contentsline {subsubsection}{Potential Challanges}{18}{section*.58}%
+\contentsline {section}{\numberline {4}Hadoop spark and pyspark}{18}{section.0.4}%
+\contentsline {subsubsection}{What is Hadoop}{18}{section*.59}%
+\contentsline {subsubsection}{Mapper}{18}{section*.60}%
+\contentsline {subsubsection}{Reducer}{18}{section*.61}%
+\contentsline {subsubsection}{What is Spark}{18}{section*.62}%
+\contentsline {subsubsection}{Spark vs Hadoop}{19}{section*.63}%
+\contentsline {subsubsection}{Software Architectural Bottlenecks}{20}{section*.67}%
+\contentsline {subsubsection}{Portability Limitations}{20}{section*.68}%
+\contentsline {section}{\numberline {5}Software Development}{20}{section.0.5}%
+\contentsline {subsection}{\numberline {5.1}Unit Tests}{20}{subsection.0.5.1}%
+\contentsline {subsection}{\numberline {5.2}Branching}{21}{subsection.0.5.2}%
+\contentsline {section}{\numberline {6}Planning and Time-Scale}{21}{section.0.6}%
+\contentsline {subsection}{\numberline {6.1}Planning}{22}{subsection.0.6.1}%
+\contentsline {subsubsection}{looking back on Project Plan Timeline}{22}{section*.70}%
+\contentsline {subsection}{\numberline {6.2}Time-Scale}{22}{subsection.0.6.2}%
+\contentsline {section}{\numberline {7}Diary}{22}{section.0.7}%
+\contentsline {subsubsection}{26th September 2022}{22}{section*.73}%
+\contentsline {subsubsection}{3rd October 2022}{23}{section*.74}%
+\contentsline {subsubsection}{10th October 2022}{23}{section*.75}%
+\contentsline {subsubsection}{17th October 2022}{24}{section*.76}%
+\contentsline {subsubsection}{24th October 2022}{24}{section*.77}%
+\contentsline {subsubsection}{31th October 2022}{24}{section*.78}%
+\contentsline {subsubsection}{7th November 2022}{24}{section*.79}%
+\contentsline {subsubsection}{14th November 2022}{24}{section*.80}%
+\contentsline {subsubsection}{21th November 2022}{24}{section*.81}%
+\contentsline {subsubsection}{28th November 2022}{25}{section*.82}%
+\contentsline {subsubsection}{5th December 2022}{25}{section*.83}%
