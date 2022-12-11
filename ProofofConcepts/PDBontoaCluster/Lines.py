@@ -39,7 +39,7 @@ def readPDBfile(fileloc, spark):
     pdb = spark.read.option('header','false').csv(fileloc, inferSchema = True)
     return pdb
 
-def convertdftopdb(dfs, spark):
+def convertdftopdb(dfs, spark, executable):
     for df in dfs:
         f = open("/Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/PDBontoaCluster/PDBsforExecutables/newPDB.pdb", 'w')
         for i in df.collect():
@@ -48,6 +48,11 @@ def convertdftopdb(dfs, spark):
             else:
                 f.write(i[0]+"\n")
         f.close()
+        executable()
+
+def numberoflinesexecutables():
+    # This is an example execuatble that returns the number of lines within each pdb provided
+    os.system("wc -l /Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/PDBontoaCluster/PDBsforExecutables/newPDB.pdb")
 
 def main(spark):
 
@@ -62,12 +67,11 @@ def main(spark):
     # In order to run an executable we first need to translate the type into a dataframe
     dfs = convertrddsintodfs(rdds, spark)
 
+    executable = numberoflinesexecutables
+
     # before running the executable we need to convert the dataframe back into a pdb file
-    convertdftopdb(dfs, spark)
+    convertdftopdb(dfs, spark, executable)
 
-
-    # This is an example execuatble that returns the number of lines within each pdb provided
-    os.system("wc -l /Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/PDBontoaCluster/PDBsforExecutables/newPDB.pdb")
 
 
     ## Test this way of converting datframe to file https://stackoverflow.com/questions/67316136/spark-write-dataframe-with-custom-file-name
