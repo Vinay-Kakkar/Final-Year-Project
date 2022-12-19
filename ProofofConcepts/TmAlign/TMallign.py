@@ -36,7 +36,8 @@ def convertrddsintodfs(rdds, spark):
 def readPDBfile(fileloc, spark):
     # In order to distriubte the files into a rdd we first need to create dataframes
     # We can read the pdb file as a csv as we only care about stripping the file line by line rather then sections within the lines
-    pdb = spark.read.option('header','false').csv(fileloc, inferSchema = True)
+    #pdb = spark.read.option('header','false').csv(fileloc, inferSchema = True)
+    pdb = spark.read.option('header','false').text(fileloc)
     return pdb
 
 def convertdftopdb(dfs, spark, executable):
@@ -78,17 +79,13 @@ for df in dfs1:
             f.write(i[0]+"\n")
     f.close()
 
-for df in dfs2:
-    f = open("/Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/TmAlign/TempPDB2/Second.pdb", 'w')
-    for i in df.collect():
-        if ("END " in i[0]):
-              f.write(i[0])
-        else:
-            f.write(i[0]+"\n")
-    f.close()
-    print("Executing..............")
-    os.system("./TMalign FirstPDB/"+Firstpdbfile[0]+ " TempPDB2/Second.pdb")
-
- 
-
-
+    for df in dfs2:
+        f = open("/Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/TmAlign/TempPDB2/Second.pdb", 'w')
+        for i in df.collect():
+            if ("END " in i[0]):
+                f.write(i[0])
+            else:
+                f.write(i[0]+"\n")
+        f.close()
+        print("Executing..............")
+        os.system("./TMalign TempPDB1/First.pdb TempPDB2/Second.pdb")
