@@ -2,6 +2,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StringType
 import os
 from pathlib import Path
+import time
 
 def getallpdbfiles(directory):
     pdbfiles = []
@@ -51,6 +52,7 @@ def convertdftopdb(dfs, spark, executable):
         f.close()
         executable()
 
+start = time.time()
 spark = SparkSession.builder.appName('PDB').getOrCreate()
 
 directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/TmAlign/FirstPDB")
@@ -89,3 +91,7 @@ for df in dfs1:
         f.close()
         print("Executing..............")
         os.system("./TMalign TempPDB1/First.pdb TempPDB2/Second.pdb")
+
+    
+    end = time.time()
+    print(end - start)
