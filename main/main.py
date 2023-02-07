@@ -8,16 +8,15 @@ import time
 
 def main(spark):
     start = time.time()
-    directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/main/PDBsDirectory1")
-    directory2 = ("/Users/vinaykakkar/Desktop/PROJECT/main/PDBsDirectory2")
+    directory = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsDirectory/*")
+    tempdirectory = "/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsfromRDD"
 
-    rddkeyvalue1 = spark.sparkContext.wholeTextFiles(directory1)
-    rddkeyvalue2 = spark.sparkContext.wholeTextFiles(directory1)
+    rddkeyvalue = spark.sparkContext.wholeTextFiles(directory)
 
-    def numberoflinesinfile(k):
+    def getNumberOfLines(k):
         os.system("wc -l "+ k[40:])
     
-    rddkeyvalue1.map(lambda x: numberoflinesinfile(x[0])).collect()
+    rddkeyvalue.map(lambda x: getNumberOfLines(x[0])).collect()
 
     end = time.time()
     print(end - start)
