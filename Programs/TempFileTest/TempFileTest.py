@@ -24,7 +24,6 @@ def main(spark):
         with tempfile.NamedTemporaryFile(prefix=filename[69:], mode='w') as tmp:
             tmp.write(filecontent)
             os.system("wc -l "+ tmp.name)
-        return
     
     rddkeyvalue.map(lambda x: numberoflinesinfile(x[0], x[1])).collect()
 
