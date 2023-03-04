@@ -36,12 +36,27 @@ def convertrddsintodfs(rdds, spark):
 def readPDBfile(fileloc, spark):
     # In order to distriubte the files into a rdd we first need to create dataframes
     # We can read the pdb file as a csv as we only care about stripping the file line by line rather then sections within the lines
-    pdb = spark.read.option('header','true').csv(fileloc, inferSchema = True)
+    pdb = spark.read.option('header','false').csv(fileloc, inferSchema = True)
     return pdb
+
+def convertdftopdb(dfs, spark, executable):
+    for df in dfs:
+        f = open("/Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/PDBontoaCluster/PDBsforExecutables/newPDB.pdb", 'w')
+        for i in df.collect():
+            if ("END " in i[0]):
+                f.write(i[0])
+            else:
+                f.write(i[0]+"\n")
+        f.close()
+        executable()
+
+def numberoflinesexecutables():
+    # This is an example execuatble that returns the number of lines within each pdb provided
+    os.system("wc -l /Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/PDBontoaCluster/PDBsforExecutables/newPDB.pdb")
 
 def main(spark):
 
-    directory = ("/Users/vinaykakkar/Desktop/PROJECT-main/ProofofConcepts/PDBontoaCluster/OriginalPDBs")
+    directory = ("/Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/PDBontoaCluster/OriginalPDBs")
 
     pdbfiles = getallpdbfiles(directory)
 
@@ -52,14 +67,14 @@ def main(spark):
     # In order to run an executable we first need to translate the type into a dataframe
     dfs = convertrddsintodfs(rdds, spark)
 
+    executable = numberoflinesexecutables
+
     # before running the executable we need to convert the dataframe back into a pdb file
-    # This is an example execuatble that returns the number of lines within each pdb provided
-    for df in dfs:
-        f = open("/Users/vinaykakkar/Desktop/PROJECT-main/ProofofConcepts/PDBontoaCluster/PDBsforExecutables/newPDB.pdb", 'w')
-        for i in df.collect():
-            f.write(i[0]+"\n")
-        os.system("wc -l /Users/vinaykakkar/Desktop/PROJECT-main/ProofofConcepts/PDBontoaCluster/PDBsforExecutables/newPDB.pdb")
-        f.close()
+    convertdftopdb(dfs, spark, executable)
+
+
+
+    ## Test this way of converting datframe to file https://stackoverflow.com/questions/67316136/spark-write-dataframe-with-custom-file-name
 if __name__ == '__main__':
     # This creates a local cluster
     spark = SparkSession.builder.appName('PDB').getOrCreate()
