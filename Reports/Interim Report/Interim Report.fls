@@ -1,8 +1,8 @@
-PWD /Users/vinaykakkar/Desktop/PROJECT-main/Reports/Interim Report
+PWD /Users/vinaykakkar/Desktop/PROJECT/Reports/Interim Report
 INPUT /usr/local/texlive/2022basic/texmf.cnf
 INPUT /usr/local/texlive/2022basic/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022basic/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/vinaykakkar/Desktop/PROJECT-main/Reports/Interim Report/Interim Report.tex
+INPUT /Users/vinaykakkar/Desktop/PROJECT/Reports/Interim Report/Interim Report.tex
 OUTPUT Interim Report.log
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/report.cls
