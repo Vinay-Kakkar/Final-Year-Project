@@ -116,8 +116,14 @@ def getpdbfiles(folder, value):
 
 def getcurrentpdbfiles(folderpath):
     # python3 main.py getcurrentpdbfiles PDBsDirectory1
-    for file in os.listdir(folderpath):
-        print(file)
+    lisofpdbs = []
+    if os.path.exists(folderpath) == False:
+        raise Exception("Invalid folder path")
+    for root, dirs, files in os.walk(folderpath):
+        for file in files:
+            if file.endswith('.pdb'):
+                lisofpdbs.append(os.path.join(root, file))
+    return lisofpdbs
 
 def emptypdbfolder(folder_path):
     # python3 main.py emptypdbfolder PDBsDirectory1
