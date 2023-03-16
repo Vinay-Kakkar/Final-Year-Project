@@ -69,23 +69,19 @@ The framework should contain multiple functions that the user can use in order t
 \subsubsection{Software Framework and MapReduce}
 The software framework must support a Mapreduce formalism that can process large numbers of protein structures. Where the MapReduce formalism consists of two main functions: Map and Reduce. The Map function takes a set of data and transforms it into another set of data, where individual elements are broken down into key-value pairs. The Reduce function then takes the output of the Map function and combines all the values associated with a given key, producing a final output for each key. More specifically each map and reduce step can be conducted through multiple nodes.
 
-The objective of the software framework is to 
-
 
 \subsubsection{Interface and Documentation}
 \subsubsection{Further Objectives}
 
 
 \subsection{Introduction}
-Structural bioinformatics plays a critical role in the development of new drugs and therapies, as well as in understanding the molecular basis of biological processes. It involves the analysis and interpretation of large amounts of complex data, including the three-dimensional structures of proteins, DNA, and other macromolecules. As the size and complexity of these data sets continue to increase, the need for efficient and scalable computational tools for their analysis and processing becomes ever more pressing.
+Structural bioinformatics plays a critical role in the development of new drugs, as well as in understanding the molecular basis of biological processes. It involves the analysis and interpretation of large amounts of complex data, including the three-dimensional structures of proteins, DNA, and other macromolecules. As the size and complexity of these data sets continue to increase, the need for efficient and scalable computational tools for their analysis and processing becomes ever more pressing.
 
 One promising approach to addressing this challenge is the use of MapReduce, a programming model for large-scale data processing in distributed computing environments. MapReduce enables the parallel processing of large data sets across multiple nodes in a cluster, which can significantly improve the speed and efficiency of data analysis tasks.
 
 In this report, we present a structural bioinformatics framework that utilizes a MapReduce formalism for the efficient analysis of large-scale structural data. Our framework is based on a distributed computing architecture that allows for the parallel processing of structural data, including protein structures, protein-protein interactions, and other molecular structures. We describe the key components of our framework, including the data preprocessing, map, and reduce phases, as well as the parallel algorithms and data structures used to implement these phases.
 
 We demonstrate the effectiveness of our framework through a series of experiments on real-world structural data sets, showing that our approach can significantly reduce the time and resources required for complex bioinformatics tasks. Our results highlight the potential of MapReduce-based approaches for accelerating the analysis of large-scale structural data in the field of bioinformatics.
-
-\textbf{\textit{NOTE: Need to read and re write}}
 
 
 
@@ -819,7 +815,7 @@ There are a few systems that solve similar tasts these include:
 \end{itemize}
 
 
-
+\section{Everything Below i would like to expand on more will be doing so as my next steps}
 \section{Contents and Knowledge: 20 marks}
 \subsection{Description of relevant theory}
 Structural Bioinformatics is a field of study that involves the development and application of computational methods to study the structure and function of biological macromolecules such as proteins, DNA, and RNA. The field relies on several theories and approaches, including mathematical, algorithmic, hardware, and software-oriented theories. In this context, your dissertation on a Structural Bioinformatics Framework using a MapReduce formalism should include a detailed description of relevant theories that underpin the computational methods and techniques used in your research.
@@ -857,18 +853,17 @@ Hardware theory is also relevant in Structural Bioinformatics since the analysis
 \subsubsection{Software Theory}
 Software theory is another critical aspect of Structural Bioinformatics, which focuses on the development of specialized software tools and frameworks for the analysis and interpretation of biological data. The use of specialized software tools and frameworks is essential to the success of Structural Bioinformatics since the analysis of large datasets requires sophisticated data processing and visualization tools. For example, software tools such as PyMOL and Chimera are used to visualize protein structures, while frameworks such as Hadoop and Spark are used to process large-scale genomic and proteomic datasets using a MapReduce formalism.
 
-\textbf{Note: In summary, your dissertation on a Structural Bioinformatics Framework using a MapReduce formalism should include a detailed description of the relevant theories that underpin the computational methods and techniques used in your research. Theories such as mathematical theory, algorithmic theory, hardware theory, and software theory are all critical to the success of Structural Bioinformatics and should be described in detail in your dissertation.}
 
 
 \subsection{Development and Software Engineering}
 
-Adequate development and software engineering are critical components of any software project, and they are particularly important in the context of developing a structural bioinformatics framework using a MapReduce formalism. In this response, we will discuss the key concepts of adequate development and software engineering and their relevance to this specific project.
+Development and software engineering are critical components of any software project, and they are particularly important in the context of developing a structural bioinformatics framework using a MapReduce formalism.
 
-Adequate development refers to the process of developing software in a way that meets the needs of its users and stakeholders. This includes developing software that is reliable, efficient, and maintainable, and that meets the requirements of its users. Adequate development also involves ensuring that the software is tested thoroughly and that it is secure.
+Development refers to the process of developing software in a way that meets the needs of its users and stakeholders. This includes developing software that is reliable, efficient, and maintainable, and that meets the requirements of its users. Whilst ensuring that the software is tested thoroughly and that it is secure.
 
-Software engineering, on the other hand, refers to the systematic approach to developing software. This involves using engineering principles and best practices to design, develop, and maintain software. Software engineering encompasses a range of activities, including requirements analysis, design, coding, testing, and maintenance.
+Software engineering, on the other hand, refers to the systematic approach to developing software. This involves using principles and best practices to design, develop, and maintain software. Software engineering encompasses a range of activities, including requirements analysis, design, coding, testing, and maintenance.
 
-In the context of developing a structural bioinformatics framework using a MapReduce formalism, adequate development and software engineering are particularly important. This is because the development of such a framework involves complex algorithms and data structures, as well as large amounts of data. As a result, it is essential to ensure that the software is developed using best practices and that it is designed in a way that is scalable and efficient.
+Both developent and software engineering is important as this framework involves complex algorithms and data structures, as well as large amounts of data. As a result, it is essential to ensure that the software is developed using best practices and that it is designed in a way that is scalable and efficient.
 
 The following topics cover the adequate development and software engineering for my project:
 
@@ -900,14 +895,6 @@ The framework should be thoroughly tested, using both automated and manual testi
 
 The software should be designed and developed with maintainability in mind, to ensure that it can be easily updated and improved over time.
 
-
-
-
-
-
-
-
-In summary, adequate development and software engineering are critical components of developing a structural bioinformatics framework using a MapReduce formalism. By following best practices and using established engineering principles, developers can ensure that the software is reliable, efficient, and maintainable, and that it meets the needs of its users and stakeholders.
 
 \section{Technical decision making: 10 marks}
 \subsection{Are important (technical) decisions well made and argued?}
@@ -950,11 +937,18 @@ Finally the software framework is scalable and can handle increasingly large dat
 
 The project went according to plan by completing most to all the set out objectives however seting up the clusetr with correct rdd and key value pairs took much more time then expected. For this reason i didnt have enough time to create a good interface keeping at a bash level of interaction for the user. A readme has been created which helps the user understand the functions within the framework however a more user frienly user interface would be benifitial for eaxmple when running the functions that implement the api to search or download pdbs a better user interafce can be created that would be easier to use to be able to set up the pdb files the user would like to run the executables on to.
 
-\subsection{its difficulties, successes and future enhancements}
 \subsection{conclusions or results analysed or discussed}
+Need to include benchmarking here
 
 \section{Professional Issues: 10 marks}
 \subsection{Should be a topic relevant to the project undertaken.}
+Structural bioinformatics involves the use of complex data analysis techniques and tools that require a high level of accuracy and reliability. As such, it is important to consider ethical issues related to data privacy, ownership, and sharing. It means that we have spotential impact of your on public health.
+
+Structural bioinformatics research often involves the use of proprietary software and databases. So it is important to consider issues related to property and ensure that i am adhering to copyright and licensing agreements when using these tools.
+
+Structural bioinformatics involves the handling of sensitive data, such as genomic data, that is often subject to strict data security regulations. So it is important to plan to ensure the security and confidentiality of your data, and protect it from unauthorized access or disclosure.
+
+
 
 \bibliographystyle{alpha}
 \bibliography{bibliography}
