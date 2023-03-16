@@ -15,12 +15,21 @@ def linecount(spark, filename):
     # python3 main.py linecount PDBsDirectory1
     directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+filename+"/*")
 
+    if not os.path.exists(filename):
+        raise Exception("Path does not exist")
+
+    files = os.listdir(filename)
+    if not files:
+        raise Exception("No files found in folder provided")
     rddkeyvalue = spark.sparkContext.wholeTextFiles(directory)
+
 
     def numberoflinesinfile(k):
         os.system("wc -l "+ k[45:])
-    
+
     rddkeyvalue.map(lambda x: numberoflinesinfile(x[0])).collect()
+
+    return True
 
 def tmalign(spark, folder1, folder2):
     # python3 main.py tmalign PDBsDirectory1 PDBsDirectory2
