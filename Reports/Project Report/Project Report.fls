@@ -483,6 +483,26 @@ INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/caption/caption3.sty
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -617,6 +637,18 @@ INPUT ./Execute.png
 INPUT Execute.png
 INPUT ./Execute.png
 INPUT ./Execute.png
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omlcmr.fd
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omlcmr.fd
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omlcmr.fd
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omlcmr.fd
 INPUT ./Project Report.bbl
 INPUT Project Report.bbl
 INPUT ./Project Report.bbl
@@ -632,6 +664,7 @@ INPUT /Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jkn
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb

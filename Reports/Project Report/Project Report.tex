@@ -3,6 +3,7 @@
 \usepackage{hyperref}
 \usepackage{sectsty}
 \usepackage{subcaption}
+\usepackage{listings}
 
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -816,84 +817,90 @@ There are a few systems that solve similar tasts these include:
 
 
 \section{Everything Below i would like to expand on more will be doing so as my next steps}
-\section{Contents and Knowledge: 20 marks}
-\subsection{Description of relevant theory}
-Structural Bioinformatics is a field of study that involves the development and application of computational methods to study the structure and function of biological macromolecules such as proteins, DNA, and RNA. The field relies on several theories and approaches, including mathematical, algorithmic, hardware, and software-oriented theories. In this context, your dissertation on a Structural Bioinformatics Framework using a MapReduce formalism should include a detailed description of relevant theories that underpin the computational methods and techniques used in your research.
-\subsubsection{Mathematical Theory}
-Mathematical theory plays a crucial role in Structural Bioinformatics by providing a solid foundation for the development of algorithms and models. The mathematical theory falls into three sections which are used to develop algorithms that analyze and interpret the structural and functional properties of biological macromolecules.
+
+
+\section{Software Engineering}
+\subsection{Objective Implementation}
 
 \begin{itemize}
-    \item Graph Theory
-    \item Probability theory
-    \item Linear algebra
+    \item Develop a software framework that suppots the Mapreduce formalism and can process
+    large numbers of protein structures.
 \end{itemize}
 
-\subsubsection{Graph Theory}
+To implement this we need to break down the objective into two parts the first part is to achieve a framework that supports a mapreduce formalism. In order to do this i need to decide between hadoop and apache spark. Please refer to my Literature review on Hadoop spark and pyspark where spark performes quicker whilst having having an API for python.
 
-Graph theory is used to represent the three-dimensional structure of a protein as a network of nodes and edges, 
+\subsubsection{Implementing PySpark}
 
-\subsubsection{Probability theory}
+Install Java: PySpark requires Java to run. You can download and install the latest version of Java from the official website (https://www.oracle.com/java/technologies/javase-downloads.html).
 
-Probability theory is used to predict the likelihood of a given amino acid sequence folding into a particular protein structure.
+Install Apache Spark: PySpark is built on top of Apache Spark, so you need to install Apache Spark first. You can download the latest version of Apache Spark from the official website (https://spark.apache.org/downloads.html). Choose a pre-built package for Apache Spark and select the version that matches your installed Java version. Extract the downloaded package to a location of your choice.
 
-\subsubsection{Linear algebra}
+Install Python: PySpark requires Python 3.x to run. You can download and install the latest version of Python from the official website (https://www.python.org/downloads/).
 
-Linear algebra provides powerful tools for analyzing these sets of points, such as calculating distances between atoms, determining the orientation and alignment of protein structures, and identifying similarities and differences between different protein structures.
+Set environment variables: To use PySpark, you need to set environment variables for Java and Spark. As I am implementing this on MAC OS to do so we need to open the terminal and run the following commands:
 
-One example of how linear algebra is used in structural bioinformatics is in the calculation of principal component analysis (PCA) of protein structures. PCA is a method of reducing the complexity of a protein structure by identifying the most significant features that contribute to its overall shape and structure. This involves computing the eigenvectors and eigenvalues of a matrix that represents the distribution of atoms in the protein structure, which can be done using linear algebra.
+\begin{lstlisting}[language=bash]
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/<JDK_version>/Contents/Home
+    export PATH=$JAVA_HOME/bin:$PATH
+    export SPARK_HOME=<path_to_spark_folder>
+    export PATH=$SPARK_HOME/bin:$PATH
+\end{lstlisting}
 
-Another example is in the field of molecular dynamics simulations, where linear algebra is used to solve the differential equations that describe the motion of atoms in a protein structure over time. This allows researchers to simulate the behavior of proteins under different conditions and to predict how they will interact with other molecules.
+Replace 'JDK version' with the version of Java you installed and 'path to spark folder' with the path to the folder where you extracted Apache Spark.
 
-\subsubsection{Algorithmic Theory}
-Algorithmic theory is another important aspect of Structural Bioinformatics, which focuses on developing efficient algorithms for analyzing and interpreting large-scale biological data. The development of algorithms is critical to the success of Structural Bioinformatics since the analysis of large datasets is computationally intensive and requires specialized tools and techniques. For example, algorithms based on dynamic programming are used to compare protein sequences and identify conserved regions, while clustering algorithms are used to group similar protein structures.
+Install PySpark: You can install PySpark using pip. Open the terminal and run the following command:
 
-\subsubsection{Hardware theory}
-Hardware theory is also relevant in Structural Bioinformatics since the analysis of large biological datasets requires specialized hardware resources such as high-performance computing clusters and graphics processing units (GPUs). The use of specialized hardware resources allows for the efficient processing of large datasets, which is essential for the analysis of complex biological systems. For example, GPUs are used to accelerate molecular dynamics simulations, while high-performance computing clusters are used to analyze large-scale genomic and proteomic datasets.
+\begin{lstlisting}[language=bash]
+    pip install pyspark
+\end{lstlisting}
 
-\subsubsection{Software Theory}
-Software theory is another critical aspect of Structural Bioinformatics, which focuses on the development of specialized software tools and frameworks for the analysis and interpretation of biological data. The use of specialized software tools and frameworks is essential to the success of Structural Bioinformatics since the analysis of large datasets requires sophisticated data processing and visualization tools. For example, software tools such as PyMOL and Chimera are used to visualize protein structures, while frameworks such as Hadoop and Spark are used to process large-scale genomic and proteomic datasets using a MapReduce formalism.
+Finally Test PySpark: You can test PySpark to check if all is set uop correctly by opening the Python shell and running the following commands:
 
+\begin{lstlisting}[language=bash]
+    from pyspark.sql import SparkSession
+    spark = SparkSession.builder.appName("test").getOrCreate()
+    df = spark.range(10)
+    df.show()
+\end{lstlisting}
 
+This should create a Spark session, create a DataFrame with 10 rows, and display it in the console.
 
-\subsection{Development and Software Engineering}
+The second part of the objective is to ensure that we can process large numbers of protein structures. To do this we need to optimize our Spark job and cluster configuration. There are some actions we can not implement, some actions we can consider before the code and finally  some actions we can implement in to our code.
 
-Development and software engineering are critical components of any software project, and they are particularly important in the context of developing a structural bioinformatics framework using a MapReduce formalism.
+\subsubsection{Can not implement}
+We can not implemnet this in to our project as it has been decided that the framework will stick to one node in a local cluster and use better serlizatition formats due to the time constraints.
 
-Development refers to the process of developing software in a way that meets the needs of its users and stakeholders. This includes developing software that is reliable, efficient, and maintainable, and that meets the requirements of its users. Whilst ensuring that the software is tested thoroughly and that it is secure.
+Cluster Configuration:
+Make sure that you have a cluster with sufficient resources to handle the amount of data you want to process. You can use Amazon EMR, Google Cloud Dataproc or any other cloud-based solution to spin up a cluster with adequate resources.
 
-Software engineering, on the other hand, refers to the systematic approach to developing software. This involves using principles and best practices to design, develop, and maintain software. Software engineering encompasses a range of activities, including requirements analysis, design, coding, testing, and maintenance.
+Data Serialization:
+Serialization is the process of converting data structures into a format that can be easily transmitted over the network. By default, PySpark uses Python's pickle library for serialization, which can be slow for large datasets. You can improve serialization performance by using more efficient serialization formats like Avro or Parquet.
 
-Both developent and software engineering is important as this framework involves complex algorithms and data structures, as well as large amounts of data. As a result, it is essential to ensure that the software is developed using best practices and that it is designed in a way that is scalable and efficient.
+\subsubsection{Before implementing the code}
+Hardware Configuration:
+Ensure that your cluster has sufficient CPU, RAM, and disk resources to handle the workload. You can also use SSDs (Solid State Drives) for faster disk access and faster I/O operations.
 
-The following topics cover the adequate development and software engineering for my project:
+To do this we need to look at the minimum requirements for running PySpark.
 
 \begin{itemize}
-    \item Requirements analysis
-    \item Design
-    \item Coding
-    \item Testing
-    \item Maintenance
+    \item A 64-bit operating system e.g., macOS, Linux, or Windows
+    \item At least 8 GB of RAM
+    \item A multi-core processor e.g., Intel Core i5 or i7
 \end{itemize}
 
-\subsubsection{Requirements analysis}
+\subsubsection{Whilst Implementing code}
+These are some functions that we can implement into our code to ensure that optimize our Spark job and cluster configuration
+Partitioning:
+Partitioning the input data can significantly improve performance, especially for large datasets. Partitioning involves splitting the data into smaller chunks and processing them in parallel. You can specify the number of partitions using the repartition function in PySpark.
 
-It is essential to understand the requirements of the framework's users and stakeholders, including their needs for data processing, visualization, and analysis.
+Caching:
+Caching is an optimization technique that involves storing intermediate results in memory to avoid recomputation. Caching is particularly useful when you have iterative algorithms that reuse the same data multiple times. You can use the cache function in PySpark to cache Resilient Distributed Datasets or DataFrames.\\\\
 
-\subsubsection{Design}
+\begin{itemize}
+    \item Implement a distributed computing system using MapReduce to parallelize protein
+    structure analysis across multiple computing nodes.
+\end{itemize}
 
-The framework should be designed in a modular and scalable way, to allow for easy integration of new features and functionalities. The use of established design patterns and principles can help to ensure that the framework is maintainable and extensible.
-
-\subsubsection{Coding}
-
-The code should be written using best practices, such as using descriptive variable names, following a consistent coding style, and ensuring that the code is well-documented. Testing should be an integral part of the coding process, with both unit tests and integration tests used to ensure that the code works as intended.
-
-\subsubsection{Testing}
-
-The framework should be thoroughly tested, using both automated and manual testing methods. This can help to identify bugs and issues early in the development process, and ensure that the software is reliable and secure.
-
-\subsubsection{Maintenance}
-
-The software should be designed and developed with maintainability in mind, to ensure that it can be easily updated and improved over time.
 
 
 \section{Technical decision making: 10 marks}

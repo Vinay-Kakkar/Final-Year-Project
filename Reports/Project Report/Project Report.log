@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  14 MAR 2023 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  17 MAR 2023 19:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -252,10 +252,32 @@ Package caption Info: hyperref package is loaded.
 )
 \c@subfigure=\count278
 \c@subtable=\count279
-) (/usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count280
+\lst@gtempboxa=\box51
+\lst@token=\toks18
+\lst@length=\count281
+\lst@currlwidth=\dimen163
+\lst@column=\count282
+\lst@pos=\count283
+\lst@lostspace=\dimen164
+\lst@width=\dimen165
+\lst@newlines=\count284
+\lst@lineno=\count285
+\lst@maxwidth=\dimen166
+ (/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count286
+\lst@skipnumbers=\count287
+\lst@framebox=\box52
+) (/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (/usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count280
-\l__pdf_internal_box=\box51
+\l__color_backend_stack_int=\count288
+\l__pdf_internal_box=\box53
 ) (./Project Report.aux
 
 LaTeX Warning: Label `tab:Amino acids' multiply defined.
@@ -272,24 +294,24 @@ LaTeX Warning: Label `Results1' multiply defined.
 )
 \openout1 = `"Project Report.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -326,121 +348,123 @@ LaTeX Font Info:    ... okay on input line 18.
 
 (/usr/local/texlive/2022basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count281
-\scratchdimen=\dimen163
-\scratchbox=\box52
-\nofMPsegments=\count282
-\nofMParguments=\count283
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count284
-\MPscratchDim=\dimen164
-\MPnumerator=\count285
-\makeMPintoPDFobject=\count286
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count289
+\scratchdimen=\dimen167
+\scratchbox=\box54
+\nofMPsegments=\count290
+\nofMParguments=\count291
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count292
+\MPscratchDim=\dimen168
+\MPnumerator=\count293
+\makeMPintoPDFobject=\count294
+\everyMPtoPDFconversion=\toks20
 ) (/usr/local/texlive/2022basic/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2022basic/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 19.
  (./Project Report.out) (./Project Report.out)
 \@outlinefile=\write3
 \openout3 = `"Project Report.out"'.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count295
 <logo.pdf, id=36, 948.54375pt x 473.77pt>
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
-Package pdftex.def Info: logo.pdf  used on input line 21.
+Package pdftex.def Info: logo.pdf  used on input line 22.
 (pdftex.def)             Requested size: 284.82584pt x 142.26378pt.
  [0{/usr/local/texlive/2022basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./logo.pdf>]
-\c@definition=\count287
+\c@definition=\count296
  [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
 
  []
 
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
 [3
 
 ] [4]
-Overfull \hbox (3.7838pt too wide) in paragraph at lines 103--104
+Overfull \hbox (3.7838pt too wide) in paragraph at lines 104--105
 []\OT1/cmr/m/it/10.95 A dy-namic net-work of in-ter-link-ing pro-tein fil-a-ments present
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 120.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 121.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 120.
+(Font)              size <5> substituted on input line 121.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 120.
+(Font)              size <5> substituted on input line 121.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 120.
+(Font)              size <5> substituted on input line 121.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11> on input line 120.
+(Font)              <11> on input line 121.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.69997> on input line 120.
+(Font)              <7.69997> on input line 121.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.5> on input line 120.
+(Font)              <5.5> on input line 121.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <Protein Structure.png, id=97, 452.69125pt x 366.36874pt>
 File: Protein Structure.png Graphic file (type png)
 <use Protein Structure.png>
-Package pdftex.def Info: Protein Structure.png  used on input line 160.
+Package pdftex.def Info: Protein Structure.png  used on input line 161.
 (pdftex.def)             Requested size: 220.50887pt x 178.46008pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -451,68 +475,68 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Gene Expresion.png, id=148, 341.275pt x 300.62312pt>
 File: Gene Expresion.png Graphic file (type png)
 <use Gene Expresion.png>
-Package pdftex.def Info: Gene Expresion.png  used on input line 205.
+Package pdftex.def Info: Gene Expresion.png  used on input line 206.
 (pdftex.def)             Requested size: 220.50887pt x 194.24675pt.
 <SAGE1.png, id=151, 349.305pt x 377.41pt>
 File: SAGE1.png Graphic file (type png)
 <use SAGE1.png>
-Package pdftex.def Info: SAGE1.png  used on input line 217.
+Package pdftex.def Info: SAGE1.png  used on input line 218.
 (pdftex.def)             Requested size: 178.60974pt x 192.98332pt.
 
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 218.
+(caption)                Try setting it with `size=' explicitly on input line 219.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 218.
+(caption)                Try setting it with `size=' explicitly on input line 219.
 See the caption package documentation for explanation.
 
 <SAGE2.png, id=152, 349.305pt x 327.2225pt>
 File: SAGE2.png Graphic file (type png)
 <use SAGE2.png>
-Package pdftex.def Info: SAGE2.png  used on input line 223.
+Package pdftex.def Info: SAGE2.png  used on input line 224.
 (pdftex.def)             Requested size: 178.60974pt x 167.32065pt.
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 224.
+(caption)                Try setting it with `size=' explicitly on input line 225.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 224.
+(caption)                Try setting it with `size=' explicitly on input line 225.
 See the caption package documentation for explanation.
 
 [7 <./Protein Structure.png>] [8 <./Gene Expresion.png> <./SAGE1.png> <./SAGE2.png>]
 <Overlaping.png, id=189, 496.85625pt x 444.66125pt>
 File: Overlaping.png Graphic file (type png)
 <use Overlaping.png>
-Package pdftex.def Info: Overlaping.png  used on input line 242.
+Package pdftex.def Info: Overlaping.png  used on input line 243.
 (pdftex.def)             Requested size: 220.50887pt x 197.3478pt.
  [9 <./Overlaping.png>]
 <RNAseq.png, id=212, 736.7525pt x 747.29187pt>
 File: RNAseq.png Graphic file (type png)
 <use RNAseq.png>
-Package pdftex.def Info: RNAseq.png  used on input line 282.
+Package pdftex.def Info: RNAseq.png  used on input line 283.
 (pdftex.def)             Requested size: 220.50887pt x 223.65335pt.
  [10 <./RNAseq.png>] [11]
-Overfull \hbox (18.97404pt too wide) in paragraph at lines 329--330
+Overfull \hbox (18.97404pt too wide) in paragraph at lines 330--331
 \OT1/cmr/m/n/10.95 ti-ple se-quence align-ment pro-cess-ing in DMP-Fold218 and lan-guage model representations.[[]]. 
  []
 
 
-Overfull \hbox (2.16403pt too wide) in paragraph at lines 340--341
+Overfull \hbox (2.16403pt too wide) in paragraph at lines 341--342
 []\OT1/cmr/m/it/10.95 Macromolecular is any very large molecule, usu-ally with
  []
 
 
-Underfull \hbox (badness 2318) in paragraph at lines 371--372
+Underfull \hbox (badness 2318) in paragraph at lines 372--373
 []\OT1/cmr/m/n/10.95 I3. (meta)data in-clude qual-i-fied ref-er-ences to other
  []
 
 
-Overfull \hbox (11.09396pt too wide) in paragraph at lines 356--379
+Overfull \hbox (11.09396pt too wide) in paragraph at lines 357--380
  [] 
  []
 
@@ -523,20 +547,20 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <PDB Site.png, id=298, 595.22375pt x 747.29187pt>
 File: PDB Site.png Graphic file (type png)
 <use PDB Site.png>
-Package pdftex.def Info: PDB Site.png  used on input line 415.
+Package pdftex.def Info: PDB Site.png  used on input line 416.
 (pdftex.def)             Requested size: 220.50887pt x 276.83574pt.
 <Top Bar Search A.png, id=301, 893.3375pt x 569.12625pt>
 File: Top Bar Search A.png Graphic file (type png)
 <use Top Bar Search A.png>
-Package pdftex.def Info: Top Bar Search A.png  used on input line 423.
+Package pdftex.def Info: Top Bar Search A.png  used on input line 424.
 (pdftex.def)             Requested size: 178.60974pt x 113.7885pt.
 <Top Bar Search B.png, id=302, 883.3pt x 595.72563pt>
 File: Top Bar Search B.png Graphic file (type png)
 <use Top Bar Search B.png>
-Package pdftex.def Info: Top Bar Search B.png  used on input line 428.
+Package pdftex.def Info: Top Bar Search B.png  used on input line 429.
 (pdftex.def)             Requested size: 178.60974pt x 120.45198pt.
  [14] [15 <./PDB Site.png> <./Top Bar Search A.png> <./Top Bar Search B.png>]
-Overfull \hbox (16.67786pt too wide) in paragraph at lines 437--438
+Overfull \hbox (16.67786pt too wide) in paragraph at lines 438--439
 \OT1/cmr/m/n/10.95 In 2020, RCSB PDB had an up-grade of its de-liv-ery ar-chi-tec-ture [[]]at RCSB.org [[]]. 
  []
 
@@ -549,45 +573,76 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <PDB File.png, id=361, 987.18813pt x 440.64626pt>
 File: PDB File.png Graphic file (type png)
 <use PDB File.png>
-Package pdftex.def Info: PDB File.png  used on input line 569.
+Package pdftex.def Info: PDB File.png  used on input line 570.
 (pdftex.def)             Requested size: 220.50887pt x 98.4284pt.
 
-Overfull \hbox (21.31625pt too wide) in paragraph at lines 574--575
+Overfull \hbox (21.31625pt too wide) in paragraph at lines 575--576
 \OT1/cmr/m/n/10.95 Mmcif is a dictionary-based ap-proach to data ex-tracted from crys-tal-lo-graphic ex-per-i-ments [[]]. 
  []
 
 <xml.png, id=368, 670.00313pt x 645.91313pt>
 File: xml.png Graphic file (type png)
 <use xml.png>
-Package pdftex.def Info: xml.png  used on input line 586.
+Package pdftex.def Info: xml.png  used on input line 587.
 (pdftex.def)             Requested size: 220.50887pt x 212.58035pt.
 [19 <./PDB File.png>] [20 <./xml.png>] [21] [22] [23]
 <Execute.png, id=449, 704.6325pt x 471.7625pt>
 File: Execute.png Graphic file (type png)
 <use Execute.png>
-Package pdftex.def Info: Execute.png  used on input line 699.
+Package pdftex.def Info: Execute.png  used on input line 700.
 (pdftex.def)             Requested size: 220.50887pt x 147.63417pt.
 
-Overfull \hbox (1.95448pt too wide) in paragraph at lines 711--746
+Overfull \hbox (1.95448pt too wide) in paragraph at lines 712--747
  [] 
  []
 
 [24 <./Execute.png>] [25] [26] [27
 
-] [28
+]
+Overfull \hbox (23.65819pt too wide) in paragraph at lines 834--835
+\OT1/cmr/m/n/10.95 Java from the of-fi-cial web-site (https://www.oracle.com/java/technologies/javase-downloads.html). 
+ []
 
-] [29] [30] [31
+(/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 843.
+ (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <11> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 843.
 
-] [32
+Overfull \hbox (97.72787pt too wide) in paragraph at lines 843--844
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+[28
 
 ]
-Overfull \hbox (2.24489pt too wide) in paragraph at lines 947--948
+Underfull \hbox (badness 10000) in paragraph at lines 896--898
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 896--898
+
+ []
+
+[29] [30
+
+] [31
+
+]
+Overfull \hbox (2.24489pt too wide) in paragraph at lines 954--955
 []\OT1/cmr/m/n/10.95 Structural bioin-for-mat-ics re-search of-ten in-volves the use of pro-pri-etary soft-ware and databases.
  []
 
-(./Project Report.bbl [33
+(./Project Report.bbl [32
 
-] [34
+] [33
 
 ]
 Underfull \hbox (badness 1303) in paragraph at lines 64--77
@@ -599,24 +654,24 @@ Underfull \hbox (badness 1354) in paragraph at lines 64--77
 \OT1/cmr/m/n/10.95 Chris-tine Zardecki.  RCSB Pro-tein Data Bank: Cel-e-brat-ing 50 years
  []
 
-[35]
+[34]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 166.
  (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <11> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
- [36]
+ [35]
 Underfull \hbox (badness 1112) in paragraph at lines 287--293
 []\OT1/cmr/m/n/10.95 Xiangrui Meng, Joseph Bradley, Bu-rak Yavuz, Evan Sparks, Shiv-aram
  []
 
-[37] [38]
+[36] [37]
 Underfull \hbox (badness 1173) in paragraph at lines 423--429
 []\OT1/cmr/m/n/10.95 John D. West-brook and Paula M. D. Fitzger-ald.  The PDB For-mat,
  []
 
-[39]) [40] (./Project Report.aux)
+[38]) [39] (./Project Report.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -625,21 +680,21 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Project Report".out' has not changed.
-(rerunfilecheck)             Checksum: ADF56D529E7BD75B2E12032C52B522A8;2029.
+(rerunfilecheck)             Checksum: 02A3E20369084F65CBFB7D65C25C15CE;1960.
  ) 
 Here is how much of TeX's memory you used:
- 11075 strings out of 476422
- 182255 string characters out of 5810350
- 537273 words of memory out of 5000000
- 32025 multiletter control sequences out of 15000+600000
+ 12848 strings out of 476422
+ 206063 string characters out of 5810350
+ 735832 words of memory out of 5000000
+ 33775 multiletter control sequences out of 15000+600000
  476721 words of font info for 52 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 72i,13n,77p,1316b,545s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Project Report.pdf" (41 pages, 4141261 bytes).
+ 72i,13n,77p,1316b,1378s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "Project Report.pdf" (40 pages, 4148759 bytes).
 PDF statistics:
- 677 PDF objects out of 1000 (max. 8388607)
- 563 compressed objects within 6 object streams
- 219 named destinations out of 1000 (max. 500000)
+ 682 PDF objects out of 1000 (max. 8388607)
+ 566 compressed objects within 6 object streams
+ 221 named destinations out of 1000 (max. 500000)
  130 words of extra memory for PDF output out of 10000 (max. 10000000)
 
