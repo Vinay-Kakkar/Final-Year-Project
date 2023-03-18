@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  17 MAR 2023 19:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  18 MAR 2023 14:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -631,18 +631,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 896--898
 
  []
 
-[29] [30
+[29]
+Overfull \hbox (143.71835pt too wide) in paragraph at lines 926--927
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
 
-] [31
+
+Overfull \hbox (130.57822pt too wide) in paragraph at lines 927--929
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (110.86801pt too wide) in paragraph at lines 932--933
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (18.88705pt too wide) in paragraph at lines 936--938
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[30]
+Overfull \hbox (130.57822pt too wide) in paragraph at lines 982--983
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (130.57822pt too wide) in paragraph at lines 983--985
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[31]
+Overfull \hbox (209.41904pt too wide) in paragraph at lines 989--990
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[32]
+Overfull \hbox (143.71835pt too wide) in paragraph at lines 1029--1031
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (18.88705pt too wide) in paragraph at lines 1036--1039
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+[33] [34
+
+] [35
 
 ]
-Overfull \hbox (2.24489pt too wide) in paragraph at lines 954--955
+Overfull \hbox (2.24489pt too wide) in paragraph at lines 1098--1099
 []\OT1/cmr/m/n/10.95 Structural bioin-for-mat-ics re-search of-ten in-volves the use of pro-pri-etary soft-ware and databases.
  []
 
-(./Project Report.bbl [32
+(./Project Report.bbl [36
 
-] [33
+] [37
 
 ]
 Underfull \hbox (badness 1303) in paragraph at lines 64--77
@@ -654,24 +699,24 @@ Underfull \hbox (badness 1354) in paragraph at lines 64--77
 \OT1/cmr/m/n/10.95 Chris-tine Zardecki.  RCSB Pro-tein Data Bank: Cel-e-brat-ing 50 years
  []
 
-[34]
+[38]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 166.
  (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <11> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 166.
- [35]
+ [39]
 Underfull \hbox (badness 1112) in paragraph at lines 287--293
 []\OT1/cmr/m/n/10.95 Xiangrui Meng, Joseph Bradley, Bu-rak Yavuz, Evan Sparks, Shiv-aram
  []
 
-[36] [37]
+[40] [41]
 Underfull \hbox (badness 1173) in paragraph at lines 423--429
 []\OT1/cmr/m/n/10.95 John D. West-brook and Paula M. D. Fitzger-ald.  The PDB For-mat,
  []
 
-[38]) [39] (./Project Report.aux)
+[42]) [43] (./Project Report.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -683,18 +728,18 @@ Package rerunfilecheck Info: File `"Project Report".out' has not changed.
 (rerunfilecheck)             Checksum: 02A3E20369084F65CBFB7D65C25C15CE;1960.
  ) 
 Here is how much of TeX's memory you used:
- 12848 strings out of 476422
- 206063 string characters out of 5810350
- 735832 words of memory out of 5000000
- 33775 multiletter control sequences out of 15000+600000
+ 13007 strings out of 476422
+ 208089 string characters out of 5810350
+ 750832 words of memory out of 5000000
+ 33842 multiletter control sequences out of 15000+600000
  476721 words of font info for 52 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 72i,13n,77p,1316b,1378s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,13n,77p,1316b,1854s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Project Report.pdf" (40 pages, 4148759 bytes).
+Output written on "Project Report.pdf" (44 pages, 4162951 bytes).
 PDF statistics:
- 682 PDF objects out of 1000 (max. 8388607)
- 566 compressed objects within 6 object streams
- 221 named destinations out of 1000 (max. 500000)
+ 808 PDF objects out of 1000 (max. 8388607)
+ 685 compressed objects within 7 object streams
+ 313 named destinations out of 1000 (max. 500000)
  130 words of extra memory for PDF output out of 10000 (max. 10000000)
 

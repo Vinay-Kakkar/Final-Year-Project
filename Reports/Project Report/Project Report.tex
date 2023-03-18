@@ -901,7 +901,151 @@ Caching is an optimization technique that involves storing intermediate results 
     structure analysis across multiple computing nodes.
 \end{itemize}
 
+To implement a distributed computing system using MapReduce to parallelize protein structure analysis across multiple computing nodes using PySpark, we need complete the following steps:
 
+\begin{enumerate}
+    \item Setup a PySpark cluster with multiple worker nodes.
+    \item Write a Map function to parse the protein structure data and extract the relevant features.
+    \item Write a Reduce function to combine the results from the Map function.
+    \item Load the protein structure data into PySpark RDDs.
+    \item Apply the Map function to each protein structure RDD in parallel.
+    \item Apply the Reduce function to combine the results from the Map function.
+    \item Save the output to a distributed file system.
+\end{enumerate}
+
+The following code has been taken from my lines program which is inteanded to print the number of lines each pdb file contains which complete the steps above
+
+\begin{lstlisting}
+    from pyspark.sql import SparkSession
+    from pyspark.sql.types import StringType
+    import os
+    from pathlib import Path
+    import tempfile
+
+    def main(spark):
+        directory = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsDirectory/*")
+        tempdirectory = "/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsfromRDD"
+
+        rddkeyvalue = spark.sparkContext.wholeTextFiles(directory)
+
+        def numberoflines(filename, filecontent):
+            with tempfile.NamedTemporaryFile(prefix=filename[69:], mode='w') as tmp:
+                tmp.write(filecontent)
+                os.system("wc -l "+ tmp.name)
+
+        rddkeyvalue.map(lambda x: numberoflines(x[0], x[1])).collect()
+
+    if __name__ == '__main__':
+        spark = SparkSession.builder.appName('PDB').getOrCreate()
+        main(spark)
+
+\end{lstlisting}
+
+\subsubsection{PySpark cluster setup}
+
+The SparkSession object is a higher-level interface to create a Spark application with SparkContext, which provides a unified entry point to interact with the Spark cluster.
+
+We use the builder API to create a SparkSession instance and set the application name to "PDB". The getOrCreate method creates a new SparkSession instance or reuses an existing one if one already exists. This creates a SparkSession with all the necessary configurations and settings for connecting to the Spark cluster.
+
+When we execute the code, the SparkSession instance is created and the worker nodes are launched, enabling distributed computing across the cluster.
+
+\subsubsection{Map function}
+The numberoflines function takes a folders path and the values within the protien structure and creates a temp file in which it writes the contents of the protien structure. The temp file is then used to get the number of lines with the shell command "wc -l 'tempfilename'".
+
+Once the numberoflines function has been defined, we can apply it to each protein structure file in parallel using the Map function in Spark.
+
+
+\subsubsection{Reduce function}
+The code provided does not include an explicit implementation of a Reduce function. However, you can write a Reduce function using PySpark's reduce function, which would result in the same respone if needed to return the number of lines.
+
+\subsubsection{PySpark RDDs}
+The code provided loads protein structure data by using the wholeTextFiles function to read in all the files in a directory as an RDD of key-value pairs, where the key is the filename and the value is the contents of the file.
+
+\subsubsection{Save to distributed file system}
+The code provided does not include any code to save the output to a distributed file system. However, you can use PySpark's saveAsTextFile function to save the output as text files in a distributed file system.
+
+\begin{itemize}
+    \item Optimize the software framework to reduce the processing time required for protein structure analysis.
+\end{itemize}
+
+I will now present the first version of my lines programs and explain features i changed so that the framework will be more optimized for reduce the processing time required for protein structure analysis.
+
+\begin{lstlisting}
+    from pyspark.sql import SparkSession
+    from pyspark.sql.types import StringType
+    import os
+    import shutil
+    from pathlib import Path
+
+
+    def main(spark):
+        directory = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsDirectory")
+        tempdirectory = "/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsfromRDD"
+
+        for file in os.listdir(os.fsencode(directory)):
+            filename = os.fsdecode(file)
+            if filename.endswith(".DS_Store"):
+                continue
+            rdd = spark.read.text("Programs/Lines/PDBsDirectory/"+filename).rdd.map(lambda x: x[0])
+            if os.path.exists(tempdirectory):
+                shutil.rmtree(tempdirectory)
+            rdd.saveAsTextFile(tempdirectory)
+            os.system("wc -l "+tempdirectory+"/part-00000")
+
+
+    if __name__ == '__main__':
+        # This creates a local cluster
+        spark = SparkSession.builder.appName('PDB').getOrCreate()
+        main(spark)
+\end{lstlisting}
+
+\subsubsection{Issues with code}
+We have instasiated a for loop which loops through all the files in the PDBsDirectory the code then reads each file in the PDBsDirectory directory and loads it into an RDD using spark.read.text ignoring any files that end with DSStore which is one of the outputs returned from saveAsTextFile. This operation can be time-consuming for large files because it involves reading the entire file into memory as a single string. This is not efficient for processing large files.
+
+The code then saves the RDD to the PDBsfromRDD directory using rdd.saveAsTextFile but we need to check if this directory exists already, deleting it if so, as for the next pdb file in the PDBsDirectory we will need to cast saveAsTextFile to this which requires that folder to not exist in the first place. SaveAsTextFile function can be expensive because it involves writing the entire RDD to disk.
+
+Finally if there is a lot of files in PDBsDirectory the the for loop will need to go through each one whilst also running shutil.rmtree which is not effeciant as there are some operations being run each iteration which we can remove.
+
+\subsubsection{Improvment Using wholeTextFiles()}
+
+wholeTextFiles() can be used instead of textFile() to read all files within a directory as a single RDD. wholeTextFiles() reads the files in the specified directory and returns an RDD where each element is a tuple of (filename, contents), where filename is the name of the file and contents is the entire contents of the file as a single string.
+
+This eliminates the need to have a for loop to go through the directory as we can read each file in the directory using wholeTextFiles() and a wildcard '*' in the directory path for example directory = "/path/*" which will select all the files in that path.
+
+As we have the name and content of the file we can remove saveAsTextFile() as we can pass in the file name into the map function thus casting the shell command on the file.
+
+This will result in the following code:
+
+\begin{lstlisting}
+    from pyspark.sql import SparkSession
+    from pyspark.sql.types import StringType
+    import os
+    import shutil
+    from pathlib import Path
+
+
+    def main(spark):
+        start = time.time()
+        directory = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsDirectory/*")
+
+        rddkeyvalue = spark.sparkContext.wholeTextFiles(directory)
+
+        def numberoflinesinfile(k):
+            os.system("wc -l "+ k[40:])
+        
+        rddkeyvalue.map(lambda x: numberoflinesinfile(x[0])).collect()
+
+
+    if __name__ == '__main__':
+        # This creates a local cluster
+        spark = SparkSession.builder.appName('PDB').getOrCreate()
+        main(spark)
+
+\end{lstlisting}
+
+\begin{itemize}
+    \item Validate the software framework by testing it with a variety of protein structure analysis tools and evaluating its performance in comparison to other available tools.
+\end{itemize}
 
 \section{Technical decision making: 10 marks}
 \subsection{Are important (technical) decisions well made and argued?}
