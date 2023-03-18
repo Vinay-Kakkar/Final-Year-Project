@@ -1,11 +1,15 @@
 import pdb
 import unittest
-from main.main import getcurrentpdbfiles, linecount, searchpdbfiles
+import main
 from pyspark.sql import SparkSession
 from pyspark.sql import DataFrame
 from pyspark.rdd import RDD
 import pandas as pd
 import os
+import re
+import requests
+import json
+import urllib
 
 #Created temp function due to the issues of working directories test runs the code from /PROJECT where main is build to be run from PROJECT/main
 def templinecount(spark, filename):
@@ -23,6 +27,34 @@ def templinecount(spark, filename):
     rddkeyvalue.map(lambda x: numberoflinesinfile(x[0])).collect()
     return True
 
+def tempsearchpdbfiles(value, jsonpath, api):
+    # python3 main.py searchpdbfiles vinay
+    if bool(re.search('[!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~]', value)):
+        raise Exception("Invalid Input please dont use punctuations")
+    jsonfile = jsonpath
+    try:
+        with open(file=jsonfile, mode="r") as jsonFile:
+            data = json.load(jsonFile)
+    except:
+        raise Exception("Invalid json")
+    data['query']['parameters']['value'] = value
+    with open(file=jsonfile, mode="w") as jsonFile:
+        json.dump(data, jsonFile)
+    #fix to make the values in data not use ' qoutes but use "" qoutes instead
+    data = json.dumps(data)
+    newdata = urllib.parse.quote(data)
+    apicall = (api+'json={}'.format(newdata))
+    #Check this line to see what response you are getting if code stops working
+    result = requests.get(apicall)
+    if result.status_code != 200:
+        raise Exception("API error occurred")
+    resultjson = result.json()
+    listofresults = []
+    for result in resultjson["result_set"]:
+        listofresults.append(result)
+    print(listofresults)
+    return listofresults
+
 class Testgetcurrentpdbfiles(unittest.TestCase):
     directory = ("main/testdirectory")
 
@@ -30,7 +62,7 @@ class Testgetcurrentpdbfiles(unittest.TestCase):
     def test_checkreturntype(self):
         os.mkdir(self.directory)
         open(os.path.join(self.directory, "fake.pdb"), "w").close()
-        test = getcurrentpdbfiles(self.directory)
+        test = main.getcurrentpdbfiles(self.directory)
         self.assertTrue(type(test) is list)
 
         os.remove(os.path.join(self.directory, "fake.pdb"))
@@ -39,14 +71,14 @@ class Testgetcurrentpdbfiles(unittest.TestCase):
     #Test that the function returns an empty list when given a directory path that contains no files.
     def test_checkemptyfolder(self):
         os.mkdir(self.directory)
-        test = getcurrentpdbfiles(self.directory)
+        test = main.getcurrentpdbfiles(self.directory)
         self.assertTrue(type(test) is list)
         os.rmdir(self.directory)
     
     #Test that the function raises an exception when given an invalid directory path (e.g., a path that does not exist).
     def test_invalidpath(self):
         with self.assertRaises(Exception) as context:
-            getcurrentpdbfiles(self.directory)
+            main.getcurrentpdbfiles(self.directory)
         self.assertTrue("Invalid folder path" in str(context.exception))
 
     #Test that the function correctly handles nested directories and returns all files within them.
@@ -58,7 +90,7 @@ class Testgetcurrentpdbfiles(unittest.TestCase):
         open(os.path.join(self.directory, subdirectory, "fake2.pdb"), "w").close()
 
 
-        test = getcurrentpdbfiles(self.directory)
+        test = main.getcurrentpdbfiles(self.directory)
         self.assertTrue(len(test) is 2)
 
         os.remove(os.path.join(self.directory, "fake1.pdb"))
@@ -78,7 +110,7 @@ class Testgetcurrentpdbfiles(unittest.TestCase):
         os.symlink(os.path.join(self.directory, "subdirectory"), os.path.join(self.directory, "link2"))
 
 
-        test = getcurrentpdbfiles(self.directory)
+        test = main.getcurrentpdbfiles(self.directory)
         self.assertTrue(len(test) is 2)
 
         os.remove(os.path.join(self.directory, "fake1.pdb"))
@@ -145,19 +177,28 @@ class Testsearchpdbfiles(unittest.TestCase):
     #Test that the function returns the correct result when passed a valid input value.
     def test_validinput(self):
         value = "covid"
-        test = searchpdbfiles(value)
+        test = tempsearchpdbfiles(value, 'main/Search.json', 'https://search.rcsb.org/rcsbsearch/v2/query?')
         result = {'identifier': '7N0R', 'score': 1.0}
         self.assertTrue(type(test) is list)
         self.assertTrue(test[0] == result)
-    #Test that the function raises an exception when passed an invalid input value (e.g. a string instead of an integer).
 
+    #Test that the function raises an exception when passed an invalid input value (e.g. a string instead of an integer).
     def test_invalidinput(self):
         value = "___"
         with self.assertRaises(Exception) as context:
-            test = searchpdbfiles(value)
+            test = tempsearchpdbfiles(value, 'main/Search.json', 'https://search.rcsb.org/rcsbsearch/v2/query?')
         self.assertTrue("Invalid Input please dont use punctuations" in str(context.exception))
-    #Test that the function correctly reads the JSON file with the input value.
-    #Test that the function correctly calls the API with the JSON data.
+
     #Test that the function correctly handles errors returned by the API.
+    def test_apiexception(self):
+        value = "covid"
+        with self.assertRaises(Exception) as context:
+            test = tempsearchpdbfiles(value, 'main/Search.json', 'https://search.rcsb.org/rcsbsearc')
+        self.assertTrue("API error occurred" in str(context.exception))
+
     #Test that the function returns an error if the JSON file cannot be read.
-    #Test that the function handles errors from the API call correctly.
+    def test_invalidjson(self):
+        value = "covid"
+        with self.assertRaises(Exception) as context:
+            test = tempsearchpdbfiles(value, 'main/invalid.json', 'https://search.rcsb.org/rcsbsearch/v2/query?')
+        self.assertTrue("Invalid json" in str(context.exception))

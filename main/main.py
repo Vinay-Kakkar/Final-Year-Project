@@ -53,34 +53,26 @@ def tmalign(spark, folder1, folder2):
 
 def searchpdbfiles(value):
     # python3 main.py searchpdbfiles vinay
-
-    if bool(re.search('[^\w\s]', value)):
+    if bool(re.search('[!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~]', value)):
         raise Exception("Invalid Input please dont use punctuations")
-
-
     jsonfile = 'main/Search.json'
-
-
-    with open(file=jsonfile, mode="r") as jsonFile:
-        data = json.load(jsonFile)
-
+    try:
+        with open(file=jsonfile, mode="r") as jsonFile:
+            data = json.load(jsonFile)
+    except:
+        raise Exception("Invalid json")
     data['query']['parameters']['value'] = value
-
-
     with open(file=jsonfile, mode="w") as jsonFile:
         json.dump(data, jsonFile)
-
     #fix to make the values in data not use ' qoutes but use "" qoutes instead
     data = json.dumps(data)
-
     newdata = urllib.parse.quote(data)
     apicall = 'https://search.rcsb.org/rcsbsearch/v2/query?json={}'.format(newdata)
-
-
     #Check this line to see what response you are getting if code stops working
     result = requests.get(apicall)
+    if result.status_code != 200:
+        raise Exception("API error occurred")
     resultjson = result.json()
-
     listofresults = []
     for result in resultjson["result_set"]:
         listofresults.append(result)
