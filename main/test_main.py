@@ -1,6 +1,6 @@
 import pdb
 import unittest
-import main
+from main.main import getcurrentpdbfiles, linecount, searchpdbfiles
 from pyspark.sql import SparkSession
 from pyspark.sql import DataFrame
 from pyspark.rdd import RDD
@@ -30,7 +30,7 @@ class Testgetcurrentpdbfiles(unittest.TestCase):
     def test_checkreturntype(self):
         os.mkdir(self.directory)
         open(os.path.join(self.directory, "fake.pdb"), "w").close()
-        test = main.getcurrentpdbfiles(self.directory)
+        test = getcurrentpdbfiles(self.directory)
         self.assertTrue(type(test) is list)
 
         os.remove(os.path.join(self.directory, "fake.pdb"))
@@ -39,14 +39,14 @@ class Testgetcurrentpdbfiles(unittest.TestCase):
     #Test that the function returns an empty list when given a directory path that contains no files.
     def test_checkemptyfolder(self):
         os.mkdir(self.directory)
-        test = main.getcurrentpdbfiles(self.directory)
+        test = getcurrentpdbfiles(self.directory)
         self.assertTrue(type(test) is list)
         os.rmdir(self.directory)
     
     #Test that the function raises an exception when given an invalid directory path (e.g., a path that does not exist).
     def test_invalidpath(self):
         with self.assertRaises(Exception) as context:
-            main.getcurrentpdbfiles(self.directory)
+            getcurrentpdbfiles(self.directory)
         self.assertTrue("Invalid folder path" in str(context.exception))
 
     #Test that the function correctly handles nested directories and returns all files within them.
@@ -58,7 +58,7 @@ class Testgetcurrentpdbfiles(unittest.TestCase):
         open(os.path.join(self.directory, subdirectory, "fake2.pdb"), "w").close()
 
 
-        test = main.getcurrentpdbfiles(self.directory)
+        test = getcurrentpdbfiles(self.directory)
         self.assertTrue(len(test) is 2)
 
         os.remove(os.path.join(self.directory, "fake1.pdb"))
@@ -78,7 +78,7 @@ class Testgetcurrentpdbfiles(unittest.TestCase):
         os.symlink(os.path.join(self.directory, "subdirectory"), os.path.join(self.directory, "link2"))
 
 
-        test = main.getcurrentpdbfiles(self.directory)
+        test = getcurrentpdbfiles(self.directory)
         self.assertTrue(len(test) is 2)
 
         os.remove(os.path.join(self.directory, "fake1.pdb"))
@@ -101,7 +101,6 @@ class Testlinecount(unittest.TestCase):
         self.assertTrue("No files found in folder provided" in str(context.exception))
         
         os.rmdir(self.directory)
-
 
     #Test that the function returns true when given a folder with a file:
     def test_folder_with_file(self):
@@ -140,4 +139,25 @@ class Testlinecount(unittest.TestCase):
             test = templinecount(spark, self.directorywithoutmain)
         self.assertTrue("Path does not exist" in str(context.exception))
         
-        
+class Testsearchpdbfiles(unittest.TestCase):
+    directory = ("main/testdirectory")
+
+    #Test that the function returns the correct result when passed a valid input value.
+    def test_validinput(self):
+        value = "covid"
+        test = searchpdbfiles(value)
+        result = {'identifier': '7N0R', 'score': 1.0}
+        self.assertTrue(type(test) is list)
+        self.assertTrue(test[0] == result)
+    #Test that the function raises an exception when passed an invalid input value (e.g. a string instead of an integer).
+
+    def test_invalidinput(self):
+        value = "___"
+        with self.assertRaises(Exception) as context:
+            test = searchpdbfiles(value)
+        self.assertTrue("Invalid Input please dont use punctuations" in str(context.exception))
+    #Test that the function correctly reads the JSON file with the input value.
+    #Test that the function correctly calls the API with the JSON data.
+    #Test that the function correctly handles errors returned by the API.
+    #Test that the function returns an error if the JSON file cannot be read.
+    #Test that the function handles errors from the API call correctly.

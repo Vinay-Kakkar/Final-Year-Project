@@ -9,6 +9,7 @@ import json
 import urllib.parse
 from os.path import exists
 import sys
+import re
 
 
 def linecount(spark, filename):
@@ -52,7 +53,12 @@ def tmalign(spark, folder1, folder2):
 
 def searchpdbfiles(value):
     # python3 main.py searchpdbfiles vinay
-    jsonfile = 'Search.json'
+
+    if bool(re.search('[^\w\s]', value)):
+        raise Exception("Invalid Input please dont use punctuations")
+
+
+    jsonfile = 'main/Search.json'
 
 
     with open(file=jsonfile, mode="r") as jsonFile:
@@ -73,10 +79,13 @@ def searchpdbfiles(value):
 
     #Check this line to see what response you are getting if code stops working
     result = requests.get(apicall)
-    result = result.json()
+    resultjson = result.json()
 
-    for x in result["result_set"]:
-        print(x)
+    listofresults = []
+    for result in resultjson["result_set"]:
+        listofresults.append(result)
+    print(listofresults)
+    return listofresults
     #503 Service Unavailable. The server is currently unable to handle the request due to a temporary overloading
 
 def getpdbfiles(folder, value):
