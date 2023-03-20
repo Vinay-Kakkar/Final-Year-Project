@@ -82,13 +82,15 @@ def searchpdbfiles(value):
 
 def getpdbfiles(folder, value):
     # python3 main.py getpdbfiles PDBsDirectory1 vinay
+    if bool(re.search('[!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~]', value)):
+        raise Exception("Invalid Input please dont use punctuations")
     jsonfile = 'Search.json'
     directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder+"/")
-
-
-    with open(file=jsonfile, mode="r") as jsonFile:
-        data = json.load(jsonFile)
-
+    try:
+        with open(file=jsonfile, mode="r") as jsonFile:
+            data = json.load(jsonFile)
+    except:
+        raise Exception("Invalid json")
     data['query']['parameters']['value'] = value
 
 
@@ -104,6 +106,8 @@ def getpdbfiles(folder, value):
 
     #Check this line to see what response you are getting if code stops working
     result = requests.get(apicall)
+    if result.status_code != 200:
+        raise Exception("API error occurred")
     result = result.json()
 
     listofresults = []
@@ -117,7 +121,10 @@ def getpdbfiles(folder, value):
             continue
         apicall = 'https://files.rcsb.org/download/{}.pdb'.format(pdbfile)
 
-        response = requests.get(apicall)
+        try:
+            response = requests.get(apicall)
+        except:
+            raise Exception("API error occurred")
 
         with open(directory + pdbfile + '.pdb', 'wb') as f:
             f.write(response.content)

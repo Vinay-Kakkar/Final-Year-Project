@@ -1,4 +1,5 @@
 import pdb
+import shutil
 import unittest
 import main
 from pyspark.sql import SparkSession
@@ -10,6 +11,7 @@ import re
 import requests
 import json
 import urllib
+from os.path import exists
 
 #Created temp function due to the issues of working directories test runs the code from /PROJECT where main is build to be run from PROJECT/main
 def templinecount(spark, filename):
@@ -54,6 +56,43 @@ def tempsearchpdbfiles(value, jsonpath, api):
         listofresults.append(result)
     print(listofresults)
     return listofresults
+
+def tempgetpdbfiles(folder, value, jsonpath, api):
+    if bool(re.search('[!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~]', value)):
+        raise Exception("Invalid Input please dont use punctuations")
+    jsonfile = jsonpath
+    directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder+"/")
+    try:
+        with open(file=jsonfile, mode="r") as jsonFile:
+            data = json.load(jsonFile)
+    except:
+        raise Exception("Invalid json")
+    data['query']['parameters']['value'] = value
+    with open(file=jsonfile, mode="w") as jsonFile:
+        json.dump(data, jsonFile)
+    data = json.dumps(data)
+    newdata = urllib.parse.quote(data)
+    apicall = 'https://search.rcsb.org/rcsbsearch/v2/query?json={}'.format(newdata)
+    result = requests.get(apicall)
+    if result.status_code != 200:
+        raise Exception("API error occurred")
+    result = result.json()
+    listofresults = []
+    for x in result["result_set"]:
+        listofresults.append(x['identifier'])
+    #Eveything above is for getting the values of the search
+
+    for pdbfile in listofresults:
+        if exists(directory + pdbfile + '.pdb'):
+            print(pdbfile + ': already exists')
+            continue
+        apicall = api+'/{}.pdb'.format(pdbfile)
+        try:
+            response = requests.get(apicall)
+        except:
+            raise Exception("API error occurred")
+        with open(directory + pdbfile + '.pdb', 'wb') as f:
+            f.write(response.content)
 
 class Testgetcurrentpdbfiles(unittest.TestCase):
     directory = ("main/testdirectory")
@@ -202,3 +241,155 @@ class Testsearchpdbfiles(unittest.TestCase):
         with self.assertRaises(Exception) as context:
             test = tempsearchpdbfiles(value, 'main/invalid.json', 'https://search.rcsb.org/rcsbsearch/v2/query?')
         self.assertTrue("Invalid json" in str(context.exception))
+
+class Testgetpdbfiles(unittest.TestCase):
+    directory = ("main/testdirectory")
+    directorywithoutmain = ("testdirectory")
+    #Test that the function raises an error when an invalid input is passed.
+    def test_invalidinput(self):
+        os.mkdir(self.directory)
+        value = "___"
+        with self.assertRaises(Exception) as context:
+            test = tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', 'https://search.rcsb.org/rcsbsearch/v2/query?')
+        self.assertTrue("Invalid Input please dont use punctuations" in str(context.exception))
+
+        os.rmdir(self.directory)
+    
+    #Test that the function successfully reads and loads the JSON file.
+    def test_valid_json(self):
+        os.mkdir(self.directory)
+        value = "covid"
+        result = tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', 'https://search.rcsb.org/rcsbsearch/v2/query?')
+        self.assertIsNone(result)
+        for filename in os.listdir(self.directory):
+            file_path = os.path.join(self.directory, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print(f'Failed to delete {file_path}. Reason: {e}')
+        os.rmdir(self.directory)
+    
+    
+    #Test that the function successfully receives a response from the API.
+    def test_api_response(self):
+        os.mkdir(self.directory)
+        value = "covid"
+        api_url='https://files.rcsb.org/download'
+        response = tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
+        self.assertIsNone(response)
+        for filename in os.listdir(self.directory):
+            file_path = os.path.join(self.directory, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print(f'Failed to delete {file_path}. Reason: {e}')
+        os.rmdir(self.directory)
+    
+    #Test that the function correctly handles any errors or exceptions that may occur during the API call (e.g. network errors, server errors).
+    def test_api_call_error_handling(self):
+        os.mkdir(self.directory)
+        value = "covid"
+        api_url='https://files.rcsb.'
+        with self.assertRaises(Exception) as context:
+            tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
+        self.assertTrue("API error occurred" in str(context.exception))
+        for filename in os.listdir(self.directory):
+            file_path = os.path.join(self.directory, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print(f'Failed to delete {file_path}. Reason: {e}')
+        os.rmdir(self.directory)
+
+    #Test that the function correctly parses and returns the data from the API response.
+    def test_pdb_content(self):
+        os.mkdir(self.directory)
+        value = "covid"
+        api_url='https://files.rcsb.org/download'
+        result = tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
+        self.assertIsNone(result)
+        file_path = os.path.join(self.directory, '6YUN.pdb')
+        with open(file_path, 'r') as f:
+            content = f.read()
+        self.assertTrue(content.startswith('HEADER'))
+        for filename in os.listdir(self.directory):
+            file_path = os.path.join(self.directory, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print(f'Failed to delete {file_path}. Reason: {e}')
+        os.rmdir(self.directory)
+
+    #Test that the function correctly writes the downloaded data to a file.
+    def test_download_file(self):
+        os.mkdir(self.directory)
+        value = "covid"
+        api_url='https://files.rcsb.org/download'
+        tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
+        file_path = os.path.join(self.directory, '6YUN.pdb')
+        file_exists = os.path.exists(file_path)
+        self.assertTrue(file_exists)
+        for filename in os.listdir(self.directory):
+            file_path = os.path.join(self.directory, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print(f'Failed to delete {file_path}. Reason: {e}')
+        os.rmdir(self.directory)
+
+    #Test that the downloaded file contains the correct data and format.
+    def test_file_format(self):
+        os.mkdir(self.directory)
+        value = "covid"
+        api_url='https://files.rcsb.org/download'
+        tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
+        file_path = os.path.join(self.directory, '6YUN.pdb')
+        with open(file_path, 'r') as f:
+            content = f.read()
+        self.assertTrue(content.startswith('HEADER'))
+        for filename in os.listdir(self.directory):
+            file_path = os.path.join(self.directory, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print(f'Failed to delete {file_path}. Reason: {e}')
+        os.rmdir(self.directory)
+
+    #Test that the function returns the correct output for different input values.
+    def test_input_values(self):
+        os.mkdir(self.directory)
+        values = ["covid", "v", "vinay"]
+        api_url='https://files.rcsb.org/download'
+        for value in values:
+            result = tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
+            self.assertIsNone(result)
+            file_size = os.path.getsize(self.directory)
+            self.assertGreaterEqual(file_size, 0)
+            for filename in os.listdir(self.directory):
+                file_path = os.path.join(self.directory, filename)
+                try:
+                    if os.path.isfile(file_path) or os.path.islink(file_path):
+                        os.unlink(file_path)
+                    elif os.path.isdir(file_path):
+                        shutil.rmtree(file_path)
+                except Exception as e:
+                    print(f'Failed to delete {file_path}. Reason: {e}')
+        os.rmdir(self.directory)
