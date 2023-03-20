@@ -395,7 +395,7 @@ class Testgetpdbfiles(unittest.TestCase):
                     print(f'Failed to delete {file_path}. Reason: {e}')
         os.rmdir(self.directory)
 
-class Testgetpdbfiles(unittest.TestCase):
+class Testemptypdbfolder(unittest.TestCase):
     def test_emptypdbfolder(self):
         with TemporaryDirectory() as temp_dir:
             file1 = os.path.join(temp_dir, 'file1.txt')
