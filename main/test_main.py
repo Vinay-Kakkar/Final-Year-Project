@@ -1,5 +1,6 @@
 import pdb
 import shutil
+from tempfile import TemporaryDirectory
 import unittest
 import main
 from pyspark.sql import SparkSession
@@ -393,3 +394,21 @@ class Testgetpdbfiles(unittest.TestCase):
                 except Exception as e:
                     print(f'Failed to delete {file_path}. Reason: {e}')
         os.rmdir(self.directory)
+
+class Testgetpdbfiles(unittest.TestCase):
+    def test_emptypdbfolder(self):
+        with TemporaryDirectory() as temp_dir:
+            file1 = os.path.join(temp_dir, 'file1.txt')
+            file2 = os.path.join(temp_dir, 'file2.txt')
+            sub_dir = os.path.join(temp_dir, 'subdir')
+            os.mkdir(sub_dir)
+            file3 = os.path.join(sub_dir, 'file3.txt')
+            open(file1, 'w').close()
+            open(file2, 'w').close()
+            open(file3, 'w').close()
+
+            main.emptypdbfolder(temp_dir)
+
+            assert not os.path.exists(file1)
+            assert not os.path.exists(file2)
+            assert not os.path.exists(file3)
