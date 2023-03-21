@@ -1047,6 +1047,142 @@ This will result in the following code:
     \item Validate the software framework by testing it with a variety of protein structure analysis tools and evaluating its performance in comparison to other available tools.
 \end{itemize}
 
+\subsubsection{Need help with the above bullet point not sure what to write about}
+
+\begin{itemize}
+    \item Design an interface that allows users to manipulate the pdbs that are being passed into
+    the executable for protein structure analysis.
+\end{itemize}
+
+\subsubsection{Need to hold out on this one as we could potentially have a ui}
+
+\begin{itemize}
+    \item Ensure the software framework is scalable and can handle increasingly large datasets.
+\end{itemize}
+
+There are several things we can consider to esnure the software framework is scalable and can handle increasingly large datasets:
+
+\begin{enumerate}
+    \item Partitioning data
+    \item Distributed computing
+    \item Efficient algorithms
+    \item Testing and validation
+\end{enumerate}
+
+I will be using my TMalign program to show how i have implemented each one of these:
+
+
+\begin{lstlisting}
+    def main(spark):
+        directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsDirectory1/*")
+        directory2 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsDirectory2/*")
+
+        rddkeyvalue1 = spark.sparkContext.wholeTextFiles(directory1)
+        rddkeyvalue2 = spark.sparkContext.wholeTextFiles(directory2)
+
+        rdd = rddkeyvalue1.cartesian(rddkeyvalue2)
+
+        def runTMalign(tuple1, tuple2):
+            with tempfile.NamedTemporaryFile(prefix = tuple1[0][72:], mode='w') as tmp1, tempfile.NamedTemporaryFile(prefix = tuple2[0][72:], mode='w') as tmp2:
+                tmp1.write(tuple1[1])
+                tmp2.write(tuple2[1])
+                os.system("./TMalign " + tmp1.name + " " + tmp2.name)
+
+        rdd.map(lambda tuple: runTMalign(tuple[0], tuple[1])).collect()
+            
+    if __name__ == '__main__':
+        # This creates a local cluster
+        spark = SparkSession.builder.appName('PDB').getOrCreate()
+        main(spark)
+\end{lstlisting}
+
+\subsubsection{Partitioning data}
+When handling large datasets we can partition them into smaller, more manageable chunks. TMalign needs two .pdb files in order for it to be able to align the two files performing its anlaysis. A key example of partitioning is the two directories being used this cuts the size of the size of the files in two as now the user can decide exactly what set of .pdb files are paired with and sent to tmalign for the analysis thus easier to process in parallel and can make better use of resources.
+
+\subsubsection{Distributed computing}
+As we are using MapReduce, this can help with scalability as the data is being broken down and performed in parrellel. This can be seen with the map step where each node will be given a pair of pdb files which need tmalign run on. Overall the processing workload is spread out across multiple machines, allowing for faster processing and the ability to handle larger datasets. Additionally, if one machine fails or experiences an error, the rest of the system can continue running without interruption.
+
+\subsubsection{Efficient algorithms}
+An earlier version of the tmalign program:
+
+\begin{lstlisting}
+    def main(spark):
+        directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsDirectory1")
+        directory2 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsDirectory2")
+        tempdirectory1 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsfromRDD1")
+        tempdirectory2 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsfromRDD2")
+
+        for file in os.listdir(os.fsencode(directory1)):
+            filename = os.fsdecode(file)
+            if filename.endswith(".DS_Store"):
+                continue
+            rdd = spark.read.text("PDBsDirectory1/"+filename).rdd.map(lambda x: x[0])
+            if os.path.exists(tempdirectory1):
+                shutil.rmtree(tempdirectory1)
+            rdd.saveAsTextFile(tempdirectory1)
+
+            for file in os.listdir(os.fsencode(directory2)):
+                filename = os.fsdecode(file)
+                if filename.endswith(".DS_Store"):
+                    continue
+                rdd = spark.read.text("PDBsDirectory2/"+filename).rdd.map(lambda x: x[0])
+                if os.path.exists(tempdirectory2):
+                    shutil.rmtree(tempdirectory2)
+                rdd.saveAsTextFile(tempdirectory2)
+                os.system("./TMalign PDBsfromRDD1/part-00000 PDBsfromRDD2/part-00000")
+
+    if __name__ == '__main__':
+        # This creates a local cluster
+        spark = SparkSession.builder.appName('PDB').getOrCreate()
+        main(spark)
+\end{lstlisting}
+
+Here we are going through each file in the first folder and saving each file into a rdd. We then save this rdd into a tempfile before iterating through to the next file in the folder we have another for loop for the second folder. This is to loop through and repeat the steps above for the second folder. As a result we end with two temp files which we can run tmalign on iterating through all the files in the second folder before moving on to the next file in the first folder.
+
+This is not effeciant as we have nested for loops and we are having to read through the second file eberytime we go the the next file in the first folder.
+
+Introducing wholeTextFiles() method allowed the program to only need to read each folder once. We then get the values from each key-value pair and perform the cartesean product on them. Giving us an rdd where each value in the first folder is paired with each value in the second folder. This helped utilize the memory and compute resources of a cluster efficiently which improved overall performance.
+
+Testing and validation:
+Whilst developing the framework, using python unittests i was able to test and validate its performance on different sizes of datasets also looking at catching unxepected errors occuring. This helped identify areas where the code got improvments and ensured that it can handle increasingly large datasets.
+
+An example change is shown where we use tempfiles over saveAsTextFile. As in the eleair version we did not have a key value pair we needed to use the saveAsTextFile method which spits out the contents of the rdd for us to be able to then run into the tmalign function. However we now have the contents of the pdv so we can write these to a temp file where once used the directory is closed and not used again. This saves reasorces as we are not creating and deleting a permanent directory for each pdb file each iteration.
+
+\begin{itemize}
+    \item Ensure the software framework can be eaisly updated to keep pace with advancements
+    in protein structure analysis techniques and computing technology.
+\end{itemize}
+
+In order to achive this objective we need to consider implementing a modular design that allows for easy integration of updates and improvements. We can also incorporate version control tools such as Git to manage changes in the codebase and ensure that the latest updates are available to users.
+
+\subsubsection{modular design}
+Within my software i have ensured that:
+
+\begin{itemize}
+    \item Each module should perform one specific task or functionality independently
+    \item Modules should have well-defined interfaces for communication with other modules
+    \item Modules should be relatively self-contained, i.e., they should not have dependencies on other modules
+    \item Each module should have unit tests to ensure its correct functionality
+    \item Modules should be designed to be reusable
+\end{itemize}
+
+\subsubsection{Git}
+Within git these actions have sure the software framework can be eaisly updated to keep pace with advancements:
+
+\begin{itemize}
+    \item Create a repository where the framework code will be uploaded to and managed.
+    \item After each update or modification to the codebase, commit the changes to the repository with a clear commit message describing the changes made.
+    \item Merge code to the repository's main branch after verifying that it is stable.
+    \item Publish documentation in the form of a README file or wiki, providing detailed information about how to interact with the software and its requirements.
+\end{itemize}
+
+By implementing modular design and using Git best practices, you can ensure that your codebase remains a high-quality, reliable, and scalable software framework with the latest updates available to users.
+
+\begin{itemize}
+    \item Provide documentation and user support to enable researchers to use the software
+    framework effectively
+\end{itemize}
+
 \section{Technical decision making: 10 marks}
 \subsection{Are important (technical) decisions well made and argued?}
 When it comes to technical decisions, it is crucial that they are well made and argued. This is especially true in the field of structural bioinformatics, where the accuracy and reliability of results are critical.
