@@ -503,6 +503,33 @@ INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/listings.cfg
+INPUT ./csquotes.sty
+INPUT ./csquotes.sty
+INPUT csquotes.sty
+INPUT ./csquotes.sty
+INPUT ./csquotes.sty
+INPUT ./csquotes.sty
+INPUT ./csquotes.sty
+INPUT ./csquotes.sty
+INPUT csquotes.sty
+INPUT ./csquotes.sty
+INPUT csquotes.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT ./csquotes.def
+INPUT csquotes.def
+INPUT ./csquotes.def
+INPUT csquotes.def
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -570,18 +597,17 @@ INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
 INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT ./Protein Structure.png
 INPUT ./Protein Structure.png
 INPUT Protein Structure.png
 INPUT ./Protein Structure.png
 INPUT ./Protein Structure.png
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT ./Gene Expresion.png
 INPUT ./Gene Expresion.png
 INPUT Gene Expresion.png
@@ -602,11 +628,7 @@ INPUT ./Overlaping.png
 INPUT Overlaping.png
 INPUT ./Overlaping.png
 INPUT ./Overlaping.png
-INPUT ./RNAseq.png
-INPUT ./RNAseq.png
-INPUT RNAseq.png
-INPUT ./RNAseq.png
-INPUT ./RNAseq.png
+INPUT /usr/local/texlive/2022basic/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
 INPUT ./PDB Site.png
 INPUT ./PDB Site.png
 INPUT PDB Site.png

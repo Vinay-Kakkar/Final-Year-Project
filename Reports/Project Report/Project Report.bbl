@@ -177,6 +177,10 @@ David~S. Goodsell.
 \newblock {PDB101}: {Learn}: {Guide} to {Understanding} {PDB} {Data}:
   {Introduction}.
 
+\bibitem[goy18]{goyal_spark_2018}
+saurabh goyal.
+\newblock Spark {Architecture} and {Deployment}, October 2018.
+
 \bibitem[HRJ17]{hazarika_performance_2017}
 Akaash~Vishal Hazarika, G~Jagadeesh Sai~Raghu Ram, and Eeti Jain.
 \newblock Performance comparision of {Hadoop} and spark engine.

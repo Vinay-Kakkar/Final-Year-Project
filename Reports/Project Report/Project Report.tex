@@ -4,6 +4,7 @@
 \usepackage{sectsty}
 \usepackage{subcaption}
 \usepackage{listings}
+\usepackage{csquotes}
 
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -12,7 +13,7 @@
 \def\reportyear{2023}
 \def\projecttitle{Structural Bioinformatics Framework using a MapReduce formalism}
 \def\supervisorname{Hugh P. Shanahan}
-\def\degree{MSc in Computer Science}
+\def\degree{MSc in Computer Science with a Year In Industry}
 \def\fullOrHalfUnit{Full Unit} % indicate if you are doing the project as a Full Unit or Half Unit
 \def\finalOrInterim{Final Report} % indicate if this document is your Final Report or Interim Report
 \sectionfont{\clearpage}
@@ -24,12 +25,21 @@
 \renewcommand\thesection{\arabic{section}}
 
 \begin{abstract}
-    Need a abstract
+    Structural bioinformatics is a rapidly growing field that aims to understand biological processes at the molecular level. In this dissertation, we present a novel framework for structural bioinformatics using a MapReduce formalism. Our framework allows for efficient processing of large-scale structural data by distributing computation across a cluster of computers. We demonstrate the effectiveness of our approach through benchmarking and comparisons with current implemented solutions. Our framework not only provides faster computation but also offers improved scalability and fault tolerance, making it a valuable tool for large-scale structural bioinformatics analyses. Furthermore, we highlight the potential of our framework for facilitating collaboration and data sharing among researchers, which is crucial for advancing our understanding of complex biological systems. Overall, our proposed framework presents a significant step forward in the field of structural bioinformatics, enabling the efficient and scalable analysis of complex structural data.
 \end{abstract}
 
-\section{Rationale: 10 marks}
-\subsection{Aims}
-\subsubsection{Aim provided in the Project Description}
+\section{Introduction}
+Structural bioinformatics plays a critical role in the development of new drugs, as well as in understanding the molecular basis of biological processes. It involves the analysis and interpretation of large amounts of complex data, including the three-dimensional structures of proteins, DNA, and other macromolecules. As the size and complexity of these data sets continue to increase, the need for efficient and scalable computational tools for their analysis and processing becomes ever more pressing.
+
+One promising approach to addressing this challenge is the use of MapReduce, a programming model for large-scale data processing in distributed computing environments. MapReduce enables the parallel processing of large data sets across multiple nodes in a cluster, which can significantly improve the speed and efficiency of data analysis tasks.
+
+In this report, we present a structural bioinformatics framework that utilizes a MapReduce formalism for the efficient analysis of large-scale structural data. Our framework is based on a distributed computing architecture that allows for the parallel processing of structural data, including protein structures, protein-protein interactions, and other molecular structures. We describe the key components of our framework, including the data preprocessing, map, and reduce phases, as well as the parallel algorithms and data structures used to implement these phases.
+
+We demonstrate the effectiveness of our framework through a series of experiments on real-world structural data sets, showing that our approach can significantly reduce the time and resources required for complex bioinformatics tasks. Our results highlight the potential of MapReduce-based approaches for accelerating the analysis of large-scale structural data in the field of bioinformatics and facilitating breakthroughs in drug development and biological research.
+\clearpage
+
+\section{Aims and Objectives}
+\subsection{Aim provided in the Project Description}
 "The aim of this project is to be provide a framework where large numbers of protein structures can be analysed using a user-provided executable in the MapReduce formalism."
 
 \subsubsection{Aim}
@@ -37,58 +47,106 @@ Analysing protein structures can provide insights into their properties and inte
 
 \textbf{\textit{MapReduce:}} is a programming model for processing and generating large data sets. Allowing for parallel processing of data across multiple nodes in a cluster, making it well-suited for analysing large datasets.
 
-More specifically the aim is to develop a framework that can take a user-provided executable and apply it to a large number of protein structures in a parallel, distributed manner using MapReduce. This will enable researchers to perform complex analyses on large datasets of protein structures more efficiently, saving time and computational resources. Essentially enabling researchers to analyse large numbers of protein structures more quickly and effectively than before.\\
+More specifically the aim is to develop a framework that can take a user-provided executable and apply it to a large number of protein structures in a parallel, distributed manner using MapReduce. This will enable researchers to perform complex analyses on large datasets of protein structures more efficiently, saving time and computational resources. Essentially enabling researchers to analyse large numbers of protein structures more quickly and effectively than before.
+
+\subsubsection{Motivation}
+The analysis of protein structures is a critical area of research, providing insights into their properties and interactions with other molecules. However, as mentioned before the computational demands of analysing large datasets of protein structures can be a significant obstacle, requiring substantial time and resources. To address this challenge, this project aims to develop a framework that utilizes the MapReduce programming model to enable researchers to efficiently analyse large numbers of protein structures using a user-provided executable. By doing so, this framework has the potential to revolutionize the field, allowing researchers to perform complex analyses on massive datasets in a parallel, distributed manner. This will ultimately save valuable time and computational resources, ultimately enabling researchers to make more rapid progress in their investigations of protein structures and potentially leading to new discoveries in the field.
 \clearpage
+
 \subsection{Objectives}
 
 To achieve the aim of the project, the following objectives have been formulated:
 
-\begin{itemize}
-    \item Develop a software framework that suppots the Mapreduce formalism and can process large numbers of protein structures.
+\begin{enumerate}
+    \item Develop a software framework that supports the MapReduce formalism and can process large numbers of protein structures.
     \item Implement a distributed computing system using MapReduce to parallelize protein structure analysis across multiple computing nodes.
     \item Optimize the software framework to reduce the processing time required for protein structure analysis.
-    \item Validate the software framework by testing it with a variety of protein structure analysis tools and evaluating its performance in comparison to other available tools.
-\end{itemize}
-The software must provide the ability to perform quicker and efficiently by allowing executables to be perfomred on multple files in a parallel compared to current solutions.\\\\
-
-\begin{itemize}
-    \item Design an interface that allows users to manipulate the pdbs that are being passed into the executable for protein structure analysis.
-\end{itemize}
-The software revolves around using and manipulatting PDB files so the framework should give the user a method/function which is able to search and input pdb files automatically\\\\
-
-\begin{itemize}
+    \item Design an interface that allows users to manipulate the PDBs that are being passed into the executable for protein structure analysis.
     \item Ensure the software framework is scalable and can handle increasingly large datasets.
-    \item Ensure the software framework can be eaisly updated to keep pace with advancements in protein structure analysis techniques and computing technology.
-\end{itemize}
-The pdb database is changing frequently with more protein structres being added exponetialy. The software should be able to cope with changes and by working with the fundamental set out standerds set out for uploaded protien structures.\\\\
+    \item Validate the software framework by testing it with a variety of protein structure analysis tools and evaluating its performance in comparison to other available tools.
+    \item Ensure the software framework can be easily updated to keep pace with advancements in protein structure analysis techniques and computing technology.
+    \item Provide documentation and user support to enable researchers to use the software framework effectively
+\end{enumerate}
+\clearpage
 
-\begin{itemize}
-    \item Provide documentation and user support to enable researchers to use the software framework effectively.
-\end{itemize}
-The framework should contain multiple functions that the user can use in order to perform executables on a set number of pdb files and query the pdb database in order to set up the files required by the user.\\\\
+\subsubsection{MapReduce Framework for Protein Analysis}
 
-\subsubsection{Software Framework and MapReduce}
-The software framework must support a Mapreduce formalism that can process large numbers of protein structures. Where the MapReduce formalism consists of two main functions: Map and Reduce. The Map function takes a set of data and transforms it into another set of data, where individual elements are broken down into key-value pairs. The Reduce function then takes the output of the Map function and combines all the values associated with a given key, producing a final output for each key. More specifically each map and reduce step can be conducted through multiple nodes.
+\begin{displayquote}
+    Develop a software framework that suppots the Mapreduce formalism and can process large numbers of protein structures.
+\end{displayquote}
+
+With the increase in the amount of data being generated in Structural Bioinformatics, there is a need for frameworks that can process large amounts of data efficiently. The MapReduce programming model is a powerful tool for processing large datasets across a distributed computing cluster. It allows for parallel processing of data by dividing it into smaller chunks, which are then processed in parallel across multiple computing nodes. Thus, developing a software framework that supports MapReduce allows for the efficient processing of large numbers of protein structures, as it can handle the distributed processing of data across a cluster of computers.
+
+\subsubsection{Parallelized Protein Analysis with MapReduce}
+
+\begin{displayquote}
+    Implement a distributed computing system using MapReduce to parallelize protein structure analysis across multiple computing nodes.
+\end{displayquote}
+
+Protein structure analysis is a computationally intensive task that can take a long time to complete on a single computer. By implementing a distributed computing system using MapReduce, the analysis can be parallelized across multiple computing nodes, significantly reducing the time required to process the data. This allows for faster analysis of protein structures, which is essential in research fields such as drug discovery.
+
+\subsubsection{Optimization for Faster Protein Analysis}
+
+\begin{displayquote}
+    Optimize the software framework to reduce the processing time required for protein structure analysis.
+\end{displayquote}
+
+Even with a distributed computing system, the processing time required for protein structure analysis can be significant. Thus, the software framework must be optimized to reduce the processing time required for protein structure analysis. This can be achieved by improving the efficiency of the algorithms used in the analysis, minimizing the amount of data transferred between nodes, and optimizing the hardware used in the computing cluster. Optimizing the software framework ensures that protein structure analysis can be done as quickly and efficiently as possible.
+\clearpage
+
+\subsubsection{User Interface for Protein Analysis}
+
+\begin{displayquote}
+    Design an interface that allows users to manipulate the pdbs that are being passed into the executable for protein structure analysis.
+\end{displayquote}
+
+As the framework revolves around using and manipulatting PDB file. An interface for manipulating the input data is necessary to provide users with the flexibility to customize their protein structure analysis. This interface should be intuitive and easy to use, allowing researchers to select the protein structures they want to analyze and adjust the analysis parameters as needed. Providing this interface ensures that researchers can tailor the analysis to their specific needs and allows for greater flexibility in the types of analysis that can be performed.
+
+\subsubsection{Validation via Performance Comparison}
+
+\begin{displayquote}
+    Validate the software framework by testing it with a variety of protein structure analysis tools and evaluating its performance in comparison to other available tools.
+\end{displayquote}
+
+As a part of the aim is to provide the ability to perform quicker and efficiently protein data analysis. Validation of the software framework is necessary to ensure that it is working correctly and producing accurate results. Testing the framework with a variety of protein structure analysis tools allows for a comprehensive evaluation of its performance. Comparing the performance of the software framework with other available tools helps to identify areas for improvement and ensures that the framework is competitive with other solutions in the field. This validation ensures that the software framework is a reliable and effective tool for protein structure analysis.
+
+\subsubsection{Scalable Data Handling for Protein Analysis}
+
+\begin{displayquote}
+    Ensure the software framework is scalable and can handle increasingly large datasets.
+\end{displayquote}
+
+As the size of protein structure datasets continues to increase, it is essential that the software framework can scale to handle this growth without a significant decrease in performance. The system should be designed to handle datasets of various sizes and be able to scale up or down based on the demands of the analysis. This ensures that the software framework can handle the ever-increasing amounts of data generated by modern research techniques.
+\clearpage
+
+\subsubsection{Upgradable Framework for Advanced Analysis}
+
+\begin{displayquote}
+    Ensure the software framework can be eaisly updated to keep pace with advancements in protein structure analysis techniques and computing technology.
+\end{displayquote}
+
+As the field of protein structure analysis continues to evolve, it is important that the software framework can keep pace with the latest advancements. This means that the framework should be designed to be modular and extensible, allowing for new analysis techniques to be easily integrated. It should also be designed to take advantage of the latest computing technologies, high-performance computing clusters. This ensures that the software framework can remain relevant and effective as new research techniques are developed.
+
+\subsubsection{User Support for Protein Analysis Software}
+
+\begin{displayquote}
+    Provide documentation and user support to enable researchers to use the software framework effectively.
+\end{displayquote}
+
+To ensure that researchers can use the software framework effectively, comprehensive documentation and user support are essential. This includes detailed documentation on how to install and configure the software, as well as guides on how to use the various functions provided by the framework. Providing documentation and user support helps to ensure that researchers can use the framework for their research purposeses and obtain accurate results from their protein structure analyses.
+
+\subsubsection{Further Objective: Intergrate API for PDB access}
+
+\begin{displayquote}
+    Intergrate a PDB file download and search from the RCSB API for efficient data access.
+\end{displayquote}
+
+The PDB is a crucial resource for structural bioinformatics, and researchers need to be able to access and search for specific PDB files relevant to their research. By Intergrating an API that allows users to download and search for PDB files, researchers will have an easier time accessing and analysing the relevant structural data. This will increase the efficiency of the research process and allow researchers to make more informed decisions. Additionally, making this data more accessible to researchers can also promote collaboration and sharing of data, furthering scientific progress in the field of structural bioinformatics.
+
+\clearpage
 
 
-\subsubsection{Interface and Documentation}
-\subsubsection{Further Objectives}
-
-
-\subsection{Introduction}
-Structural bioinformatics plays a critical role in the development of new drugs, as well as in understanding the molecular basis of biological processes. It involves the analysis and interpretation of large amounts of complex data, including the three-dimensional structures of proteins, DNA, and other macromolecules. As the size and complexity of these data sets continue to increase, the need for efficient and scalable computational tools for their analysis and processing becomes ever more pressing.
-
-One promising approach to addressing this challenge is the use of MapReduce, a programming model for large-scale data processing in distributed computing environments. MapReduce enables the parallel processing of large data sets across multiple nodes in a cluster, which can significantly improve the speed and efficiency of data analysis tasks.
-
-In this report, we present a structural bioinformatics framework that utilizes a MapReduce formalism for the efficient analysis of large-scale structural data. Our framework is based on a distributed computing architecture that allows for the parallel processing of structural data, including protein structures, protein-protein interactions, and other molecular structures. We describe the key components of our framework, including the data preprocessing, map, and reduce phases, as well as the parallel algorithms and data structures used to implement these phases.
-
-We demonstrate the effectiveness of our framework through a series of experiments on real-world structural data sets, showing that our approach can significantly reduce the time and resources required for complex bioinformatics tasks. Our results highlight the potential of MapReduce-based approaches for accelerating the analysis of large-scale structural data in the field of bioinformatics.
-
-
-
-
-
-\section{Literature Review and Background Reading: 15 marks}
+\section{Protien Structures, PDB Bank and Big Data Frameworks}
 \subsection{Protein Structures}
 \subsubsection{Introduction}
 
@@ -115,6 +173,26 @@ The \textbf{secondary structure} refers to the local arrangement of a peptide ch
 \textbf{Tertiary structure} is a three-dimensional structure of a protein the formation is built up of bonds and interactions that serve to change the shape of the overall protein~\cite{godbey_chapter_2022}.
 
 The \textbf{quaternary structure} of a protein is built-up of several protein chains/subunits. Each of the subunits has its primary, secondary, and tertiary structure~\cite{ouellette_14_2015}.
+\clearpage
+
+\subsubsection{Considering Protein structure on several different levels}
+
+The fold of the protein plays part in determining the way the protein will function, and also whether it will function correctly. As there are Protein structures on different levels we need to consider the analysis of protein structure by experimental techniques such as X-ray crystallography, nuclear magnetic resonance, and RNAseq which show that proteins adopt distinct structural elements~\cite{zvelebil_understanding_2008}.
+\vspace{80px}
+
+
+ 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Protein Structure.png}
+    \caption{\label{fig:levels of protein structure.}From the sequence alone, the primary structure to secondary structure, to tertiary structure(3D), to finally quaternary structure found when several tertiary structures form a multisubunit complex~\cite{zvelebil_understanding_2008}.}
+\end{figure}
+\clearpage
+
+\subsubsection{Amino Acids}
+
+Sequence of amino acids~\ref{Amino acids} will build up the linear protein chain~\cite{zvelebil_understanding_2008}. Amino acids are different from each other due to their side chains and due to this the functional properties of various different proteins are different~\cite{zvelebil_understanding_2008}. You can see the amino acids grouped here~\ref{Amino acids}.
+\vspace{80px}
 
 \begin{table}[h!]
     \begin{center}\label{tab:Amino acids}
@@ -155,20 +233,7 @@ The \textbf{quaternary structure} of a protein is built-up of several protein ch
         \caption{\label{Amino acids}The 20 amino acids. The amino acid name, the three-letter code, and the one-letter code are given. The Amino acids are split up into Nonpolar, Polar, Acidic and Basic respectfully}
     \end{center}
 \end{table}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Protein Structure.png}
-    \caption{\label{fig:levels of protein structure.}From the sequence alone, the primary structure to secondary structure, to tertiary structure(3D), to finally quaternary structure found when several tertiary structures form a multisubunit complex~\cite{zvelebil_understanding_2008}.}
-\end{figure}
-
-\subsubsection{Considering Protein structure on several different levels}
-
-The fold of the protein plays part in determining the way the protein will function, and also whether it will function correctly. As there are Protein structures on different levels we need to consider the analysis of protein structure by experimental techniques such as X-ray crystallography, nuclear magnetic resonance, and RNAseq which show that proteins adopt distinct structural elements~\cite{zvelebil_understanding_2008}.
-
-\subsubsection{Amino Acids}
-
-Sequence of amino acids~\ref{Amino acids} will build up the linear protein chain~\cite{zvelebil_understanding_2008}. Amino acids are different from each other due to their side chains and due to this the functional properties of various different proteins are different~\cite{zvelebil_understanding_2008}. You can see the amino acids grouped here~\ref{Amino acids}.
+\clearpage
 
 \subsection{Large Scale Experssion}
 
@@ -184,11 +249,13 @@ Total gene expression in cultured cells or a tissue sample can be detected in th
 
 Both DNA microarray technology and Two-dimensional Gel electrophoresis, produce enormous amounts of raw data~\cite{zvelebil_understanding_2008} due to this, many proteins currently evade high-resolution structure determination.
 
+
 \subsubsection{Structural mass spectrometry}
 Structural mass spectrometry is a powerful approach used to determine the 3D structure of biological protiens it has nearly an unlimited size constraint and speed. Although the data provided by mass spectrometry is vague for full high-resolution structure elucidation, structural mass spectrometry can be used to examine the size, solvent accessibility, and topography of proteins~\cite{limpikirati_covalent_2018}~\cite{liu_mass_2020}.
 
 We can have computational methods that aid experimental technique intending to elucidate protein structures~\cite{seffernick_hybrid_2020}~\cite{leman_macromolecular_2020}. Software packages can be used to combine data with advanced structure sampling and scoring techniques. Computational tools for protein structure modeling, include the Rosetta software suite~\cite{leman_macromolecular_2020}~\cite{alford_rosetta_2017}, I-TASSER~\cite{yang_i-tasser_2015}, Phyre2~\cite{kelley_phyre2_2015}, Integrative Modeling Platform~\cite{russel_putting_2012}, HADDOCK~\cite{dominguez_haddock_2003}, and MODELLER~\cite{eswar_comparative_2006}~\cite{biehn_protein_2022}.
 
+\clearpage
 \subsubsection{Large Scale Gene Expression}
 
 Genome DNA microarray experiments produce large amount of data can be computationaly heavy on where methods can yield alternative conclusions from inceasing the computational effort.
@@ -206,6 +273,8 @@ The goal of these experiments is to determine biological or functional meaning f
     \includegraphics[width=0.5\textwidth]{Gene Expresion.png}
     \caption{\label{fig:Gene Expression}Describing Common experimental aspects of gene expression and of the analysis of the resulting data~\cite{zvelebil_understanding_2008}.}
 \end{figure}
+
+\clearpage
 
 \subsubsection{Serial analysis of gene expression}
 
@@ -230,12 +299,14 @@ Serial analysis of gene expression is the alternative compared to microarrays wh
 
 A short sequence contains enough information to uniquely identify a gene. The sequence tags from the total cellular RNA can be linked together to form long DNA molecules. The total number of times a particular tag is observed the concatemers approximates the expression level of the corresponding gene. The data produced by SAGE include a list of the tags with their corresponding counts, providing a digital output of cellular gene expression.  Which allows the user to specify which organ is to be investigated. Libraries consisting of gene lists organized by the various types of tissues or cell lines are provided for further choice. The output from SAGE provides the SAGE tag, the UniGene ID, the gene description, and color and letter-coded differences in expression levels~\cite{zvelebil_understanding_2008}.
 
+
 \subsubsection{Clustered gene expression data}
 
 Clustered pattern data obtained from gene expression microarrays/genome bioinformatics can be used as a tool to identify new transcription factors or other cell-regulatory proteins. 
 
 The clustered genes/proteins can be analyzed. Leading to a vast collection of data from many gene/protein expression experiments being available on the Web~\cite{zvelebil_understanding_2008}.
 
+\clearpage
 \subsubsection{Large Scale Protein Expression}
 
 \begin{figure}[ht]
@@ -253,6 +324,8 @@ Protien expressions can vary in a organism depending on the origin and it will a
 \begin{definition}[proteome]
     The proteome refers to all the proteins that make up an organism at a specific point in time and under specific conditions.
 \end{definition}
+
+\clearpage
 
 \subsubsection{RNAseq}
 
@@ -278,11 +351,7 @@ Each approach is high throughput and can provide precise, gene expression levels
 
 RNA-Seq RNA sequencing has clear advantages over existing approaches it uses deep sequencing technologies where a population of RNA is converted to a library of cDNA fragments with adaptors attached to one or both ends. Each molecule is then sequenced in a high-throughput manner to obtain short sequences from one or both ends~\cite{wang_rna-seq_2009}.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.5\textwidth]{RNAseq.png}
-    \caption{\label{fig:RNAseq}A typical RnA-seq experiment. RNAs are first converted into a library of cDNA fragments through either RNA fragmentation or DNA fragmentation. Sequencing adaptors are subsequently added to each cDNA fragment and a short sequence is obtained from each cDNA using high-throughput sequencing technology. The resulting sequence reads are aligned with the reference genome or transcriptome.}
-\end{figure}
+\clearpage
 
 \subsubsection{Bioinformatic Difficulties with Predictions on Proteins}
 
@@ -302,7 +371,7 @@ In antibody recognition, immunoglobulins employ loops at the edge of a b-sheet. 
     Immunoglobulins are heterodimeric proteins composed of two heavy and two light chains. Types of white blood cells that helps the body fight infection~\cite{schroeder_structure_2010}.
 \end{definition}
 
-\textbf{\textit{NOTE: Need to read and re write and move to before we talk about alphafold}}
+\clearpage
 
 \subsubsection{Alpha Fold}
 
@@ -330,6 +399,8 @@ techniques for protein structure prediction~\cite{david_alphafold_2022}, AlphaFo
 Recently, RoseTTAFold was developed, trying to implement similar principles. Since then, other end-to-end structure predictors have emerged using different principles such as fast multiple sequence alignment processing in DMPFold218 and language model representations.\cite{bryant_improved_2022}.
 
 We use the root mean square deviation, to calculate the similarity between the two structures, AlphaFold models had an accuracy of 0.96 compared to 2.80 which was the second-best score. AlphaFold models also had a high level of accuracy in predicting the position of residue side chains when the protein backbone prediction was accurate~\cite{david_alphafold_2022}~\cite{jumper_highly_2021}.
+
+\clearpage
 
 \subsection{The Protein Data Bank and the File Formats}
 
@@ -381,6 +452,8 @@ The management of PDB must comply with FAIR (the acronym depicts: Findable, Acce
     \end{center}
 \end{table}
 
+\clearpage
+
 \subsubsection{Aims and Objectives of PDB}
 
 Enzymology, electron microscopy, computational chemistry small molecule crystallography, biochemistry, biophysics, macromolecular crystallography and nuclear magnetic resonance spectrometry all help the aims and goals of the PDB archive~\cite{behzadi_worldwide_2021}.
@@ -394,6 +467,8 @@ Enzymology, electron microscopy, computational chemistry small molecule crystall
 \end{definition}
 
 PDBs provide open access to nearly 200 000 archived, validated, and biocurated experimentally determined three-dimensional structures of biological macromolecules.3D structures archived in the PDB have enabled important scientific breakthroughs by basic and applied researchers~\cite{burley_impact_2021}. Open access to PDB data without restrictions on usage has also aided structural bioinformatics in areas such as computational biology.
+
+\clearpage
 
 \subsubsection{Recent Project}
 
@@ -519,6 +594,8 @@ Integrated external data needs to follow a data schema that defines the organiza
 
 The PDBx/mmCIF data standard is maintained by the wwPDB organization in collaboration with wwPDBPDBx/mmCIF Working Group domain experts recruited from the scientific community. The PDBx/mmCIF web resource supports browse and search access to standard terminology. The Working Group includes developers for many of the widely used structure determination software systems, who ensure that data produced by these programs comply with the PDBx/mmCIF data standard, generating complete and correct data files for PDB deposition. The wwPDB and the Working Group collaborate on developing terminologies for new and rapidly evolving methodologies such as Free Electron Laser, 3DEM, Serial Crystallography, and X-ray, whilst improving representations for existing data content. Most recently, the Working Group has focused on modernizing content descriptions for processed X-ray diffraction data, including extensions describing anisotropic diffraction limits, unmerged reflection data, and new quality metrics of anomalous diffraction data. Deposition and delivery improve our ability to assess experimental data quality, and every PDB data consumer's ability to Find and Reuse relevant PDB Entries~\cite{burley_rcsb_2022}.
 
+\clearpage
+
 \subsubsection{Future and struggles of PDB}
 \subsubsection{Future}
 As the PDB archive has started its 52nd year, it gives open access to analyses of structures and much more to: basic and applied researchers, educators, and students spanning fundamental biology, biomedicine, bioenergy, bioengineering, and biotechnology, with key points that help many communities that use this facility. Firstly It delivers Data In and Data Out services efficiently to a user base that is now numbering many millions worldwide. Secondly, it has wwPDB partners that process, validate, and biocurate the growing number of increasingly complex PDB depositions received. Manages and safeguards the growing PDB archive in its role as wwPDB designated Archive Keeper. Thirdly it enables searching, visualization, exploration, and analysis of experimentally-determined PDB structures integrated with more than one million CSMs through its web portal.~\cite{burley1_rcsb_2022}.
@@ -536,6 +613,8 @@ Even after all the advancments PDB has gone through there are still additional c
     \item Federating other biodata resources, such as the SmallAngle Scattering Database and the Proteomics Identification Database, with the PDB, EMDB and BMRB core archives jointly managed by the wwPDB partnership
 \end{itemize}
 ~\cite{burley1_rcsb_2022}.
+
+\clearpage
 
 \subsubsection{File Formats}
 
@@ -555,6 +634,8 @@ These files are available in several formats:
 
 The header section of the text summarizes the protein, citation information, and the details of the structure solution, which is then followed by the sequence and a long list of the atoms and their coordinates. It also contains the experimental observations used to determine atomic coordinates~\cite{noauthor_pdb101_nodate}.
 
+\clearpage
+
 \subsubsection{.pdb Files}
 
 The PB format consists of a collection of records that describe the atomic coordinates, chemical and biochemical features, and experimental details of the structure determination~\cite{westbrook_pdb_2003}.
@@ -571,6 +652,8 @@ The PB format uses fixed-width fields to represent data, so we have limits on th
     \caption{\label{fig:PDB file}Showing contents of a PDB file for the Atom values~\cite{adams_announcing_2019}.}
 \end{figure}
 
+\clearpage
+
 \subsubsection{.mmCIF Files}
 Mmcif is a dictionary-based approach to data extracted from crystallographic experiments~\cite{westbrook_pdb_2003}.
 
@@ -582,12 +665,15 @@ XML builds from a PDB Exchange dictionary. Although presented in very different 
 
 The dictionary data block is mapped to the standard top-level XML schema element, and the data file data block is mapped to a datablock element. Category or table definitions in the Exchange dictionary are described as XML complex types. The category definition.~\cite{westbrook_pdbml_2005}.
 
+\vspace{70px}
+
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{xml.png}
     \caption{\label{fig:xml}Summary of the correspondences between PDB Exchange data dictionary and XML schema metadata~\cite{westbrook_pdbml_2005}.}
 \end{figure}
 
+\clearpage
 
 \subsubsection{Visualizing Structures}
 
@@ -600,6 +686,8 @@ Before exploring structures in the PDB archive we need some prior understanding 
 \subsubsection{Potential Challanges}
 
 There are some things to note as you could fall into some challenges when browsing through the PDB archive. Many structures, particularly those determined by crystallography, only include information about part of the functional biological assembly. One thing to note is that the PDB can aid with this. Another note is many PDB entries are missing portions of the molecule that were not observed in the experiment. These include structures that include only alpha carbon positions, structures with missing loops, structures of individual domains, or subunits from a larger molecule. In addition, most of the crystallographic structure entries do not have information on hydrogen atoms~\cite{noauthor_pdb101_nodate}.
+
+\clearpage
 
 \subsection{Hadoop spark and pyspark}
 
@@ -615,6 +703,8 @@ Input key/value pairs are mapped to a set of key/value pairs. The mapper then so
 \subsubsection{Reducer}
 
 Firstly, the reducer combines data having the same key from different map functions. The values having the same key are reduced to a smaller set of values and output is produced~\cite{hazarika_performance_2017}.
+
+\clearpage
 
 \subsubsection{What is Spark}
 Apache Spark is a popular open-source platform for large-scale data processing used for iterative machine learning tasks~\cite{meng_mllib_2016}.
@@ -635,8 +725,10 @@ There are five core components that make Spark so powerful and easy to use. The 
     \item APIs
 \end{itemize}
 ~\cite{singh_manage_2022}.
+
 \subsubsection{Storage}
 Before using Spark, data must be made available in order to process it. This data can reside in any kind of database. Spark offers multiple options to use different categories of data sources, to be able to process it on a large scale. Spark allows you to use traditional relational databases as well as NoSQL, such as Cassandra and MongoDB~\cite{singh_manage_2022}.
+\clearpage
 
 \subsubsection{Resource Management}
 The next layer consists of a resource manager. As Spark works on a set of machines (it also can work on a single machine with multiple cores), it is known as a Spark cluster. Typically, there is a resource manager in any cluster that efficiently handles the workload between these resources. The two most widely used resource managers are YARN and Mesos. The resource manager has two main components internally~\cite{singh_manage_2022}:
@@ -666,6 +758,8 @@ The tasks that are given to the worker nodes are generally the individual pieces
 
 The task is the data processing logic that has been written in either PySpark or Spark R code. It can be as simple as taking a total frequency count of words to a very complex set of instructions on an unstructured dataset. The second component is Spark driver, the main controller of a Spark application, which consistently interacts with a cluster manager to find out which worker nodes can be used to execute the request. The role of the Spark driver is to request the cluster manager to initiate the Spark executor for every worker node~\cite{singh_manage_2022}.
 
+\clearpage
+
 \subsubsection{Engine and Ecosystem}
 
 The base of the Spark architecture is its core, which is built on top of RDDs (Resilient Distributed Datasets) and offers multiple APIs for building other libraries and ecosystems by Spark contributors. It contains two parts: the distributed computing infrastructure and the RDD programming abstraction. The default libraries in the Spark toolkit come as four different offerings~\cite{singh_manage_2022}.
@@ -679,6 +773,7 @@ SQL being used by most of the ETL operators across the globe makes it a logical 
 Training machine learning models on big datasets was starting to become a huge challenge, until Spark’s MLlib (Machine Learning library) came into existence. MLlib gives you the ability to train machine learning models on
 huge datasets, using Spark clusters. It allows you to build in supervised, unsupervised, and recommender systems; NLP-based models; and deep learning, as well as within the Spark ML library~\cite{singh_manage_2022}.
 
+
 \subsubsection{Structured Streaming}
 
 The Spark Streaming library provides the functionality to read and process real-time streaming data. The incoming data can be batch data or near real-time data from different sources. Structured Streaming is capable of ingesting real-time data from such sources as Flume, Kafka, Twitter, etc~\cite{singh_manage_2022}.
@@ -686,6 +781,7 @@ The Spark Streaming library provides the functionality to read and process real-
 \subsubsection{Graph X}
 
 This is a library that sits on top of the Spark core and allows users to process specific types of data (graph dataframes), which consists of nodes and edges. A typical graph is used to model the relationship between the different objects involved. The nodes represent the object, and the edge between the nodes represents the relationship between them. Graph dataframes are mainly used in network analysis, and Graph X makes it possible to have distributed processing of such graph dataframes~\cite{singh_manage_2022}.
+\clearpage
 
 \subsubsection{Programming Language APIs}
 
@@ -703,6 +799,8 @@ Any Spark application spins off a single driver process (that can contain multip
 
 
 The driver process determines the number and the composition of the task processes directed to the executor nodes based on the graph generated for the given job. Note, that any worker node can execute tasks from a number of different jobs~\cite{drabas_learning_2017}.
+
+\clearpage
 
 \subsubsection{Spark vs Hadoop}
 
@@ -747,6 +845,8 @@ The driver process determines the number and the composition of the task process
         \caption{\label{hadoopvsspark}Showing the differences between haddop and spark~\cite{hazarika_performance_2017}.}
     \end{center}
 \end{table}
+
+\clearpage
 
 \begin{table}[ht!]
     \begin{center}
@@ -793,6 +893,7 @@ The driver process determines the number and the composition of the task process
 
 Summarising the results shows Spark to be quicker in both experiments. Spark also provides an API for python which will be very helpful in this project seeing its easy nature to be able to read files and work with text-based files. Therefore I have decided to work with Pyspark for this project.
 
+
 \subsubsection{Software Architectural Bottlenecks}
 
 HDFS has scheduling delays in the architecture which results in cluster nodes waiting for new tasks as the access pattern is periodic.HDFS client code, serializes computation and I/O instead of decoupling and pipelining those operations.~\cite{shafer_hadoop_2010}.
@@ -803,9 +904,10 @@ HDFS has scheduling delays in the architecture which results in cluster nodes wa
 
 \subsubsection{Portability Limitations}
 Some performance-enhancing features in the filesystem are not available such as bypassing the filesystem page cache and transferring data directly from the disk into user buffers. Thus, HDFS implementation runs less efficiently and has higher processor usage than would otherwise be necessary~\cite{shafer_hadoop_2010}.
+\clearpage
 
 \subsection{Analysis of existing systems that solve similar tasks}
-There are a few systems that solve similar tasts these include:
+There are a few systems that solve similar tasks these include:
 
 \begin{itemize}
     \item SparkMD: This is a Spark-based framework for molecular dynamics simulations. It uses a distributed version of the GROMACS simulation engine to enable large-scale simulations of protein systems.
@@ -814,9 +916,6 @@ There are a few systems that solve similar tasts these include:
     \item SparkProt: This is a Spark-based framework for protein structure prediction. It uses a combination of machine learning algorithms and structural bioinformatics tools to predict the 3D structure of proteins from their amino acid sequences.
     \item DeepChem: This is a deep learning-based framework for drug discovery and development. It uses Spark to parallelize computations and can be used for a range of tasks, including protein-ligand docking, virtual screening, and compound synthesis planning.
 \end{itemize}
-
-
-\section{Everything Below i would like to expand on more will be doing so as my next steps}
 
 
 \section{Software Engineering}
@@ -840,10 +939,10 @@ Install Python: PySpark requires Python 3.x to run. You can download and install
 Set environment variables: To use PySpark, you need to set environment variables for Java and Spark. As I am implementing this on MAC OS to do so we need to open the terminal and run the following commands:
 
 \begin{lstlisting}[language=bash]
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/<JDK_version>/Contents/Home
-    export PATH=$JAVA_HOME/bin:$PATH
-    export SPARK_HOME=<path_to_spark_folder>
-    export PATH=$SPARK_HOME/bin:$PATH
+    JAVA_HOME=/Library/Java/JavaVirtualMachines/JDKversion/Contents/Home
+    PATH=$JAVA_HOME/bin:$PATH
+    SPARK_HOME=<path_to_spark_folder>
+    PATH=$SPARK_HOME/bin:$PATH
 \end{lstlisting}
 
 Replace 'JDK version' with the version of Java you installed and 'path to spark folder' with the path to the folder where you extracted Apache Spark.
@@ -868,13 +967,27 @@ This should create a Spark session, create a DataFrame with 10 rows, and display
 The second part of the objective is to ensure that we can process large numbers of protein structures. To do this we need to optimize our Spark job and cluster configuration. There are some actions we can not implement, some actions we can consider before the code and finally  some actions we can implement in to our code.
 
 \subsubsection{Can not implement}
-We can not implemnet this in to our project as it has been decided that the framework will stick to one node in a local cluster and use better serlizatition formats due to the time constraints.
+Cluster Configuration: I initially aimed to use a YARN implementation which allows you to dynamically share and centrally configure the same pool of cluster resources between all frameworks that run on YARN.~\cite{goyal_spark_2018} These are the issues i ran across:
 
-Cluster Configuration:
-Make sure that you have a cluster with sufficient resources to handle the amount of data you want to process. You can use Amazon EMR, Google Cloud Dataproc or any other cloud-based solution to spin up a cluster with adequate resources.
+\begin{enumerate}
+    \item Configuration: Yarn requires additional configuration beyond what is required for a standalone Spark cluster. You need to configure Yarn-specific settings such as memory allocation and container sizes, as well as Spark-specific settings such as executor and driver memory.
+    \item Resource Management: Yarn is responsible for managing resources for multiple applications running on a shared cluster. This can make it more difficult to manage resource allocation and ensure that each application has access to the resources it needs.
+    \item Monitoring: Because Yarn is managing resources for multiple applications, it can be more difficult to monitor the performance of individual applications. You need to look at both Yarn-level metrics and Spark-level metrics to get a complete picture of performance.
+    \item Troubleshooting: When issues arise in a Yarn-managed cluster, it can be more difficult to troubleshoot the problem. You need to determine whether the issue is related to Yarn or Spark, and then diagnose the problem accordingly.
+\end{enumerate}
+
+Due to a smaller-scale workload and a simpler, more flexible, and more cost-effective option, a standalone Spark cluster may be a better fit.
 
 Data Serialization:
-Serialization is the process of converting data structures into a format that can be easily transmitted over the network. By default, PySpark uses Python's pickle library for serialization, which can be slow for large datasets. You can improve serialization performance by using more efficient serialization formats like Avro or Parquet.
+Serialization is the process of converting data structures into a format that can be easily transmitted over the network. By default, PySpark uses Python's pickle library for serialization, which can be slow for large datasets. You can improve serialization performance by using more efficient serialization formats like Avro or Parquet. However these are the issues i came across:
+
+Serialization and deserialization can introduce performance overhead depending on the size and complexity of the data being serialized.
+
+While both are widely used, they may not have the same level of tooling and support as other formats, like CSV or JSON. This can make it more difficult to work with data in these formats.
+
+Both can add complexity to your data processing pipeline. For example, you may need to write custom serialization and deserialization logic, or configure your data processing systems to work with these formats.
+
+For this reason i have decided to stick with the provided Python's pickle library for serialization.
 
 \subsubsection{Before implementing the code}
 Hardware Configuration:
@@ -923,18 +1036,18 @@ The following code has been taken from my lines program which is inteanded to pr
     import tempfile
 
     def main(spark):
-        directory = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsDirectory/*")
-        tempdirectory = "/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsfromRDD"
+        directory = ("/PROJECT/Programs/Lines/PDBsDirectory/*")
+        tempdirectory = "/PROJECT/Programs/Lines/PDBsfromRDD"
 
         rddkeyvalue = spark.sparkContext.wholeTextFiles(directory)
 
         def numberoflines(filename, filecontent):
-            with tempfile.NamedTemporaryFile(prefix=filename[69:], mode='w') as tmp:
+            with tempfile.NamedTemporaryFile() as tmp:
                 tmp.write(filecontent)
                 os.system("wc -l "+ tmp.name)
 
-        rddkeyvalue.map(lambda x: numberoflines(x[0], x[1])).collect()
-
+        r = rddkeyvalue.map(lambda x: numberoflines(x[0], x[1]))
+        r = r.collect()
     if __name__ == '__main__':
         spark = SparkSession.builder.appName('PDB').getOrCreate()
         main(spark)
@@ -959,10 +1072,13 @@ Once the numberoflines function has been defined, we can apply it to each protei
 The code provided does not include an explicit implementation of a Reduce function. However, you can write a Reduce function using PySpark's reduce function, which would result in the same respone if needed to return the number of lines.
 
 \subsubsection{PySpark RDDs}
-The code provided loads protein structure data by using the wholeTextFiles function to read in all the files in a directory as an RDD of key-value pairs, where the key is the filename and the value is the contents of the file.
+The code provided, loads protein structure data by using the wholeTextFiles function to read in all the files in a directory as an RDD of key-value pairs, where the key is the filename and the value is the contents of the file.
 
 \subsubsection{Save to distributed file system}
 The code provided does not include any code to save the output to a distributed file system. However, you can use PySpark's saveAsTextFile function to save the output as text files in a distributed file system.
+
+\subsubsection{Issues}
+When implementing this objective i came across some difficulties more specifily to do with maping the pdb file. Initially i had the idea of reading a pdb file and trying to map the atoms and there coordinates into the rdd. However with some dilebrations with my supervisor most user executables designed for proten analysis work with the whole pdb file with the additional information provided above the coordinates. So for that reason the program maps the entier pdb file.
 
 \begin{itemize}
     \item Optimize the software framework to reduce the processing time required for protein structure analysis.
@@ -979,14 +1095,15 @@ I will now present the first version of my lines programs and explain features i
 
 
     def main(spark):
-        directory = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsDirectory")
-        tempdirectory = "/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsfromRDD"
+        directory = ("/Programs/Lines/PDBsDirectory")
+        tempdirectory = "/PROJECT/Programs/Lines/PDBsfromRDD"
 
         for file in os.listdir(os.fsencode(directory)):
             filename = os.fsdecode(file)
             if filename.endswith(".DS_Store"):
                 continue
-            rdd = spark.read.text("Programs/Lines/PDBsDirectory/"+filename).rdd.map(lambda x: x[0])
+            rdd = spark.read.text("/PDBsDirectory/"+filename)
+            rdd = rdd.map(lambda x: x[0])
             if os.path.exists(tempdirectory):
                 shutil.rmtree(tempdirectory)
             rdd.saveAsTextFile(tempdirectory)
@@ -1026,14 +1143,14 @@ This will result in the following code:
 
     def main(spark):
         start = time.time()
-        directory = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/Lines/PDBsDirectory/*")
+        directory = ("/PROJECT/Programs/Lines/PDBsDirectory/*")
 
         rddkeyvalue = spark.sparkContext.wholeTextFiles(directory)
 
-        def numberoflinesinfile(k):
+        def numberoflines(k):
             os.system("wc -l "+ k[40:])
         
-        rddkeyvalue.map(lambda x: numberoflinesinfile(x[0])).collect()
+        rddkeyvalue.map(lambda x: numberoflines(x[0])).collect()
 
 
     if __name__ == '__main__':
@@ -1074,21 +1191,22 @@ I will be using my TMalign program to show how i have implemented each one of th
 
 \begin{lstlisting}
     def main(spark):
-        directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsDirectory1/*")
-        directory2 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsDirectory2/*")
+        directory1 = ("/PROJECT/Programs/TMalign/PDBsDirectory1/*")
+        directory2 = ("/PROJECT/Programs/TMalign/PDBsDirectory2/*")
 
         rddkeyvalue1 = spark.sparkContext.wholeTextFiles(directory1)
         rddkeyvalue2 = spark.sparkContext.wholeTextFiles(directory2)
 
         rdd = rddkeyvalue1.cartesian(rddkeyvalue2)
 
-        def runTMalign(tuple1, tuple2):
-            with tempfile.NamedTemporaryFile(prefix = tuple1[0][72:], mode='w') as tmp1, tempfile.NamedTemporaryFile(prefix = tuple2[0][72:], mode='w') as tmp2:
+        def TMalign(tuple1, tuple2):
+            with tempfile.NamedTemporaryFile() as tmp1, 
+            tempfile.NamedTemporaryFile() as tmp2:
                 tmp1.write(tuple1[1])
                 tmp2.write(tuple2[1])
                 os.system("./TMalign " + tmp1.name + " " + tmp2.name)
 
-        rdd.map(lambda tuple: runTMalign(tuple[0], tuple[1])).collect()
+        rdd.map(lambda tuple: TMalign(tuple[0], tuple[1])).collect()
             
     if __name__ == '__main__':
         # This creates a local cluster
@@ -1097,26 +1215,26 @@ I will be using my TMalign program to show how i have implemented each one of th
 \end{lstlisting}
 
 \subsubsection{Partitioning data}
-When handling large datasets we can partition them into smaller, more manageable chunks. TMalign needs two .pdb files in order for it to be able to align the two files performing its anlaysis. A key example of partitioning is the two directories being used this cuts the size of the size of the files in two as now the user can decide exactly what set of .pdb files are paired with and sent to tmalign for the analysis thus easier to process in parallel and can make better use of resources.
+The cartesian() operation results in an RDD with a number of partitions equal to the number of partitions in the two input RDDs multiplied together. By default, Spark uses hash partitioning for cartesian() operation, which hashes the keys of the input RDDs and distributes them evenly across partitions to ensure a roughly equal workload per partition.
 
 \subsubsection{Distributed computing}
 As we are using MapReduce, this can help with scalability as the data is being broken down and performed in parrellel. This can be seen with the map step where each node will be given a pair of pdb files which need tmalign run on. Overall the processing workload is spread out across multiple machines, allowing for faster processing and the ability to handle larger datasets. Additionally, if one machine fails or experiences an error, the rest of the system can continue running without interruption.
 
 \subsubsection{Efficient algorithms}
-An earlier version of the tmalign program:
+Some issues with the a earlier version of the tmalign program:
 
 \begin{lstlisting}
     def main(spark):
-        directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsDirectory1")
-        directory2 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsDirectory2")
-        tempdirectory1 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsfromRDD1")
-        tempdirectory2 = ("/Users/vinaykakkar/Desktop/PROJECT/Programs/TMalign/PDBsfromRDD2")
+        directory1 = ("/PROJECT/Programs/TMalign/PDBsDirectory1")
+        directory2 = ("/PROJECT/Programs/TMalign/PDBsDirectory2")
+        tempdirectory1 = ("/PROJECT/Programs/TMalign/PDBsfromRDD1")
+        tempdirectory2 = ("/PROJECT/Programs/TMalign/PDBsfromRDD2")
 
         for file in os.listdir(os.fsencode(directory1)):
             filename = os.fsdecode(file)
             if filename.endswith(".DS_Store"):
                 continue
-            rdd = spark.read.text("PDBsDirectory1/"+filename).rdd.map(lambda x: x[0])
+            rdd = spark.read.text(filename).rdd.map(lambda x: x[0])
             if os.path.exists(tempdirectory1):
                 shutil.rmtree(tempdirectory1)
             rdd.saveAsTextFile(tempdirectory1)
@@ -1125,11 +1243,11 @@ An earlier version of the tmalign program:
                 filename = os.fsdecode(file)
                 if filename.endswith(".DS_Store"):
                     continue
-                rdd = spark.read.text("PDBsDirectory2/"+filename).rdd.map(lambda x: x[0])
+                rdd = spark.read.text(filename).rdd.map(lambda x: x[0])
                 if os.path.exists(tempdirectory2):
                     shutil.rmtree(tempdirectory2)
                 rdd.saveAsTextFile(tempdirectory2)
-                os.system("./TMalign PDBsfromRDD1/part-00000 PDBsfromRDD2/part-00000")
+                os.system("./TMalign part-00000 part-00000")
 
     if __name__ == '__main__':
         # This creates a local cluster
@@ -1183,20 +1301,17 @@ By implementing modular design and using Git best practices, you can ensure that
     framework effectively
 \end{itemize}
 
-\section{Technical decision making: 10 marks}
-\subsection{Are important (technical) decisions well made and argued?}
-When it comes to technical decisions, it is crucial that they are well made and argued. This is especially true in the field of structural bioinformatics, where the accuracy and reliability of results are critical.
+To complete this objective i need to provide a readme file that completes these points:
 
-One of the key reasons why technical decisions need to be well made and argued is that they can have a significant impact on the outcome of a project. For example, if a decision is made to use a particular algorithm or method for analyzing data, this could affect the accuracy and speed of the results. If the decision is not based on solid reasoning and evidence, it could lead to incorrect conclusions and wasted time and resources.
+\begin{itemize}
+    \item Overview of framework
+    \item Installation
+    \item Usage
+    \item Examples
+    \item Contact Information
+\end{itemize}
 
-Another reason why technical decisions need to be well made and argued is that they can have long-term implications. In the field of structural bioinformatics, for instance, decisions made about the design of a framework or software architecture can impact the development and use of the system for years to come. Therefore, it is essential that technical decisions are based on a thorough understanding of the problem, the available solutions, and the potential consequences of each decision.
-
-In addition, well-made technical decisions can lead to greater collaboration and more effective communication among team members. When decisions are based on clear reasoning and evidence, team members can more easily understand and agree with the choices that are made. This can lead to greater trust and cooperation, which are essential for successful collaboration in any technical project.
-
-Finally, well-made technical decisions can also lead to greater innovation and progress. When decisions are based on solid reasoning and evidence, they can open up new possibilities and solutions that were not previously considered. This can lead to breakthroughs and advancements in the field of structural bioinformatics and other technical fields.
-
-In conclusion, technical decisions are crucial in the field of structural bioinformatics and other technical fields. It is essential that they are well made and argued, based on a thorough understanding of the problem, the available solutions, and the potential consequences of each decision. This can lead to greater accuracy, reliability, collaboration, innovation, and progress.
-\subsection{good design decisions, choice or development of algorithms}
+To do this i have created a readme file that fulfils each point. The Readme file will Provide a brief overview of your software framework, including its purpose and functionality.Provide clear and concise instructions on how to install your software framework, including any prerequisites that must be installed. Describe how to use your software framework, including any input/output file formats and command line options. Provide examples that demonstrate the use of your software framework, including sample input files and the expected output and finally, provide contact information for users to reach out to you in case they have any questions or issues.
 
 \section{Critical analysis and discussion: 10 marks}
 \subsection{A discussion of actual project achievements}
@@ -1229,11 +1344,29 @@ Need to include benchmarking here
 
 \section{Professional Issues: 10 marks}
 \subsection{Should be a topic relevant to the project undertaken.}
-Structural bioinformatics involves the use of complex data analysis techniques and tools that require a high level of accuracy and reliability. As such, it is important to consider ethical issues related to data privacy, ownership, and sharing. It means that we have spotential impact of your on public health.
+Structural bioinformatics involves the use of complex data analysis techniques and tools that require a high level of accuracy and reliability. As such, it is important to consider ethical issues related to data privacy, ownership, and sharing. It means that there could potentially impact on public health.
 
-Structural bioinformatics research often involves the use of proprietary software and databases. So it is important to consider issues related to property and ensure that i am adhering to copyright and licensing agreements when using these tools.
+Public health is an important consideration in the field of structural bioinformatics, as the analysis of biological molecules at a molecular level can lead to a greater understanding of diseases and potential treatments. For example, structural bioinformatics has been used to develop new drugs, vaccines, and therapies that can improve public health outcomes.
 
-Structural bioinformatics involves the handling of sensitive data, such as genomic data, that is often subject to strict data security regulations. So it is important to plan to ensure the security and confidentiality of your data, and protect it from unauthorized access or disclosure.
+Structural bioinformatics combines computational and experimental techniques to study the structure and function of biological molecules at a molecular level, requiring the analysis of large amounts of complex data and the use of advanced tools and techniques to extract meaningful information.
+
+Given the sensitive nature of the data involved, ethical issues related to data privacy, ownership, and sharing are important. 
+
+Data privacy is a crucial aspect of structural bioinformatics as it involves the handling of personal data. Researchers must ensure that the data they collect is kept confidential and used only for the purpose for which it was collected. Appropriate measures must also be taken to protect the data from unauthorized access or disclosure. These measures can consist of researchers must ensure that any sensitive data they collect (such as genomic data) is kept confidential and not disclosed to unauthorized parties. Appropriate measures must be taken to protect the data from unauthorized access, such as using encryption or secure storage methods. This means that researchers must take appropriate measures to prevent data breaches and ensure that the data they collect is secure. If a breach does occur, researchers must take prompt action to minimize the harm to individuals and organizations whose data has been compromised.
+
+
+
+Ownership of data is another ethical issue that must be carefully considered. Researchers must respect the rights of the individuals or organizations that provide the data and ensure that they are given appropriate credit for their contributions. The potential commercial value of the data must also be considered to ensure that researchers do not exploit it for their own gain. To do so Researchers must respect the rights of the individuals or organizations that provide the data, and ensure that they are properly credited for their contributions. For example, Researchers need to obtain informed consent from participants before collecting their data, and clearly explain the purpose and potential risks of the study. Participants should also be informed about their rights to access and control their data. If the data has commercial value, researchers must consider the ethical implications of using it for their own gain, and whether they need to obtain consent or provide compensation to the data providers. Another important aspect to ownership is transparency such that researchers should be transparent about their data collection and analysis methods, and make their findings publicly available whenever possible. This can help ensure that the scientific community and the public at large are aware of the potential benefits and risks associated with structural bioinformatics research.
+
+Sharing of data is a fundamental aspect of structural bioinformatics, as it allows researchers to collaborate and share knowledge. However, sharing of data must be done in a responsible and ethical manner, with appropriate safeguards in place to protect the privacy and confidentiality of the data. When sharing data, researchers should establish data sharing agreements that outline the terms and conditions of the data sharing arrangement, including who has access to the data and how it can be used. Researchers must ensure that appropriate safeguards are in place to protect the privacy and confidentiality of the data, such as using data use agreements or anonymization techniques. Such that, anonymization techniques can be used to protect the privacy of individuals and organizations whose data is being used in structural bioinformatics research. Researchers can remove identifying information from the data, such as names or addresses, to prevent it from being traced back to specific individuals.
+
+Policies are important to concider too where we have:
+
+Data access policies: Institutions and organizations that collect and share data should establish data access policies that outline who can access the data and under what circumstances. These policies can help ensure that the data is used in a responsible and ethical manner.
+
+Data retention policies: Institutions and organizations should establish data retention policies that dictate how long data can be stored and when it should be destroyed. This can help ensure that data is not used for unintended purposes or retained longer than necessary.
+
+In conclusion, as the Structural Bioinformatics Framework is examined within the context of a MapReduce formalism, it is crucial to consider the ethical implications of this field. The potential impact of structural bioinformatics on public health is significant, but the responsible management of data privacy, ownership, and sharing must be prioritized to ensure the ethical and responsible advancement of this field.
 
 
 
