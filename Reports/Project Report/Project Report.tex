@@ -921,12 +921,22 @@ There are a few systems that solve similar tasks these include:
 \section{Software Engineering}
 \subsection{Objective Implementation}
 
-\begin{itemize}
-    \item Develop a software framework that suppots the Mapreduce formalism and can process
-    large numbers of protein structures.
-\end{itemize}
+Out of all the objectives listed in section 2.2 I will go through each one and show my implementation, thoughts, issues and any technical decisions i had to make whilst trying to achive the objective.
 
-To implement this we need to break down the objective into two parts the first part is to achieve a framework that supports a mapreduce formalism. In order to do this i need to decide between hadoop and apache spark. Please refer to my Literature review on Hadoop spark and pyspark where spark performes quicker whilst having having an API for python.
+\subsubsection{MapReduce Framework for Protein Analysis}
+
+\begin{displayquote}
+    Develop a software framework that suppots the Mapreduce formalism and can process
+    large numbers of protein structures.
+\end{displayquote}
+
+To implement this we need to break down the objective into two parts the first part is to build a framework that supports a mapreduce formalism and the second part is to ensure that the build can process large number of protien structures. 
+
+\subsubsection{1. Framework that supports a mapreduce formalism}
+
+The first decisions i have to make is to decide what software to use which can enable me to use a mapreduce formalism I cancluded with two options, hadoop and apache spark. Please refer to my Literature review on Hadoop spark and pyspark in summary spark is newer and performes quicker whilst having having an API for python. Which ultimately led me to choose spark over hadoop.
+
+\clearpage
 
 \subsubsection{Implementing PySpark}
 
@@ -964,10 +974,14 @@ Finally Test PySpark: You can test PySpark to check if all is set uop correctly 
 
 This should create a Spark session, create a DataFrame with 10 rows, and display it in the console.
 
-The second part of the objective is to ensure that we can process large numbers of protein structures. To do this we need to optimize our Spark job and cluster configuration. There are some actions we can not implement, some actions we can consider before the code and finally  some actions we can implement in to our code.
+\clearpage
+
+\subsubsection{2. Process large numbers of protein structures}
+
+The second part of the objective is to ensure that we can process large numbers of protein structures. To do this we need to optimize our Spark job and cluster configuration. There are actions that fall outside of our ability to execute, while others can be considered during the planning phase before coding, and some can be implemented directly into the code itself.
 
 \subsubsection{Can not implement}
-Cluster Configuration: I initially aimed to use a YARN implementation which allows you to dynamically share and centrally configure the same pool of cluster resources between all frameworks that run on YARN.~\cite{goyal_spark_2018} These are the issues i ran across:
+\textbf{Cluster Configuration:} I initially aimed to use a YARN implementation which allows you to dynamically share and centrally configure the same pool of cluster resources between all frameworks that run on YARN.~\cite{goyal_spark_2018} These are the issues i ran across:
 
 \begin{enumerate}
     \item Configuration: Yarn requires additional configuration beyond what is required for a standalone Spark cluster. You need to configure Yarn-specific settings such as memory allocation and container sizes, as well as Spark-specific settings such as executor and driver memory.
@@ -978,22 +992,18 @@ Cluster Configuration: I initially aimed to use a YARN implementation which allo
 
 Due to a smaller-scale workload and a simpler, more flexible, and more cost-effective option, a standalone Spark cluster may be a better fit.
 
-Data Serialization:
-Serialization is the process of converting data structures into a format that can be easily transmitted over the network. By default, PySpark uses Python's pickle library for serialization, which can be slow for large datasets. You can improve serialization performance by using more efficient serialization formats like Avro or Parquet. However these are the issues i came across:
+\textbf{Data Serialisation:} Serialisation is the process of converting data structures into a format that can be easily transmitted over the network. By default, PySpark uses Python's pickle library for serialisation, which can be slow for large datasets. You can improve serialisation performance by using more efficient serialisation formats like Avro or Parquet. However i came across some issues:
 
-Serialization and deserialization can introduce performance overhead depending on the size and complexity of the data being serialized.
+Serialisation and deserialisation can introduce performance overhead due to the immense size and complexity of protien structure analysis data being serialized. While both are widely used, they may not have the same level of tooling and support as other formats, like CSV or JSON or txt. This can make it more difficult to work with data in these formats. Finally, both can add complexity to your data processing pipeline. For example, you may need to write custom serialization and deserialization logic, or configure your data processing systems to work with these formats.
 
-While both are widely used, they may not have the same level of tooling and support as other formats, like CSV or JSON. This can make it more difficult to work with data in these formats.
+Thus, I have decided to use Python's pickle library for serialization.
 
-Both can add complexity to your data processing pipeline. For example, you may need to write custom serialization and deserialization logic, or configure your data processing systems to work with these formats.
-
-For this reason i have decided to stick with the provided Python's pickle library for serialization.
+\clearpage
 
 \subsubsection{Before implementing the code}
-Hardware Configuration:
-Ensure that your cluster has sufficient CPU, RAM, and disk resources to handle the workload. You can also use SSDs (Solid State Drives) for faster disk access and faster I/O operations.
+\textbf{Hardware Configuration:} Ensure that your cluster has sufficient CPU, RAM, and disk resources to handle the workload. You can also use SSDs for faster disk access and faster I/O operations.
 
-To do this we need to look at the minimum requirements for running PySpark.
+Thus, we need to ensure that the device running the framework meets the minimum criteria. To do this we need to look at the minimum requirements for running PySpark. 
 
 \begin{itemize}
     \item A 64-bit operating system e.g., macOS, Linux, or Windows
@@ -1002,17 +1012,48 @@ To do this we need to look at the minimum requirements for running PySpark.
 \end{itemize}
 
 \subsubsection{Whilst Implementing code}
-These are some functions that we can implement into our code to ensure that optimize our Spark job and cluster configuration
-Partitioning:
-Partitioning the input data can significantly improve performance, especially for large datasets. Partitioning involves splitting the data into smaller chunks and processing them in parallel. You can specify the number of partitions using the repartition function in PySpark.
+These are some features of pyspark that we can implement into our code to ensure that optimize our Spark job and cluster configuration.
 
-Caching:
-Caching is an optimization technique that involves storing intermediate results in memory to avoid recomputation. Caching is particularly useful when you have iterative algorithms that reuse the same data multiple times. You can use the cache function in PySpark to cache Resilient Distributed Datasets or DataFrames.\\\\
+\textbf{Caching:} Caching is an optimization technique that involves storing intermediate results in memory to avoid recomputation. Caching is particularly useful when you have iterative algorithms that reuse the same data multiple times. You can use the cache function in PySpark to cache Resilient Distributed Datasets or DataFrames.
 
-\begin{itemize}
-    \item Implement a distributed computing system using MapReduce to parallelize protein
-    structure analysis across multiple computing nodes.
-\end{itemize}
+\clearpage
+
+\begin{table}[ht!]
+    \begin{center}
+    \label{tab:partitioning}
+        \begin{tabular}{p{0.6\linewidth}|p{0.35\linewidth}}
+        Partitioning Function & Description\\
+        \hline
+        \\
+        hash() & Hashes the keys and partitions the data based on the hash value of the key. It is the default partitioning function in PySpark.
+        \\
+        \hline
+        \\
+        range() & Partitions the data based on the range of the key values. For example, if the key values range from 1 to 100, and there are 4 partitions, the first partition will contain keys from 1 to 25, and so on.
+        \\
+        \hline
+        \\
+        round robin() & This function partitions the data in a round-robin fashion. For example, if there are 3 partitions, the first partition will contain the first record, the fourth record, the seventh record, and so on.
+        \\
+        \hline
+        \\
+        custom() & This function allows you to define your own partitioning logic by implementing the getPartition(key) method.
+        \end{tabular}
+        \caption{\label{partitioning}Showing examples of pyspark partitioning functions and what they do.}
+    \end{center}
+\end{table}
+
+\vspace{60px}
+
+\textbf{Partitioning:} Partitioning the input data can significantly improve performance, especially for large datasets. Partitioning involves splitting the data into smaller chunks and processing them in parallel.
+
+\clearpage
+
+\subsubsection{Parallelized Protein Analysis with MapReduce}
+
+\begin{displayquote}
+    Implement a distributed computing system using MapReduce to parallelize protein structure analysis across multiple computing nodes.
+\end{displayquote}
 
 To implement a distributed computing system using MapReduce to parallelize protein structure analysis across multiple computing nodes using PySpark, we need complete the following steps:
 
@@ -1054,6 +1095,8 @@ The following code has been taken from my lines program which is inteanded to pr
 
 \end{lstlisting}
 
+\clearpage
+
 \subsubsection{PySpark cluster setup}
 
 The SparkSession object is a higher-level interface to create a Spark application with SparkContext, which provides a unified entry point to interact with the Spark cluster.
@@ -1071,18 +1114,24 @@ Once the numberoflines function has been defined, we can apply it to each protei
 \subsubsection{Reduce function}
 The code provided does not include an explicit implementation of a Reduce function. However, you can write a Reduce function using PySpark's reduce function, which would result in the same respone if needed to return the number of lines.
 
+
 \subsubsection{PySpark RDDs}
 The code provided, loads protein structure data by using the wholeTextFiles function to read in all the files in a directory as an RDD of key-value pairs, where the key is the filename and the value is the contents of the file.
 
 \subsubsection{Save to distributed file system}
 The code provided does not include any code to save the output to a distributed file system. However, you can use PySpark's saveAsTextFile function to save the output as text files in a distributed file system.
+\clearpage
 
 \subsubsection{Issues}
 When implementing this objective i came across some difficulties more specifily to do with maping the pdb file. Initially i had the idea of reading a pdb file and trying to map the atoms and there coordinates into the rdd. However with some dilebrations with my supervisor most user executables designed for proten analysis work with the whole pdb file with the additional information provided above the coordinates. So for that reason the program maps the entier pdb file.
 
-\begin{itemize}
-    \item Optimize the software framework to reduce the processing time required for protein structure analysis.
-\end{itemize}
+\clearpage
+
+\subsubsection{Optimization for Faster Protein Analysis}
+
+\begin{displayquote}
+    Optimize the software framework to reduce the processing time required for protein structure analysis.
+\end{displayquote}
 
 I will now present the first version of my lines programs and explain features i changed so that the framework will be more optimized for reduce the processing time required for protein structure analysis.
 
@@ -1116,12 +1165,16 @@ I will now present the first version of my lines programs and explain features i
         main(spark)
 \end{lstlisting}
 
+\clearpage
+
 \subsubsection{Issues with code}
 We have instasiated a for loop which loops through all the files in the PDBsDirectory the code then reads each file in the PDBsDirectory directory and loads it into an RDD using spark.read.text ignoring any files that end with DSStore which is one of the outputs returned from saveAsTextFile. This operation can be time-consuming for large files because it involves reading the entire file into memory as a single string. This is not efficient for processing large files.
 
 The code then saves the RDD to the PDBsfromRDD directory using rdd.saveAsTextFile but we need to check if this directory exists already, deleting it if so, as for the next pdb file in the PDBsDirectory we will need to cast saveAsTextFile to this which requires that folder to not exist in the first place. SaveAsTextFile function can be expensive because it involves writing the entire RDD to disk.
 
 Finally if there is a lot of files in PDBsDirectory the the for loop will need to go through each one whilst also running shutil.rmtree which is not effeciant as there are some operations being run each iteration which we can remove.
+
+\clearpage
 
 \subsubsection{Improvment Using wholeTextFiles()}
 
@@ -1157,25 +1210,31 @@ This will result in the following code:
         # This creates a local cluster
         spark = SparkSession.builder.appName('PDB').getOrCreate()
         main(spark)
-
 \end{lstlisting}
 
-\begin{itemize}
-    \item Validate the software framework by testing it with a variety of protein structure analysis tools and evaluating its performance in comparison to other available tools.
-\end{itemize}
+\clearpage
+
+\subsubsection{User Interface for Protein Analysis}
+\begin{displayquote}
+    Design an interface that allows users to manipulate the pdbs that are being passed into
+    the executable for protein structure analysis.
+\end{displayquote}
+
+\clearpage
+
+\subsubsection{Validation via Performance Comparison}
+\begin{displayquote}
+    Validate the software framework by testing it with a variety of protein structure analysis tools and evaluating its performance in comparison to other available tools.
+\end{displayquote}
 
 \subsubsection{Need help with the above bullet point not sure what to write about}
 
-\begin{itemize}
-    \item Design an interface that allows users to manipulate the pdbs that are being passed into
-    the executable for protein structure analysis.
-\end{itemize}
+\clearpage
 
-\subsubsection{Need to hold out on this one as we could potentially have a ui}
-
-\begin{itemize}
-    \item Ensure the software framework is scalable and can handle increasingly large datasets.
-\end{itemize}
+\subsubsection{Scalable Data Handling for Protein Analysis}
+\begin{displayquote}
+    Ensure the software framework is scalable and can handle increasingly large datasets.
+\end{displayquote}
 
 There are several things we can consider to esnure the software framework is scalable and can handle increasingly large datasets:
 
@@ -1214,11 +1273,15 @@ I will be using my TMalign program to show how i have implemented each one of th
         main(spark)
 \end{lstlisting}
 
+\clearpage
+
 \subsubsection{Partitioning data}
 The cartesian() operation results in an RDD with a number of partitions equal to the number of partitions in the two input RDDs multiplied together. By default, Spark uses hash partitioning for cartesian() operation, which hashes the keys of the input RDDs and distributes them evenly across partitions to ensure a roughly equal workload per partition.
 
 \subsubsection{Distributed computing}
 As we are using MapReduce, this can help with scalability as the data is being broken down and performed in parrellel. This can be seen with the map step where each node will be given a pair of pdb files which need tmalign run on. Overall the processing workload is spread out across multiple machines, allowing for faster processing and the ability to handle larger datasets. Additionally, if one machine fails or experiences an error, the rest of the system can continue running without interruption.
+
+\clearpage
 
 \subsubsection{Efficient algorithms}
 Some issues with the a earlier version of the tmalign program:
@@ -1261,15 +1324,19 @@ This is not effeciant as we have nested for loops and we are having to read thro
 
 Introducing wholeTextFiles() method allowed the program to only need to read each folder once. We then get the values from each key-value pair and perform the cartesean product on them. Giving us an rdd where each value in the first folder is paired with each value in the second folder. This helped utilize the memory and compute resources of a cluster efficiently which improved overall performance.
 
-Testing and validation:
-Whilst developing the framework, using python unittests i was able to test and validate its performance on different sizes of datasets also looking at catching unxepected errors occuring. This helped identify areas where the code got improvments and ensured that it can handle increasingly large datasets.
+\clearpage
+
+\textbf{Testing and validation:} Whilst developing the framework, using python unittests i was able to test and validate its performance on different sizes of datasets also looking at catching unxepected errors occuring. This helped identify areas where the code got improvments and ensured that it can handle increasingly large datasets.
 
 An example change is shown where we use tempfiles over saveAsTextFile. As in the eleair version we did not have a key value pair we needed to use the saveAsTextFile method which spits out the contents of the rdd for us to be able to then run into the tmalign function. However we now have the contents of the pdv so we can write these to a temp file where once used the directory is closed and not used again. This saves reasorces as we are not creating and deleting a permanent directory for each pdb file each iteration.
 
-\begin{itemize}
-    \item Ensure the software framework can be eaisly updated to keep pace with advancements
+\clearpage
+
+\subsubsection{Upgradable Framework for Advanced Analysis}
+\begin{displayquote}
+    Ensure the software framework can be eaisly updated to keep pace with advancements
     in protein structure analysis techniques and computing technology.
-\end{itemize}
+\end{displayquote}
 
 In order to achive this objective we need to consider implementing a modular design that allows for easy integration of updates and improvements. We can also incorporate version control tools such as Git to manage changes in the codebase and ensure that the latest updates are available to users.
 
@@ -1284,6 +1351,7 @@ Within my software i have ensured that:
     \item Modules should be designed to be reusable
 \end{itemize}
 
+
 \subsubsection{Git}
 Within git these actions have sure the software framework can be eaisly updated to keep pace with advancements:
 
@@ -1295,11 +1363,13 @@ Within git these actions have sure the software framework can be eaisly updated 
 \end{itemize}
 
 By implementing modular design and using Git best practices, you can ensure that your codebase remains a high-quality, reliable, and scalable software framework with the latest updates available to users.
+\clearpage
 
-\begin{itemize}
-    \item Provide documentation and user support to enable researchers to use the software
+\subsubsection{User Support for Protein Analysis Software}
+\begin{displayquote}
+    Provide documentation and user support to enable researchers to use the software
     framework effectively
-\end{itemize}
+\end{displayquote}
 
 To complete this objective i need to provide a readme file that completes these points:
 
