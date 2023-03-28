@@ -548,4 +548,265 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: PDB Site.png Graphic file (type png)
 <use PDB Site.png>
 Package pdftex.def Info: PDB Site.png  used on input line 491.
-(pdftex.def)             Requested size: 220.50887pt x
+(pdftex.def)             Requested size: 220.50887pt x 276.83574pt.
+<Top Bar Search A.png, id=337, 893.3375pt x 569.12625pt>
+File: Top Bar Search A.png Graphic file (type png)
+<use Top Bar Search A.png>
+Package pdftex.def Info: Top Bar Search A.png  used on input line 499.
+(pdftex.def)             Requested size: 178.60974pt x 113.7885pt.
+<Top Bar Search B.png, id=338, 883.3pt x 595.72563pt>
+File: Top Bar Search B.png Graphic file (type png)
+<use Top Bar Search B.png>
+Package pdftex.def Info: Top Bar Search B.png  used on input line 504.
+(pdftex.def)             Requested size: 178.60974pt x 120.45198pt.
+ [21
+
+] [22 <./PDB Site.png> <./Top Bar Search A.png> <./Top Bar Search B.png>]
+Overfull \hbox (16.67786pt too wide) in paragraph at lines 513--514
+\OT1/cmr/m/n/10.95 In 2020, RCSB PDB had an up-grade of its de-liv-ery ar-chi-tec-ture [[]]at RCSB.org [[]]. 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[23
+
+] [24] [25
+
+] [26
+
+]
+<PDB File.png, id=401, 987.18813pt x 440.64626pt>
+File: PDB File.png Graphic file (type png)
+<use PDB File.png>
+Package pdftex.def Info: PDB File.png  used on input line 651.
+(pdftex.def)             Requested size: 220.50887pt x 98.4284pt.
+ [27
+
+ <./PDB File.png>]
+Overfull \hbox (21.31625pt too wide) in paragraph at lines 658--659
+\OT1/cmr/m/n/10.95 Mmcif is a dictionary-based ap-proach to data ex-tracted from crys-tal-lo-graphic ex-per-i-ments [[]]. 
+ []
+
+<xml.png, id=417, 670.00313pt x 645.91313pt>
+File: xml.png Graphic file (type png)
+<use xml.png>
+Package pdftex.def Info: xml.png  used on input line 672.
+(pdftex.def)             Requested size: 220.50887pt x 212.58035pt.
+[28
+
+ <./xml.png>] [29
+
+] [30
+
+] [31
+
+] [32
+
+] [33
+
+]
+<Execute.png, id=497, 704.6325pt x 471.7625pt>
+File: Execute.png Graphic file (type png)
+<use Execute.png>
+Package pdftex.def Info: Execute.png  used on input line 796.
+(pdftex.def)             Requested size: 220.50887pt x 147.63417pt.
+ [34
+
+ <./Execute.png>]
+Overfull \hbox (1.95448pt too wide) in paragraph at lines 810--845
+ [] 
+ []
+
+[35
+
+] [36
+
+] [37
+
+] [38
+
+] (/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 955.
+ (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <11> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 955.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 961.
+ (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <11> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 961.
+ [39
+
+] [40
+
+] [41
+
+]
+Overfull \hbox (1.95448pt too wide) in paragraph at lines 1037--1055
+ [] 
+ []
+
+[42
+
+] [43
+
+] [44
+
+] [45
+
+] [46
+
+] [47
+
+] [48
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1319--1319
+[]\OT1/cmr/m/n/10.95 Biological As-sem-bly File in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1321--1321
+[]\OT1/cmr/m/n/10.95 Biological As-sem-bly File in
+ []
+
+[49
+
+]
+Overfull \hbox (18.88705pt too wide) in paragraph at lines 1347--1349
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[50]
+Overfull \hbox (12.31699pt too wide) in paragraph at lines 1371--1372
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 1393--1395
+\OT1/cmr/m/n/10.95 search re-quest in-clud-ing pag-
+ []
+
+
+Underfull \hbox (badness 2941) in paragraph at lines 1393--1395
+\OT1/cmr/m/n/10.95 i-na-tion, sort-ing, scor-ing and
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 1397--1398
+\OT1/cmr/m/n/10.95 for log-ging pur-poses. When
+ []
+
+
+Overfull \hbox (1.95448pt too wide) in paragraph at lines 1381--1399
+ [] 
+ []
+
+[51
+
+] [52
+
+] [53] [54
+
+] [55
+
+] [56
+
+]
+Overfull \hbox (5.74692pt too wide) in paragraph at lines 1559--1560
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.74692pt too wide) in paragraph at lines 1560--1562
+[][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (12.31699pt too wide) in paragraph at lines 1569--1571
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.74692pt too wide) in paragraph at lines 1571--1573
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[57
+
+] [58
+
+]
+Overfull \hbox (25.45712pt too wide) in paragraph at lines 1612--1613
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+] [64
+
+] (./Project Report.bbl [65] [66
+
+]
+Underfull \hbox (badness 1303) in paragraph at lines 64--77
+\OT1/cmr/m/n/10.95 Joan Se-gura, Mon-ica Sekha-ran, Chenghua Shao, Brinda Val-lat, Maria
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 64--77
+\OT1/cmr/m/n/10.95 Chris-tine Zardecki.  RCSB Pro-tein Data Bank: Cel-e-brat-ing 50 years
+ []
+
+[67] [68]
+Underfull \hbox (badness 1112) in paragraph at lines 291--297
+[]\OT1/cmr/m/n/10.95 Xiangrui Meng, Joseph Bradley, Bu-rak Yavuz, Evan Sparks, Shiv-aram
+ []
+
+[69] [70]
+Underfull \hbox (badness 1173) in paragraph at lines 427--433
+[]\OT1/cmr/m/n/10.95 John D. West-brook and Paula M. D. Fitzger-ald.  The PDB For-mat,
+ []
+
+[71]) [72] (./Project Report.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.5pt have occurred.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `"Project Report".out' has not changed.
+(rerunfilecheck)             Checksum: 6C2D607BD3675541B1BA492AC5939413;1338.
+ ) 
+Here is how much of TeX's memory you used:
+ 14319 strings out of 476422
+ 226877 string characters out of 5810350
+ 793210 words of memory out of 5000000
+ 34889 multiletter control sequences out of 15000+600000
+ 476721 words of font info for 52 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 72i,13n,77p,1498b,1377s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on "Project Report.pdf" (73 pages, 4072533 bytes).
+PDF statistics:
+ 1208 PDF objects out of 1440 (max. 8388607)
+ 1054 compressed objects within 11 object streams
+ 570 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+
