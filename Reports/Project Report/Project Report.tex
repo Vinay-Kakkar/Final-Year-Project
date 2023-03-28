@@ -934,36 +934,45 @@ To implement this we need to break down the objective into two parts the first p
 
 \subsubsection{1. Framework that supports a mapreduce formalism}
 
-The first decisions i have to make is to decide what software to use which can enable me to use a mapreduce formalism I cancluded with two options, hadoop and apache spark. Please refer to my Literature review on Hadoop spark and pyspark in summary spark is newer and performes quicker whilst having having an API for python. Which ultimately led me to choose spark over hadoop.
+The first decisions i have to make is to decide what software to use which can enable me to use a mapreduce formalism I concluded with two options, hadoop and apache spark. Please refer to my Literature review on Hadoop spark and pyspark in summary spark is newer and performes quicker whilst having having an API for python. Which ultimately led me to choose spark over hadoop.
 
 \clearpage
 
 \subsubsection{Implementing PySpark}
 
-Install Java: PySpark requires Java to run. You can download and install the latest version of Java from the official website (https://www.oracle.com/java/technologies/javase-downloads.html).
+\textbf{Install Java:} PySpark requires Java to run. You can download and install the latest version of Java from the official website (https://www.oracle.com/java/technologies/javase-downloads.html).
 
-Install Apache Spark: PySpark is built on top of Apache Spark, so you need to install Apache Spark first. You can download the latest version of Apache Spark from the official website (https://spark.apache.org/downloads.html). Choose a pre-built package for Apache Spark and select the version that matches your installed Java version. Extract the downloaded package to a location of your choice.
+\textbf{Install Apache Spark:} PySpark is built on top of Apache Spark, so you need to install Apache Spark first. You can download the latest version of Apache Spark from the official website (https://spark.apache.org/downloads.html). Choose a pre-built package for Apache Spark and select the version that matches your installed Java version. Extract the downloaded package to a location of your choice.
 
-Install Python: PySpark requires Python 3.x to run. You can download and install the latest version of Python from the official website (https://www.python.org/downloads/).
+\textbf{Install Python:} PySpark requires Python 3.x to run. You can download and install the latest version of Python from the official website (https://www.python.org/downloads/).
 
-Set environment variables: To use PySpark, you need to set environment variables for Java and Spark. As I am implementing this on MAC OS to do so we need to open the terminal and run the following commands:
+Set environment variables: To use PySpark, you need to set environment variables for Java and Spark. On MAC OS and linux open the terminal and run the following commands:
 
 \begin{lstlisting}[language=bash]
-    JAVA_HOME=/Library/Java/JavaVirtualMachines/JDKversion/Contents/Home
-    PATH=$JAVA_HOME/bin:$PATH
-    SPARK_HOME=<path_to_spark_folder>
-    PATH=$SPARK_HOME/bin:$PATH
+    export JAVA_HOME=/Library/Java/
+    JavaVirtualMachines/JDKversion/Contents/Home
+    export PATH=$JAVA_HOME/bin:$PATH
+    export SPARK_HOME=<path_to_spark_folder>
+    export PATH=$SPARK_HOME/bin:$PATH
+\end{lstlisting}
+
+On windows open command prompt and run the following commands:
+\begin{lstlisting}[language=bash]
+    setx JAVA_HOME "C:\Program Files\Java\jdk-16.0.2"
+    setx PATH "%PATH%;%JAVA_HOME%\bin"
+    setx SPARK_HOME "C:\spark-3.2.0-bin-hadoop3.2"
+    setx PATH "%PATH%;%SPARK_HOME%\bin"
 \end{lstlisting}
 
 Replace 'JDK version' with the version of Java you installed and 'path to spark folder' with the path to the folder where you extracted Apache Spark.
 
-Install PySpark: You can install PySpark using pip. Open the terminal and run the following command:
+\textbf{Install PySpark:} You can install PySpark using pip. Open the terminal and run the following command:
 
 \begin{lstlisting}[language=bash]
     pip install pyspark
 \end{lstlisting}
 
-Finally Test PySpark: You can test PySpark to check if all is set uop correctly by opening the Python shell and running the following commands:
+Finally \textbf{Test PySpark:} You can test PySpark to check if all is set uop correctly by opening the Python shell and running the following commands:
 
 \begin{lstlisting}[language=bash]
     from pyspark.sql import SparkSession
@@ -972,7 +981,9 @@ Finally Test PySpark: You can test PySpark to check if all is set uop correctly 
     df.show()
 \end{lstlisting}
 
-This should create a Spark session, create a DataFrame with 10 rows, and display it in the console.
+The above code creates a SparkSession, which is the entry point to Spark, a distributed computing framework that supports a MapReduce formalism.
+
+In particular, the following code creates a SparkSession with the name "test". The SparkSession is the entry point to Spark and provides a way to interact with Spark's distributed data processing capabilities. Once the SparkSession is created, the code generates a DataFrame using the range() method, which creates a DataFrame with a single column named "id" and ten rows with values from 0 to 9. Finally, the code prints the contents of the DataFrame using the show() method. This displays the contents of the DataFrame in a tabular format. Overall providing a Framework that supports a mapreduce formalism.
 
 \clearpage
 
@@ -1016,36 +1027,47 @@ These are some features of pyspark that we can implement into our code to ensure
 
 \textbf{Caching:} Caching is an optimization technique that involves storing intermediate results in memory to avoid recomputation. Caching is particularly useful when you have iterative algorithms that reuse the same data multiple times. You can use the cache function in PySpark to cache Resilient Distributed Datasets or DataFrames.
 
+\textbf{Partitioning:} Partitioning the input data can significantly improve performance, especially for large datasets. Partitioning involves splitting the data into smaller chunks and processing them in parallel.
+
 \clearpage
 
 \begin{table}[ht!]
     \begin{center}
-    \label{tab:partitioning}
+        \label{tab:partitioning}
         \begin{tabular}{p{0.6\linewidth}|p{0.35\linewidth}}
-        Partitioning Function & Description\\
-        \hline
-        \\
-        hash() & Hashes the keys and partitions the data based on the hash value of the key. It is the default partitioning function in PySpark.
-        \\
-        \hline
-        \\
-        range() & Partitions the data based on the range of the key values. For example, if the key values range from 1 to 100, and there are 4 partitions, the first partition will contain keys from 1 to 25, and so on.
-        \\
-        \hline
-        \\
-        round robin() & This function partitions the data in a round-robin fashion. For example, if there are 3 partitions, the first partition will contain the first record, the fourth record, the seventh record, and so on.
-        \\
-        \hline
-        \\
-        custom() & This function allows you to define your own partitioning logic by implementing the getPartition(key) method.
+            Partitioning Function & Description\\
+            \hline
+            \\
+            hash() & Hashes the keys and partitions the data based on the hash value of the key. It is the default partitioning function in PySpark.
+            \\
+            \hline
+            \\
+            range() & Partitions the data based on the range of the key values. For example, if the key values range from 1 to 100, and there are 4 partitions, the first partition will contain keys from 1 to 25, and so on.
+            \\
+            \hline
+            \\
+            round robin() & This function partitions the data in a round-robin fashion. For example, if there are 3 partitions, the first partition will contain the first record, the fourth record, the seventh record, and so on.
+            \\
+            \hline
+            \\
+            custom() & This function allows you to define your own partitioning logic by implementing the getPartition(key) method.
         \end{tabular}
         \caption{\label{partitioning}Showing examples of pyspark partitioning functions and what they do.}
     \end{center}
 \end{table}
 
-\vspace{60px}
+\subsubsection{Amended code to handle large amounts of Protein data}
 
-\textbf{Partitioning:} Partitioning the input data can significantly improve performance, especially for large datasets. Partitioning involves splitting the data into smaller chunks and processing them in parallel.
+\begin{lstlisting}
+    proteinfiles = spark.read.format("text").load(path)
+    processedproteins = protein_files.rdd.map(processprotein)
+\end{lstlisting}
+
+These are two lines of code that will allow the ability to handle large amounts of protein data. 
+
+Where proteinfiles holds the information of the protein structure. We then would pass this into a map function that will conduct processes on the protein structure data. Finally performing a .collect() function will save the results of the processed data into processedproteins.
+
+Ultimately using this with conjuction of the code used to test pyspark we end up with a framework that supports the Mapreduce formalism and can process large number of protein structures.
 
 \clearpage
 
@@ -1062,6 +1084,7 @@ To implement a distributed computing system using MapReduce to parallelize prote
     \item Write a Map function to parse the protein structure data and extract the relevant features.
     \item Write a Reduce function to combine the results from the Map function.
     \item Load the protein structure data into PySpark RDDs.
+    \item Create a function that can process protein structures.
     \item Apply the Map function to each protein structure RDD in parallel.
     \item Apply the Reduce function to combine the results from the Map function.
     \item Save the output to a distributed file system.
@@ -1122,9 +1145,46 @@ The code provided, loads protein structure data by using the wholeTextFiles func
 The code provided does not include any code to save the output to a distributed file system. However, you can use PySpark's saveAsTextFile function to save the output as text files in a distributed file system.
 \clearpage
 
-\subsubsection{Issues}
-When implementing this objective i came across some difficulties more specifily to do with maping the pdb file. Initially i had the idea of reading a pdb file and trying to map the atoms and there coordinates into the rdd. However with some dilebrations with my supervisor most user executables designed for proten analysis work with the whole pdb file with the additional information provided above the coordinates. So for that reason the program maps the entier pdb file.
+\subsubsection{Issues and Technical decisions}
 
+With the code provided the process we are conducting is returning the number of lines for each pdb file provided. I originally set out to use a user executable called hoppscore. Which is a script written for the purpose to provice a score when passed in a pdb files. However, I came across some issues with setting the script up.
+
+Here is an example of what an example hoppscore execution would look like:
+
+\begin{lstlisting}
+    hoppscore  -r 1.7 -g 12 sample.pdb 
+
+    Output is sent to STDOUT
+
+    hoppscore -r 1.7 -g 12 sample.pdb > sample.pdb.out
+\end{lstlisting}
+
+Program output is sent to STDOUT and looks like this:
+
+\begin{lstlisting}
+    !F - Favored, A - Allowed, U - Unfavored, D - Disallowed
+    !F > 612.7, 183.3 < A > 612.7, 0 < U > 183.3, D=0
+    !Avg: 183.290662650602, Sigma: 858.791452289234
+    !Input File: test.pdb
+    !Reference Database Resolution Limit: 17
+    !phi-psi pairs: 1
+    !  SS    AA   FILENAME  RES      F/Avg  Favored?
+    !-----------------------------------------------
+        C     D   test.pdb    2      10.19  F   2
+        S     A   test.pdb    3      34.83  F   2
+        G     P   test.pdb    4      99.17  F   2
+        G     F   test.pdb    5       5.93  F   2
+        G     E   test.pdb    6       1.01  A   1
+     .
+     .
+     .
+
+    !-----------------------------------------------
+                                       Sum: 111
+                                     Score: 1.23
+\end{lstlisting}
+
+However when attempting to install the program i failed to do so. The readme files show how to install the tool in different operating systems however i failed to do so when following the steps and there is no external help or documentation online for this tool. This can be because the program was last updated in 10/04/2013 showing that it has not been an active analysis tool recently. Thus, i decided to change the protein anlysis function to return the number of lines instead.
 \clearpage
 
 \subsubsection{Optimization for Faster Protein Analysis}
@@ -1211,6 +1271,249 @@ This will result in the following code:
         spark = SparkSession.builder.appName('PDB').getOrCreate()
         main(spark)
 \end{lstlisting}
+
+\clearpage
+
+\subsubsection{Intergrate API for PDB access}
+\begin{displayquote}
+    Intergrate a PDB file download and search from the RCSB API for efficient data access.
+\end{displayquote}
+
+As the software framework is dependent on what files are currently loaded into the correct folders this objective is important as it is an easy way for the researcher to download pdb files without having to access the website.
+
+The objective is to work with the RCSB protein data bank website using there provided api. Please refer to my Literature review of the website for a better understanding of what it holds and the features it provides. In summery the RCSB Protein Data Bank website is a comprehensive resource that provides access to 3D structural data of proteins, nucleic acids, and complex assemblies. It is a valuable tool for researchers in the fields of biochemistry, biophysics, and molecular biology.
+
+The RCSB site provides many apis including:
+\begin{itemize}
+    \item Data API
+    \item Search API
+    \item ModelServer API
+    \item VolumeServer API
+    \item 1D Coordinate Server
+\end{itemize}
+
+The features that are required for this objective and are also the main features that power rcsb.org are, File Download Services which, serves to download the pdb file of a provided protein structure. Search API serves to find out what identifiers match a certain search condition.
+
+\subsubsection{File Download Services}
+
+The file download service provides the ability to download a file that the website contains given the correct parameters. This is key as it will allow the reasercher to use the api to download any required files without needing to access the website. 
+
+The following url is an example on how to download a .pdb file in this case 4hhb.pdb:
+
+\begin{lstlisting}
+    https://files.rcsb.org/download/4hhb.pdb
+\end{lstlisting}
+
+There are a few different options when downloading files from the website:
+
+\begin{tabular}{ |p{5.5cm}|p{2.5cm}|p{6cm}|  }
+    \hline
+    \multicolumn{3}{|c|}{PDB entry files} \\
+    \hline
+    File Format&Compression&Example URL\\
+    \hline
+    Biological Assembly File in PDB&Uncompressed&/download/1hh3.pdb1\\
+    \hline
+    Biological Assembly File in PDB&Compressed&/download/1hh3.pdb1.gz\\
+    \hline
+    Biological Assembly File in PDBx/mmCIF&Uncompressed&/download/5a9z-assembly1.cif\\
+    \hline
+    Biological Assembly File in PDBx/mmCIF&Compressed&/download/5a9z-assembly1.cif.gz\\
+    \hline
+    PDB&Compressed&/download/4hhb.pdb.gz\\
+    \hline
+    PDB&Uncompressed&/download/4hhb.pdb\\
+    \hline
+    PDBx/mmCIF&Compressed&/download/4hhb.cif.gz\\
+    \hline
+    PDBx/mmCIF&Uncompressed&/download/4hhb.cif\\
+    \hline
+    XML&Compressed&/download/4hhb.xml.gz\\
+    \hline
+    XML&Compressed&/download/4hhb.xml\\
+    \hline
+    
+\end{tabular}
+
+Depending on what is put after the download in the URL we will get a different download. The table highlights some of the main File formats and examples on how to use the URL to download them.
+
+\subsubsection{Implementing Download Service into Python}
+
+Using this we can retreive the data for a given pdb file name and write it into a file and save it to the path given:
+
+\begin{lstlisting}
+    import requests
+
+    apicall = 'https://files.rcsb.org/download/{}.pdb'.format(pdbfile)
+
+    response = requests.get(apicall)
+
+    with open('path' + pdbfile + '.pdb', 'wb') as f:
+        f.write(response.content)
+
+\end{lstlisting}
+
+The RCSB site holds an extremlly vast amount of pdb files we can actually see all current PDB ids by going to:
+
+\begin{lstlisting}
+    https://data.rcsb.org/rest/v1/holdings/current/entry_ids
+\end{lstlisting}
+
+This brings in the need for the search api. As it is not good to assume that the user will have the name for each file they would like to donwload.
+
+\clearpage
+
+\subsubsection{Search API}
+
+The Search API accepts HTTP GET or POST requests with JSON payloads. In GET method, search request should be sent as a URL-encoded query string in json parameter: 
+
+\begin{lstlisting}
+    https://search.rcsb.org/rcsbsearch/v2/query?json={search-request}
+\end{lstlisting}
+
+A search request is a complete specification of what should be returned in a result set. The search request is represented as a JSON object. The building blocks of the request are:
+
+\vspace{40px}
+
+\begin{table}[ht!]
+    \begin{center}
+        \label{tab:json}
+        \begin{tabular}{p{0.6\linewidth}|p{0.35\linewidth}}
+            Context & Description\\
+            \hline
+            \\
+            return type (Required) & Specifies the type of the returned identifiers, e.g. entry, polymer entity, assembly, etc.
+            \\
+            \hline
+            \\
+            query (Optional) & Specifies the search expression. Can be omitted if, instead of IDs retrieval, facets or count operation should be performed. In this case the request must be configured via the request options context.
+            \\
+            \hline
+            \\
+            request options (Optional) & Controls various aspects of the search request including pagination, sorting, scoring and faceting. If omitted, the default parameters for sorting, scoring and pagination will be applied.
+            \\
+            \hline
+            \\
+            request info (Optional) & Specifies an additional information about the query, e.g. query id. It's an optional property and used internally at RCSB PDB for logging purposes. When query id is sent with the search request, it will be included into the corresponding response object.
+        \end{tabular}
+        \caption{\label{json}Aspects that a valid json for the search api on RCSB can hold.}
+    \end{center}
+\end{table}
+
+\clearpage
+
+Here is an example valid json and the response for the results shown when searching for thymidine kinase:
+
+\begin{lstlisting}
+  "query": {
+    "type": "terminal",
+    "service": "full_text",
+    "parameters": {
+      "value": "thymidine kinase"
+    }
+  },
+  "return_type": "entry"
+\end{lstlisting}
+
+\vspace{40px}
+
+This is the respone receive back:
+
+\begin{lstlisting}
+  "query_id" : "f3424f3f-a69a-4b70-96ee-df9fb8db7558",
+  "result_type" : "entry",
+  "total_count" : 57547,
+  "result_set" : [ {
+    "identifier" : "2UZ3",
+    "score" : 1.0
+  }, {
+    "identifier" : "2B8T",
+    "score" : 0.9175522850503486
+  }, {
+    "identifier" : "2WVJ",
+    "score" : 0.898559256390395
+  }, {
+    "identifier" : "2J87",
+    "score" : 0.602571649883811
+  }, {
+    "identifier" : "2VTK",
+    "score" : 0.3646165762974438
+  }, {
+    "identifier" : "1XBT",
+    "score" : 0.2990240123934934
+  }, {
+    "identifier" : "1KIM",
+    "score" : 0.24848954298993028
+  }, {
+    "identifier" : "1E2J",
+    "score" : 0.18949651432997677
+  }, {
+    "identifier" : "1P6X",
+    "score" : 0.08545313710302091
+  }, {
+    "identifier" : "2QQE",
+    "score" : 0.0
+  } ]
+\end{lstlisting}
+
+We get the pdb identifier and the score of how relatable it is to the search value. This is helpful as now we can in theory download each result as we have the identifier accosiated to them. For example: https://files.rcsb.org/download/2UZ3.pdb
+
+\subsubsection{Implementing Search API in python}
+
+Before starting the python program we need to create a valid json file. Using the examples provided from the RCSB API documentation found here https://search.rcsb.org/basic-queries We can set up a json file that looks like the following:
+
+\begin{lstlisting}
+   "query":{
+      "type":"terminal",
+      "service":"full_text",
+      "parameters":{
+         "value":"vinay"
+      }
+   },
+   "return_type":"entry"
+\end{lstlisting}
+
+We now need to create a following python program that can use the following json file and execute a get request to the api. The following program was created: 
+
+\begin{lstlisting}
+    import requests
+    import json
+
+    url = "https://search.rcsb.org/rcsbsearch/v1/query"
+
+    # Load the query from a JSON file
+    with open("query.json", "r") as f:
+        query = json.load(f)
+
+    # Convert the query to a JSON string
+    query_json = json.dumps(query)
+
+    # Set the headers and data for the request
+    headers = {"Content-Type": "application/json"}
+    data = query_json.encode("utf-8")
+
+    # Send the request and get the response
+    response = requests.post(url, headers=headers, data=data)
+
+    # Convert the response to a JSON object
+    response_json = response.json()
+
+    # Print the results
+    print(json.dumps(response_json, indent=4))  
+\end{lstlisting}
+
+In this program, we first define the URL of the RCSB PDB API endpoint. We then open and load the json file provided from a query dictionary to a JSON string using json.dumps(). Next, we set the headers and data for the HTTP request using the requests.post() function. We pass in the URL, headers, and data as arguments, and get back the response from the server.
+
+\clearpage
+
+\subsubsection{Issues with creating a valid JSON}
+
+I came across an issue when creating a valid JSON to pass into the Searh API. Currently the JSON file is only allowing the search for one value. However there is a vast number of other filters and search options a reasercher can use when browsing the pdb bank. Therfore i decdided to consoludate with my supervisor to determine some useful filter options for the reasercher to use whilst working with the framework. Some of these filters included:
+
+\begin{itemize}
+    \item R Factor
+    \item Date of 
+\end{itemize}
 
 \clearpage
 
