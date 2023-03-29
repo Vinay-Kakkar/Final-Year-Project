@@ -122,7 +122,6 @@
 \null
 \vfil
 \begin{center}
-\includegraphics[height=5cm]{logo}\\[2cm]
 \title{Final Year Project Report}\\[0.25cm]
 \Large \textbf{\fullOrHalfUnit~-~\finalOrInterim}\\[0.5cm]\rule{4cm}{1pt}\\[0.7cm]
 \title{\textbf{\projecttitle}}\\[1cm]
@@ -130,6 +129,7 @@
 \textsf{\Large  A report submitted in part fulfilment of the degree of\\[0.5cm]
 \textbf{\degree}}\\[0.5cm]
 \textsf{\Large  \textbf{Supervisor:}  \supervisorname}\\[2cm]
+\includegraphics[height=5cm]{logo}\\[2cm]
 \textsf{\Large Department of Computer Science\\
 Royal Holloway, University of London\\\vfill
 \normalsize \today}
