@@ -63,7 +63,6 @@ To achieve the aim of the project, the following objectives have been formulated
     \item Optimize the software framework to reduce the processing time required for protein structure analysis.
     \item Design an interface that allows users to manipulate the PDBs that are being passed into the executable for protein structure analysis.
     \item Ensure the software framework is scalable and can handle increasingly large datasets.
-    \item Validate the software framework by testing it with a variety of protein structure analysis tools and evaluating its performance in comparison to other available tools.
     \item Ensure the software framework can be easily updated to keep pace with advancements in protein structure analysis techniques and computing technology.
     \item Provide documentation and user support to enable researchers to use the software framework effectively
 \end{enumerate}
@@ -101,14 +100,6 @@ Even with a distributed computing system, the processing time required for prote
 \end{displayquote}
 
 As the framework revolves around using and manipulatting PDB file. An interface for manipulating the input data is necessary to provide users with the flexibility to customize their protein structure analysis. This interface should be intuitive and easy to use, allowing researchers to select the protein structures they want to analyze and adjust the analysis parameters as needed. Providing this interface ensures that researchers can tailor the analysis to their specific needs and allows for greater flexibility in the types of analysis that can be performed.
-
-\subsubsection{Validation via Performance Comparison}
-
-\begin{displayquote}
-    Validate the software framework by testing it with a variety of protein structure analysis tools and evaluating its performance in comparison to other available tools.
-\end{displayquote}
-
-As a part of the aim is to provide the ability to perform quicker and efficiently protein data analysis. Validation of the software framework is necessary to ensure that it is working correctly and producing accurate results. Testing the framework with a variety of protein structure analysis tools allows for a comprehensive evaluation of its performance. Comparing the performance of the software framework with other available tools helps to identify areas for improvement and ensures that the framework is competitive with other solutions in the field. This validation ensures that the software framework is a reliable and effective tool for protein structure analysis.
 
 \subsubsection{Scalable Data Handling for Protein Analysis}
 
@@ -1478,42 +1469,147 @@ We now need to create a following python program that can use the following json
 \begin{lstlisting}
     import requests
     import json
-
-    url = "https://search.rcsb.org/rcsbsearch/v1/query"
-
-    # Load the query from a JSON file
-    with open("query.json", "r") as f:
-        query = json.load(f)
-
-    # Convert the query to a JSON string
-    query_json = json.dumps(query)
-
-    # Set the headers and data for the request
-    headers = {"Content-Type": "application/json"}
-    data = query_json.encode("utf-8")
-
-    # Send the request and get the response
-    response = requests.post(url, headers=headers, data=data)
-
-    # Convert the response to a JSON object
-    response_json = response.json()
-
-    # Print the results
-    print(json.dumps(response_json, indent=4))  
+    import urllib.parse
+    from os.path import exists
+    import sys
+    
+    def main(folder, value):
+    
+        jsonfile = 'Search.json'
+        directory = (path)
+    
+    
+        with open(file=jsonfile, mode="r") as jsonFile:
+            data = json.load(jsonFile)
+    
+        data['query']['parameters']['value'] = value
+    
+    
+        with open(file=jsonfile, mode="w") as jsonFile:
+            json.dump(data, jsonFile)
+    
+        #fix to make the values in data 
+        #not use ' qoutes but use "" qoutes instead
+        data = json.dumps(data)
+    
+        newdata = urllib.parse.quote(data)
+        apicall = 
+        'https://search.rcsb.org/rcsbsearch/v2
+        /query?json={}'.format(newdata)
+    
+    
+        result = requests.get(apicall)
+        result = result.json()
+    
+        for x in result["result_set"]:
+            print(x)
+    
+    if __name__ == '__main__':
+        globals()[sys.argv[1]](sys.argv[2], sys.argv[3])
+    
+    #Example run line: python3 searchpdbfiles.py main PDBsDirectory2 vinay
+    
 \end{lstlisting}
 
-In this program, we first define the URL of the RCSB PDB API endpoint. We then open and load the json file provided from a query dictionary to a JSON string using json.dumps(). Next, we set the headers and data for the HTTP request using the requests.post() function. We pass in the URL, headers, and data as arguments, and get back the response from the server.
-
-\clearpage
+In this program, we first define the URL of the RCSB PDB API endpoint. We then open and change the value of the search filter to what is provided and load the json file from a query dictionary to a JSON string using json.dumps(). The urllib.parse.quote() method is used to URL-encode the search query JSON string. The script sends a GET request to the API using the requests.get() method with the apicall URL. Finally retreiving the results and printing them.
 
 \subsubsection{Issues with creating a valid JSON}
 
-I came across an issue when creating a valid JSON to pass into the Searh API. Currently the JSON file is only allowing the search for one value. However there is a vast number of other filters and search options a reasercher can use when browsing the pdb bank. Therfore i decdided to consoludate with my supervisor to determine some useful filter options for the reasercher to use whilst working with the framework. Some of these filters included:
+I came across an issue when creating a valid JSON to pass into the Searh API. Currently the JSON file is only allowing the search for one value. However there is a vast number of other filters and search options a reasercher can use when browsing the pdb bank. Therfore i decdided to consoludate with my supervisor to determine some useful filter options for the reasercher to use whilst working with the framework. Two useful filters included:
 
 \begin{itemize}
     \item R Factor
-    \item Date of 
+    \item Date of Deposition
 \end{itemize}
+
+This required multiple filters in one JSON query the value, R factor and Date of Deposition. This was found difficult to create a valid JSON, as the documentation uses high level biology terms which made it hard to look for exactly what i needed. I first broke down the problem by looking at how to translate these filter terms into a valid JSON format. I found that: 
+
+\begin{itemize}
+    \item reflns.pdbx Rmerge I obs is a measure of the quality of a protein structure, specifically the average R-merge value of the observed reflections. R-merge is a statistical parameter that is used to evaluate the agreement between multiple observations of a diffraction spot. A lower value of reflns.pdbx Rmerge I obs generally indicates a better quality protein structure.
+    \item rcsb accession info.initial release date is the date when a protein structure was first released to the RCSB PDB. This is the date when the protein structure was deposited in the PDB for the first time, and it is assigned by the depositor. The date is in the format YYYY-MM-DD.
+\end{itemize}
+
+\clearpage
+
+The documentation provides a 'Open in Editor' button which allowes an easy and effective way of editing json and sending it through to the api for a response.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=1\textwidth]{SearchAPIEditor.png}
+    \caption{\label{fig:SearchAPIEditor}Showing the User interface of the editor for the RCSB Search API.}
+\end{figure}
+
+It provides the user with error messages if the entered JSON on the left hand side is incorrect. Howver this was found to be not helpful as it the messages were vauge. Seeing this was not helping i decided to investigate the RCSB pdb bank website more specificaly looking at the api requests being sent on the website by investigating the through the advanced search using the netwrok tab.
+
+I first created a search using the the advanced search button that fufiled the filters i am attempting to create in json format.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.5\textwidth]{payload.png}
+    \caption{\label{fig:payload}Payload for when filtering through value date of deposition and rfactor}
+\end{figure}
+
+This payload provided me with a valid JSON with correct filters i require however, this JSON had lots of extra components that i did not require. So using the editor, documentation and valid json provided by the payload i created a valid json that filters on the three criterias Value, Rfactor and Date of Deposition which is the following:
+
+\begin{lstlisting}
+    "query": {
+      "type": "group",
+      "logical_operator": "and",
+      "nodes": [
+        {
+          "type": "group",
+          "logical_operator": "and",
+          "nodes": [
+            {
+              "type": "terminal",
+              "service":"full_text",
+              "parameters": {
+                "value":"covid"
+              }
+            },
+            {
+              "type": "terminal",
+              "service": "text",
+              "parameters": {
+                "attribute":"reflns.pdbx_Rmerge_I_obs",
+                "operator":"greater",
+                "negation":false,
+                "value":0.2
+              }
+            }
+          ]
+        },
+        {
+          "type": "terminal",
+          "service": "text",
+          "parameters": {
+            "attribute": "rcsb_accession_info.initial_release_date",
+            "operator": "less",
+            "value": "2019-08-20"
+          }
+        }
+      ]
+    },
+    "return_type": "polymer_entity"
+\end{lstlisting}
+
+\subsubsection{Explaining the Query}
+
+query: This is the main component of the JSON, which specifies the search criteria. It consists of three parts:
+
+\begin{enumerate}
+    \item type: This specifies that the query is a group query, which means that it consists of multiple sub-queries that are combined using a logical operator.
+    \item logical operator: This specifies that the logical operator used to combine the sub-queries is "and". This means that all the sub-queries must be true for a protein structure to be included in the search results.
+    \item nodes: This is an array of sub-queries, each of which is also a group query with two sub-nodes. The first sub-node is a query to search for the term "covid" in any text field and the second sub-node is a query to filter for protein structures with a reflns.pdbx Rmerge I obs value greater than 0.2. The second group query is then combined with a third sub-node, which is a terminal query to filter for protein structures with an initial release date less than 2019-08-20.
+\end{enumerate}
+
+Finally, return type: This specifies the type of entity that should be returned in the search results. In this case, the return type is "polymer entity", which means that the search results will only include polymer entities, which are protein or nucleic acid molecules with a defined sequence.
+
+
+
+
+
+
 
 \clearpage
 
@@ -1523,14 +1619,108 @@ I came across an issue when creating a valid JSON to pass into the Searh API. Cu
     the executable for protein structure analysis.
 \end{displayquote}
 
-\clearpage
+The framework is dependent on what files are present in the correct folder for the functions to work. This creates the need for a user interface for an easy approach to manipulate these folders to the reaserchers needs. Before begining the user interface i needed some functions that will be used when interacting with the user interface. Here is a list of all the functions i would like the user interface to inherit:
 
-\subsubsection{Validation via Performance Comparison}
-\begin{displayquote}
-    Validate the software framework by testing it with a variety of protein structure analysis tools and evaluating its performance in comparison to other available tools.
-\end{displayquote}
+\begin{itemize}
+    \item Clear all PDB files in folders
+    \item Remove One or more specifc pdb file in folders
+    \item Return all values within folder
+    \item Add one or more specific pdb file in folders
+    \item Search pdb file using API
+    \item Search and download pdb file from API into folder
+\end{itemize}
 
-\subsubsection{Need help with the above bullet point not sure what to write about}
+After implementing these functions in python we need to create a user interface that can inherit these functions.
+
+\subsubsection{Implementing Functions For User Interface}
+
+There is no need to implement Search pdb file using API as we already have please refer to Intergrate API for PDB access objective implentation.
+
+\subsubsection{Clear all PDB files in folders}
+
+This is the following program as the folder should only contain pdb files we dont need to specify what type of files to remove:
+
+\begin{lstlisting}
+    import os
+    import sys
+
+    def main(folder_path):
+    # iterate through all files and subdirectories in the provided folder
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            # delete the file
+            os.remove(os.path.join(root, file))
+
+    if __name__ == '__main__':
+    globals()[sys.argv[1]](sys.argv[2])
+
+    #Example run line: python3 emptypdbfolder.py main PDBsDirectory1   
+
+\end{lstlisting}
+
+\subsubsection{Return all values within folder}
+
+This is the following program as the front end has nto been created yet i have left the return as print but is subject to change:
+
+\begin{lstlisting}
+    import os
+    import sys
+
+    def main(folderpath):
+        for file in os.listdir(folderpath):
+            print(file)
+
+    if __name__ == '__main__':
+    globals()[sys.argv[1]](sys.argv[2])
+    #Example run line: python3 getcurrentpdbfiles.py main PDBsDirectory1
+
+\end{lstlisting}
+
+\subsubsection{Search and download pdb file from API into folder}
+
+This is the following program:
+
+\begin{lstlisting}
+def main(folder, value):
+    jsonfile = 'Search.json'
+    directory = (path)
+    with open(file=jsonfile, mode="r") as jsonFile:
+        data = json.load(jsonFile)
+    data['query']['parameters']['value'] = value
+    with open(file=jsonfile, mode="w") as jsonFile:
+        json.dump(data, jsonFile)
+    data = json.dumps(data)
+    newdata = urllib.parse.quote(data)
+
+    apicall = 'https://search.rcsb.org/rcsbsearch/
+    v2/query?json={}'.format(newdata)
+
+    result = requests.get(apicall)
+    result = result.json()
+    listofresults = []
+    for x in result["result_set"]:
+        listofresults.append(x['identifier'])
+    #Eveything above is for getting the values of the search
+    for pdbfile in listofresults:
+        if exists(directory + pdbfile + '.pdb'):
+            print(pdbfile + ': already exists')
+            continue
+
+        apicall = 'https://files.rcsb.org
+        /download/{}.pdb'.format(pdbfile)
+
+        response = requests.get(apicall)
+        with open(directory + pdbfile + '.pdb', 'wb') as f:
+            f.write(response.content)
+if __name__ == '__main__':
+    globals()[sys.argv[1]](sys.argv[2], sys.argv[3])
+#Example run line: python3 getpdbfiles.py main PDBsDirectory2 vinay
+\end{lstlisting}
+
+\subsubsection{Technical Decisions: User Interface for Protein Analysis}
+Unfortunatly i did not manage to complete this objective and i will discuss in more details in section 5. I am depriortizing this objective due to time constraints. I also believe that a better user interface is not a key objective when trying to achieve the aim of the project. The functions are currently giving the reasercher the ability to be able to use them through the terminal or command prompt giving some form of user interface to the reasercher when using the framework tool. The user interface is more of a addition feature to the framework making it easier to use. I plan to create a readme file which will in detail explain the functions of the program what they do and what they return and how to use them in the terminal.
+
+So i have the made the technical decision to priortize in finishing all other objectives before moving back on to finishing this objective.
 
 \clearpage
 
@@ -1629,7 +1819,77 @@ Introducing wholeTextFiles() method allowed the program to only need to read eac
 
 \clearpage
 
-\textbf{Testing and validation:} Whilst developing the framework, using python unittests i was able to test and validate its performance on different sizes of datasets also looking at catching unxepected errors occuring. This helped identify areas where the code got improvments and ensured that it can handle increasingly large datasets.
+\textbf{Testing and validation:} Whilst developing the framework, using python unittests i was able to test and validate its performance on different sizes of datasets also looking at catching unxepected errors occuring. This helped identify areas where the code got improvments and ensured that it can handle increasingly large datasets. Here is an example Unittest i have created: 
+
+\begin{lstlisting}
+    class Testgetpdbfiles(unittest.TestCase):
+
+        def test_input_values(self):
+            os.mkdir(self.directory)
+            values = ["covid", "v", "vinay"]
+
+            api_url='https://files.rcsb.org/download'
+
+            for value in values:
+
+                result = tempgetpdbfiles(self.directorywithoutmain, 
+                value, 'main/Search.json', api_url)
+
+                self.assertIsNone(result)
+                file_size = os.path.getsize(self.directory)
+                self.assertGreaterEqual(file_size, 0)
+                for filename in os.listdir(self.directory):
+
+                    file_path = os.path.join(self.directory,
+                     filename)
+
+                    try:
+                        if os.path.isfile(file_path) or
+                         os.path.islink(file_path):
+                            os.unlink(file_path)
+                        elif os.path.isdir(file_path):
+                            shutil.rmtree(file_path)
+                    except Exception as e:
+
+                        print(f'Failed to delete {file_path}.
+                         Reason: {e}')
+
+            os.rmdir(self.directory)
+
+\end{lstlisting}
+
+This is a test to check if the function returns the correct output for different input values. When using the getpdbfiles function (Search and Download pdb files off of the RCSB API) The test case aims to validate that the function works as expected by checking the following:
+
+\begin{enumerate}
+    \item The function should not return any value (None) if it executes successfully.
+    \item The size of the downloaded files should be greater than or equal to zero.
+    \item The downloaded files should be deleted after the function execution.
+\end{enumerate}
+
+The test case creates a directory and uses it as a target directory for the downloaded files. It then defines a list of values that the function will use to download the files. The loop iterates over the values and calls the tempgetpdbfiles() function with each value. After that, it asserts that the function returns None and checks the size of the directory where the files are saved. It also checks that all downloaded files have been deleted after the function execution.
+
+Finally, the test case removes the target directory created at the beginning. If all the assertions pass without any errors, the test case passes, indicating that the function works as expected for the given input values. If any of the assertions fail, the test case fails, indicating that there is an issue with the function's implementation.
+
+\subsubsection{Issues with setting up UnitTests}
+
+When setting up Unittests for my python programs i ran across an issue to do with relative path when running the code and running the unittest cases. Here is what my current directory looks like:
+
+\begin{lstlisting}
+    PROJECT
+        /main
+            /PDBsDirectory1
+                1a0aA.pdb
+            /PDBsDirectory2
+            invalid.json
+            search.json
+            main.py
+            test_main.py
+
+\end{lstlisting}
+
+When running my function directly from /main for example "python3 main.py getpdbfiles PDBsDirectory1 vinay" This would work as the relative folder path is correct and the line of code within the function getpdbfiles "directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder+"/")" would instansiate the correct directory. However when i ran the unittest for test main.py from /main passing in the value PDBsDirectory1 did not work as it is running the code from /PROJECT which was enforcing the test to fail as the relative path was not correct. Due to this a work around is to create a temp function that replicates the original functions. For any changes that occured to the function due to the test cases both functions were ammended equally.
+
+\subsubsection{Example Bug Caught}
 
 An example change is shown where we use tempfiles over saveAsTextFile. As in the eleair version we did not have a key value pair we needed to use the saveAsTextFile method which spits out the contents of the rdd for us to be able to then run into the tmalign function. However we now have the contents of the pdv so we can write these to a temp file where once used the directory is closed and not used again. This saves reasorces as we are not creating and deleting a permanent directory for each pdb file each iteration.
 
@@ -1686,8 +1946,7 @@ To complete this objective i need to provide a readme file that completes these 
 
 To do this i have created a readme file that fulfils each point. The Readme file will Provide a brief overview of your software framework, including its purpose and functionality.Provide clear and concise instructions on how to install your software framework, including any prerequisites that must be installed. Describe how to use your software framework, including any input/output file formats and command line options. Provide examples that demonstrate the use of your software framework, including sample input files and the expected output and finally, provide contact information for users to reach out to you in case they have any questions or issues.
 
-\section{Critical analysis and discussion: 10 marks}
-\subsection{A discussion of actual project achievements}
+\section{Project Achievements}
 A list of all the things achived in my project:
 
 \begin{itemize}
@@ -1695,22 +1954,20 @@ A list of all the things achived in my project:
     \item Cluster Setup
     \item Key Value Pair
     \item TMalign
-    \item API Post
+    \item API Service Download
     \item API Get
     \item Benchmarking
 \end{itemize}
 
-\subsection{how successful the project was}
+\subsection{The Project}
 
-The project was quite successful with me completing most to all project set objectives. Being able to search and download pdb files from the framework. The user is also able to call out two user executables on the pdbs they require. At the end of this project we have a software framework that suppots the Mapreduce formalism and can process large numbers of protein structures. Whilst being able to do so by parallelize protein structure analysis across multiple computing nodes. The framework is optimized to reduce the processing time required for protein structure analysis.
-
-The framework has a interface that allows users to manipulate the pdbs that are being passed into the executable for protein structure analysis.
+The project was quite successful all the objectives were implemented in a detail manner expect for the user interface. Overall the reasercher is able to search and download pdb files from the framework. The reasercher is also able to call out two user executables on the pdbs they require more specifically these are implemented useing a mapreduce formalism. Whilst having some functions that help manipulate the folders holding the pdb files. Ultimatly, at the end of this project we have a software framework that suppots the Mapreduce formalism and can process large numbers of protein structures. Whilst being able to do so by parallelising protein structure analysis across multiple computing nodes. Keeping in mind that the framework is optimized to reduce the processing time required for protein structure analysis.
 
 Finally the software framework is scalable and can handle increasingly large datasets and can be eaisly updated to keep pace with advancements in protein structure analysis techniques and computing technology.
 
-\subsection{Reflection on the project process}
+\subsection{Project Reflection}
 
-The project went according to plan by completing most to all the set out objectives however seting up the clusetr with correct rdd and key value pairs took much more time then expected. For this reason i didnt have enough time to create a good interface keeping at a bash level of interaction for the user. A readme has been created which helps the user understand the functions within the framework however a more user frienly user interface would be benifitial for eaxmple when running the functions that implement the api to search or download pdbs a better user interafce can be created that would be easier to use to be able to set up the pdb files the user would like to run the executables on to.
+All set out obejectives were completed in order and occording to plan. However seting up the clusetr with correct rdd and key value pairs took much more time then expected as at first i was trying to use just the data of the pdb file as the rdd. For this reason i didnt have enough time to create a good interface keeping at a bash level of interaction for the reasercher. Due to this i have tried to prioteise a detailed reademe file which helps the reasercher understand the functions within the framework however a more user frienly user interface would be benifitial for eaxmple when running the functions that implement the api to search or download pdbs a better user interafce can be created that would be easier to use such as to set up the pdb files the reasercher would like to run the executables on to.
 
 \subsection{conclusions or results analysed or discussed}
 Need to include benchmarking here
