@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  29 MAR 2023 18:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  30 MAR 2023 00:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -395,7 +395,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count302
-<logo.pdf, id=32, 948.54375pt x 473.77pt>
+<logo.pdf, id=36, 948.54375pt x 473.77pt>
 File: logo.pdf Graphic file (type pdf)
 <use logo.pdf>
 Package pdftex.def Info: logo.pdf  used on input line 23.
@@ -428,7 +428,7 @@ Overfull \hbox (3.7838pt too wide) in paragraph at lines 153--154
 
 
 ]
-<Protein Structure.png, id=134, 452.69125pt x 366.36874pt>
+<Protein Structure.png, id=138, 452.69125pt x 366.36874pt>
 File: Protein Structure.png Graphic file (type png)
 <use Protein Structure.png>
 Package pdftex.def Info: Protein Structure.png  used on input line 178.
@@ -461,7 +461,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 ] [11
 
 ]
-<Gene Expresion.png, id=189, 341.275pt x 300.62312pt>
+<Gene Expresion.png, id=193, 341.275pt x 300.62312pt>
 File: Gene Expresion.png Graphic file (type png)
 <use Gene Expresion.png>
 Package pdftex.def Info: Gene Expresion.png  used on input line 264.
@@ -469,7 +469,7 @@ Package pdftex.def Info: Gene Expresion.png  used on input line 264.
  [12
 
  <./Gene Expresion.png>]
-<SAGE1.png, id=202, 349.305pt x 377.41pt>
+<SAGE1.png, id=206, 349.305pt x 377.41pt>
 File: SAGE1.png Graphic file (type png)
 <use SAGE1.png>
 Package pdftex.def Info: SAGE1.png  used on input line 278.
@@ -485,7 +485,7 @@ Package caption Warning: Cannot determine current font size.
 (caption)                Try setting it with `size=' explicitly on input line 279.
 See the caption package documentation for explanation.
 
-<SAGE2.png, id=203, 349.305pt x 327.2225pt>
+<SAGE2.png, id=207, 349.305pt x 327.2225pt>
 File: SAGE2.png Graphic file (type png)
 <use SAGE2.png>
 Package pdftex.def Info: SAGE2.png  used on input line 284.
@@ -503,7 +503,7 @@ See the caption package documentation for explanation.
 [13
 
  <./SAGE1.png> <./SAGE2.png>]
-<Overlaping.png, id=217, 496.85625pt x 444.66125pt>
+<Overlaping.png, id=221, 496.85625pt x 444.66125pt>
 File: Overlaping.png Graphic file (type png)
 <use Overlaping.png>
 Package pdftex.def Info: Overlaping.png  used on input line 305.
@@ -544,17 +544,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ] [19] [20
 
 ]
-<PDB Site.png, id=332, 595.22375pt x 747.29187pt>
+<PDB Site.png, id=336, 595.22375pt x 747.29187pt>
 File: PDB Site.png Graphic file (type png)
 <use PDB Site.png>
 Package pdftex.def Info: PDB Site.png  used on input line 482.
 (pdftex.def)             Requested size: 220.50887pt x 276.83574pt.
-<Top Bar Search A.png, id=335, 893.3375pt x 569.12625pt>
+<Top Bar Search A.png, id=339, 893.3375pt x 569.12625pt>
 File: Top Bar Search A.png Graphic file (type png)
 <use Top Bar Search A.png>
 Package pdftex.def Info: Top Bar Search A.png  used on input line 490.
 (pdftex.def)             Requested size: 178.60974pt x 113.7885pt.
-<Top Bar Search B.png, id=336, 883.3pt x 595.72563pt>
+<Top Bar Search B.png, id=340, 883.3pt x 595.72563pt>
 File: Top Bar Search B.png Graphic file (type png)
 <use Top Bar Search B.png>
 Package pdftex.def Info: Top Bar Search B.png  used on input line 495.
@@ -576,7 +576,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ] [26
 
 ]
-<PDB File.png, id=399, 987.18813pt x 440.64626pt>
+<PDB File.png, id=403, 987.18813pt x 440.64626pt>
 File: PDB File.png Graphic file (type png)
 <use PDB File.png>
 Package pdftex.def Info: PDB File.png  used on input line 642.
@@ -588,7 +588,7 @@ Overfull \hbox (21.31625pt too wide) in paragraph at lines 649--650
 \OT1/cmr/m/n/10.95 Mmcif is a dictionary-based ap-proach to data ex-tracted from crys-tal-lo-graphic ex-per-i-ments [[]]. 
  []
 
-<xml.png, id=415, 670.00313pt x 645.91313pt>
+<xml.png, id=419, 670.00313pt x 645.91313pt>
 File: xml.png Graphic file (type png)
 <use xml.png>
 Package pdftex.def Info: xml.png  used on input line 663.
@@ -606,7 +606,7 @@ Package pdftex.def Info: xml.png  used on input line 663.
 ] [33
 
 ]
-<Execute.png, id=495, 704.6325pt x 471.7625pt>
+<Execute.png, id=499, 704.6325pt x 471.7625pt>
 File: Execute.png Graphic file (type png)
 <use Execute.png>
 Package pdftex.def Info: Execute.png  used on input line 787.
@@ -720,12 +720,12 @@ Overfull \hbox (45.16733pt too wide) in paragraph at lines 1510--1512
  []
 
 [54]
-<SearchAPIEditor.png, id=888, 1458.44875pt x 383.4325pt>
+<SearchAPIEditor.png, id=893, 1458.44875pt x 383.4325pt>
 File: SearchAPIEditor.png Graphic file (type png)
 <use SearchAPIEditor.png>
 Package pdftex.def Info: SearchAPIEditor.png  used on input line 1538.
 (pdftex.def)             Requested size: 441.01773pt x 115.94334pt.
-<payload.png, id=889, 916.42375pt x 619.31375pt>
+<payload.png, id=894, 916.42375pt x 619.31375pt>
 File: payload.png Graphic file (type png)
 <use payload.png>
 Package pdftex.def Info: payload.png  used on input line 1548.
@@ -791,11 +791,18 @@ Overfull \hbox (25.45712pt too wide) in paragraph at lines 1802--1803
 
 ] [66
 
-] [67
+]
+Overfull \hbox (1.02818pt too wide) in paragraph at lines 1984--1985
+\OT1/cmr/m/n/10.95 pro-tein struc-ture files amongst MapRe-duce clus-ter and, TmA-lign which proves we can MapRe-
+ []
 
-] [68
+[67
 
-] (./Project Report.bbl [69] [70
+] [68] [69
+
+] [70
+
+] (./Project Report.bbl [71] [72
 
 ]
 Underfull \hbox (badness 1303) in paragraph at lines 64--77
@@ -807,17 +814,17 @@ Underfull \hbox (badness 1354) in paragraph at lines 64--77
 \OT1/cmr/m/n/10.95 Chris-tine Zardecki.  RCSB Pro-tein Data Bank: Cel-e-brat-ing 50 years
  []
 
-[71] [72]
+[73] [74]
 Underfull \hbox (badness 1112) in paragraph at lines 291--297
 []\OT1/cmr/m/n/10.95 Xiangrui Meng, Joseph Bradley, Bu-rak Yavuz, Evan Sparks, Shiv-aram
  []
 
-[73] [74]
+[75] [76]
 Underfull \hbox (badness 1173) in paragraph at lines 427--433
 []\OT1/cmr/m/n/10.95 John D. West-brook and Paula M. D. Fitzger-ald.  The PDB For-mat,
  []
 
-[75]) [76] (./Project Report.aux)
+[77]) [78] (./Project Report.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -826,21 +833,21 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Project Report".out' has not changed.
-(rerunfilecheck)             Checksum: 8599ED58C0F1925A33765243E7491432;1216.
+(rerunfilecheck)             Checksum: 59C7A026702159D3330C3814D3ACDB15;1349.
  ) 
 Here is how much of TeX's memory you used:
- 14588 strings out of 476422
- 230836 string characters out of 5810350
+ 14639 strings out of 476422
+ 231575 string characters out of 5810350
  799416 words of memory out of 5000000
- 34979 multiletter control sequences out of 15000+600000
+ 35000 multiletter control sequences out of 15000+600000
  476721 words of font info for 52 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  72i,13n,77p,1498b,1902s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Project Report.pdf" (77 pages, 4391571 bytes).
+Output written on "Project Report.pdf" (79 pages, 4396300 bytes).
 PDF statistics:
- 1439 PDF objects out of 1440 (max. 8388607)
- 1275 compressed objects within 13 object streams
- 747 named destinations out of 1000 (max. 500000)
- 127 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1486 PDF objects out of 1728 (max. 8388607)
+ 1319 compressed objects within 14 object streams
+ 777 named destinations out of 1000 (max. 500000)
+ 135 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -28,7 +28,7 @@
     Structural bioinformatics is a rapidly growing field that aims to understand biological processes at the molecular level. In this dissertation, we present a novel framework for structural bioinformatics using a MapReduce formalism. Our framework allows for efficient processing of large-scale structural data by distributing computation across a cluster of computers. We demonstrate the effectiveness of our approach through benchmarking and comparisons with current implemented solutions. Our framework not only provides faster computation but also offers improved scalability and fault tolerance, making it a valuable tool for large-scale structural bioinformatics analyses. Furthermore, we highlight the potential of our framework for facilitating collaboration and data sharing among researchers, which is crucial for advancing our understanding of complex biological systems. Overall, our proposed framework presents a significant step forward in the field of structural bioinformatics, enabling the efficient and scalable analysis of complex structural data.
 \end{abstract}
 
-\section{Introduction}
+\section{Motivation}
 Structural bioinformatics plays a critical role in the development of new drugs, as well as in understanding the molecular basis of biological processes. It involves the analysis and interpretation of large amounts of complex data, including the three-dimensional structures of proteins, DNA, and other macromolecules. As the size and complexity of these data sets continue to increase, the need for efficient and scalable computational tools for their analysis and processing becomes ever more pressing.
 
 One promising approach to addressing this challenge is the use of MapReduce, a programming model for large-scale data processing in distributed computing environments. MapReduce enables the parallel processing of large data sets across multiple nodes in a cluster, which can significantly improve the speed and efficiency of data analysis tasks.
@@ -1903,29 +1903,30 @@ An example change is shown where we use tempfiles over saveAsTextFile. As in the
 
 In order to achive this objective we need to consider implementing a modular design that allows for easy integration of updates and improvements. We can also incorporate version control tools such as Git to manage changes in the codebase and ensure that the latest updates are available to users.
 
-\subsubsection{modular design}
+\subsubsection{Modular Design}
 Within my software i have ensured that:
 
 \begin{itemize}
     \item Each module should perform one specific task or functionality independently
     \item Modules should have well-defined interfaces for communication with other modules
     \item Modules should be relatively self-contained, i.e., they should not have dependencies on other modules
-    \item Each module should have unit tests to ensure its correct functionality
+    \item Each module have unit tests to ensure its correct functionality
     \item Modules should be designed to be reusable
 \end{itemize}
 
 
 \subsubsection{Git}
-Within git these actions have sure the software framework can be eaisly updated to keep pace with advancements:
+Within git these actions make sure that the software framework can be eaisly updated to keep pace with advancements:
 
 \begin{itemize}
-    \item Create a repository where the framework code will be uploaded to and managed.
+    \item We have a repository where the framework code will be uploaded to and managed.
     \item After each update or modification to the codebase, commit the changes to the repository with a clear commit message describing the changes made.
     \item Merge code to the repository's main branch after verifying that it is stable.
     \item Publish documentation in the form of a README file or wiki, providing detailed information about how to interact with the software and its requirements.
 \end{itemize}
 
-By implementing modular design and using Git best practices, you can ensure that your codebase remains a high-quality, reliable, and scalable software framework with the latest updates available to users.
+By implementing modular design and using Git best practices, you can ensure that the codebase remains a high-quality, reliable, and scalable software framework with the latest updates available to users.
+
 \clearpage
 
 \subsubsection{User Support for Protein Analysis Software}
@@ -1941,10 +1942,76 @@ To complete this objective i need to provide a readme file that completes these 
     \item Installation
     \item Usage
     \item Examples
-    \item Contact Information
 \end{itemize}
 
-To do this i have created a readme file that fulfils each point. The Readme file will Provide a brief overview of your software framework, including its purpose and functionality.Provide clear and concise instructions on how to install your software framework, including any prerequisites that must be installed. Describe how to use your software framework, including any input/output file formats and command line options. Provide examples that demonstrate the use of your software framework, including sample input files and the expected output and finally, provide contact information for users to reach out to you in case they have any questions or issues.
+To do this i have created a readme file that fulfils each point. The Readme file will Provide a brief overview of your software framework, including its purpose and functionality.Provide clear and concise instructions on how to install your software framework, including any prerequisites that must be installed. Describe how to use your software framework, including any input/output file formats and command line options. Provide examples that demonstrate the use of your software framework, including sample input files and the expected output.
+
+\section{Project Framework}
+Within this section i will be issuing a guide to how to setup the framework whilst providing function and non-functional requirements. I will also creating a video showing the functions and framework running. I will also be walking through the repository and explaining the files stored in there.
+
+
+\subsection{Directory}
+
+\begin{lstlisting}
+    PROJECT
+    /Notes
+    /Programs
+        /Lines
+        /TMalign
+        /TempFileTest
+    /ProofofConcepts
+        /PDBontaCluster
+        /TmAlign
+    /Python_Tutorial
+        /ApiTests
+        /Cluster_Tutorial
+        /MapReduce_Tutorial
+        /TestProject
+    /Reports
+        /Interim Report
+        /Project Report
+        /Protein Data Bank
+        /Protein Structures
+        /Template
+        /latex
+    /main
+\end{lstlisting}
+
+PROJECT holds all of the work i have conducted. 
+
+Notes contains all of the information i collected on the required background reading. I used these notes to help create the literature review. Python Tutorials folder contains all the tuturials i completed in which helped me understand the basics of features. This inclues using API's, setting up clusters, performing mapredcue functions and Test Project used to help me understand the basics of pyspark.
+
+ProofofConcepts folder contains two programs PDBontaCluster which proves distributing protein structure files amongst MapReduce cluster and, TmAlign which proves we can MapReduce using a single type of executable for analysing protein structures.
+
+Programs contains three programs performing two executables Lines returns the number of lines and TmAlign performs its script on two protein structures. TempfileTest was a test to use a temp file on the Lines program.
+
+Reports contains all of the reports i have creted for this project. Including my Interim Report, Project Report, Report on Protein Data Bank, Report on Protein Structures, a template for the Project Report, and finally, a latex test for setting up purposes.
+
+Lastly we have our main folder, this folder contains all of the available functions in seperate python files, a main python file that contains all of the available functions in one file, unit tests that have tests created to be run on the main python file and finally two benchmarking python programs intended for liens and TMalign.
+
+\subsection{Framework}
+The python file in PROJECT/main/main.py contains the framework with all the available functions.
+
+\subsubsection{Functional Requirements}
+
+\begin{itemize}
+    \item The code should be able to count the number of lines in each file of a given directory.
+    \item The code should be able to align two sets of files using the TMalign algorithm.
+    \item The code should be able to search for PDB files on the RCSB PDB database using a given value.
+    \item The code should be able to download PDB files from the RCSB PDB database for a given value and store them in a specified directory.
+\end{itemize}
+
+\subsubsection{Non-Functional Requirements}
+
+\begin{itemize}
+    \item The code should be written in Python3.
+    \item The code should use the PySpark library for processing large datasets.
+    \item The code should be easily understandable and maintainable by developers.
+    \item The code should have proper error handling and should raise appropriate exceptions when errors occur.
+\end{itemize}
+
+
+
 
 \section{Project Achievements}
 A list of all the things achived in my project:
