@@ -13,6 +13,20 @@ import re
 
 
 def linecount(spark, fileName):
+    """
+    Returns the line count for each file in the directory given by 'fileName'.
+    The function takes a SparkSession object and a string 'fileName' as input.
+
+    Args:
+    - spark (SparkSession): A SparkSession object
+    - fileName (str): A string representing the name of the directory to count lines in
+
+    Returns:
+    - True: A boolean indicating that the function has completed executing successfully.
+
+    Raises:
+    - Exception: If 'fileName' does not exist or if no files are found in the folder provided
+    """
     # python3 main.py linecount PDBsDirectory1
     directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+fileName+"/*")
 
@@ -33,6 +47,21 @@ def linecount(spark, fileName):
     return True
 
 def tmalign(spark, folder1, folder2):
+    """
+    Performs TM-align structural alignment of proteins in the directories 'folder1' and 'folder2'.
+    The function takes a SparkSession object and two strings 'folder1' and 'folder2' as input.
+
+    Args:
+    - spark (SparkSession): A SparkSession object
+    - folder1 (str): A string representing the name of the first directory to perform structural alignment
+    - folder2 (str): A string representing the name of the second directory to perform structural alignment
+
+    Returns:
+    - None
+
+    Raises:
+    - None
+    """
     # python3 main.py tmalign PDBsDirectory1 PDBsDirectory2
     directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder1+"/*")
     directory2 = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder2+"/*")
@@ -52,6 +81,19 @@ def tmalign(spark, folder1, folder2):
     rdd.map(lambda tuple: runTMalign(tuple[0], tuple[1])).collect()
 
 def searchpdbfiles(value):
+    """
+    Searches for PDB files containing the search value provided.
+    The function takes a string 'value' as input.
+
+    Args:
+    - value (str): A string representing the search value to look for in PDB files.
+
+    Returns:
+    - listOfResults (list): A list of dictionaries representing the search results.
+
+    Raises:
+    - Exception: If the input string contains invalid characters or if an API error occurs.
+    """
     # python3 main.py searchpdbfiles vinay
     if bool(re.search('[!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~]', value)):
         raise Exception("Invalid Input please dont use punctuations")
@@ -81,6 +123,20 @@ def searchpdbfiles(value):
     #503 Service Unavailable. The server is currently unable to handle the request due to a temporary overloading
 
 def getpdbfiles(folder, value):
+    """
+    Downloads PDB files containing the search value provided to the directory 'folder'.
+    The function takes two strings 'folder' and 'value' as input.
+
+    Args:
+    - folder (str): A string representing the name of the directory to download PDB files to.
+    - value (str): A string representing the search value to look for in PDB files.
+
+    Returns:
+    - None
+
+    Raises:
+    - Exception: If the input string contains invalid characters or if an API error occurs.
+    """
     # python3 main.py getpdbfiles PDBsDirectory1 vinay
     if bool(re.search('[!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~]', value)):
         raise Exception("Invalid Input please dont use punctuations")
@@ -132,6 +188,15 @@ def getpdbfiles(folder, value):
     #503 Service Unavailable. The server is currently unable to handle the request due to a temporary overloading
 
 def getcurrentpdbfiles(folderPath):
+    """
+    Returns a list of absolute paths for all PDB files in the specified directory and its subdirectories.
+
+    Parameters:
+    folder_path (str): The path of the directory to search for PDB files.
+
+    Returns:
+    list: A list of absolute paths for all PDB files found in the specified directory and its subdirectories.
+    """
     # python3 main.py getcurrentpdbfiles PDBsDirectory1
     listOfPdbs = []
     if os.path.exists(folderPath) == False:
@@ -143,6 +208,15 @@ def getcurrentpdbfiles(folderPath):
     return listOfPdbs
 
 def emptypdbfolder(folderPath):
+    """
+    Deletes all files within the specified directory and its subdirectories.
+
+    Parameters:
+    folder_path (str): The path of the directory to empty.
+
+    Returns:
+    None
+    """
     # python3 main.py emptypdbfolder PDBsDirectory1
     # iterate through all files and subdirectories in the provided folder
     print(folderPath)
