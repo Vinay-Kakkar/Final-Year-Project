@@ -1947,7 +1947,7 @@ To complete this objective i need to provide a readme file that completes these 
 To do this i have created a readme file that fulfils each point. The Readme file will Provide a brief overview of your software framework, including its purpose and functionality.Provide clear and concise instructions on how to install your software framework, including any prerequisites that must be installed. Describe how to use your software framework, including any input/output file formats and command line options. Provide examples that demonstrate the use of your software framework, including sample input files and the expected output.
 
 \section{Project Framework}
-Within this section i will be issuing a guide to how to setup the framework whilst providing function and non-functional requirements. I will also creating a video showing the functions and framework running. I will also be walking through the repository and explaining the files stored in there.
+Within this section i will be issuing a guide to how to setup the framework whilst providing function and non-functional requirements. I will also creating a video showing the functions and framework running. I will also be walking through the repository and explaining the files stored in there. Finally, i will be going through a setup guide to how to install the program.
 
 
 \subsection{Directory}
@@ -2010,8 +2010,87 @@ The python file in PROJECT/main/main.py contains the framework with all the avai
     \item The code should have proper error handling and should raise appropriate exceptions when errors occur.
 \end{itemize}
 
+\subsubsection{Setup Guide}
 
+\textbf{Install Git:} If Git is not already installed you can download it from the Git website (https://git-scm.com/downloads) and follow the installation instructions.
 
+\textbf{Clone the Repository:} Clone the repository by running the following command: git clone https://gitlab.cim.rhul.ac.uk/zfac214/PROJECT/-/tree/main
+
+\textbf{Install Required Dependencies:} Navigate to the README.md which lists the dependencies required for the program. Install any necessary dependencies using the appropriate package manager for example pip install.
+
+\textbf{Run the Program:} Once all the dependencies are installed run the program using the appropriate command you can see the correct commands using the README.md file.
+
+\subsection{Example Results}
+
+It is important to note that the program must be run within the /main folder and that the folders used within the framework must be stored in the /main folder.
+
+I will provide some examples of running functions showing how to run the function and the expected result. The available functions include:
+
+\begin{itemize}
+    \item linecount
+    \item tmalign
+    \item searchpdbfiles
+    \item getpdbfiles
+    \item emptypdbfolder
+    \item getcurrentpdbfiles
+\end{itemize}
+
+The current formula to run any of these functions available in the main.py file is the following:
+
+\begin{lstlisting}
+    python3 main.py <Function name> <Parameters>
+\end{lstlisting}
+To see what parameters are needed for the function please refer to the README file in the /main folder.
+
+\subsubsection{linecount}
+An example for linecount function where the parameter takes the folder of which contains all the pdb files:
+
+\begin{lstlisting}
+    python3 main.py linecount PDBsDirectory1
+\end{lstlisting}
+
+This will result in the following output:
+
+\begin{lstlisting}
+    linecount output
+\end{lstlisting}
+
+\subsubsection{tmalign}
+An example for tmalign function where the parameter takes two folders which contains the pdb files:
+
+\begin{lstlisting}
+    python3 main.py tmalign PDBsDirectory1 PDBsDirectory2
+\end{lstlisting}
+
+This will result in the following output:
+
+\begin{lstlisting}
+    tmalign output
+\end{lstlisting}
+
+\subsubsection{searchpdbfiles, getpdbfiles, emptypdbfolder, getcurrentpdbfiles}
+
+As all the functions follow the same pattern please refer to the README file to determine what parameters the function excepts it provides what parameters it needs and example executions whilst also explaining what to expect as an output from the function. I will provide an example output for each of the remaining functions:
+
+searchpdbfiles
+\begin{lstlisting}
+    searchpdbfiles output
+\end{lstlisting}
+
+getpdbfiles
+\begin{lstlisting}
+    getpdbfiles output
+\end{lstlisting}
+
+emptypdbfolder
+\begin{lstlisting}
+    emptypdbfolder output
+\end{lstlisting}
+
+getcurrentpdbfiles
+\begin{lstlisting}
+    getcurrentpdbfiles output
+\end{lstlisting}
 
 \section{Project Achievements}
 A list of all the things achived in my project:
