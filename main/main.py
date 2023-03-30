@@ -49,22 +49,35 @@ def linecount(spark, fileName):
 def tmalign(spark, folder1, folder2):
     """
     Performs TM-align structural alignment of proteins in the directories 'folder1' and 'folder2'.
-    The function takes a SparkSession object and two strings 'folder1' and 'folder2' as input.
-
+    
     Args:
-    - spark (SparkSession): A SparkSession object
-    - folder1 (str): A string representing the name of the first directory to perform structural alignment
-    - folder2 (str): A string representing the name of the second directory to perform structural alignment
+        spark (SparkSession): A SparkSession object.
+        folder1 (str): A string representing the path of the first directory containing protein PDB files.
+        folder2 (str): A string representing the path of the second directory containing protein PDB files.
 
     Returns:
-    - None
+        None
 
     Raises:
-    - None
+        Exception: If the path for either of the folders doesn't exist.
+        Exception: If there are no PDB files found in the directories.
     """
     # python3 main.py tmalign PDBsDirectory1 PDBsDirectory2
+    if not os.path.exists(folder1):
+        raise Exception("Path does not exist")
+    if not os.path.exists(folder2):
+        raise Exception("Path does not exist")
+    
     directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder1+"/*")
     directory2 = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder2+"/*")
+
+    
+    files = os.listdir(folder1)
+    if not files:
+        raise Exception("No files found in folder provided")
+    files = os.listdir(folder1)
+    if not files:
+        raise Exception("No files found in folder provided")
 
     rddKeyValue1 = spark.sparkContext.wholeTextFiles(directory1)
     rddKeyValue2 = spark.sparkContext.wholeTextFiles(directory2)
