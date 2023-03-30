@@ -22,10 +22,10 @@ def tmalign(spark, folder1, folder2):
     directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder1+"/*")
     directory2 = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder2+"/*")
 
-    rddkeyvalue1 = spark.wholeTextFiles(directory1)
-    rddkeyvalue2 = spark.wholeTextFiles(directory2)
+    rddKeyValue1 = spark.wholeTextFiles(directory1)
+    rddKeyValue2 = spark.wholeTextFiles(directory2)
 
-    rdd = rddkeyvalue1.cartesian(rddkeyvalue2)
+    rdd = rddKeyValue1.cartesian(rddKeyValue2)
 
     def runTMalign(tuple1, tuple2):
         with tempfile.NamedTemporaryFile(mode='w') as tmp1, tempfile.NamedTemporaryFile(mode='w') as tmp2:

@@ -15,10 +15,10 @@ def main(folder1, folder2):
     directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder1+"/*")
     directory2 = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder2+"/*")
 
-    rddkeyvalue1 = spark.sparkContext.wholeTextFiles(directory1)
-    rddkeyvalue2 = spark.sparkContext.wholeTextFiles(directory2)
+    rddKeyValue1 = spark.sparkContext.wholeTextFiles(directory1)
+    rddKeyValue2 = spark.sparkContext.wholeTextFiles(directory2)
 
-    rdd = rddkeyvalue1.cartesian(rddkeyvalue2)
+    rdd = rddKeyValue1.cartesian(rddKeyValue2)
 
     def runTMalign(tuple1, tuple2):
         with tempfile.NamedTemporaryFile(prefix = tuple1[0][60:], mode='w') as tmp1, tempfile.NamedTemporaryFile(prefix = tuple2[0][60:], mode='w') as tmp2:

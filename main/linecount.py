@@ -7,18 +7,18 @@ import time
 import sys
 
 
-def main(filename):
+def main(fileName):
     # This creates a local cluster
     spark = SparkSession.builder.appName('PDB').getOrCreate()
     start = time.time()
-    directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+filename+"/*")
+    directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+fileName+"/*")
 
-    rddkeyvalue = spark.sparkContext.wholeTextFiles(directory)
+    rddKeyValue = spark.sparkContext.wholeTextFiles(directory)
 
     def numberoflinesinfile(k):
         os.system("wc -l "+ k[45:])
     
-    rddkeyvalue.map(lambda x: numberoflinesinfile(x[0])).collect()
+    rddKeyValue.map(lambda x: numberoflinesinfile(x[0])).collect()
 
     end = time.time()
     print(end - start)

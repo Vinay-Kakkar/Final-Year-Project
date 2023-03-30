@@ -15,26 +15,26 @@ import urllib
 from os.path import exists
 
 #Created temp function due to the issues of working directories test runs the code from /PROJECT where main is build to be run from PROJECT/main
-def templinecount(spark, filename):
-    directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+filename+"/*")
+def templinecount(spark, fileName):
+    directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+fileName+"/*")
 
-    if not os.path.exists("main/"+filename):
+    if not os.path.exists("main/"+fileName):
         raise Exception("Path does not exist")
 
-    files = os.listdir("main/"+filename)
+    files = os.listdir("main/"+fileName)
     if not files:
         raise Exception("No files found in folder provided")
-    rddkeyvalue = spark.sparkContext.wholeTextFiles(directory)
+    rddKeyValue = spark.sparkContext.wholeTextFiles(directory)
     def numberoflinesinfile(k):
         os.system("wc -l "+ k[45:])
-    rddkeyvalue.map(lambda x: numberoflinesinfile(x[0])).collect()
+    rddKeyValue.map(lambda x: numberoflinesinfile(x[0])).collect()
     return True
 
-def tempsearchpdbfiles(value, jsonpath, api):
+def tempsearchpdbfiles(value, jsonPath, api):
     # python3 main.py searchpdbfiles vinay
     if bool(re.search('[!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~]', value)):
         raise Exception("Invalid Input please dont use punctuations")
-    jsonfile = jsonpath
+    jsonfile = jsonPath
     try:
         with open(file=jsonfile, mode="r") as jsonFile:
             data = json.load(jsonFile)
@@ -45,23 +45,23 @@ def tempsearchpdbfiles(value, jsonpath, api):
         json.dump(data, jsonFile)
     #fix to make the values in data not use ' qoutes but use "" qoutes instead
     data = json.dumps(data)
-    newdata = urllib.parse.quote(data)
-    apicall = (api+'json={}'.format(newdata))
+    newData = urllib.parse.quote(data)
+    apiCall = (api+'json={}'.format(newData))
     #Check this line to see what response you are getting if code stops working
-    result = requests.get(apicall)
+    result = requests.get(apiCall)
     if result.status_code != 200:
         raise Exception("API error occurred")
-    resultjson = result.json()
-    listofresults = []
-    for result in resultjson["result_set"]:
-        listofresults.append(result)
-    print(listofresults)
-    return listofresults
+    resultJson = result.json()
+    listOfResults = []
+    for result in resultJson["result_set"]:
+        listOfResults.append(result)
+    print(listOfResults)
+    return listOfResults
 
-def tempgetpdbfiles(folder, value, jsonpath, api):
+def tempgetpdbfiles(folder, value, jsonPath, api):
     if bool(re.search('[!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~]', value)):
         raise Exception("Invalid Input please dont use punctuations")
-    jsonfile = jsonpath
+    jsonfile = jsonPath
     directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder+"/")
     try:
         with open(file=jsonfile, mode="r") as jsonFile:
@@ -72,27 +72,27 @@ def tempgetpdbfiles(folder, value, jsonpath, api):
     with open(file=jsonfile, mode="w") as jsonFile:
         json.dump(data, jsonFile)
     data = json.dumps(data)
-    newdata = urllib.parse.quote(data)
-    apicall = 'https://search.rcsb.org/rcsbsearch/v2/query?json={}'.format(newdata)
-    result = requests.get(apicall)
+    newData = urllib.parse.quote(data)
+    apiCall = 'https://search.rcsb.org/rcsbsearch/v2/query?json={}'.format(newData)
+    result = requests.get(apiCall)
     if result.status_code != 200:
         raise Exception("API error occurred")
     result = result.json()
-    listofresults = []
+    listOfResults = []
     for x in result["result_set"]:
-        listofresults.append(x['identifier'])
+        listOfResults.append(x['identifier'])
     #Eveything above is for getting the values of the search
 
-    for pdbfile in listofresults:
-        if exists(directory + pdbfile + '.pdb'):
-            print(pdbfile + ': already exists')
+    for pdbFile in listOfResults:
+        if exists(directory + pdbFile + '.pdb'):
+            print(pdbFile + ': already exists')
             continue
-        apicall = api+'/{}.pdb'.format(pdbfile)
+        apiCall = api+'/{}.pdb'.format(pdbFile)
         try:
-            response = requests.get(apicall)
+            response = requests.get(apiCall)
         except:
             raise Exception("API error occurred")
-        with open(directory + pdbfile + '.pdb', 'wb') as f:
+        with open(directory + pdbFile + '.pdb', 'wb') as f:
             f.write(response.content)
 
 class Testgetcurrentpdbfiles(unittest.TestCase):
@@ -123,28 +123,28 @@ class Testgetcurrentpdbfiles(unittest.TestCase):
 
     #Test that the function correctly handles nested directories and returns all files within them.
     def test_subdir(self):
-        subdirectory = "subfolder"
+        subDirectory = "subfolder"
         os.mkdir(self.directory)
         open(os.path.join(self.directory, "fake1.pdb"), "w").close()
-        os.mkdir(os.path.join(self.directory, subdirectory))
-        open(os.path.join(self.directory, subdirectory, "fake2.pdb"), "w").close()
+        os.mkdir(os.path.join(self.directory, subDirectory))
+        open(os.path.join(self.directory, subDirectory, "fake2.pdb"), "w").close()
 
 
         test = main.getcurrentpdbfiles(self.directory)
         self.assertTrue(len(test) is 2)
 
         os.remove(os.path.join(self.directory, "fake1.pdb"))
-        os.remove(os.path.join(self.directory, subdirectory, "fake2.pdb"))
-        os.rmdir(os.path.join(self.directory, subdirectory))
+        os.remove(os.path.join(self.directory, subDirectory, "fake2.pdb"))
+        os.rmdir(os.path.join(self.directory, subDirectory))
         os.rmdir(self.directory)
     
     #Test that the function only returns files and not directories or other types of files (e.g., symbolic links).
     def test_subdir(self):
-        subdirectory = "subfolder"
+        subDirectory = "subfolder"
         os.mkdir(self.directory)
         open(os.path.join(self.directory, "fake1.pdb"), "w").close()
-        os.mkdir(os.path.join(self.directory, subdirectory))
-        open(os.path.join(self.directory, subdirectory, "fake2.pdb"), "w").close()
+        os.mkdir(os.path.join(self.directory, subDirectory))
+        open(os.path.join(self.directory, subDirectory, "fake2.pdb"), "w").close()
 
         os.symlink(os.path.join(self.directory, "file1.txt"), os.path.join(self.directory, "link1"))
         os.symlink(os.path.join(self.directory, "subdirectory"), os.path.join(self.directory, "link2"))
@@ -156,20 +156,20 @@ class Testgetcurrentpdbfiles(unittest.TestCase):
         os.remove(os.path.join(self.directory, "fake1.pdb"))
         os.remove(os.path.join(self.directory, "link1"))
         os.remove(os.path.join(self.directory, "link2"))
-        os.remove(os.path.join(self.directory, subdirectory, "fake2.pdb"))
-        os.rmdir(os.path.join(self.directory, subdirectory))
+        os.remove(os.path.join(self.directory, subDirectory, "fake2.pdb"))
+        os.rmdir(os.path.join(self.directory, subDirectory))
         os.rmdir(self.directory)
    
 class Testlinecount(unittest.TestCase):
     directory = ("main/testdirectory")
-    directorywithoutmain = ("testdirectory")
+    directoryWithOutMain = ("testdirectory")
 
     #Test that the function returns Exception when there is no files in folder
     def test_empty_folder_path(self):
         with self.assertRaises(Exception) as context:
             spark = SparkSession.builder.appName('Test').getOrCreate()
             os.mkdir(self.directory)
-            test = templinecount(spark, self.directorywithoutmain)
+            test = templinecount(spark, self.directoryWithOutMain)
         self.assertTrue("No files found in folder provided" in str(context.exception))
         
         os.rmdir(self.directory)
@@ -179,7 +179,7 @@ class Testlinecount(unittest.TestCase):
         spark = SparkSession.builder.appName('Test').getOrCreate()
         os.mkdir(self.directory)
         open(os.path.join(self.directory, "fake.pdb"), "w").close()
-        test = templinecount(spark, self.directorywithoutmain)
+        test = templinecount(spark, self.directoryWithOutMain)
         self.assertTrue(test is True)
         
         os.remove(os.path.join(self.directory, "fake.pdb"))
@@ -190,25 +190,25 @@ class Testlinecount(unittest.TestCase):
 
         spark = SparkSession.builder.appName('Test').getOrCreate()
 
-        subdirectory = "subfolder"
+        subDirectory = "subfolder"
         os.mkdir(self.directory)
         open(os.path.join(self.directory, "fake1.pdb"), "w").close()
-        os.mkdir(os.path.join(self.directory, subdirectory))
-        open(os.path.join(self.directory, subdirectory, "fake2.pdb"), "w").close()
+        os.mkdir(os.path.join(self.directory, subDirectory))
+        open(os.path.join(self.directory, subDirectory, "fake2.pdb"), "w").close()
 
-        test = templinecount(spark, self.directorywithoutmain)
+        test = templinecount(spark, self.directoryWithOutMain)
         self.assertTrue(test is True)
         
         os.remove(os.path.join(self.directory, "fake1.pdb"))
-        os.remove(os.path.join(self.directory, subdirectory, "fake2.pdb"))
-        os.rmdir(os.path.join(self.directory, subdirectory))
+        os.remove(os.path.join(self.directory, subDirectory, "fake2.pdb"))
+        os.rmdir(os.path.join(self.directory, subDirectory))
         os.rmdir(self.directory)
     
     #Test that the function returns exception when there is a invalid folder
     def test_invalid_folder(self):
         spark = SparkSession.builder.appName('Test').getOrCreate()
         with self.assertRaises(Exception) as context:
-            test = templinecount(spark, self.directorywithoutmain)
+            test = templinecount(spark, self.directoryWithOutMain)
         self.assertTrue("Path does not exist" in str(context.exception))
         
 class Testsearchpdbfiles(unittest.TestCase):
@@ -245,13 +245,13 @@ class Testsearchpdbfiles(unittest.TestCase):
 
 class Testgetpdbfiles(unittest.TestCase):
     directory = ("main/testdirectory")
-    directorywithoutmain = ("testdirectory")
+    directoryWithOutMain = ("testdirectory")
     #Test that the function raises an error when an invalid input is passed.
     def test_invalidinput(self):
         os.mkdir(self.directory)
         value = "___"
         with self.assertRaises(Exception) as context:
-            test = tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', 'https://search.rcsb.org/rcsbsearch/v2/query?')
+            test = tempgetpdbfiles(self.directoryWithOutMain, value, 'main/Search.json', 'https://search.rcsb.org/rcsbsearch/v2/query?')
         self.assertTrue("Invalid Input please dont use punctuations" in str(context.exception))
 
         os.rmdir(self.directory)
@@ -260,17 +260,17 @@ class Testgetpdbfiles(unittest.TestCase):
     def test_valid_json(self):
         os.mkdir(self.directory)
         value = "covid"
-        result = tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', 'https://search.rcsb.org/rcsbsearch/v2/query?')
+        result = tempgetpdbfiles(self.directoryWithOutMain, value, 'main/Search.json', 'https://search.rcsb.org/rcsbsearch/v2/query?')
         self.assertIsNone(result)
-        for filename in os.listdir(self.directory):
-            file_path = os.path.join(self.directory, filename)
+        for fileName in os.listdir(self.directory):
+            filePath = os.path.join(self.directory, fileName)
             try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
+                if os.path.isfile(filePath) or os.path.islink(filePath):
+                    os.unlink(filePath)
+                elif os.path.isdir(filePath):
+                    shutil.rmtree(filePath)
             except Exception as e:
-                print(f'Failed to delete {file_path}. Reason: {e}')
+                print(f'Failed to delete {filePath}. Reason: {e}')
         os.rmdir(self.directory)
     
     
@@ -278,121 +278,121 @@ class Testgetpdbfiles(unittest.TestCase):
     def test_api_response(self):
         os.mkdir(self.directory)
         value = "covid"
-        api_url='https://files.rcsb.org/download'
-        response = tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
+        apiUrl='https://files.rcsb.org/download'
+        response = tempgetpdbfiles(self.directoryWithOutMain, value, 'main/Search.json', apiUrl)
         self.assertIsNone(response)
-        for filename in os.listdir(self.directory):
-            file_path = os.path.join(self.directory, filename)
+        for fileName in os.listdir(self.directory):
+            filePath = os.path.join(self.directory, fileName)
             try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
+                if os.path.isfile(filePath) or os.path.islink(filePath):
+                    os.unlink(filePath)
+                elif os.path.isdir(filePath):
+                    shutil.rmtree(filePath)
             except Exception as e:
-                print(f'Failed to delete {file_path}. Reason: {e}')
+                print(f'Failed to delete {filePath}. Reason: {e}')
         os.rmdir(self.directory)
     
     #Test that the function correctly handles any errors or exceptions that may occur during the API call (e.g. network errors, server errors).
     def test_api_call_error_handling(self):
         os.mkdir(self.directory)
         value = "covid"
-        api_url='https://files.rcsb.'
+        apiUrl='https://files.rcsb.'
         with self.assertRaises(Exception) as context:
-            tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
+            tempgetpdbfiles(self.directoryWithOutMain, value, 'main/Search.json', apiUrl)
         self.assertTrue("API error occurred" in str(context.exception))
-        for filename in os.listdir(self.directory):
-            file_path = os.path.join(self.directory, filename)
+        for fileName in os.listdir(self.directory):
+            filePath = os.path.join(self.directory, fileName)
             try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
+                if os.path.isfile(filePath) or os.path.islink(filePath):
+                    os.unlink(filePath)
+                elif os.path.isdir(filePath):
+                    shutil.rmtree(filePath)
             except Exception as e:
-                print(f'Failed to delete {file_path}. Reason: {e}')
+                print(f'Failed to delete {filePath}. Reason: {e}')
         os.rmdir(self.directory)
 
     #Test that the function correctly parses and returns the data from the API response.
     def test_pdb_content(self):
         os.mkdir(self.directory)
         value = "covid"
-        api_url='https://files.rcsb.org/download'
-        result = tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
+        apiUrl='https://files.rcsb.org/download'
+        result = tempgetpdbfiles(self.directoryWithOutMain, value, 'main/Search.json', apiUrl)
         self.assertIsNone(result)
-        file_path = os.path.join(self.directory, '6YUN.pdb')
-        with open(file_path, 'r') as f:
+        filePath = os.path.join(self.directory, '6YUN.pdb')
+        with open(filePath, 'r') as f:
             content = f.read()
         self.assertTrue(content.startswith('HEADER'))
-        for filename in os.listdir(self.directory):
-            file_path = os.path.join(self.directory, filename)
+        for fileName in os.listdir(self.directory):
+            filePath = os.path.join(self.directory, fileName)
             try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
+                if os.path.isfile(filePath) or os.path.islink(filePath):
+                    os.unlink(filePath)
+                elif os.path.isdir(filePath):
+                    shutil.rmtree(filePath)
             except Exception as e:
-                print(f'Failed to delete {file_path}. Reason: {e}')
+                print(f'Failed to delete {filePath}. Reason: {e}')
         os.rmdir(self.directory)
 
     #Test that the function correctly writes the downloaded data to a file.
     def test_download_file(self):
         os.mkdir(self.directory)
         value = "covid"
-        api_url='https://files.rcsb.org/download'
-        tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
-        file_path = os.path.join(self.directory, '6YUN.pdb')
-        file_exists = os.path.exists(file_path)
-        self.assertTrue(file_exists)
-        for filename in os.listdir(self.directory):
-            file_path = os.path.join(self.directory, filename)
+        apiUrl='https://files.rcsb.org/download'
+        tempgetpdbfiles(self.directoryWithOutMain, value, 'main/Search.json', apiUrl)
+        filePath = os.path.join(self.directory, '6YUN.pdb')
+        fileExists = os.path.exists(filePath)
+        self.assertTrue(fileExists)
+        for fileName in os.listdir(self.directory):
+            filePath = os.path.join(self.directory, fileName)
             try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
+                if os.path.isfile(filePath) or os.path.islink(filePath):
+                    os.unlink(filePath)
+                elif os.path.isdir(filePath):
+                    shutil.rmtree(filePath)
             except Exception as e:
-                print(f'Failed to delete {file_path}. Reason: {e}')
+                print(f'Failed to delete {filePath}. Reason: {e}')
         os.rmdir(self.directory)
 
     #Test that the downloaded file contains the correct data and format.
     def test_file_format(self):
         os.mkdir(self.directory)
         value = "covid"
-        api_url='https://files.rcsb.org/download'
-        tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
-        file_path = os.path.join(self.directory, '6YUN.pdb')
-        with open(file_path, 'r') as f:
+        apiUrl='https://files.rcsb.org/download'
+        tempgetpdbfiles(self.directoryWithOutMain, value, 'main/Search.json', apiUrl)
+        filePath = os.path.join(self.directory, '6YUN.pdb')
+        with open(filePath, 'r') as f:
             content = f.read()
         self.assertTrue(content.startswith('HEADER'))
-        for filename in os.listdir(self.directory):
-            file_path = os.path.join(self.directory, filename)
+        for fileName in os.listdir(self.directory):
+            filePath = os.path.join(self.directory, fileName)
             try:
-                if os.path.isfile(file_path) or os.path.islink(file_path):
-                    os.unlink(file_path)
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
+                if os.path.isfile(filePath) or os.path.islink(filePath):
+                    os.unlink(filePath)
+                elif os.path.isdir(filePath):
+                    shutil.rmtree(filePath)
             except Exception as e:
-                print(f'Failed to delete {file_path}. Reason: {e}')
+                print(f'Failed to delete {filePath}. Reason: {e}')
         os.rmdir(self.directory)
 
     #Test that the function returns the correct output for different input values.
     def test_input_values(self):
         os.mkdir(self.directory)
         values = ["covid", "v", "vinay"]
-        api_url='https://files.rcsb.org/download'
+        apiUrl='https://files.rcsb.org/download'
         for value in values:
-            result = tempgetpdbfiles(self.directorywithoutmain, value, 'main/Search.json', api_url)
+            result = tempgetpdbfiles(self.directoryWithOutMain, value, 'main/Search.json', apiUrl)
             self.assertIsNone(result)
-            file_size = os.path.getsize(self.directory)
-            self.assertGreaterEqual(file_size, 0)
-            for filename in os.listdir(self.directory):
-                file_path = os.path.join(self.directory, filename)
+            fileSize = os.path.getsize(self.directory)
+            self.assertGreaterEqual(fileSize, 0)
+            for fileName in os.listdir(self.directory):
+                filePath = os.path.join(self.directory, fileName)
                 try:
-                    if os.path.isfile(file_path) or os.path.islink(file_path):
-                        os.unlink(file_path)
-                    elif os.path.isdir(file_path):
-                        shutil.rmtree(file_path)
+                    if os.path.isfile(filePath) or os.path.islink(filePath):
+                        os.unlink(filePath)
+                    elif os.path.isdir(filePath):
+                        shutil.rmtree(filePath)
                 except Exception as e:
-                    print(f'Failed to delete {file_path}. Reason: {e}')
+                    print(f'Failed to delete {filePath}. Reason: {e}')
         os.rmdir(self.directory)
 
 class Testemptypdbfolder(unittest.TestCase):

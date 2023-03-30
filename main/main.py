@@ -12,23 +12,23 @@ import sys
 import re
 
 
-def linecount(spark, filename):
+def linecount(spark, fileName):
     # python3 main.py linecount PDBsDirectory1
-    directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+filename+"/*")
+    directory = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+fileName+"/*")
 
-    if not os.path.exists(filename):
+    if not os.path.exists(fileName):
         raise Exception("Path does not exist")
 
-    files = os.listdir(filename)
+    files = os.listdir(fileName)
     if not files:
         raise Exception("No files found in folder provided")
-    rddkeyvalue = spark.sparkContext.wholeTextFiles(directory)
+    rddKeyValue = spark.sparkContext.wholeTextFiles(directory)
 
 
     def numberoflinesinfile(k):
         os.system("wc -l "+ k[45:])
 
-    rddkeyvalue.map(lambda x: numberoflinesinfile(x[0])).collect()
+    rddKeyValue.map(lambda x: numberoflinesinfile(x[0])).collect()
 
     return True
 
@@ -37,10 +37,10 @@ def tmalign(spark, folder1, folder2):
     directory1 = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder1+"/*")
     directory2 = ("/Users/vinaykakkar/Desktop/PROJECT/main/"+folder2+"/*")
 
-    rddkeyvalue1 = spark.sparkContext.wholeTextFiles(directory1)
-    rddkeyvalue2 = spark.sparkContext.wholeTextFiles(directory2)
+    rddKeyValue1 = spark.sparkContext.wholeTextFiles(directory1)
+    rddKeyValue2 = spark.sparkContext.wholeTextFiles(directory2)
 
-    rdd = rddkeyvalue1.cartesian(rddkeyvalue2)
+    rdd = rddKeyValue1.cartesian(rddKeyValue2)
 
     def runTMalign(tuple1, tuple2):
         with tempfile.NamedTemporaryFile(prefix = tuple1[0][60:], mode='w') as tmp1, tempfile.NamedTemporaryFile(prefix = tuple2[0][60:], mode='w') as tmp2:
@@ -66,18 +66,18 @@ def searchpdbfiles(value):
         json.dump(data, jsonFile)
     #fix to make the values in data not use ' qoutes but use "" qoutes instead
     data = json.dumps(data)
-    newdata = urllib.parse.quote(data)
-    apicall = 'https://search.rcsb.org/rcsbsearch/v2/query?json={}'.format(newdata)
+    newData = urllib.parse.quote(data)
+    apiCall = 'https://search.rcsb.org/rcsbsearch/v2/query?json={}'.format(newData)
     #Check this line to see what response you are getting if code stops working
-    result = requests.get(apicall)
+    result = requests.get(apiCall)
     if result.status_code != 200:
         raise Exception("API error occurred")
-    resultjson = result.json()
-    listofresults = []
-    for result in resultjson["result_set"]:
-        listofresults.append(result)
-    print(listofresults)
-    return listofresults
+    resultJson = result.json()
+    listOfResults = []
+    for result in resultJson["result_set"]:
+        listOfResults.append(result)
+    print(listOfResults)
+    return listOfResults
     #503 Service Unavailable. The server is currently unable to handle the request due to a temporary overloading
 
 def getpdbfiles(folder, value):
@@ -100,53 +100,53 @@ def getpdbfiles(folder, value):
     #fix to make the values in data not use ' qoutes but use "" qoutes instead
     data = json.dumps(data)
 
-    newdata = urllib.parse.quote(data)
-    apicall = 'https://search.rcsb.org/rcsbsearch/v2/query?json={}'.format(newdata)
+    newData = urllib.parse.quote(data)
+    apiCall = 'https://search.rcsb.org/rcsbsearch/v2/query?json={}'.format(newData)
 
 
     #Check this line to see what response you are getting if code stops working
-    result = requests.get(apicall)
+    result = requests.get(apiCall)
     if result.status_code != 200:
         raise Exception("API error occurred")
     result = result.json()
 
-    listofresults = []
+    listOfResults = []
     for x in result["result_set"]:
-        listofresults.append(x['identifier'])
+        listOfResults.append(x['identifier'])
     #Eveything above is for getting the values of the search
 
-    for pdbfile in listofresults:
-        if exists(directory + pdbfile + '.pdb'):
-            print(pdbfile + ': already exists')
+    for pdbFile in listOfResults:
+        if exists(directory + pdbFile + '.pdb'):
+            print(pdbFile + ': already exists')
             continue
-        apicall = 'https://files.rcsb.org/download/{}.pdb'.format(pdbfile)
+        apiCall = 'https://files.rcsb.org/download/{}.pdb'.format(pdbFile)
 
         try:
-            response = requests.get(apicall)
+            response = requests.get(apiCall)
         except:
             raise Exception("API error occurred")
 
-        with open(directory + pdbfile + '.pdb', 'wb') as f:
+        with open(directory + pdbFile + '.pdb', 'wb') as f:
             f.write(response.content)
 
     #503 Service Unavailable. The server is currently unable to handle the request due to a temporary overloading
 
-def getcurrentpdbfiles(folderpath):
+def getcurrentpdbfiles(folderPath):
     # python3 main.py getcurrentpdbfiles PDBsDirectory1
-    lisofpdbs = []
-    if os.path.exists(folderpath) == False:
+    listOfPdbs = []
+    if os.path.exists(folderPath) == False:
         raise Exception("Invalid folder path")
-    for root, dirs, files in os.walk(folderpath):
+    for root, dirs, files in os.walk(folderPath):
         for file in files:
             if file.endswith('.pdb'):
-                lisofpdbs.append(os.path.join(root, file))
-    return lisofpdbs
+                listOfPdbs.append(os.path.join(root, file))
+    return listOfPdbs
 
-def emptypdbfolder(folder_path):
+def emptypdbfolder(folderPath):
     # python3 main.py emptypdbfolder PDBsDirectory1
     # iterate through all files and subdirectories in the provided folder
-    print(folder_path)
-    for root, dirs, files in os.walk(folder_path):
+    print(folderPath)
+    for root, dirs, files in os.walk(folderPath):
         for file in files:
             # delete the file
             os.remove(os.path.join(root, file))

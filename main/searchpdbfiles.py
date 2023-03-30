@@ -22,12 +22,12 @@ def main(folder, value):
     #fix to make the values in data not use ' qoutes but use "" qoutes instead
     data = json.dumps(data)
 
-    newdata = urllib.parse.quote(data)
-    apicall = 'https://search.rcsb.org/rcsbsearch/v2/query?json={}'.format(newdata)
+    newData = urllib.parse.quote(data)
+    apiCall = 'https://search.rcsb.org/rcsbsearch/v2/query?json={}'.format(newData)
 
 
     #Check this line to see what response you are getting if code stops working
-    result = requests.get(apicall)
+    result = requests.get(apiCall)
     result = result.json()
 
     for x in result["result_set"]:

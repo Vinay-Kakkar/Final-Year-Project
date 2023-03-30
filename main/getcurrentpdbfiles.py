@@ -1,8 +1,8 @@
 import os
 import sys
 
-def main(folderpath):
-    for file in os.listdir(folderpath):
+def main(folderPath):
+    for file in os.listdir(folderPath):
         print(file)
 
 if __name__ == '__main__':

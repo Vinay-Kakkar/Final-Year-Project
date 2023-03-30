@@ -1,1 +1,1 @@
-{"query": {"type": "terminal", "service": "full_text", "parameters": {"value": "vinay"}}, "return_type": "entry"}
+{"query": {"type": "terminal", "service": "full_text", "parameters": {"value": "covid"}}, "return_type": "entry"}

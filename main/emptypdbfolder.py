@@ -1,9 +1,9 @@
 import os
 import sys
 
-def main(folder_path):
+def main(folderPath):
     # iterate through all files and subdirectories in the provided folder
-    for root, dirs, files in os.walk(folder_path):
+    for root, dirs, files in os.walk(folderPath):
         for file in files:
             # delete the file
             os.remove(os.path.join(root, file))
