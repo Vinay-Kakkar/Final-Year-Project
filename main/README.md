@@ -15,6 +15,8 @@
 * sys
 * re
 
+
+
 ## Installation ##
 
 1. Clone the repository using the following command:
@@ -33,6 +35,18 @@ wget http://zhanglab.ccmb.med.umich.edu/TM-align/TMalign.gz
 gunzip TMalign.gz
 chmod +x TMalign
 ```
+
+## Important Notes ##
+
+When running the framework:
+
+1. Please ensure that you run the commands from the /main directory
+
+2. Please ensure that the folders that contain the pdb files need to be stored in the /main directory
+
+3. Please ensure that any json files being used are stored in the /main directory
+
+I have set up some sample files for you so you can run the framework: search.json, PDBsDirectory1, PDBsDirectory2 but feel free to add your own folders and json files.
 
 
 ## Usage ##
