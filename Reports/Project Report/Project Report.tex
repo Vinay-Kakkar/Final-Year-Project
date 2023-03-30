@@ -2020,6 +2020,8 @@ The python file in PROJECT/main/main.py contains the framework with all the avai
 
 \textbf{Run the Program:} Once all the dependencies are installed run the program using the appropriate command you can see the correct commands using the README.md file.
 
+\clearpage
+
 \subsection{Example Results}
 
 It is important to note that the program must be run within the /main folder and that the folders used within the framework must be stored in the /main folder.
@@ -2042,6 +2044,8 @@ The current formula to run any of these functions available in the main.py file 
 \end{lstlisting}
 To see what parameters are needed for the function please refer to the README file in the /main folder.
 
+For the following examples please note that the /main folder contains two folders PDBsDirectory1 and PDBsDirectory2 which contain the following .pdb files respectfully: 1a0aA, 1apq, 1aqb and 1aqt, 1aua, AF-A0A5E8GAP1-F1-model.
+
 \subsubsection{linecount}
 An example for linecount function where the parameter takes the folder of which contains all the pdb files:
 
@@ -2052,8 +2056,16 @@ An example for linecount function where the parameter takes the folder of which 
 This will result in the following output:
 
 \begin{lstlisting}
-    linecount output
+    main % python3 main.py linecount PDBsDirectory1             
+         499 PDBsDirectory1/1a0aA.pdb (0 + 1) / 1]
+         416 PDBsDirectory1/1apq_.pdb
+        1426 PDBsDirectory1/1aqb_.pdb   
 \end{lstlisting}
+
+The output shows the number of lines for each file within the PDBsDirectory1 folder. We can identify what file it is as it displays the files name.
+
+\clearpage
+
 
 \subsubsection{tmalign}
 An example for tmalign function where the parameter takes two folders which contains the pdb files:
@@ -2062,35 +2074,88 @@ An example for tmalign function where the parameter takes two folders which cont
     python3 main.py tmalign PDBsDirectory1 PDBsDirectory2
 \end{lstlisting}
 
-This will result in the following output:
+This will result in the following output please note that each file PDBsDirectory1 will be run through the tmalign script with each file in PDBsDirectory2 thus in this example we get nine results so i will only display the first one:
 
 \begin{lstlisting}
-    tmalign output
+    main % python3 main.py tmalign PDBsDirectory1 PDBsDirectory2
+
+    Name of Chain_1: /var/folders/bl/4cf/T/1a0aA.pdboiu4dqlf
+    (to be superimposed onto Chain_2)
+    Name of Chain_2: /var/folders/bl/4cf/T/1aqt_.pdbjzohaiuy
+    Length of Chain_1: 63 residues
+    Length of Chain_2: 135 residues
+
+    Aligned length= 27, RMSD=   1.51, 
+    Seq_ID=n_identical/n_aligned= 0.074
+    TM-score= 0.36843 
+    (if normalized by length of Chain_1, i.e., LN=63, d0=2.71)
+
+    TM-score= 0.18532 
+    (if normalized by length of Chain_2, i.e., LN=135, d0=4.32)
+
+    (You should use TM-score normalized 
+    by length of the reference structure)
+
+    (":" denotes residue pairs of 
+    d <  5.0 Angstrom, "." denotes 
+    other aligned residues)
+
+    MK-------------------------------------------------------
+    ---------------------------------------------------RES--H
+    KHAEQARRNRLAVALHELASLIPAEWKQQNVSAAPSKATTVEAACRYIRHLQQNGST
+                                                            
+    .::  ::::::::::::::::::::::::                                 
+
+    --STYHLDVVSAEQQMFSGLVEKIQVTGSEGELGIYPGHAPLLTAIKPGMIRIVKQH
+    GHEEFIYLSGGILEVQPGNVTVLADTAIRGQDLDEARAMEAKRKAEEHISSSHGDVD
+    YAQASAELAKAIAQLRVIELTKK----------------------------------
+
+    Total CPU time is  0.00 seconds
 \end{lstlisting}
+
+The output provides information about the alignment between the two protein structures.
+
+The quality of the alignment is then assessed using various metrics. The TM-score is a measure of structural similarity between the two proteins, with higher TM-score values indicating better alignment.
+
+The output also provides a visual representation of the alignment, with colons.
+
+Finally, the total CPU time required for the alignment is also reported.
+
+\clearpage
 
 \subsubsection{searchpdbfiles, getpdbfiles, emptypdbfolder, getcurrentpdbfiles}
 
 As all the functions follow the same pattern please refer to the README file to determine what parameters the function excepts it provides what parameters it needs and example executions whilst also explaining what to expect as an output from the function. I will provide an example output for each of the remaining functions:
 
-searchpdbfiles
+\textbf{searchpdbfiles} is used to return results from the RCSB API. It is to replicate what would be returned if we search on the website:
 \begin{lstlisting}
-    searchpdbfiles output
+    main % python3 main.py searchpdbfiles vinay
+    [{'identifier': '1DGO', 'score': 1.0}]
 \end{lstlisting}
+Over here we search with the key word vinay and get a result with a protein structure with the identifier 1DGO. We can check if this is correct but searching the same value on the RCSB website.
 
-getpdbfiles
+\textbf{getpdbfiles} provides a download feature for the every identifier returned by the api which is determined by the value:
 \begin{lstlisting}
-    getpdbfiles output
+    main % python3 main.py getpdbfiles PDBsDirectory1 vinay
 \end{lstlisting}
+We search with the keyword vinay as we have seen the identifier returned is 1DGO. We also mention what folder we would like to download it into. Thus we get the file 1DGO.pdb downloaded into the folder PDBsDirectory1.
 
-emptypdbfolder
+\textbf{getcurrentpdbfiles} returns a list of all the pdb files in a folder:
 \begin{lstlisting}
-    emptypdbfolder output
+    main % python3
+    >>> from main import getcurrentpdbfiles
+    >>> getcurrentpdbfiles("PDBsDirectory1")
+    ['PDBsDirectory1/1DGO.pdb', 'PDBsDirectory1/1a0aA.pdb',
+    'PDBsDirectory1/1aqb_.pdb', 'PDBsDirectory1/1apq_.pdb']
 \end{lstlisting}
+We have the correct files being displayed here.
 
-getcurrentpdbfiles
+\textbf{emptypdbfolder} is created to remove and empty a folder provided:
 \begin{lstlisting}
-    getcurrentpdbfiles output
+    main % python3 main.py emptypdbfolder PDBsDirectory1  
+    OriginalPDBscopy
 \end{lstlisting}
+After running this function it emptied the PDBsDirectory1 folder.
 
 \section{Project Achievements}
 A list of all the things achived in my project:

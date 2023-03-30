@@ -1,8 +1,8 @@
-PWD /Users/vinaykakkar/Desktop/PROJECT-main/Reports/Protein Structures
+PWD /Users/vinaykakkar/Desktop/PROJECT/Reports/Protein Structures
 INPUT /usr/local/texlive/2022basic/texmf.cnf
 INPUT /usr/local/texlive/2022basic/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022basic/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/vinaykakkar/Desktop/PROJECT-main/Reports/Protein Structures/Protein Structures.tex
+INPUT /Users/vinaykakkar/Desktop/PROJECT/Reports/Protein Structures/Protein Structures.tex
 OUTPUT Protein Structures.log
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2022basic/texmf-dist/tex/latex/base/report.cls
