@@ -68,6 +68,8 @@ To achieve the aim of the project, the following objectives have been formulated
 \end{enumerate}
 \clearpage
 
+\subsection{Rationale for Objectives}
+
 \subsubsection{MapReduce Framework for Protein Analysis}
 
 \begin{displayquote}
@@ -910,6 +912,110 @@ There are a few systems that solve similar tasks these include:
 
 
 \section{Software Engineering}
+
+\subsection{User Executable Setup}
+
+I will be going through the setup, implementation and issues occured when setting up user Executables the two user executables include:
+
+\begin{enumerate}
+    \item Hoppscore
+    \item TMalign
+\end{enumerate}
+
+\subsubsection{TMalign}
+
+TM-align is an algorithm for sequence independent protein structure comparisons. For two protein structures of unknown equivalence, TM-align first generates optimized residue-to-residue alignment based on structural similarity using heuristic dynamic programming iterations. An optimal superposition of the two structures built on the detected alignment, as well as the TM-score value which scales the structural similarity, will be returned. TM-score has the value in (0,1], where 1 indicates a perfect match between two structures. Following strict statistics of structures in the PDB, scores below 0.2 correspond to randomly chosen unrelated proteins while those higher than 0.5 assume generally the same fold in SCOP/CATH. https://zhanggroup.org/TM-align/
+
+The website contains a user interface which allowes you to execute two sample protein files and provides an output which includes the results text form and also a visual form.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{TmalignResult.png}
+    \caption{\label{fig:TmalignResult}Showing text result when running tmalign on the https://zhanggroup.org/TM-align/ site.}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{TmalignVisual.png}
+    \caption{\label{fig:TmalignVisual}Showing visual result when running tmalign on the https://zhanggroup.org/TM-align/ site.}
+\end{figure}
+
+TMalign has useful documentation on setup and example executions which helped implement it into a python program.
+
+\subsubsection{TMalign Pythin Implementation}
+
+First i needed to download and set up tmalign onto my computer. You can download the latest version of TM-align from the official website: http://zhanglab.ccmb.med.umich.edu/TM-align/
+
+We then need to complie the program by running the command "make" within the directory of tmalign. This should generate an executable file called TMalign. Now that tm align is installed we can call the bash commands listed in the document:
+
+\begin{lstlisting}
+    TMalign chain_1.pdb chain_2.pdb
+\end{lstlisting}
+
+This will me our map step within the python function. For example the line
+
+\begin{lstlisting}
+    rdd.map(lambda tuple: TMalign(tuple[0], tuple[1])).collect()
+\end{lstlisting}
+
+which will pass in the values of the protien strucutre into the tmalign function. This functions objective is to get two files and run the bash command shown above on it:
+
+\begin{lstlisting}
+    def TMalign(tuple1, tuple2):
+    with tempfile.NamedTemporaryFile() as tmp1, \
+         tempfile.NamedTemporaryFile() as tmp2:
+        tmp1.write(tuple1[1])
+        tmp2.write(tuple2[1])
+        os.system('./TMalign {} {}'.format(tmp1.name, tmp2.name))
+\end{lstlisting}
+
+\clearpage
+
+\subsubsection{Hoppscore}
+
+Hoppscore is a user executable written for the purpose to provice a score when passed in a pdb files which indicates the quality of a given protein. The higher the Hoppscore value, is better for the experimental data. However, I came across some issues with setting the script up.
+
+Here is an example of what an example hoppscore execution would look like:
+
+\begin{lstlisting}
+    hoppscore  -r 1.7 -g 12 sample.pdb 
+
+    Output is sent to STDOUT
+
+    hoppscore -r 1.7 -g 12 sample.pdb > sample.pdb.out
+\end{lstlisting}
+
+Program output is sent to STDOUT and looks like this:
+
+\begin{lstlisting}
+    !F - Favored, A - Allowed, U - Unfavored, D - Disallowed
+    !F > 612.7, 183.3 < A > 612.7, 0 < U > 183.3, D=0
+    !Avg: 183.290662650602, Sigma: 858.791452289234
+    !Input File: test.pdb
+    !Reference Database Resolution Limit: 17
+    !phi-psi pairs: 1
+    !  SS    AA   FILENAME  RES      F/Avg  Favored?
+    !-----------------------------------------------
+        C     D   test.pdb    2      10.19  F   2
+        S     A   test.pdb    3      34.83  F   2
+        G     P   test.pdb    4      99.17  F   2
+        G     F   test.pdb    5       5.93  F   2
+        G     E   test.pdb    6       1.01  A   1
+     .
+     .
+     .
+
+    !-----------------------------------------------
+                                       Sum: 111
+                                     Score: 1.23
+\end{lstlisting}
+
+However when attempting to install the program i failed to do so. The readme files show how to install the tool in different operating systems however i failed to do so when following the steps and there is no external help or documentation online for this tool. This can be because the program was last updated in 10/04/2013 showing that it has not been an active analysis tool recently and is not widely used.
+\clearpage
+
+
 \subsection{Objective Implementation}
 
 Out of all the objectives listed in section 2.2 I will go through each one and show my implementation, thoughts, issues and any technical decisions i had to make whilst trying to achive the objective.
@@ -1136,48 +1242,6 @@ The code provided, loads protein structure data by using the wholeTextFiles func
 The code provided does not include any code to save the output to a distributed file system. However, you can use PySpark's saveAsTextFile function to save the output as text files in a distributed file system.
 \clearpage
 
-\subsubsection{Issues and Technical decisions}
-
-With the code provided the process we are conducting is returning the number of lines for each pdb file provided. I originally set out to use a user executable called hoppscore. Which is a script written for the purpose to provice a score when passed in a pdb files. However, I came across some issues with setting the script up.
-
-Here is an example of what an example hoppscore execution would look like:
-
-\begin{lstlisting}
-    hoppscore  -r 1.7 -g 12 sample.pdb 
-
-    Output is sent to STDOUT
-
-    hoppscore -r 1.7 -g 12 sample.pdb > sample.pdb.out
-\end{lstlisting}
-
-Program output is sent to STDOUT and looks like this:
-
-\begin{lstlisting}
-    !F - Favored, A - Allowed, U - Unfavored, D - Disallowed
-    !F > 612.7, 183.3 < A > 612.7, 0 < U > 183.3, D=0
-    !Avg: 183.290662650602, Sigma: 858.791452289234
-    !Input File: test.pdb
-    !Reference Database Resolution Limit: 17
-    !phi-psi pairs: 1
-    !  SS    AA   FILENAME  RES      F/Avg  Favored?
-    !-----------------------------------------------
-        C     D   test.pdb    2      10.19  F   2
-        S     A   test.pdb    3      34.83  F   2
-        G     P   test.pdb    4      99.17  F   2
-        G     F   test.pdb    5       5.93  F   2
-        G     E   test.pdb    6       1.01  A   1
-     .
-     .
-     .
-
-    !-----------------------------------------------
-                                       Sum: 111
-                                     Score: 1.23
-\end{lstlisting}
-
-However when attempting to install the program i failed to do so. The readme files show how to install the tool in different operating systems however i failed to do so when following the steps and there is no external help or documentation online for this tool. This can be because the program was last updated in 10/04/2013 showing that it has not been an active analysis tool recently. Thus, i decided to change the protein anlysis function to return the number of lines instead.
-\clearpage
-
 \subsubsection{Optimization for Faster Protein Analysis}
 
 \begin{displayquote}
@@ -1285,9 +1349,11 @@ The RCSB site provides many apis including:
 
 The features that are required for this objective and are also the main features that power rcsb.org are, File Download Services which, serves to download the pdb file of a provided protein structure. Search API serves to find out what identifiers match a certain search condition.
 
+\clearpage
+
 \subsubsection{File Download Services}
 
-The file download service provides the ability to download a file that the website contains given the correct parameters. This is key as it will allow the reasercher to use the api to download any required files without needing to access the website. 
+The file download service provides the ability to download a file that the website contains given the correct parameters. This is important as it will allow the reasercher to use the api to download any required files without needing to access the website. 
 
 The following url is an example on how to download a .pdb file in this case 4hhb.pdb:
 
@@ -1297,36 +1363,42 @@ The following url is an example on how to download a .pdb file in this case 4hhb
 
 There are a few different options when downloading files from the website:
 
-\begin{tabular}{ |p{5.5cm}|p{2.5cm}|p{6cm}|  }
-    \hline
-    \multicolumn{3}{|c|}{PDB entry files} \\
-    \hline
-    File Format&Compression&Example URL\\
-    \hline
-    Biological Assembly File in PDB&Uncompressed&/download/1hh3.pdb1\\
-    \hline
-    Biological Assembly File in PDB&Compressed&/download/1hh3.pdb1.gz\\
-    \hline
-    Biological Assembly File in PDBx/mmCIF&Uncompressed&/download/5a9z-assembly1.cif\\
-    \hline
-    Biological Assembly File in PDBx/mmCIF&Compressed&/download/5a9z-assembly1.cif.gz\\
-    \hline
-    PDB&Compressed&/download/4hhb.pdb.gz\\
-    \hline
-    PDB&Uncompressed&/download/4hhb.pdb\\
-    \hline
-    PDBx/mmCIF&Compressed&/download/4hhb.cif.gz\\
-    \hline
-    PDBx/mmCIF&Uncompressed&/download/4hhb.cif\\
-    \hline
-    XML&Compressed&/download/4hhb.xml.gz\\
-    \hline
-    XML&Compressed&/download/4hhb.xml\\
-    \hline
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{ |p{5.5cm}|p{2.5cm}|p{6cm}|  }
+            \hline
+            \multicolumn{3}{|c|}{PDB entry files} \\
+            \hline
+            File Format&Compression&Example URL\\
+            \hline
+            Biological Assembly File in PDB&Uncompressed&/download/1hh3.pdb1\\
+            \hline
+            Biological Assembly File in PDB&Compressed&/download/1hh3.pdb1.gz\\
+            \hline
+            Biological Assembly File in PDBx/mmCIF&Uncompressed&/download/5a9z-assembly1.cif\\
+            \hline
+            Biological Assembly File in PDBx/mmCIF&Compressed&/download/5a9z-assembly1.cif.gz\\
+            \hline
+            PDB&Compressed&/download/4hhb.pdb.gz\\
+            \hline
+            PDB&Uncompressed&/download/4hhb.pdb\\
+            \hline
+            PDBx/mmCIF&Compressed&/download/4hhb.cif.gz\\
+            \hline
+            PDBx/mmCIF&Uncompressed&/download/4hhb.cif\\
+            \hline
+            XML&Compressed&/download/4hhb.xml.gz\\
+            \hline
+            XML&Compressed&/download/4hhb.xml\\
+            \hline
+        \end{tabular}
+        \caption{\label{DownloadPDB}Showing different type of downloads options using the Dowload Serivce~\cite{bank_file_nodate}.} 
+    \end{center}
+\end{table}
     
-\end{tabular}
-
 Depending on what is put after the download in the URL we will get a different download. The table highlights some of the main File formats and examples on how to use the URL to download them.
+
+\clearpage
 
 \subsubsection{Implementing Download Service into Python}
 
@@ -1356,13 +1428,13 @@ This brings in the need for the search api. As it is not good to assume that the
 
 \subsubsection{Search API}
 
-The Search API accepts HTTP GET or POST requests with JSON payloads. In GET method, search request should be sent as a URL-encoded query string in json parameter: 
+The Search API accepts HTTP GET or POST requests with JSON payloads. In GET method, search request should be sent as a URL-encoded query string in json parameter~\cite{burley_rcsb_2019}\cite{rose_rcsb_2021}: 
 
 \begin{lstlisting}
     https://search.rcsb.org/rcsbsearch/v2/query?json={search-request}
 \end{lstlisting}
 
-A search request is a complete specification of what should be returned in a result set. The search request is represented as a JSON object. The building blocks of the request are:
+A search request is a complete specification of what should be returned in a result set. The search request is represented as a JSON object. The building blocks of the request are~\cite{burley_rcsb_2019}\cite{rose_rcsb_2021}:
 
 \vspace{40px}
 
@@ -1387,13 +1459,13 @@ A search request is a complete specification of what should be returned in a res
             \\
             request info (Optional) & Specifies an additional information about the query, e.g. query id. It's an optional property and used internally at RCSB PDB for logging purposes. When query id is sent with the search request, it will be included into the corresponding response object.
         \end{tabular}
-        \caption{\label{json}Aspects that a valid json for the search api on RCSB can hold.}
+        \caption{\label{json}Aspects that a valid json for the search api on RCSB can hold~\cite{burley_rcsb_2019}\cite{rose_rcsb_2021}.}
     \end{center}
 \end{table}
 
 \clearpage
 
-Here is an example valid json and the response for the results shown when searching for thymidine kinase:
+Here is an example valid json and the response for the results shown when searching for thymidine kinase~\cite{burley_rcsb_2019}\cite{rose_rcsb_2021}:
 
 \begin{lstlisting}
   "query": {
@@ -1522,7 +1594,7 @@ I came across an issue when creating a valid JSON to pass into the Searh API. Cu
     \item Date of Deposition
 \end{itemize}
 
-This required multiple filters in one JSON query the value, R factor and Date of Deposition. This was found difficult to create a valid JSON, as the documentation uses high level biology terms which made it hard to look for exactly what i needed. I first broke down the problem by looking at how to translate these filter terms into a valid JSON format. I found that: 
+This required multiple filters in one JSON query the value, R factor and Date of Deposition. This was found difficult to create a valid JSON, as the documentation uses high level biology terms which made it hard to look for exactly what i needed. I first broke down the problem by looking at how to translate these filter terms into a valid JSON format~\cite{burley_rcsb_2019}. I found that: 
 
 \begin{itemize}
     \item reflns.pdbx Rmerge I obs is a measure of the quality of a protein structure, specifically the average R-merge value of the observed reflections. R-merge is a statistical parameter that is used to evaluate the agreement between multiple observations of a diffraction spot. A lower value of reflns.pdbx Rmerge I obs generally indicates a better quality protein structure.
@@ -1536,10 +1608,10 @@ The documentation provides a 'Open in Editor' button which allowes an easy and e
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{SearchAPIEditor.png}
-    \caption{\label{fig:SearchAPIEditor}Showing the User interface of the editor for the RCSB Search API.}
+    \caption{\label{fig:SearchAPIEditor}Showing the User interface of the editor for the RCSB Search API~~\cite{burley_rcsb_2019}\cite{rose_rcsb_2021}.}
 \end{figure}
 
-It provides the user with error messages if the entered JSON on the left hand side is incorrect. Howver this was found to be not helpful as it the messages were vauge. Seeing this was not helping i decided to investigate the RCSB pdb bank website more specificaly looking at the api requests being sent on the website by investigating the through the advanced search using the netwrok tab.
+It provides the user with error messages if the entered JSON on the left hand side is incorrect. However this was found to be not helpful as it the messages were vauge. Seeing this was not helping i decided to investigate the RCSB pdb bank website more specificaly looking at the api requests being sent on the website by investigating the through the advanced search using the netwrok tab.
 
 I first created a search using the the advanced search button that fufiled the filters i am attempting to create in json format.
 
@@ -1595,22 +1667,15 @@ This payload provided me with a valid JSON with correct filters i require howeve
 
 \subsubsection{Explaining the Query}
 
-query: This is the main component of the JSON, which specifies the search criteria. It consists of three parts:
+\textbf{query}: This is the main component of the JSON, which specifies the search criteria. It consists of three parts:
 
 \begin{enumerate}
-    \item type: This specifies that the query is a group query, which means that it consists of multiple sub-queries that are combined using a logical operator.
-    \item logical operator: This specifies that the logical operator used to combine the sub-queries is "and". This means that all the sub-queries must be true for a protein structure to be included in the search results.
-    \item nodes: This is an array of sub-queries, each of which is also a group query with two sub-nodes. The first sub-node is a query to search for the term "covid" in any text field and the second sub-node is a query to filter for protein structures with a reflns.pdbx Rmerge I obs value greater than 0.2. The second group query is then combined with a third sub-node, which is a terminal query to filter for protein structures with an initial release date less than 2019-08-20.
+    \item \textbf{type:} This specifies that the query is a group query, which means that it consists of multiple sub-queries that are combined using a logical operator.
+    \item \textbf{logical operator:} This specifies that the logical operator used to combine the sub-queries is "and". This means that all the sub-queries must be true for a protein structure to be included in the search results.
+    \item \textbf{nodes:} This is an array of sub-queries, each of which is also a group query with two sub-nodes. The first sub-node is a query to search for the term "covid" in any text field and the second sub-node is a query to filter for protein structures with a reflns.pdbx Rmerge I obs value greater than 0.2. The second group query is then combined with a third sub-node, which is a terminal query to filter for protein structures with an initial release date less than 2019-08-20.
 \end{enumerate}
 
-Finally, return type: This specifies the type of entity that should be returned in the search results. In this case, the return type is "polymer entity", which means that the search results will only include polymer entities, which are protein or nucleic acid molecules with a defined sequence.
-
-
-
-
-
-
-
+Finally, \textbf{return type:} This specifies the type of entity that should be returned in the search results. In this case, the return type is "polymer entity", which means that the search results will only include polymer entities, which are protein or nucleic acid molecules with a defined sequence.
 \clearpage
 
 \subsubsection{User Interface for Protein Analysis}
@@ -2170,15 +2235,87 @@ A list of all the things achived in my project:
     \item Benchmarking
 \end{itemize}
 
-\subsection{The Project}
+\subsubsection{Pyspark}
+PySpark is a powerful Python library for working with large datasets using Apache Spark. More specifically, it allows you to perform complex protein structure data processing tasks and build data pipelines using a distributed computing framework.
 
-The project was quite successful all the objectives were implemented in a detail manner expect for the user interface. Overall the reasercher is able to search and download pdb files from the framework. The reasercher is also able to call out two user executables on the pdbs they require more specifically these are implemented useing a mapreduce formalism. Whilst having some functions that help manipulate the folders holding the pdb files. Ultimatly, at the end of this project we have a software framework that suppots the Mapreduce formalism and can process large numbers of protein structures. Whilst being able to do so by parallelising protein structure analysis across multiple computing nodes. Keeping in mind that the framework is optimized to reduce the processing time required for protein structure analysis.
+\subsubsection{Cluster Setup}
+Setting up a cluster is an important aspect of working with distributed computing frameworks like Apache Spark. It involves configuring multiple nodes to work together and share computing resources to process data more efficiently. This achievement shows that the cluster is successfully set up to work with PySpark.
 
-Finally the software framework is scalable and can handle increasingly large datasets and can be eaisly updated to keep pace with advancements in protein structure analysis techniques and computing technology.
+\subsubsection{Key Value Pair}
+Key Value Pair is a fundamental concept in computer science and data processing. In PySpark, key-value pairs are used to represent data in a way that facilitates processing and analysis. By understanding and working with key-value pairs, showing a solid grasp of the fundamental principles of data processing.
+
+\clearpage
+
+\subsubsection{TMalign}
+I have set up a user executable TMalign which is a tool used to compare protein structures. This is a specialized tool used in the field of bioinformatics by researches for there studies and experiments. 
+
+\subsubsection{API Service Download and API Get}
+API Service Download and API Get are related to web development and data processing for the RCSB website. APIs, or Application Programming Interfaces, allow the framework to comunicate with the RCSB data bank.
+
+\subsubsection{Benchmarking}
+Lastly, Benchmarking is an important in the development process which ensure that the code is performing well and is optimized. By benchmarking the code, we can identify bottlenecks and optimize the code to improve its performance.
+
+\clearpage
 
 \subsection{Project Reflection}
 
-All set out obejectives were completed in order and occording to plan. However seting up the clusetr with correct rdd and key value pairs took much more time then expected as at first i was trying to use just the data of the pdb file as the rdd. For this reason i didnt have enough time to create a good interface keeping at a bash level of interaction for the reasercher. Due to this i have tried to prioteise a detailed reademe file which helps the reasercher understand the functions within the framework however a more user frienly user interface would be benifitial for eaxmple when running the functions that implement the api to search or download pdbs a better user interafce can be created that would be easier to use such as to set up the pdb files the reasercher would like to run the executables on to.
+Computational demands of analysing large datasets of protein structures can be a significant obstacle, requiring substantial time and resources. To address this challenge, this project aims to develop a framework that utilizes the MapReduce programming model to enable researchers to efficiently analyse large numbers of protein structures using a user-provided executable. In order to do this we have set out a list of objectives which once implemented will achive the projects aim. In order to do this we have conducted using python and spark. This enables the ability to parrellelise data whilst computing a MapReduce step. As an outcome all the objectives were implemented in a detail manner expect for the user interface. Overall the reasercher is able to search and download pdb files from the framework. The reasercher is also able to call out two user executables on the pdbs they require more specifically these are implemented useing a mapreduce formalism. Whilst having some functions that help manipulate the folders holding the pdb files. Ultimatly, at the end of this project we have a software framework that suppots the Mapreduce formalism and can process large numbers of protein structures. Whilst being able to do so by parallelising protein structure analysis across multiple computing nodes. Keeping in mind that the framework is optimized to reduce the processing time required for protein structure analysis.Finally the software framework is scalable and can handle increasingly large datasets and can be eaisly updated to keep pace with advancements in protein structure analysis techniques and computing technology.
+
+\subsubsection{Evaluate the process}
+
+I had to amend the set out deadlines I had created to better suit my priorities. This was the new deadlines created starting from week 1 shown in \ref{tab:Timeline}. This was becuase after completing my proof of concept programs i noticed that i was not collecting data from the pdb into a spark RDD in an efficent manor. Due to this i took a technical decision to re think and plan my priorities.
+
+All set out obejectives were completed in order and occording to the new devised plan. However seting up the cluster with using the correct functions resulting with rdd and key value pairs took more time then expected as at first i was trying to use just the data of the pdb file as the rdd. For this reason i didnt have enough time go back and create a good interface keeping at a bash level of interaction for the reasercher. Due to this i prioteise more detailed reademe file which helps the reasercher understand the functions within the framework however a more user friendly user interface would be benifitial for eaxmple when running the functions that implement the api to search or download pdbs a better user interafce can be created that would be easier to use such as to set up the pdb files the reasercher would like to run the executables on to.
+
+\clearpage
+
+\subsubsection{Improvements}
+Looking back at the start of the project it would have been more beneficial if i conducted more research on spark and understanding the different RDD data types and functions available within spark would have meant that my spark clusetr and RDD manioulation would have been efficient from the start. This would have meant that i had more time to implement a user interface.
+
+Another aspect i could have improved on is spending more time on the RCSB api documentation. I struggled and spent more time then expected on creating a valid json for the api. This was due to being overwhemled with the biology terms in the documentation so i sought out other means of creating the correct json for the api. One of these included looking through the requests being sent throught the RCSB protein data bank website. Spending more time trying to understand the api documentation would have enabled me to complete the objective quicker and potentially create extra trime for the user interface. 
+
+\vspace{40px}
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{c|l|p{0.55\linewidth}}
+        Week & Description & Explanation\\
+        \hline
+        \\
+        1-2 & RDD setup & Create a better rdd setup within pyspark.\\
+        \\
+        \hline
+        \\
+        3-4 & RDD setup and Programs & With a better rdd setup apply these changes to the existing programs.\\
+        \\
+        \hline
+        \\
+        4-5 & Executables and Program & Find install and setup a suitable executable for protein structures and apply the executable to a cluster.\\
+        \\
+        \hline
+        \\
+        6-7 & Benchmarking & Setup and perform/document Benchmarking so that i can analyse performance depending cluseter configuration.\\
+        \\
+        \hline
+        \\
+        8-9 & Report & Start final report add in all privious work where need be and also include benchmarking.\\
+        \\
+        \hline
+        \\
+        10-11 & Extension and guidlines & Implement one extension whilst writing up some guidlines on how to run/use the executable\\
+        \\
+        \hline
+        \\
+        12 & Spark & Spare week\\
+        \end{tabular}
+        \caption{\label{tab:Timeline}The objectives I completed on a weekly basis}
+    \end{center}
+\end{table}
+
+
+
+
+
 
 \subsection{conclusions or results analysed or discussed}
 Need to include benchmarking here
@@ -2191,21 +2328,51 @@ Public health is an important consideration in the field of structural bioinform
 
 Structural bioinformatics combines computational and experimental techniques to study the structure and function of biological molecules at a molecular level, requiring the analysis of large amounts of complex data and the use of advanced tools and techniques to extract meaningful information.
 
-Given the sensitive nature of the data involved, ethical issues related to data privacy, ownership, and sharing are important. 
+Given the sensitive nature of the data involved, ethical issues related to data privacy, ownership, sharing, informed consent and open science are important. 
 
 Data privacy is a crucial aspect of structural bioinformatics as it involves the handling of personal data. Researchers must ensure that the data they collect is kept confidential and used only for the purpose for which it was collected. Appropriate measures must also be taken to protect the data from unauthorized access or disclosure. These measures can consist of researchers must ensure that any sensitive data they collect (such as genomic data) is kept confidential and not disclosed to unauthorized parties. Appropriate measures must be taken to protect the data from unauthorized access, such as using encryption or secure storage methods. This means that researchers must take appropriate measures to prevent data breaches and ensure that the data they collect is secure. If a breach does occur, researchers must take prompt action to minimize the harm to individuals and organizations whose data has been compromised.
-
-
 
 Ownership of data is another ethical issue that must be carefully considered. Researchers must respect the rights of the individuals or organizations that provide the data and ensure that they are given appropriate credit for their contributions. The potential commercial value of the data must also be considered to ensure that researchers do not exploit it for their own gain. To do so Researchers must respect the rights of the individuals or organizations that provide the data, and ensure that they are properly credited for their contributions. For example, Researchers need to obtain informed consent from participants before collecting their data, and clearly explain the purpose and potential risks of the study. Participants should also be informed about their rights to access and control their data. If the data has commercial value, researchers must consider the ethical implications of using it for their own gain, and whether they need to obtain consent or provide compensation to the data providers. Another important aspect to ownership is transparency such that researchers should be transparent about their data collection and analysis methods, and make their findings publicly available whenever possible. This can help ensure that the scientific community and the public at large are aware of the potential benefits and risks associated with structural bioinformatics research.
 
 Sharing of data is a fundamental aspect of structural bioinformatics, as it allows researchers to collaborate and share knowledge. However, sharing of data must be done in a responsible and ethical manner, with appropriate safeguards in place to protect the privacy and confidentiality of the data. When sharing data, researchers should establish data sharing agreements that outline the terms and conditions of the data sharing arrangement, including who has access to the data and how it can be used. Researchers must ensure that appropriate safeguards are in place to protect the privacy and confidentiality of the data, such as using data use agreements or anonymization techniques. Such that, anonymization techniques can be used to protect the privacy of individuals and organizations whose data is being used in structural bioinformatics research. Researchers can remove identifying information from the data, such as names or addresses, to prevent it from being traced back to specific individuals.
 
-Policies are important to concider too where we have:
+Informed consent is the process of obtaining permission from research participants after providing them with information about the research, including its purpose, procedures, and potential risks and benefits. Informed consent is important because it allows participants to make an informed decision about whether or not they want to participate in the research.
 
-Data access policies: Institutions and organizations that collect and share data should establish data access policies that outline who can access the data and under what circumstances. These policies can help ensure that the data is used in a responsible and ethical manner.
+To ensure that you obtain informed consent from your participants, you should:
 
-Data retention policies: Institutions and organizations should establish data retention policies that dictate how long data can be stored and when it should be destroyed. This can help ensure that data is not used for unintended purposes or retained longer than necessary.
+\begin{itemize}
+    \item Clearly explain the purpose of your research and the procedures involved.
+    \item Describe any potential risks or discomfort that participants may experience.
+    \item Provide participants with the opportunity to ask questions and clarify any doubts.
+    \item Obtain written consent from participants, indicating that they understand the research and agree to participate.
+\end{itemize}
+
+Open science is another important ethical consideration in research, especially in the current era of big data and the increasing importance of transparency and reproducibility. Open science refers to the practice of making research findings, data, and other outputs freely available to the scientific community and the general public.
+
+There are several reasons why open science is important, including:
+
+\begin{itemize}
+    \item Improving the quality and reliability of research: Open science promotes transparency and allows for peer review and replication of research findings, which can help to identify errors or inconsistencies and improve the overall quality and reliability of research.
+    \item Increasing collaboration and innovation: Open science encourages collaboration and sharing of ideas, data, and resources among researchers and institutions, which can lead to new insights and discoveries.
+    \item Promoting public trust and engagement: Open science allows the public to access and understand research findings and data, which can promote trust in scientific research and encourage public engagement with science.
+\end{itemize}
+
+To promote open science in your research, you can:
+
+\begin{itemize}
+    \item Make your research findings and data openly accessible through repositories or journals that allow for open access publishing.
+    \item Use open source software and tools for data analysis and visualization.
+    Provide detailed descriptions of your research methods and data processing steps in your publications and presentations.
+    \item Share research findings and data through social media, blogs, and other online platforms.
+\end{itemize}
+
+Open science is related to ethics because it promotes transparency, accountability, and collaboration in research. These are important ethical principles that are essential for conducting research in a responsible and ethical manner.
+
+One of the key ethical principles in research is the principle of transparency. Transparency involves being open about your research methods, data, and findings. By making your research open and accessible to others, you are promoting transparency, which can help to build trust with your participants and colleagues.
+
+Another important ethical principle is the principle of accountability. Accountability involves taking responsibility for your actions and being able to justify your decisions. By making your research open and accessible, you are making yourself accountable to the scientific community and the public, which can help to ensure that your research is conducted in a responsible and ethical manner.
+
+Finally, open science promotes collaboration among researchers and institutions, which can help to advance the field of science and promote the public good. Collaboration and cooperation are important ethical principles, as they promote the sharing of knowledge and resources, and help to ensure that scientific research benefits the widest possible audience.
 
 In conclusion, as the Structural Bioinformatics Framework is examined within the context of a MapReduce formalism, it is crucial to consider the ethical implications of this field. The potential impact of structural bioinformatics on public health is significant, but the responsible management of data privacy, ownership, and sharing must be prioritized to ensure the ethical and responsible advancement of this field.
 

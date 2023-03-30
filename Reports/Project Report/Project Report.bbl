@@ -27,11 +27,30 @@ Rebecca~F. Alford, Andrew Leaver-Fay, Jeliazko~R. Jeliazkov, Matthew~J.
   June 2017.
 \newblock Publisher: American Chemical Society.
 
+\bibitem[Ban]{bank_file_nodate}
+RCSB Protein~Data Bank.
+\newblock File {Download} {Services}.
+
 \bibitem[BB21]{burley_open-access_2021}
 Stephen~K. Burley and Helen~M. Berman.
 \newblock Open-access data: {A} cornerstone for artificial intelligence
   approaches to protein structure prediction.
 \newblock {\em Structure (London, England: 1993)}, 29(6):515--520, June 2021.
+
+\bibitem[BBB{\etalchar{+}}19]{burley_rcsb_2019}
+Stephen~K Burley, Helen~M Berman, Charmi Bhikadiya, Chunxiao Bi, Li~Chen, Luigi
+  Di Costanzo, Cole Christie, Ken Dalenberg, Jose~M Duarte, Shuchismita Dutta,
+  Zukang Feng, Sutapa Ghosh, David~S Goodsell, Rachel~K Green, Vladimir
+  Guranović, Dmytro Guzenko, Brian~P Hudson, Tara Kalro, Yuhe Liang, Robert
+  Lowe, Harry Namkoong, Ezra Peisach, Irina Periskova, Andreas Prlić, Chris
+  Randle, Alexander Rose, Peter Rose, Raul Sala, Monica Sekharan, Chenghua
+  Shao, Lihua Tan, Yi-Ping Tao, Yana Valasatava, Maria Voigt, John Westbrook,
+  Jesse Woo, Huanwang Yang, Jasmine Young, Marina Zhuravleva, and Christine
+  Zardecki.
+\newblock {RCSB} {Protein} {Data} {Bank}: biological macromolecular structures
+  enabling research and education in fundamental biology, biomedicine,
+  biotechnology and energy.
+\newblock {\em Nucleic Acids Research}, 47(D1):D464--D474, January 2019.
 
 \bibitem[BBB{\etalchar{+}}21]{powerful_rcsb_2021}
 Stephen~K. Burley, Charmi Bhikadiya, Chunxiao Bi, Sebastian Bittrich, Li~Chen,
