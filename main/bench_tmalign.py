@@ -50,13 +50,13 @@ def tmalign(spark, folder1, folder2):
     if not files:
         raise Exception("No files found in folder provided")
 
-    rddKeyValue1 = spark.sparkContext.wholeTextFiles(directory1)
-    rddKeyValue2 = spark.sparkContext.wholeTextFiles(directory2)
+    rddKeyValue1 = spark.wholeTextFiles(directory1)
+    rddKeyValue2 = spark.wholeTextFiles(directory2)
 
     rdd = rddKeyValue1.cartesian(rddKeyValue2)
 
     def runTMalign(tuple1, tuple2):
-        with tempfile.NamedTemporaryFile(prefix = tuple1[0][60:], mode='w') as tmp1, tempfile.NamedTemporaryFile(prefix = tuple2[0][60:], mode='w') as tmp2:
+        with tempfile.NamedTemporaryFile( mode='w') as tmp1, tempfile.NamedTemporaryFile( mode='w') as tmp2:
             tmp1.write(tuple1[1])
             tmp2.write(tuple2[1])
             #print("./TMalign " + tmp1.name + " " + tmp2.name)
@@ -122,15 +122,30 @@ def bench():
     t6c = time.time()
 
 
-    times = [(t1c-t1), (t2c-t2), (t3c-t3), (t4c-t4), (t5c-t5), (t6c-t6)]
-    configurations = ["Config 1", "Config 2", "Config 3", "Config 4", "Config 5", "Config 6"]
+    # Create a list of (configuration name, execution time) tuples
+    times = [("Config 1", t1c - t1), ("Config 2", t2c - t2), ("Config 3", t3c - t3),
+             ("Config 4", t4c - t4), ("Config 5", t5c - t5), ("Config 6", t6c - t6)]
 
-    plt.plot(configurations, times, linewidth=2, color="#1f77b4")
+    # Extract the configuration names and their corresponding execution times from the tuples
+    configurations = [name for name, _ in times]
+    execution_times = [time for _, time in times]
+
+    # Plot the bar chart
+    plt.bar(configurations, execution_times, color="#1f77b4")
+
+    # Add text labels for each bar
+    for i, time1 in enumerate(execution_times):
+        plt.text(i, time1 + 1, "{:.2f}s".format(time1), ha="center", fontsize=10)
+
+    # Set the chart title, axis labels, and customize other settings
+    plt.ylim(0, max(execution_times)+(max(execution_times)//2))
     plt.ylabel("Time (seconds)", fontsize=12)
     plt.xlabel("Configuration", fontsize=12)
     plt.title("Line Plot of Execution Time by Configuration", fontsize=14)
     plt.xticks(fontsize=10, rotation=45)
     plt.yticks(fontsize=10)
     plt.grid(axis="y", linestyle=":", alpha=0.7)
+
+    # Show the chart
     plt.show()
 bench()

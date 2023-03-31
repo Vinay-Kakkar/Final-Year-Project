@@ -75,7 +75,6 @@ def bench():
     lineCount(spark1, "OriginalPDBs")
     t1c = time.time()
 
-
     conf2 = SparkConf().setAppName("MyApp").setMaster("local[1]") \
         .set("spark.executor.cores", "8")
     spark2 = SparkContext(conf=conf2)
@@ -106,23 +105,37 @@ def bench():
 
     conf6 = SparkConf().setAppName("MyApp").setMaster("local[8]") \
         .set("spark.executor.cores", "1")
-    spark6 = SparkContext(conf=conf5)
+    spark6 = SparkContext(conf=conf6)
     t6 = time.time()
     lineCount(spark6, "OriginalPDBs")
     t6c = time.time()
 
-    # Create a list of execution times for different configurations
-    times = [(t1c - t1), (t2c - t2), (t3c - t3), (t4c - t4), (t5c - t5), (t6c - t6)]
-    # Create x axis labels
+    # Create a list of (configuration name, execution time) tuples
+    times = [("Config 1", t1c - t1), ("Config 2", t2c - t2), ("Config 3", t3c - t3),
+             ("Config 4", t4c - t4), ("Config 5", t5c - t5), ("Config 6", t6c - t6)]
 
-    configurations = ["Config 1", "Config 2", "Config 3", "Config 4", "Config 5", "Config 6"]
+    # Extract the configuration names and their corresponding execution times from the tuples
+    configurations = [name for name, _ in times]
+    execution_times = [time for _, time in times]
 
-    plt.plot(configurations, times, linewidth=2, color="#1f77b4")
+    # Plot the bar chart
+    plt.bar(configurations, execution_times, color="#1f77b4")
+
+    # Add text labels for each bar
+    for i, time1 in enumerate(execution_times):
+        plt.text(i, time1 + 1, "{:.2f}s".format(time1), ha="center", fontsize=10)
+
+    # Set the chart title, axis labels, and customize other settings
+    plt.ylim(0, max(execution_times)+(max(execution_times)//2))
     plt.ylabel("Time (seconds)", fontsize=12)
     plt.xlabel("Configuration", fontsize=12)
     plt.title("Line Plot of Execution Time by Configuration", fontsize=14)
     plt.xticks(fontsize=10, rotation=45)
     plt.yticks(fontsize=10)
     plt.grid(axis="y", linestyle=":", alpha=0.7)
+
+    # Show the chart
     plt.show()
+
+
 bench()
