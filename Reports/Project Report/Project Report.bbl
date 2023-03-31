@@ -153,6 +153,10 @@ Helen~M. Berman, John Westbrook, Zukang Feng, Gary Gilliland, T.~N. Bhat, Helge
 \newblock The {Protein} {Data} {Bank}.
 \newblock {\em Nucleic Acids Research}, 28(1):235--242, January 2000.
 
+\bibitem[con]{worldwide_protein_data_bank_consortium_pdbxmmcif_nodate}
+Worldwide Protein Data~Bank consortium.
+\newblock {PDBx}/{mmCIF} {Dictionary} {Resources}.
+
 \bibitem[DBB03]{dominguez_haddock_2003}
 Cyril Dominguez, Rolf Boelens, and Alexandre M. J.~J. Bonvin.
 \newblock {HADDOCK}: {A} {Protein} {Protein} {Docking} {Approach} {Based} on
@@ -474,6 +478,11 @@ Jianyi Yang, Renxiang Yan, Ambrish Roy, Dong Xu, Jonathan Poisson, and Yang
 \newblock The {I}-{TASSER} {Suite}: protein structure and function prediction.
 \newblock {\em Nature Methods}, 12(1):7--8, January 2015.
 \newblock Number: 1 Publisher: Nature Publishing Group.
+
+\bibitem[zha]{zhang_tm-align_nodate}
+yang zhang.
+\newblock {TM}-align: {A} protein structure alignment algorithm using
+  {TM}-score rotation matrix.
 
 \bibitem[Zve08]{zvelebil_understanding_2008}
 Marketa~J. Zvelebil.

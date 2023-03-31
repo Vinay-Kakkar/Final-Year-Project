@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  30 MAR 2023 19:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  31 MAR 2023 02:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -420,7 +420,7 @@ Package pdftex.def Info: logo.pdf  used on input line 23.
 ] [7
 
 ]
-Overfull \hbox (3.7838pt too wide) in paragraph at lines 155--156
+Overfull \hbox (3.7838pt too wide) in paragraph at lines 154--155
 []\OT1/cmr/m/it/10.95 A dy-namic net-work of in-ter-link-ing pro-tein fil-a-ments present
  []
 
@@ -428,85 +428,85 @@ Overfull \hbox (3.7838pt too wide) in paragraph at lines 155--156
 
 
 ]
-<Protein Structure.png, id=139, 452.69125pt x 366.36874pt>
+<Protein Structure.png, id=138, 452.69125pt x 366.36874pt>
 File: Protein Structure.png Graphic file (type png)
 <use Protein Structure.png>
-Package pdftex.def Info: Protein Structure.png  used on input line 180.
+Package pdftex.def Info: Protein Structure.png  used on input line 179.
 (pdftex.def)             Requested size: 220.50887pt x 178.46008pt.
  [9
 
  <./Protein Structure.png>]
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 192.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 191.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 192.
+(Font)              size <5> substituted on input line 191.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 192.
+(Font)              size <5> substituted on input line 191.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 192.
+(Font)              size <5> substituted on input line 191.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11> on input line 192.
+(Font)              <11> on input line 191.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.69997> on input line 192.
+(Font)              <7.69997> on input line 191.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.5> on input line 192.
+(Font)              <5.5> on input line 191.
 [10
 
 ] [11
 
 ]
-<Gene Expresion.png, id=194, 341.275pt x 300.62312pt>
+<Gene Expresion.png, id=193, 341.275pt x 300.62312pt>
 File: Gene Expresion.png Graphic file (type png)
 <use Gene Expresion.png>
-Package pdftex.def Info: Gene Expresion.png  used on input line 266.
+Package pdftex.def Info: Gene Expresion.png  used on input line 265.
 (pdftex.def)             Requested size: 220.50887pt x 194.24675pt.
  [12
 
  <./Gene Expresion.png>]
-<SAGE1.png, id=207, 349.305pt x 377.41pt>
+<SAGE1.png, id=206, 349.305pt x 377.41pt>
 File: SAGE1.png Graphic file (type png)
 <use SAGE1.png>
-Package pdftex.def Info: SAGE1.png  used on input line 280.
+Package pdftex.def Info: SAGE1.png  used on input line 279.
 (pdftex.def)             Requested size: 178.60974pt x 192.98332pt.
 
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 281.
+(caption)                Try setting it with `size=' explicitly on input line 280.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 281.
+(caption)                Try setting it with `size=' explicitly on input line 280.
 See the caption package documentation for explanation.
 
-<SAGE2.png, id=208, 349.305pt x 327.2225pt>
+<SAGE2.png, id=207, 349.305pt x 327.2225pt>
 File: SAGE2.png Graphic file (type png)
 <use SAGE2.png>
-Package pdftex.def Info: SAGE2.png  used on input line 286.
+Package pdftex.def Info: SAGE2.png  used on input line 285.
 (pdftex.def)             Requested size: 178.60974pt x 167.32065pt.
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 287.
+(caption)                Try setting it with `size=' explicitly on input line 286.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: Cannot determine current font size.
-(caption)                Try setting it with `size=' explicitly on input line 287.
+(caption)                Try setting it with `size=' explicitly on input line 286.
 See the caption package documentation for explanation.
 
 [13
 
  <./SAGE1.png> <./SAGE2.png>]
-<Overlaping.png, id=222, 496.85625pt x 444.66125pt>
+<Overlaping.png, id=221, 496.85625pt x 444.66125pt>
 File: Overlaping.png Graphic file (type png)
 <use Overlaping.png>
-Package pdftex.def Info: Overlaping.png  used on input line 307.
+Package pdftex.def Info: Overlaping.png  used on input line 306.
 (pdftex.def)             Requested size: 220.50887pt x 197.3478pt.
  [14
 
@@ -515,24 +515,24 @@ Package pdftex.def Info: Overlaping.png  used on input line 307.
 ] [16
 
 ]
-Overfull \hbox (18.97404pt too wide) in paragraph at lines 392--393
+Overfull \hbox (18.97404pt too wide) in paragraph at lines 391--392
 \OT1/cmr/m/n/10.95 ti-ple se-quence align-ment pro-cess-ing in DMP-Fold218 and lan-guage model representations.[[]]. 
  []
 
 [17
 
 ]
-Overfull \hbox (2.16403pt too wide) in paragraph at lines 405--406
+Overfull \hbox (2.16403pt too wide) in paragraph at lines 404--405
 []\OT1/cmr/m/it/10.95 Macromolecular is any very large molecule, usu-ally with
  []
 
 
-Underfull \hbox (badness 2318) in paragraph at lines 436--437
+Underfull \hbox (badness 2318) in paragraph at lines 435--436
 []\OT1/cmr/m/n/10.95 I3. (meta)data in-clude qual-i-fied ref-er-ences to other
  []
 
 
-Overfull \hbox (11.09396pt too wide) in paragraph at lines 421--444
+Overfull \hbox (11.09396pt too wide) in paragraph at lines 420--443
  [] 
  []
 
@@ -544,25 +544,25 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ] [19] [20
 
 ]
-<PDB Site.png, id=337, 595.22375pt x 747.29187pt>
+<PDB Site.png, id=336, 595.22375pt x 747.29187pt>
 File: PDB Site.png Graphic file (type png)
 <use PDB Site.png>
-Package pdftex.def Info: PDB Site.png  used on input line 484.
+Package pdftex.def Info: PDB Site.png  used on input line 483.
 (pdftex.def)             Requested size: 220.50887pt x 276.83574pt.
-<Top Bar Search A.png, id=340, 893.3375pt x 569.12625pt>
+<Top Bar Search A.png, id=339, 893.3375pt x 569.12625pt>
 File: Top Bar Search A.png Graphic file (type png)
 <use Top Bar Search A.png>
-Package pdftex.def Info: Top Bar Search A.png  used on input line 492.
+Package pdftex.def Info: Top Bar Search A.png  used on input line 491.
 (pdftex.def)             Requested size: 178.60974pt x 113.7885pt.
-<Top Bar Search B.png, id=341, 883.3pt x 595.72563pt>
+<Top Bar Search B.png, id=340, 883.3pt x 595.72563pt>
 File: Top Bar Search B.png Graphic file (type png)
 <use Top Bar Search B.png>
-Package pdftex.def Info: Top Bar Search B.png  used on input line 497.
+Package pdftex.def Info: Top Bar Search B.png  used on input line 496.
 (pdftex.def)             Requested size: 178.60974pt x 120.45198pt.
  [21
 
 ] [22 <./PDB Site.png> <./Top Bar Search A.png> <./Top Bar Search B.png>]
-Overfull \hbox (16.67786pt too wide) in paragraph at lines 506--507
+Overfull \hbox (16.67786pt too wide) in paragraph at lines 505--506
 \OT1/cmr/m/n/10.95 In 2020, RCSB PDB had an up-grade of its de-liv-ery ar-chi-tec-ture [[]]at RCSB.org [[]]. 
  []
 
@@ -576,22 +576,22 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ] [26
 
 ]
-<PDB File.png, id=404, 987.18813pt x 440.64626pt>
+<PDB File.png, id=403, 987.18813pt x 440.64626pt>
 File: PDB File.png Graphic file (type png)
 <use PDB File.png>
-Package pdftex.def Info: PDB File.png  used on input line 644.
+Package pdftex.def Info: PDB File.png  used on input line 643.
 (pdftex.def)             Requested size: 220.50887pt x 98.4284pt.
  [27
 
  <./PDB File.png>]
-Overfull \hbox (21.31625pt too wide) in paragraph at lines 651--652
+Overfull \hbox (21.31625pt too wide) in paragraph at lines 650--651
 \OT1/cmr/m/n/10.95 Mmcif is a dictionary-based ap-proach to data ex-tracted from crys-tal-lo-graphic ex-per-i-ments [[]]. 
  []
 
-<xml.png, id=420, 670.00313pt x 645.91313pt>
+<xml.png, id=419, 670.00313pt x 645.91313pt>
 File: xml.png Graphic file (type png)
 <use xml.png>
-Package pdftex.def Info: xml.png  used on input line 665.
+Package pdftex.def Info: xml.png  used on input line 664.
 (pdftex.def)             Requested size: 220.50887pt x 212.58035pt.
 [28
 
@@ -606,15 +606,15 @@ Package pdftex.def Info: xml.png  used on input line 665.
 ] [33
 
 ]
-<Execute.png, id=500, 704.6325pt x 471.7625pt>
+<Execute.png, id=499, 704.6325pt x 471.7625pt>
 File: Execute.png Graphic file (type png)
 <use Execute.png>
-Package pdftex.def Info: Execute.png  used on input line 789.
+Package pdftex.def Info: Execute.png  used on input line 788.
 (pdftex.def)             Requested size: 220.50887pt x 147.63417pt.
  [34
 
  <./Execute.png>]
-Overfull \hbox (1.95448pt too wide) in paragraph at lines 803--838
+Overfull \hbox (1.95448pt too wide) in paragraph at lines 802--837
  [] 
  []
 
@@ -628,31 +628,31 @@ Overfull \hbox (1.95448pt too wide) in paragraph at lines 803--838
 <TmalignResult.png, id=543, 828.09375pt x 482.80376pt>
 File: TmalignResult.png Graphic file (type png)
 <use TmalignResult.png>
-Package pdftex.def Info: TmalignResult.png  used on input line 933.
+Package pdftex.def Info: TmalignResult.png  used on input line 932.
 (pdftex.def)             Requested size: 352.81552pt x 205.70825pt.
  [38
 
  <./TmalignResult.png>]
-<TmalignVisual.png, id=554, 1276.77pt x 661.47125pt>
+<TmalignVisual.png, id=557, 1276.77pt x 661.47125pt>
 File: TmalignVisual.png Graphic file (type png)
 <use TmalignVisual.png>
-Package pdftex.def Info: TmalignVisual.png  used on input line 941.
+Package pdftex.def Info: TmalignVisual.png  used on input line 940.
 (pdftex.def)             Requested size: 352.81552pt x 182.78831pt.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 967.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 966.
  (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <11> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 967.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 966.
  [39
 
  <./TmalignVisual.png>]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 987.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 986.
  (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <11> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 987.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 986.
  [40
 
 ] [41
@@ -668,7 +668,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 ] [44
 
 ]
-Overfull \hbox (1.95448pt too wide) in paragraph at lines 1134--1152
+Overfull \hbox (1.95448pt too wide) in paragraph at lines 1133--1151
  [] 
  []
 
@@ -687,23 +687,18 @@ Overfull \hbox (1.95448pt too wide) in paragraph at lines 1134--1152
 ] [51
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1378--1378
+Underfull \hbox (badness 10000) in paragraph at lines 1377--1377
 []\OT1/cmr/m/n/10.95 Biological As-sem-bly File in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1380--1380
+Underfull \hbox (badness 10000) in paragraph at lines 1379--1379
 []\OT1/cmr/m/n/10.95 Biological As-sem-bly File in
  []
 
 [52
 
-]
-Overfull \hbox (18.88705pt too wide) in paragraph at lines 1410--1412
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[53
+] [53
 
 ]
 Overfull \hbox (12.31699pt too wide) in paragraph at lines 1434--1435
@@ -740,7 +735,7 @@ Overfull \hbox (45.16733pt too wide) in paragraph at lines 1582--1584
  []
 
 [57]
-<SearchAPIEditor.png, id=944, 1458.44875pt x 383.4325pt>
+<SearchAPIEditor.png, id=953, 1458.44875pt x 383.4325pt>
 File: SearchAPIEditor.png Graphic file (type png)
 <use SearchAPIEditor.png>
 Package pdftex.def Info: SearchAPIEditor.png  used on input line 1610.
@@ -750,7 +745,7 @@ Underfull \hbox (badness 5893) in paragraph at lines 1611--1611
 []\OT1/cmr/m/n/10.95 Figure 12: |[]Show-ing the User in-ter-face of the ed-i-tor for the RCSB Search
  []
 
-<payload.png, id=949, 916.42375pt x 619.31375pt>
+<payload.png, id=958, 916.42375pt x 619.31375pt>
 File: payload.png Graphic file (type png)
 <use payload.png>
 Package pdftex.def Info: payload.png  used on input line 1620.
@@ -763,8 +758,8 @@ Overfull \hbox (5.74692pt too wide) in paragraph at lines 1658--1659
  []
 
 [59]
-Overfull \hbox (38.59726pt too wide) in paragraph at lines 1713--1714
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (12.31699pt too wide) in paragraph at lines 1713--1714
+[][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
@@ -816,12 +811,7 @@ Overfull \hbox (25.45712pt too wide) in paragraph at lines 1867--1868
 
 ] [69
 
-]
-Overfull \hbox (1.02818pt too wide) in paragraph at lines 2049--2050
-\OT1/cmr/m/n/10.95 pro-tein struc-ture files amongst MapRe-duce clus-ter and, TmA-lign which proves we can MapRe-
- []
-
-[70
+] [70
 
 ] [71] [72
 
@@ -852,12 +842,12 @@ Underfull \hbox (badness 1354) in paragraph at lines 83--96
  []
 
 [84] [85] [86]
-Underfull \hbox (badness 1112) in paragraph at lines 310--316
+Underfull \hbox (badness 1112) in paragraph at lines 314--320
 []\OT1/cmr/m/n/10.95 Xiangrui Meng, Joseph Bradley, Bu-rak Yavuz, Evan Sparks, Shiv-aram
  []
 
 [87]
-Underfull \hbox (badness 1173) in paragraph at lines 446--452
+Underfull \hbox (badness 1173) in paragraph at lines 450--456
 []\OT1/cmr/m/n/10.95 John D. West-brook and Paula M. D. Fitzger-ald.  The PDB For-mat,
  []
 
@@ -870,21 +860,21 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `"Project Report".out' has not changed.
-(rerunfilecheck)             Checksum: 59C7A026702159D3330C3814D3ACDB15;1349.
+(rerunfilecheck)             Checksum: C4761E786EE96BBB946EB9FDDA1BB0A2;1293.
  ) 
 Here is how much of TeX's memory you used:
- 14785 strings out of 476422
- 233958 string characters out of 5810350
- 800151 words of memory out of 5000000
- 35038 multiletter control sequences out of 15000+600000
+ 14787 strings out of 476422
+ 234103 string characters out of 5810350
+ 800325 words of memory out of 5000000
+ 35039 multiletter control sequences out of 15000+600000
  476721 words of font info for 52 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 72i,13n,77p,1740b,1902s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,13n,77p,1717b,1902s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Project Report.pdf" (90 pages, 5494938 bytes).
+Output written on "Project Report.pdf" (90 pages, 5494803 bytes).
 PDF statistics:
- 1671 PDF objects out of 1728 (max. 8388607)
- 1483 compressed objects within 15 object streams
- 883 named destinations out of 1000 (max. 500000)
+ 1679 PDF objects out of 1728 (max. 8388607)
+ 1489 compressed objects within 15 object streams
+ 884 named destinations out of 1000 (max. 500000)
  145 words of extra memory for PDF output out of 10000 (max. 10000000)
 
