@@ -3,5 +3,14 @@
         "iostream": "cpp",
         "vector": "cpp",
         "ostream": "cpp"
-    }
+    },
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./main",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
 }

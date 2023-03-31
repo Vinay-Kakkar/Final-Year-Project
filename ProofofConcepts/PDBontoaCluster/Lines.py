@@ -2,6 +2,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.types import StringType
 import os
 from pathlib import Path
+import time
 
 def getallpdbfiles(directory):
     pdbfiles = []
@@ -55,6 +56,7 @@ def numberoflinesexecutables():
     os.system("wc -l /Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/PDBontoaCluster/PDBsforExecutables/newPDB.pdb")
 
 def main(spark):
+    start = time.time()
 
     directory = ("/Users/vinaykakkar/Desktop/PROJECT/ProofofConcepts/PDBontoaCluster/OriginalPDBs")
 
@@ -73,6 +75,8 @@ def main(spark):
     convertdftopdb(dfs, spark, executable)
 
 
+    end = time.time()
+    print(end - start)
 
     ## Test this way of converting datframe to file https://stackoverflow.com/questions/67316136/spark-write-dataframe-with-custom-file-name
 if __name__ == '__main__':
