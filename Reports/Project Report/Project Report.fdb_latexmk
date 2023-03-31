@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex Project Report"] 1680239738 "Project Report.aux" "Project Report.bbl" "Project Report" 1680239741
+["bibtex Project Report"] 1680247284 "Project Report.aux" "Project Report.bbl" "Project Report" 1680247286
   "/usr/local/texlive/2022basic/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "Project Report.aux" 1680239741 38399 90165b311934af5900b25e8c8b845c77 "pdflatex"
+  "Project Report.aux" 1680247286 39618 9fc3aebb020504112974eea88c2f44a0 "pdflatex"
   "bibliography.bib" 1680229059 116259 d6bc900c83d1cc1b35e92fe907e0d2b4 ""
   (generated)
   "Project Report.bbl"
   "Project Report.blg"
-["pdflatex"] 1680239738 "/Users/vinaykakkar/Desktop/PROJECT/Reports/Project Report/Project Report.tex" "Project Report.pdf" "Project Report" 1680239741
-  "/Users/vinaykakkar/Desktop/PROJECT/Reports/Project Report/Project Report.tex" 1680239735 147699 9ba5a0d6cb5a869b37894cd83a2e93d7 ""
+["pdflatex"] 1680247284 "/Users/vinaykakkar/Desktop/PROJECT/Reports/Project Report/Project Report.tex" "Project Report.pdf" "Project Report" 1680247286
+  "/Users/vinaykakkar/Desktop/PROJECT/Reports/Project Report/Project Report.tex" 1680247280 153860 7d69519e034b2d3b20a0e2e7c4d5b01d ""
   "/Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1678197259 12644 9f9c1e9435afea0060c63c65e60845b7 ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/local/texlive/2022basic/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -104,10 +104,10 @@
   "Overlaping.png" 1680229059 98576 aa8e6f9a0d1687cf128a2c635d3e7caf ""
   "PDB File.png" 1680229059 450100 294f3f9a25a387d80e63f28644b1dddb ""
   "PDB Site.png" 1680229059 1150388 16ca67f170cba1b1af73e0afda030bbf ""
-  "Project Report.aux" 1680239741 38399 90165b311934af5900b25e8c8b845c77 "pdflatex"
-  "Project Report.bbl" 1680239738 25284 ff30ef3375c1c4f92784d350421e90ab "bibtex Project Report"
-  "Project Report.out" 1680239741 1293 c4761e786ee96bbb946eb9fdda1bb0a2 "pdflatex"
-  "Project Report.tex" 1680239735 147699 9ba5a0d6cb5a869b37894cd83a2e93d7 ""
+  "Project Report.aux" 1680247286 39618 9fc3aebb020504112974eea88c2f44a0 "pdflatex"
+  "Project Report.bbl" 1680247284 25284 ff30ef3375c1c4f92784d350421e90ab "bibtex Project Report"
+  "Project Report.out" 1680247286 1672 60e7a6cfbeedfb1db5383ae690930144 "pdflatex"
+  "Project Report.tex" 1680247280 153860 7d69519e034b2d3b20a0e2e7c4d5b01d ""
   "Protein Structure.png" 1680229059 114151 03e305c2d95212db4305391a31828cb7 ""
   "SAGE1.png" 1680229059 126360 591f82d5dc16ab3d0cab05c8fbe88ef6 ""
   "SAGE2.png" 1680229059 99222 3f45d693ddf01e116160bfaca6e0877b ""
