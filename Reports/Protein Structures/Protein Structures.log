@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  4 DEC 2022 15:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  30 MAR 2023 01:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/vinaykakkar/Desktop/PROJECT-main/Reports/Protein Structures/Protein Structures.tex"
-(/Users/vinaykakkar/Desktop/PROJECT-main/Reports/Protein Structures/Protein Structures.tex
+**"/Users/vinaykakkar/Desktop/PROJECT/Reports/Protein Structures/Protein Structures.tex"
+(/Users/vinaykakkar/Desktop/PROJECT/Reports/Protein Structures/Protein Structures.tex
 LaTeX2e <2022-11-01>
 L3 programming layer <2022-11-02> (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
@@ -458,14 +458,14 @@ Package rerunfilecheck Info: File `"Protein Structures".out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  12061 strings out of 476422
- 199458 string characters out of 5810350
+ 199443 string characters out of 5810350
  565739 words of memory out of 5000000
  33115 multiletter control sequences out of 15000+600000
  476228 words of font info for 52 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 72i,8n,77p,1068b,552s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,8n,77p,1063b,552s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Protein Structures.pdf" (15 pages, 656564 bytes).
+Output written on "Protein Structures.pdf" (15 pages, 656350 bytes).
 PDF statistics:
  344 PDF objects out of 1000 (max. 8388607)
  285 compressed objects within 3 object streams
