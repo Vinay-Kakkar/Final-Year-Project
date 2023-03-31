@@ -1,0 +1,26 @@
+{
+    "query":{
+       "type":"group",
+       "nodes":[
+          {
+             "type":"terminal",
+             "service":"full_text",
+             "parameters":{
+                "value":"covid"
+             }
+          },
+          {
+             "type":"terminal",
+             "service":"text",
+             "parameters":{
+                "attribute":"reflns.pdbx_Rmerge_I_obs",
+                "operator":"greater",
+                "negation":false,
+                "value":0.2
+             }
+          }
+       ],
+       "logical_operator":"and"
+    },
+    "return_type":"entry"
+ }
