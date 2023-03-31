@@ -250,7 +250,7 @@ We can have computational methods that aid experimental technique intending to e
 \clearpage
 \subsubsection{Large Scale Gene Expression}
 
-Genome DNA microarray experiments produce large amount of data can be computationaly heavy on where methods can yield alternative conclusions from inceasing the computational effort.
+Genome DNA microarray experiments produce large amounts of data that can be computationally heavy on where methods can yield alternative conclusions from increasing the computational effort.
 
 The goal of these experiments is to determine biological or functional meaning from the lists of genes, either by:
 
@@ -898,18 +898,6 @@ HDFS has scheduling delays in the architecture which results in cluster nodes wa
 Some performance-enhancing features in the filesystem are not available such as bypassing the filesystem page cache and transferring data directly from the disk into user buffers. Thus, HDFS implementation runs less efficiently and has higher processor usage than would otherwise be necessary~\cite{shafer_hadoop_2010}.
 \clearpage
 
-\subsection{Analysis of existing systems that solve similar tasks}
-There are a few systems that solve similar tasks these include:
-
-\begin{itemize}
-    \item SparkMD: This is a Spark-based framework for molecular dynamics simulations. It uses a distributed version of the GROMACS simulation engine to enable large-scale simulations of protein systems.
-    \item BioSpark: This is a Spark-based framework for processing and analyzing large-scale genomics and proteomics datasets. It provides a set of APIs for analyzing DNA sequences, protein structures, and other biological data.
-    \item Pysparkling: This is a Python-based library for parallelizing computations using Spark. It can be used for a range of bioinformatics analyses, including sequence alignment, protein structure prediction, and gene expression analysis.
-    \item SparkProt: This is a Spark-based framework for protein structure prediction. It uses a combination of machine learning algorithms and structural bioinformatics tools to predict the 3D structure of proteins from their amino acid sequences.
-    \item DeepChem: This is a deep learning-based framework for drug discovery and development. It uses Spark to parallelize computations and can be used for a range of tasks, including protein-ligand docking, virtual screening, and compound synthesis planning.
-\end{itemize}
-
-
 \section{Software Engineering}
 
 \subsection{User Executable Setup}
@@ -1391,7 +1379,7 @@ There are a few different options when downloading files from the website:
             XML&Compressed&/download/4hhb.xml\\
             \hline
         \end{tabular}
-        \caption{\label{DownloadPDB}Showing different type of downloads options using the Dowload Serivce~\cite{bank_file_nodate}.} 
+        \caption{\label{DownloadPDB}Showing different type of downloads options using the Download Serivce~\cite{bank_file_nodate}.} 
     \end{center}
 \end{table}
     
@@ -2247,19 +2235,130 @@ Key Value Pair is a fundamental concept in computer science and data processing.
 \clearpage
 
 \subsubsection{TMalign}
-I have set up a user executable TMalign which is a tool used to compare protein structures. This is a specialized tool used in the field of bioinformatics by researchers for there studies and experiments.
+I have set up a user executable TMalign which is a tool used to compare protein structures. This is a specialized tool used in the field of bioinformatics by researchers for their studies and experiments.
 
 \subsubsection{API Service Download and API Get}
 API Service Download and API Get are related to web development and data processing for the RCSB website. APIs, or Application Programming Interfaces, allow the framework to communicate with the RCSB data bank.
 
 \subsubsection{Benchmarking}
-Lastly, Benchmarking is important in the development process which ensures that the code is performing well and is optimized. By benchmarking the code, we can identify bottlenecks and optimize the code to improve its performance.
+Benchmarking is essential to the development process since it ensures the effectiveness and efficiency of the code. We can identify performance bottlenecks and make code enhancements by benchmarking the code.
+
+The KPI for this benchmark is process time to determine what configuration performs faster. When creating a local Apache Spark cluster, it's important to understand the concepts of working threads and available cores. 
+
+\textbf{Working threads:} Each working thread is responsible for executing a task in parallel with other threads. The number of working threads determines the level of parallelism in your Spark application. The more working threads you have, the more parallelism you can achieve thus, lead to faster execution times.
+
+\textbf{Available cores:} Available cores refer to the number of physical or virtual cores that are available on the machine that you're running your Spark application. The number of available cores determines how many cores are available to the worker thread when it is trying to execute a task.
+
+The number of available cores may not always match the number of working threads you can create in Spark. This is because Spark also needs to reserve some cores for its internal processes, such as managing the cluster, scheduling tasks, and coordinating data transfers.
+
+\clearpage
+
+\subsubsection{Configuration Setup}
+
+In python, I need to create a few different configurations to benchmark comparing each one with the other to determine the fastest configuration. The configuration setup is the following:
+
+\begin{lstlisting}
+    conf1 = SparkConf().setAppName("MyApp").setMaster("local[1]") \
+    .set("spark.executor.cores", "1")
+    spark1 = SparkContext(conf=conf1)
+    t1 = time.time()
+    tmalign(spark1, "OriginalPDBs", "OriginalPDBscopy")
+    t1c = time.time()
+
+
+    conf2 = SparkConf().setAppName("MyApp").setMaster("local[1]") \
+        .set("spark.executor.cores", "8")
+    spark2 = SparkContext(conf=conf2)
+    t2 = time.time()
+    tmalign(spark2, "OriginalPDBs", "OriginalPDBscopy")
+    t2c = time.time()
+
+    conf3 = SparkConf().setAppName("MyApp").setMaster("local[2]") \
+        .set("spark.executor.cores", "2")
+    spark3 = SparkContext(conf=conf3)
+    t3 = time.time()
+    tmalign(spark3, "OriginalPDBs", "OriginalPDBscopy")
+    t3c = time.time()
+
+    conf4 = SparkConf().setAppName("MyApp").setMaster("local[2]") \
+        .set("spark.executor.cores", "4")
+    spark4 = SparkContext(conf=conf4)
+    t4 = time.time()
+    tmalign(spark4, "OriginalPDBs", "OriginalPDBscopy")
+    t4c = time.time()
+
+    conf5 = SparkConf().setAppName("MyApp").setMaster("local[4]") \
+        .set("spark.executor.cores", "2")
+    spark5 = SparkContext(conf=conf5)
+    t5 = time.time()
+    tmalign(spark5, "OriginalPDBs", "OriginalPDBscopy")
+    t5c = time.time()
+
+    conf6 = SparkConf().setAppName("MyApp").setMaster("local[8]") \
+        .set("spark.executor.cores", "1")
+    spark6 = SparkContext(conf=conf5)
+    t6 = time.time()
+    tmalign(spark6, "OriginalPDBs", "OriginalPDBscopy")
+    t6c = time.time()
+
+\end{lstlisting}
+
+The differences between each configuration are the worker threads and available cores to each one. It is important to note that the device used to benchmark contains 8 cores.
+
+Applying each of the configuration clusters to each user executable i.e. the linecount and tmalign executable. Please refer to the files benchlinecount.py and benchtmalign.py. The benchlinecount.py was run against 161 pdb files whilst the benchtmalign.py was run against 121 pairs of pdb files, a smaller sample due to the more intensive task.
+
+\subsubsection{Results}
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{ |p{3.5cm}|p{3.5cm}|p{3.5cm}|  }
+            \hline
+            \multicolumn{3}{|c|}{Configurations} \\
+            \hline
+            Configuration&Worker Threads&Available Cores\\
+            \hline
+            Conf1&1&1\\
+            \hline
+            Conf2&1&8\\
+            \hline
+            Conf3&2&2\\
+            \hline
+            Conf4&2&4\\
+            \hline
+            Conf5&4&2\\
+            \hline
+            Conf6&8&1\\
+            \hline
+        \end{tabular}
+        \caption{\label{Configurations}Showing the available Cores and Worker Threads for each configuration.} 
+    \end{center}
+\end{table}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.46\textwidth]{TmalignBench.png}
+    \caption{\label{fig:TmalignBench}Time taken for each configuration to run tmalign on 121 pairs of pdb files}
+\end{figure}
+
+\vspace{30px}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.46\textwidth]{linesBench.png}
+    \caption{\label{fig:linesBench}Time taken for each configuration to run linecount on 161 pdb files}
+\end{figure}
+
+\vspace{15px}
+
+The results will be discussed in section 6.2.
+
+
+
 
 \clearpage
 
 \subsection{Project Reflection}
 
-Computational demands of analysing large datasets of protein structures can be a significant obstacle, requiring substantial time and resources. To address this challenge, this project aims to develop a framework that utilizes the MapReduce programming model to enable researchers to efficiently analyse large numbers of protein structures using a user-provided executable. To do this we have set out a list of objectives which once implemented will achieve the project aim. To do this we have conducted using python and spark. This enables the ability to parallelise data whilst computing a MapReduce step. As an outcome, all the objectives were implemented in a detailed manner except for the user interface. Overall the researcher can search and download pdb files from the framework. The researcher is also able to call out two user executables on the pdbs they require more specifically these are implemented using a MapReduce formalism. Whilst having some functions that help manipulate the folders holding the pdb files. Ultimately, at the end of this project, we have a software framework that supports MapReduce formalism and can process large numbers of protein structures. Whilst being able to do so by parallelising protein structure analysis across multiple computing nodes. Keeping in mind that the framework is optimized to reduce the processing time required for protein structure analysis. Finally, the software framework is scalable and can handle increasingly large datasets and can be easily updated to keep pace with advancements in protein structure analysis techniques and computing technology.
+Computational demands of analysing large datasets of protein structures can be a significant obstacle, requiring substantial time and resources. To address this challenge, this project aims to develop a framework that utilizes the MapReduce programming model to enable researchers to efficiently analyse large numbers of protein structures using a user-provided executable. To do this we have set out a list of objectives that once implemented will achieve the project aim. To do this we have conducted using python and spark. This enables the ability to parallelise data whilst computing a MapReduce step. As an outcome, all the objectives were implemented in a detailed manner except for the user interface. Overall the researcher can search and download pdb files from the framework. The researcher is also able to call out two user executables on the pdbs they require more specifically these are implemented using a MapReduce formalism. Whilst having some functions that help manipulate the folders holding the pdb files. Ultimately, at the end of this project, we have a software framework that supports MapReduce formalism and can process large numbers of protein structures. Whilst being able to do so by parallelising protein structure analysis across multiple computing nodes. Keeping in mind that the framework is optimized to reduce the processing time required for protein structure analysis. Finally, the software framework is scalable and can handle increasingly large datasets and can be easily updated to keep pace with advancements in protein structure analysis techniques and computing technology.
 
 \subsubsection{Evaluate the process}
 
@@ -2313,63 +2412,57 @@ Another aspect I could have improved on is spending more time on the RCSB API do
 \end{table}
 
 
-\subsection{conclusions or results analysed or discussed}
-Need to include benchmarking here
+\subsection{Benchmarking Discussion}
+In section 6 I have conducted benchmarking and show the results of the time taken to execute the user executables linecount and tmalign functions depending on the set configuration when creating the cluster. I showed all the different configuration sets and the time taken from each configuration more specifically the change of worker threads to available cores to complete its task. We discussed the differences between the two explaining how each effect cluster management. Before running the tests we were under the impression that the more worker threads and cores (max being the available cores on the machine) a configuration has we should have the faster the execution time. Looking at the graphs created we can conclude that this is true as time decreases every time we increase either option. Showing a strong correlation that the statement more cores and worker threads increase time efficiency.
+
+\subsubsection{Configuration 1}
+The first configuration contains one worker thread and one available core. This is a replicate of what the execution time would be if no parallelising was conducted. One key aspect of the project was to create a formalism that increases the efficiency of running multiple pdb files in parallel. We can see that this is correct as for both executables the time has significantly decreased as soon as more cores are available to the worker thread. We see a decrease of 1.53 seconds on the tmalign function and 1.63 on the linecount function when compared to Config 2. These differences are not so big due to the scale of the test set. However, increasing the test size should show a larger difference.
+
+\subsubsection{Best Perorming Configuration}
+
+Trying to conclude the best-performing configuration can be difficult due to the small test set. The best-performing configuration can also vary depending on the user executable being used for example adding a more intensive user executable might mean that a different configuration performs better than the rest. Out of the two executables, we can see that configuration 5 has performed the best this shows that having multiple worker threads that have more than one available core can utilize this and perform tasks the quickest. We see that in the linecount function configuration, 5 and configuration 6 performed the same. There can be several reasons for this but one reason I believe is that the function is not computationally heavy thus, having the extra available cores per worker thread did not make an impact on the performance.
 
 \section{Professional Issues}
-Structural bioinformatics involves the use of complex data analysis techniques and tools that require a high level of accuracy and reliability. As such, it is important to consider ethical issues related to data privacy, ownership, and sharing. It means that there could potential impact on public health.
+The use of complex data analysis methods and tools in structural bioinformatics necessitates a high standard of precision and dependability. As a result, it is crucial to take ethical considerations into account when discussing ethics within bioinformatics. It indicates that there may affect public health. Public health is a crucial aspect of structural bioinformatics since biological molecule analysis can improve our understanding of diseases and treatment alternatives. For instance, structural bioinformatics has been utilised to create new medications, vaccinations, and treatments that can enhance outcomes for public health.
 
-In the subject of structural bioinformatics, public health is a key factor since molecular analyses of biological molecules can help us better understand diseases and treatment options. For instance, structural bioinformatics has been utilised to create new medications, vaccinations, and treatments that can enhance outcomes for public health.
+Structural bioinformatics combines computational and experimental techniques to study the structure and function of biological molecules at a molecular level, requiring the analysis of large amounts of complex data and the use of advanced tools and techniques to extract
+meaningful information.
 
-Structural bioinformatics combines computational and experimental techniques to study the structure and function of biological molecules at a molecular level, requiring the analysis of large amounts of complex data and the use of advanced tools and techniques to extract meaningful information.
+The ethical concerns surrounding data privacy, ownership, sharing, informed consent,
+and open science is crucial given the sensitive nature of the data involved.
 
-The ethical concerns surrounding data protection, ownership, sharing, informed permission, and open science are crucial given the sensitive nature of the data involved.
+\subsection{Data Privacy}
 
-Since structural bioinformatics handles personal data, data privacy is a critical component. Researchers must make sure that the information they gather is kept private and used exclusively for the intended purpose. The data must also be protected from unauthorised access or disclosure by appropriate methods. These precautions can include requiring researchers to make sure that any private information they gather (such as genetic data) is kept private and not shared with unauthorised parties. It is necessary to take the proper precautions to safeguard the data from unauthorised access, such as utilising encryption or secure storage techniques. This means that researchers must take the necessary precautions to stop data breaches and guarantee the security of the data they acquire. Researchers must respond quickly in the event of a breach to lessen the impact on the people and organisations whose data has been exposed.
+Structural bioinformatics deals with private information. The information that researchers obtain must be kept confidential and used only for the intended purpose. Whilst safeguarding against unauthorised access or disclosure. Requiring the use of secure storage methods or encryption to protect the data from unauthorised access ensures that any private information they collect is kept private and not disclosed to unauthorised parties. This will limit the impact on the exposed data, researchers must act swiftly in the event of a breach.
 
-Ownership of data is another ethical issue that must be carefully considered. Researchers must respect the rights of the individuals or organizations that provide the data and ensure that they are given appropriate credit for their contributions. The potential commercial value of the data must also be considered to ensure that researchers do not exploit it for their own gain. To do so Researchers must respect the rights of the individuals or organizations that provide the data, and ensure that they are properly credited for their contributions. For example, Researchers need to obtain informed consent from participants before collecting their data, and clearly explain the purpose and potential risks of the study. Participants should also be informed about their rights to access and control their data. If the data has commercial value, researchers must consider the ethical implications of using it for their own gain, and whether they need to obtain consent or provide compensation to the data providers. Another important aspect to ownership is transparency such that researchers should be transparent about their data collection and analysis methods, and make their findings publicly available whenever possible. This can help ensure that the scientific community and the public at large are aware of the potential benefits and risks associated with structural bioinformatics research.
+\subsection{Ownership}
 
-Sharing of data is a fundamental aspect of structural bioinformatics, as it allows researchers to collaborate and share knowledge. However, sharing of data must be done in a responsible and ethical manner, with appropriate safeguards in place to protect the privacy and confidentiality of the data. When sharing data, researchers should establish data sharing agreements that outline the terms and conditions of the data sharing arrangement, including who has access to the data and how it can be used. Researchers must ensure that appropriate safeguards are in place to protect the privacy and confidentiality of the data, such as using data use agreements or anonymization techniques. Such that, anonymization techniques can be used to protect the privacy of individuals and organizations whose data is being used in structural bioinformatics research. Researchers can remove identifying information from the data, such as names or addresses, to prevent it from being traced back to specific individuals.
+Researchers must respect the rights of the individuals or organizations that provide the data and ensure that they are given appropriate credit for their contributions. As the researchers can exploit this for their own gain. In order to avoid this researchers need to obtain informed consent from participants before collecting their data, and clearly explain the purpose and potential risks of the study. The origin data provider should also be informed about their rights to access and control their data. Researchers must be transparent and should always make their findings public and be open about how they acquired the data. 
 
-Informed consent is the process of obtaining permission from research participants after providing them with information about the research, including its purpose, procedures, and potential risks and benefits. Informed consent is important because it allows participants to make an informed decision about whether or not they want to participate in the research.
+\subsection{Sharing of Data}
 
-To ensure that you obtain informed consent from your participants, you should:
+Sharing of data must be conducted responsibly and ethically, and having safeguards in place to protect the privacy and confidentiality of the data is necessary. We can avoid ethical issues here by establishing data sharing agreements for example, who has access to the data and how it can be used to protect the privacy and confidentiality of the data. An example can be removing personal information from the data, such as id or home address so we can not link it to particular people.
 
-\begin{itemize}
-    \item Clearly explain the purpose of your research and the procedures involved.
-    \item Describe any potential risks or discomfort that participants may experience.
-    \item Provide participants with the opportunity to ask questions and clarify any doubts.
-    \item Obtain written consent from participants, indicating that they understand the research and agree to participate.
-\end{itemize}
+\subsection{Informed Consent}
 
-Open science is another important ethical consideration in research, especially in the current era of big data and the increasing importance of transparency and reproducibility. Open science refers to the practice of making research findings, data, and other outputs freely available to the scientific community and the general public.
+Informed consent is obtaining permission from the provider after providing them with information about your intentions. This is important as it allows as it gives the provider an option on whether they would want to give consent.
 
-There are several reasons why open science is important, including:
+When providing information to the provider the researcher must include:
 
 \begin{itemize}
-    \item Improving the quality and reliability of research: Open science promotes transparency and allows for peer review and replication of research findings, which can help to identify errors or inconsistencies and improve the overall quality and reliability of research.
-    \item Increasing collaboration and innovation: Open science encourages collaboration and sharing of ideas, data, and resources among researchers and institutions, which can lead to new insights and discoveries.
-    \item Promoting public trust and engagement: Open science allows the public to access and understand research findings and data, which can promote trust in scientific research and encourage public engagement with science.
+    \item Purpose of the data and intentions.
+    \item Potential risks involved.
+    \item Obtain written consent from participants.
 \end{itemize}
 
-To promote open science in your research, you can:
+\subsection{Open Science}
 
-\begin{itemize}
-    \item Make your research findings and data openly accessible through repositories or journals that allow for open access publishing.
-    \item Use open source software and tools for data analysis and visualization.
-    Provide detailed descriptions of your research methods and data processing steps in your publications and presentations.
-    \item Share research findings and data through social media, blogs, and other online platforms.
-\end{itemize}
+Open science is the practice of making research results and other outputs accessible to the general public and other scientists. This is crucial because it allows for peer review and the replication of research findings, which raises the quality and dependability of the study. Additionally, it encourages public trust and involvement by enabling access to and comprehension of research data. This increases collaboration and innovation in the area and produces new ideas and discoveries.
 
-Open science is related to ethics because it promotes transparency, accountability, and collaboration in research. These are important ethical principles that are essential for conducting research in a responsible and ethical manner.
+As it encourages accountability, transparency, and collaboration in research, open science is crucial to ethics. Gaining transparency and increasing trust with your participants and collaborators by making your study open and available to others. Ensuring that the research is carried out responsibly and ethically by holding yourself accountable to the scientific community and the general public makes the research transparent and accessible. Open science also encourages cooperation between institutions and researchers. Encouraging sharing of information and allowing a greater number of people to be benefited from findings.
 
-One of the key ethical principles in research is the principle of transparency. Transparency involves being open about your research methods, data, and findings. By making your research open and accessible to others, you are promoting transparency, which can help to build trust with your participants and colleagues.
 
-Another important ethical principle is the principle of accountability. Accountability involves taking responsibility for your actions and being able to justify your decisions. By making your research open and accessible, you are making yourself accountable to the scientific community and the public, which can help to ensure that your research is conducted in a responsible and ethical manner.
-
-Finally, open science promotes collaboration among researchers and institutions, which can help to advance the field of science and promote the public good. Collaboration and cooperation are important ethical principles, as they promote the sharing of knowledge and resources, and help to ensure that scientific research benefits the widest possible audience.
-
-In conclusion, as the Structural Bioinformatics Framework is examined within the context of a MapReduce formalism, it is crucial to consider the ethical implications of this field. The potential impact of structural bioinformatics on public health is significant, but the responsible management of data privacy, ownership, and sharing must be prioritized to ensure the ethical and responsible advancement of this field.
+In conclusion, as the Structural Bioinformatics Framework is examined within the context of a MapReduce formalism, it is crucial to consider the ethical implications of this field. The potential impact of structural bioinformatics on public health is significant, but the responsible management of data privacy, ownership, sharing, informed consent and Open Science must be prioritized to ensure the ethical and responsible advancement of this field.
 
 
 

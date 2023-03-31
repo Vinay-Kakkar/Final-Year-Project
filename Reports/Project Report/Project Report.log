@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  31 MAR 2023 02:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.9)  31 MAR 2023 06:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -622,57 +622,58 @@ Overfull \hbox (1.95448pt too wide) in paragraph at lines 802--837
 
 ] [36
 
-] [37
-
 ]
-<TmalignResult.png, id=543, 828.09375pt x 482.80376pt>
+<TmalignResult.png, id=538, 828.09375pt x 482.80376pt>
 File: TmalignResult.png Graphic file (type png)
 <use TmalignResult.png>
-Package pdftex.def Info: TmalignResult.png  used on input line 932.
+Package pdftex.def Info: TmalignResult.png  used on input line 920.
 (pdftex.def)             Requested size: 352.81552pt x 205.70825pt.
- [38
+ [37
+
 
  <./TmalignResult.png>]
-<TmalignVisual.png, id=557, 1276.77pt x 661.47125pt>
+<TmalignVisual.png, id=552, 1276.77pt x 661.47125pt>
 File: TmalignVisual.png Graphic file (type png)
 <use TmalignVisual.png>
-Package pdftex.def Info: TmalignVisual.png  used on input line 940.
+Package pdftex.def Info: TmalignVisual.png  used on input line 928.
 (pdftex.def)             Requested size: 352.81552pt x 182.78831pt.
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 966.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 954.
  (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <11> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 966.
- [39
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 954.
+ [38
 
  <./TmalignVisual.png>]
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 986.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 974.
  (/usr/local/texlive/2022basic/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <11> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 986.
- [40
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 974.
+ [39
 
-] [41
+] [40
 
 ] (/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/texlive/2022basic/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [42
+) [41
+
+] [42
 
 ] [43
 
-] [44
-
 ]
-Overfull \hbox (1.95448pt too wide) in paragraph at lines 1133--1151
+Overfull \hbox (1.95448pt too wide) in paragraph at lines 1121--1139
  [] 
  []
 
-[45
+[44
+
+] [45
 
 ] [46
 
@@ -684,136 +685,136 @@ Overfull \hbox (1.95448pt too wide) in paragraph at lines 1133--1151
 
 ] [50
 
-] [51
-
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1377--1377
+Underfull \hbox (badness 10000) in paragraph at lines 1365--1365
 []\OT1/cmr/m/n/10.95 Biological As-sem-bly File in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1379--1379
+Underfull \hbox (badness 10000) in paragraph at lines 1367--1367
 []\OT1/cmr/m/n/10.95 Biological As-sem-bly File in
  []
 
-[52
+[51
 
-] [53
+] [52
 
 ]
-Overfull \hbox (12.31699pt too wide) in paragraph at lines 1434--1435
+Overfull \hbox (12.31699pt too wide) in paragraph at lines 1422--1423
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 1997) in paragraph at lines 1456--1458
+Underfull \hbox (badness 1997) in paragraph at lines 1444--1446
 \OT1/cmr/m/n/10.95 search re-quest in-clud-ing pag-
  []
 
 
-Underfull \hbox (badness 2941) in paragraph at lines 1456--1458
+Underfull \hbox (badness 2941) in paragraph at lines 1444--1446
 \OT1/cmr/m/n/10.95 i-na-tion, sort-ing, scor-ing and
  []
 
 
-Underfull \hbox (badness 1371) in paragraph at lines 1460--1461
+Underfull \hbox (badness 1371) in paragraph at lines 1448--1449
 \OT1/cmr/m/n/10.95 for log-ging pur-poses. When
  []
 
 
-Overfull \hbox (1.95448pt too wide) in paragraph at lines 1444--1462
+Overfull \hbox (1.95448pt too wide) in paragraph at lines 1432--1450
  [] 
  []
 
-[54
+[53
 
-] [55
+] [54
 
-] [56]
-Overfull \hbox (45.16733pt too wide) in paragraph at lines 1582--1584
+] [55]
+Overfull \hbox (45.16733pt too wide) in paragraph at lines 1570--1572
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[57]
-<SearchAPIEditor.png, id=953, 1458.44875pt x 383.4325pt>
+[56]
+<SearchAPIEditor.png, id=948, 1458.44875pt x 383.4325pt>
 File: SearchAPIEditor.png Graphic file (type png)
 <use SearchAPIEditor.png>
-Package pdftex.def Info: SearchAPIEditor.png  used on input line 1610.
+Package pdftex.def Info: SearchAPIEditor.png  used on input line 1598.
 (pdftex.def)             Requested size: 441.01773pt x 115.94334pt.
 
-Underfull \hbox (badness 5893) in paragraph at lines 1611--1611
+Underfull \hbox (badness 5893) in paragraph at lines 1599--1599
 []\OT1/cmr/m/n/10.95 Figure 12: |[]Show-ing the User in-ter-face of the ed-i-tor for the RCSB Search
  []
 
-<payload.png, id=958, 916.42375pt x 619.31375pt>
+<payload.png, id=953, 916.42375pt x 619.31375pt>
 File: payload.png Graphic file (type png)
 <use payload.png>
-Package pdftex.def Info: payload.png  used on input line 1620.
+Package pdftex.def Info: payload.png  used on input line 1608.
 (pdftex.def)             Requested size: 220.50887pt x 149.01633pt.
-[58
+[57
 
  <./SearchAPIEditor.png> <./payload.png>]
-Overfull \hbox (5.74692pt too wide) in paragraph at lines 1658--1659
+Overfull \hbox (5.74692pt too wide) in paragraph at lines 1646--1647
 [][][][][][][][][][][][][] 
  []
 
-[59]
-Overfull \hbox (12.31699pt too wide) in paragraph at lines 1713--1714
+[58]
+Overfull \hbox (12.31699pt too wide) in paragraph at lines 1701--1702
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.74692pt too wide) in paragraph at lines 1722--1724
+Overfull \hbox (5.74692pt too wide) in paragraph at lines 1710--1712
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[60
+[59
 
 ]
-Overfull \hbox (32.02719pt too wide) in paragraph at lines 1740--1742
+Overfull \hbox (32.02719pt too wide) in paragraph at lines 1728--1730
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[61] [62]
-Overfull \hbox (5.74692pt too wide) in paragraph at lines 1814--1815
+[60] [61]
+Overfull \hbox (5.74692pt too wide) in paragraph at lines 1802--1803
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.74692pt too wide) in paragraph at lines 1815--1817
+Overfull \hbox (5.74692pt too wide) in paragraph at lines 1803--1805
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (12.31699pt too wide) in paragraph at lines 1824--1826
+Overfull \hbox (12.31699pt too wide) in paragraph at lines 1812--1814
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (5.74692pt too wide) in paragraph at lines 1826--1828
+Overfull \hbox (5.74692pt too wide) in paragraph at lines 1814--1816
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[63
+[62
 
-] [64
+] [63
 
 ]
-Overfull \hbox (25.45712pt too wide) in paragraph at lines 1867--1868
+Overfull \hbox (25.45712pt too wide) in paragraph at lines 1855--1856
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[65
+[64
 
-] [66
+] [65
 
-] [67] [68
+] [66] [67
+
+] [68
 
 ] [69
 
-] [70
+] [70] [71
 
-] [71] [72
+] [72
 
 ] [73
 
@@ -823,13 +824,24 @@ Overfull \hbox (25.45712pt too wide) in paragraph at lines 1867--1868
 
 ] [76
 
-] [77
+]
+<TmalignBench.png, id=1412, 701.62125pt x 549.05125pt>
+File: TmalignBench.png Graphic file (type png)
+<use TmalignBench.png>
+Package pdftex.def Info: TmalignBench.png  used on input line 2338.
+(pdftex.def)             Requested size: 202.87111pt x 158.75162pt.
+<linesBench.png, id=1413, 689.57625pt x 556.0775pt>
+File: linesBench.png Graphic file (type png)
+<use linesBench.png>
+Package pdftex.def Info: linesBench.png  used on input line 2346.
+(pdftex.def)             Requested size: 202.87111pt x 163.59174pt.
+ [77 <./TmalignBench.png> <./linesBench.png>] [78
 
-] [78
+] [79
 
-] [79] [80
+] [80] [81
 
-] [81] (./Project Report.bbl [82] [83
+] (./Project Report.bbl [82] [83
 
 ]
 Underfull \hbox (badness 1303) in paragraph at lines 83--96
@@ -863,18 +875,18 @@ Package rerunfilecheck Info: File `"Project Report".out' has not changed.
 (rerunfilecheck)             Checksum: C4761E786EE96BBB946EB9FDDA1BB0A2;1293.
  ) 
 Here is how much of TeX's memory you used:
- 14787 strings out of 476422
- 234103 string characters out of 5810350
- 800325 words of memory out of 5000000
- 35039 multiletter control sequences out of 15000+600000
+ 14891 strings out of 476422
+ 235604 string characters out of 5810350
+ 802641 words of memory out of 5000000
+ 35087 multiletter control sequences out of 15000+600000
  476721 words of font info for 52 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 72i,13n,77p,1717b,1902s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,13n,77p,1716b,1902s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/vinaykakkar/Library/texlive/2022basic/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Project Report.pdf" (90 pages, 5494803 bytes).
+Output written on "Project Report.pdf" (90 pages, 5592283 bytes).
 PDF statistics:
- 1679 PDF objects out of 1728 (max. 8388607)
- 1489 compressed objects within 15 object streams
- 884 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1749 PDF objects out of 2073 (max. 8388607)
+ 1554 compressed objects within 16 object streams
+ 938 named destinations out of 1000 (max. 500000)
+ 155 words of extra memory for PDF output out of 10000 (max. 10000000)
 

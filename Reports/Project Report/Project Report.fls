@@ -695,6 +695,16 @@ INPUT ./payload.png
 INPUT payload.png
 INPUT ./payload.png
 INPUT ./payload.png
+INPUT ./TmalignBench.png
+INPUT ./TmalignBench.png
+INPUT TmalignBench.png
+INPUT ./TmalignBench.png
+INPUT ./TmalignBench.png
+INPUT ./linesBench.png
+INPUT ./linesBench.png
+INPUT linesBench.png
+INPUT ./linesBench.png
+INPUT ./linesBench.png
 INPUT ./Project Report.bbl
 INPUT Project Report.bbl
 INPUT ./Project Report.bbl
